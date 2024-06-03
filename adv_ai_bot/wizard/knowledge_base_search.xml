@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="knowledge_base_search_view_form" model="ir.ui.view">
+        <field name="name">mail.bot.advai.knowledge.base.search.view.form</field>
+        <field name="model">mail.bot.advai.knowledge.base.search</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="search_text"/>
+                    <field name="result_text" class="kb_result_text"/>
+                </group>
+                <footer>
+                    <button name="action_search_knowledge_base" string="Search" type="object" class="oe_highlight"/>
+                    <button name="action_reset_entries" string="Clear" type="object"/>
+                    <button string="Close" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_knowledge_base_search" model="ir.actions.act_window">
+        <field name="name">Search Knowledge Base</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">mail.bot.advai.knowledge.base.search</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="knowledge_base_search_view_form"/>
+    </record>
+
+    <menuitem name="Search Knowledge Base" id="knowledge_base_search_menu" parent="adv_ai_bot_menu"
+        action="action_knowledge_base_search" sequence="200"/>
+</odoo>

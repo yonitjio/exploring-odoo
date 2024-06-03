@@ -1,0 +1,74 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="knowledge_base_form">
+            <field name="name">mail.bot.advai.knowledge.base.form</field>
+            <field name="model">mail.bot.advai.knowledge.base</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Knowledge Base">
+                    <sheet>
+                        <group>
+                            <field name="kb_type"/>
+                        </group>
+                        <div class="o_inner_group grid">
+                            <div class="o_wrap_field d-flex d-sm-contents flex-column mb-3 mb-sm-0">
+                                <div class="o_cell o_wrap_label flex-grow-1 flex-sm-grow-0 w-100 text-break text-900">
+                                    <label for="title" string="Question" invisible="kb_type!='qa'"/>
+                                    <label for="title" string="Title" invisible="kb_type!='article'"/>
+                                </div>
+                                <field name="title" nolabel="True"/>
+                            </div>
+                        </div>
+                        <div class="o_inner_group grid">
+                            <div class="o_wrap_field d-flex d-sm-contents flex-column mb-3 mb-sm-0">
+                                <div class="o_cell o_wrap_label flex-grow-1 flex-sm-grow-0 w-100 text-break text-900">
+                                    <label for="content" string="Answer" invisible="kb_type!='qa'"/>
+                                    <label for="content" string="Article" invisible="kb_type!='article'"/>
+                                </div>
+                                <field name="content" nolabel="True"/>
+                            </div>
+                        </div>
+                        <group>
+                            <field name="is_processed" readonly="1" force_save="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="knowledge_base_tree" model="ir.ui.view">
+            <field name="name">mail.bot.advai.knowledge.base.list</field>
+            <field name="model">mail.bot.advai.knowledge.base</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Knowledge Base">
+                    <field name="kb_type" readonly="1" force_save="1"/>
+                    <field name="title" string="Title / Question" readonly="1" force_save="1"/>
+                    <field name="truncated_content" string="Article / Answer" readonly="1" force_save="1"/>
+                    <field name="is_processed" readonly="1" force_save="1"/>                </tree>
+            </field>
+        </record>
+
+        <record id="action_adv_ai_bot_knowledge_base" model="ir.actions.act_window">
+            <field name="name">Knowledge Base</field>
+            <field name="res_model">mail.bot.advai.knowledge.base</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_process_knowledge_base" model="ir.actions.server">
+            <field name="name">Process Knowledge Base</field>
+            <field name="model_id" ref="model_mail_bot_advai_knowledge_base"/>
+            <field name="binding_model_id" ref="model_mail_bot_advai_knowledge_base"/>
+            <field name="binding_view_types">form,list</field>
+            <field name="state">code</field>
+            <field name="code">model.action_process_knowledge_base()</field>
+        </record>
+
+        <menuitem name="Advanced AI Bot" id="adv_ai_bot_menu" parent="mail.menu_root_discuss" sequence="100"/>
+
+        <menuitem name="Knowledge Base" id="knowledge_base_menu" parent="adv_ai_bot_menu"
+            action="action_adv_ai_bot_knowledge_base" sequence="100"/>
+
+    </data>
+</odoo>

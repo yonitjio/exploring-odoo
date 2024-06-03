@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="partner_ai_bot" model="res.partner">
+            <field name="name">AI Bot</field>
+            <field name="image_1920" type="base64" file="ai_bot/static/description/aibot.png"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit.ai_bot</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="90"/>
+            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="inside">
+                    <app data-string="AI Bot" id="ai_bot" string="AI Bot" name="ai_bot">
+                        <block title="AI Bot" id="ai_bot_settings">
+                            <div id="ai_bot_assistant_prompt_container" class="row mt16 o_settings_container">
+                                <div class="col-12 col-lg-12 o_setting_box">
+                                    <span class="o_form_label">Assistant Prompt</span>
+                                    <hr/>
+                                    <field name="ai_bot_assistant_prompt" widget="text"/>
+                                </div>
+                            </div>
+                            <div id="ai_bot_sql_prompt_container" class="row mt16 o_settings_container">
+                                <div class="col-12 col-lg-12 o_setting_box">
+                                    <span class="o_form_label">SQL Prompt</span>
+                                    <hr/>
+                                    <field name="ai_bot_sql_prompt" widget="text"/>
+                                </div>
+                            </div>
+                            <div id="ai_bot_synth_prompt_container" class="row mt16 o_settings_container">
+                                <div class="col-12 col-lg-12 o_setting_box">
+                                    <span class="o_form_label">Synthesize Prompt</span>
+                                    <hr/>
+                                    <field name="ai_bot_synth_prompt" widget="text"/>
+                                </div>
+                            </div>
+                        </block>
+                    </app>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
