@@ -13,10 +13,8 @@
 >
 > Do not use this module unless you have reviewed the source codes thoroughly, understand what it does and in an experimental environment.
 
-In this experiment we're going to try a technique called Retrieval Augmented Generation or RAG.
-
-With RAG, we can dynamically add information regarding Odoo database. So in theory we can query any data from the database.
+This module adds a chat bot that can assist us to create, remove and list schedules using Function Calling with LocalAI and Autogen.
 
 Please watch this video for more details:
 
-[![EXPLORING_ODOO](https://img.youtube.com/vi/4ixLuLNDYrU/0.jpg)](https://www.youtube.com/watch?v=4ixLuLNDYrU)
+[![EXPLORING_ODOO](https://img.youtube.com/vi/HIw2rd87n40/0.jpg)](https://www.youtube.com/watch?v=HIw2rd87n40)
