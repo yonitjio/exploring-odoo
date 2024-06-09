@@ -13,6 +13,12 @@
 >
 > Do not use this module unless you have reviewed the source codes thoroughly, understand what it does and in an experimental environment.
 
+> [!IMPORTANT]
+> This experiment uses modified LocalAI because at the time this experiment started, LocalAI didn't implement embedding function with llama.cpp backend yet.
+> 
+> Please see [my LocalAI fork](https://github.com/yonitjio/LocalAI) for the modification.
+
+
 In this experiment we're going to try a technique called Retrieval Augmented Generation or RAG.
 
 With RAG, we can dynamically add information regarding Odoo database. So in theory we can query any data from the database.
