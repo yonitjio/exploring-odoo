@@ -21,3 +21,11 @@ This repository contains source codes presented in youtube channel [Exploring Od
 > So, again, use it at your own risk.
 >
 > I do not provide support in any kind.
+
+# Experimental Odoo Modules
+
+| Name         | Folder       | Description                             |
+| ------------ | ------------ | --------------------------------------- |
+| AI Bot       | ai_bot       | Querying Odoo database with AI.         |
+| Adv AI Bot   | adv_ai_bot   | Querying Odoo database with AI and RAG. |
+| Calendar Bot | calendar_bot | Automate schedules with AI.             |

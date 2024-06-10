@@ -1,4 +1,4 @@
-# Querying Odoo database with AI and RAG
+# Querying Odoo database with AI
 > [!WARNING]
 > This module is purely experimental and for educational purpose use only.
 >
