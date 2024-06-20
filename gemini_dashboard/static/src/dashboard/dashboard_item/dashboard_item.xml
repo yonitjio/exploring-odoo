@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="gemini_dashboard.DashboardItem">
+        <div class="card m-2 border-dark h-75">
+            <div class="card-body h-100">
+                <t t-slot="default"/>
+            </div>
+        </div>
+    </t>
+</templates>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="gemini_dashboard.LineChartCard" owl="1">
+        <div class="w-100 h-100 d-flex">
+            <div class="w-50 h-100" style="margin: 10px;">
+                <LineChart onProgress.bind="onChartProgress" onComplete.bind="onChartComplete" 
+                    data="props.data" label="props.title"/>
+            </div>
+            <div class="w-50 h-100" style="margin: 10px; padding-bottom: 50px;">
+                <Record resModel="'gemini.dashboard'" fieldNames="fieldNames" fields="fields" 
+                    mode="'readonly'" t-slot-scope="slot">
+                    <GeminiDashboardHtmlField t-props="getHtmlFieldProps(slot.record)"/>
+                </Record>
+            </div>
+        </div>
+    </t>
+</templates>

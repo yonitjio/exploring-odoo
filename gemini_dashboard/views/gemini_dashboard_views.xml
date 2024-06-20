@@ -1,0 +1,13 @@
+<odoo>
+  <data>
+    <record model="ir.actions.client" id="dashboard">
+      <field name="name">Gemini Dashboard</field>
+      <field name="tag">gemini_dashboard.dashboard</field>
+    </record>
+
+    <menuitem name="Gemini Dashboard" id="gemini_dashboard.menu_root"
+        groups="base.group_user" web_icon="gemini_dashboard,static/description/icon.png"/>
+    <menuitem name="Dashboard" id="gemini_dashboard.dashboard_menu"
+        parent="gemini_dashboard.menu_root" action="gemini_dashboard.dashboard" sequence="1"/>
+  </data>
+</odoo>
