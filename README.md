@@ -30,3 +30,6 @@ This repository contains source codes presented in youtube channel [Exploring Od
 | Adv AI Bot       | adv_ai_bot       | Querying Odoo database with AI and RAG.                 |
 | Calendar Bot     | calendar_bot     | Automate schedules with AI and Function Calling.        |
 | Gemini Dashboard | gemini_dashboard | Utilizes Google Gemin and Piper TTS to describe charts. |
+| Gemini Editor    | gemini_editor    | Generate srticles / texts with Google Gemini            |
+| Viz Bot          | viz_bot          | Import data from images                                 |
+| Simple AI Server | inference-server | For viz_bot                                             |

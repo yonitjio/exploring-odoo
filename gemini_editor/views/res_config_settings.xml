@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="gemini_res_config_settings_view" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.gemini.inherit</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='contacts_settings']" position="before">
+                        <div id="google_gemini">
+                            <block title="Google Gemini" id="gemini_setting_container" groups="base.group_no_one">
+                                <setting id="gemini_setting" help="Put your Google Gemini API key here.">
+                                    <field name="gemini_api_key" placeholder="Google Gemin API key" password="True"/>
+                                </setting>
+                            </block>
+                        </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

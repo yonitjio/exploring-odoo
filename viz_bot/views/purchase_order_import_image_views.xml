@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="purchase_order_import_image_tree" model="ir.ui.view">
+        <field name="name">purchase.order.import.image.tree</field>
+        <field name="model">purchase.order.import.image</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Purchase Order Import Image" create="false" delete="true">
+                <field name="uuid" readonly="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="purchase_order_import_image_form" model="ir.ui.view">
+        <field name="name">purchase.order.import.image.form</field>
+        <field name="model">purchase.order.import.image</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Purchase Order Import Image" edit="false" create="false" delete="true" >
+                <sheet>
+                    <group>
+                        <field name="uuid" readonly="1"/>
+                        <field name="x_image" readonly="1" widget="image"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="purchase_order_import_image_action" model="ir.actions.act_window">
+        <field name="name">Purchase Order Import Image</field>
+        <field name="res_model">purchase.order.import.image</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_purchase_order_import_image_action"
+        action="viz_bot.purchase_order_import_image_action" name="Product Order Import Image"
+        parent="purchase.menu_purchase_config" sequence="1"/>
+</odoo>

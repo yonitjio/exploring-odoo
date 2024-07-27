@@ -1,4 +1,4 @@
-# Explain dashboard with Google Gemini and Piper
+# Automate schedules with AI
 > [!WARNING]
 > This module is purely experimental and for educational purpose use only.
 >
@@ -9,10 +9,14 @@
 > Use it at your own risk.
 
 > [!CAUTION]
+> AI might generate commands that negatively impact your data.
+>
 > Do not use this module unless you have reviewed the source codes thoroughly, understand what it does and in an experimental environment.
 
-This module utilizes Google Gemini and Piper TTS to describe charts in Odoo.
+This module adds explore the possibilities to import data from images.
 
 Please watch this video for more details:
 
-[![EXPLORING_ODOO](https://img.youtube.com/vi/2ikUMYwdXR0/0.jpg)](https://youtu.be/2ikUMYwdXR0)
+[![EXPLORING_ODOO](https://img.youtube.com/vi/-pbfhXSFnhc/0.jpg)](https://www.youtube.com/watch?v=-pbfhXSFnhc)
+
+

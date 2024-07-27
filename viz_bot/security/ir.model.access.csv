@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_purchase_order_import_image_admin,vizbot.purchase.order.import.image.admin,model_purchase_order_import_image,purchase.group_purchase_manager,1,1,1,1
+access_purchase_order_import_image,vizbot.purchase.order.import.image,model_purchase_order_import_image,purchase.group_purchase_user,1,1,1,0
+access_ai_assisted_import_purchase,vizbot.import.purchase,model_vizbot_ai_import_purchase,purchase.group_purchase_user,1,1,1,0

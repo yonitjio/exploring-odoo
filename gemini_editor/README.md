@@ -1,4 +1,4 @@
-# Explain dashboard with Google Gemini and Piper
+# Generate Articles with Google Gemini
 > [!WARNING]
 > This module is purely experimental and for educational purpose use only.
 >
@@ -11,8 +11,8 @@
 > [!CAUTION]
 > Do not use this module unless you have reviewed the source codes thoroughly, understand what it does and in an experimental environment.
 
-This module utilizes Google Gemini and Piper TTS to describe charts in Odoo.
+This module utilizes Google Gemini to generate articles / texts.
 
 Please watch this video for more details:
 
-[![EXPLORING_ODOO](https://img.youtube.com/vi/2ikUMYwdXR0/0.jpg)](https://youtu.be/2ikUMYwdXR0)
+[![EXPLORING_ODOO](https://img.youtube.com/vi/BI0v8vTWpAU/0.jpg)](https://youtu.be/BI0v8vTWpAU)
