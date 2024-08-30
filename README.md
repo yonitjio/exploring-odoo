@@ -32,4 +32,4 @@ This repository contains source codes presented in youtube channel [Exploring Od
 | Gemini Dashboard | gemini_dashboard | Utilizes Google Gemin and Piper TTS to describe charts. |
 | Gemini Editor    | gemini_editor    | Generate srticles / texts with Google Gemini            |
 | Viz Bot          | viz_bot          | Import data from images                                 |
-| Simple AI Server | inference-server | For viz_bot                                             |
+| Frodoo           | frodoo           | Voice Assistant for Odoo                                |

@@ -1,4 +1,4 @@
-# Automate schedules with AI
+# Inference Server for viz_bot module
 > [!WARNING]
 > This module is purely experimental and for educational purpose use only.
 >
@@ -13,7 +13,7 @@
 >
 > Do not use this module unless you have reviewed the source codes thoroughly, understand what it does and in an experimental environment.
 
-This module adds explore the possibilities to import data from images.
+This is the inference Server for viz_bot module
 
 Please watch this video for more details:
 

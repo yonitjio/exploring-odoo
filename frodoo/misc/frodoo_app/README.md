@@ -1,4 +1,4 @@
-# Import Data from Images
+# Voice assistant to manage schedules in Odoo
 > [!WARNING]
 > This module is purely experimental and for educational purpose use only.
 >
@@ -13,10 +13,8 @@
 >
 > Do not use this module unless you have reviewed the source codes thoroughly, understand what it does and in an experimental environment.
 
-This module adds explore the possibilities to import data from images.
+This is the Desktop App for Voice Assistant for Odoo.
 
 Please watch this video for more details:
 
-[![EXPLORING_ODOO](https://img.youtube.com/vi/-pbfhXSFnhc/0.jpg)](https://www.youtube.com/watch?v=-pbfhXSFnhc)
-
-
+[![EXPLORING_ODOO](https://img.youtube.com/vi/PeVl-YiaHJA/0.jpg)](https://youtu.be/PeVl-YiaHJA)
