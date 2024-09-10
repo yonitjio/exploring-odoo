@@ -1,0 +1,1 @@
+from . import email_generator_test

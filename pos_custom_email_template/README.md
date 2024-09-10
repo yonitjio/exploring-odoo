@@ -13,10 +13,10 @@
 >
 > Do not use this module unless you have reviewed the source codes thoroughly, understand what it does and in an experimental environment.
 
-This module explore the possibilities to import data from images.
+This module adds the possibilities to use AI to generate content for POS order receipt email.
 
 Please watch this video for more details:
 
-[![EXPLORING_ODOO](https://img.youtube.com/vi/-pbfhXSFnhc/0.jpg)](https://www.youtube.com/watch?v=-pbfhXSFnhc)
+[![EXPLORING_ODOO](https://img.youtube.com/vi/jTSRlOhrNoE/0.jpg)](https://www.youtube.com/watch?v=jTSRlOhrNoE)
 
 

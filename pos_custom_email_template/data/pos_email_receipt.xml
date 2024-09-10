@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data noupdate="1">
+        <record id="pos_email_template" model="mail.template">
+            <field name="name">POS Order Receipt</field>
+            <field name="model_id" ref="point_of_sale.model_pos_order"/>
+            <field name="auto_delete" eval="False"/>
+            <field name="lang">{{ object.partner_id.lang }}</field>
+            <field name="body_html"><![CDATA[
+<table class="body" style="background-color:#f4f5f6;border-collapse:separate;mso-table-lspace:0pt;mso-table-rspace:0pt;" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#f4f5f6">
+    <tbody>
+        <tr>
+            <td style="font-family:Helvetica, sans-serif;font-size:16px;vertical-align:top;">&nbsp;</td>
+            <td style="font-family:Helvetica, sans-serif;font-size:16px;margin:0 auto;max-width:600px;padding:24px 0 0;vertical-align:top;width:600px;" width="600">
+                <div style="box-sizing:border-box;display:block;margin:0 auto;max-width:600px;padding:0;">
+                    <div style="clear:both;padding-top:24px;text-align:center;width:100%;">
+						<table style="border-collapse:separate;mso-table-lspace:0pt;mso-table-rspace:0pt;" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tbody>
+								<tr>
+									<td style="color:#9a9ea6;font-family:Helvetica, sans-serif;font-size:16px;text-align:center;vertical-align:top;">
+										<img src="https://changethis/mycompany.png"/>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+                    </div>
+					<table style="background-color:#ffffff;border-collapse:separate;border-radius:16px;border:1px solid #eaebed;mso-table-lspace:0pt;mso-table-rspace:0pt;" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tbody>
+							<tr>
+								<td style="box-sizing:border-box;font-family:Helvetica, sans-serif;font-size:16px;padding:24px;vertical-align:top;">
+								    <t t-out="object.email_receipt_message"></t>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+                    <div style="clear:both;padding-top:24px;text-align:center;width:100%;">
+						<table style="border-collapse:separate;mso-table-lspace:0pt;mso-table-rspace:0pt;" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tbody>
+								<tr>
+									<td style="color:#9a9ea6;font-family:Helvetica, sans-serif;font-size:16px;text-align:center;vertical-align:top;">
+										<p style="text-align:center;"><span style="color:#9a9ea6;font-size:16px;"></span></p><p><t t-out="object.company_id.name"></t>&nbsp;-&nbsp;<t t-out="object.company_id.partner_id.street"></t><br><t t-out="object.company_id.partner_id.city"></t>,&nbsp;<t t-out="object.company_id.partner_id.state_id.name"></t>&nbsp;<t t-out="object.company_id.partner_id.zip"></t><br></p><p><br></p><p><br></p><p><br></p><p></p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+                    </div>
+                </div>
+            </td>
+            <td style="font-family:Helvetica, sans-serif;font-size:16px;vertical-align:top;">&nbsp;</td>
+        </tr>
+    </tbody>
+</table>
+     ]]></field>
+        </record>
+    </data>
+</odoo>
