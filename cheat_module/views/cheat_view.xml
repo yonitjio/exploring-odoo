@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- List view, also called tree view on models -->
+    <record id="cheat_basic_view_list" model="ir.ui.view">
+      <field name="name">cheat.list</field>
+      <field name="model">cheat.basic</field>
+      <field name="type">tree</field>
+      <field name="arch" type="xml">
+        <tree string="Cheat">
+          <field name="char_field"/>
+          <field name="text_field"/>
+          <field name="boolean_field"/>
+          <field name="selection_field"/>
+          <field name="computed_field"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Form view on models -->
+    <record model="ir.ui.view" id="cheat_basic_view_form">
+      <field name="name">cheat.form</field>
+      <field name="model">cheat.basic</field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+        <form string="Basic Cheat">
+          <header>
+            <button name="action_set_char_field_value" type="object" string="Generate Random String" icon="fa-random" />
+          </header>
+          <sheet>
+            <group>
+              <field name="char_field"/>
+              <field name="text_field"/>
+              <field name="boolean_field"/>
+              <field name="selection_field"/>
+              <field name="computed_field"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Action opening view on model -->
+    <record model="ir.actions.act_window" id="cheat_basic_action_window">
+      <field name="name">Cheat window</field>
+      <field name="res_model">cheat.basic</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Top menu item -->
+    <menuitem name="Cheat Menu" id="cheat_basic_menu_root" />
+
+    <!-- Menu item -->
+    <menuitem name="Menu 1" id="cheat_basic_menu_1" parent="cheat_basic_menu_root"/>
+
+    <!-- Sub Menu item -->
+    <menuitem name="Basic Cheat" id="cheat_basic_menu_action_window" parent="cheat_basic_menu_1" action="cheat_basic_action_window"/>
+  </data>
+</odoo>
