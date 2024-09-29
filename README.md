@@ -34,3 +34,4 @@ This repository contains source codes presented in youtube channel [Exploring Od
 | Viz Bot          | viz_bot                   | Import data from images                                 |
 | Frodoo           | frodoo                    | Voice Assistant for Odoo                                |
 | POS Custom Email | pos_custom_email_template | Using AI to generate POS receipt email                  |
+| Cheat Module     | cheat_module              | Basic cheat module for Odoo module development          |
