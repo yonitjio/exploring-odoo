@@ -14,7 +14,9 @@
     'data': [
         'security/ir.model.access.csv',
         'views/cheat_view.xml',
-        'views/res_config_settings_view.xml'
+        'views/cheat_dialog_template_view.xml',
+        'views/res_config_settings_view.xml',
+        'wizard/cheat_wizard_view.xml'
     ],
     "application": False,
     "installable": True,
