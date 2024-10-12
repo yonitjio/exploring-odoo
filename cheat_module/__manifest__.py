@@ -16,9 +16,15 @@
         'views/cheat_view.xml',
         'views/cheat_dialog_template_view.xml',
         'views/res_config_settings_view.xml',
-        'wizard/cheat_wizard_view.xml'
+        'wizard/cheat_wizard_view.xml',
+        'views/cheat_relation_view.xml'
     ],
-    "application": False,
+     'assets': {
+        'web.assets_backend': [
+            'cheat_module/static/src/**/*',
+        ],
+    },
+   "application": False,
     "installable": True,
     "auto_install": False,
     "license":"Other proprietary",
