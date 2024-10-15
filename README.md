@@ -24,14 +24,15 @@ This repository contains source codes presented in youtube channel [Exploring Od
 
 # Experimental Odoo Modules
 
-| Name             | Folder                    | Description                                             |
-| ---------------- | ------------------------- | ------------------------------------------------------- |
-| AI Bot           | ai_bot                    | Querying Odoo database with AI.                         |
-| Adv AI Bot       | adv_ai_bot                | Querying Odoo database with AI and RAG.                 |
-| Calendar Bot     | calendar_bot              | Automate schedules with AI and Function Calling.        |
-| Gemini Dashboard | gemini_dashboard          | Utilizes Google Gemin and Piper TTS to describe charts. |
-| Gemini Editor    | gemini_editor             | Generate srticles / texts with Google Gemini            |
-| Viz Bot          | viz_bot                   | Import data from images                                 |
-| Frodoo           | frodoo                    | Voice Assistant for Odoo                                |
-| POS Custom Email | pos_custom_email_template | Using AI to generate POS receipt email                  |
-| Cheat Module     | cheat_module              | Basic cheat module for Odoo module development          |
+| Name              | Folder                    | Description                                             |
+| ----------------- | ------------------------- | ------------------------------------------------------- |
+| AI Bot            | ai_bot                    | Querying Odoo database with AI.                         |
+| Adv AI Bot        | adv_ai_bot                | Querying Odoo database with AI and RAG.                 |
+| Calendar Bot      | calendar_bot              | Automate schedules with AI and Function Calling.        |
+| Gemini Dashboard  | gemini_dashboard          | Utilizes Google Gemin and Piper TTS to describe charts. |
+| Gemini Editor     | gemini_editor             | Generate srticles / texts with Google Gemini.           |
+| Viz Bot           | viz_bot                   | Import data from images.                                |
+| Frodoo            | frodoo                    | Voice Assistant for Odoo.                               |
+| POS Custom Email  | pos_custom_email_template | Using AI to generate POS receipt email.                 |
+| Cheat Module      | cheat_module              | Basic cheat module for Odoo module development.         |
+| Cheat Inheritance | cheat_inheritance         | Addition for cheat module to demonstrate inheritances.  |
