@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- List view, also called tree view on models -->
+    <record id="cheat_child_delegation_view_list" model="ir.ui.view">
+      <field name="name">cheat.child.delegation.list</field>
+      <field name="model">cheat.child.delegation</field>
+      <field name="type">tree</field>
+      <field name="arch" type="xml">
+        <tree string="Cheat Delegation">
+          <field name="char_field"/>
+          <field name="text_field"/>
+          <field name="float_field"/>
+          <field name="auxiliary_char_field"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Form view on models -->
+    <record id="cheat_child_delegation_view_form" model="ir.ui.view">
+      <field name="name">cheat.child.delegation.form</field>
+      <field name="model">cheat.child.delegation</field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+        <form string="Cheat Delegation">
+          <sheet>
+            <group>
+              <field name="char_field"/>
+              <field name="text_field"/>
+              <field name="float_field"/>
+              <field name="auxiliary_char_field"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Action opening view on model -->
+    <record model="ir.actions.act_window" id="cheat_child_delegation_action_window">
+      <field name="name">Cheat Delegation Window</field>
+      <field name="res_model">cheat.child.delegation</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <!-- Sub Menu item -->
+    <menuitem name="Delegation" id="cheat_child_delegation_menu_action_window" parent="cheat_inheritance_menu_top"
+      action="cheat_child_delegation_action_window"/>
+  </data>
+</odoo>

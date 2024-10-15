@@ -5,7 +5,6 @@
         <record id="cheat_dialog_template_view" model="ir.ui.view">
             <field name="name">cheat.dialog.template</field>
             <field name="model">cheat.basic</field>
-            <field name="type">form</field>
             <field name="arch" type="xml">
                 <form>
                     <div>

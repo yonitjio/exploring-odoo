@@ -5,7 +5,6 @@
     <record id="cheat_relation_main_view_tree" model="ir.ui.view">
       <field name="name">cheat.relation.main.view.tree</field>
       <field name="model">cheat.relation.main</field>
-      <field name="type">tree</field>
       <field name="arch" type="xml">
         <tree string="Cheat Relation"  js_class="cheat_relation_buttons">
           <field name="main_char_field"/>
@@ -18,7 +17,6 @@
     <record model="ir.ui.view" id="cheat_relation_main_view_form">
       <field name="name">cheat.relation.main.view.form</field>
       <field name="model">cheat.relation.main</field>
-      <field name="type">form</field>
       <field name="arch" type="xml">
         <form string="Cheat Relation">
           <header>
@@ -52,7 +50,6 @@
     <record id="cheat_relation_auxiliary_view_tree" model="ir.ui.view">
       <field name="name">cheat.relation.auxiliary.view.tree</field>
       <field name="model">cheat.relation.auxiliary</field>
-      <field name="type">tree</field>
       <field name="arch" type="xml">
         <tree string="Auxiliary" editable="bottom">
           <field name="auxiliary_char_field"/>
@@ -75,14 +72,14 @@
     </record>
 
     <!-- Menu item -->
-    <menuitem name="Relations" id="cheat_relation_main_menu_top" parent="cheat_module.cheat_basic_menu_root"/>
+    <menuitem name="Relations" id="cheat_relation_main_menu_top" parent="cheat_module.cheat_menu_root"/>
 
     <!-- Sub Menu item -->
-    <menuitem name="Main" id="cheat_relation_main_menu_action_window" parent="cheat_relation_main_menu_top"
+    <menuitem name="Main" id="cheat_relation_main_menu_action_window" parent="cheat_module.cheat_relation_main_menu_top"
       action="cheat_relation_main_action_view_window"/>
 
     <!-- Sub Menu item -->
-    <menuitem name="Auxiliary" id="cheat_relation_auxiliary_menu_action_window" parent="cheat_relation_main_menu_top"
+    <menuitem name="Auxiliary" id="cheat_relation_auxiliary_menu_action_window" parent="cheat_module.cheat_relation_main_menu_top"
       action="cheat_relation_auxiliary_action_view_window"/>
   </data>
 </odoo>

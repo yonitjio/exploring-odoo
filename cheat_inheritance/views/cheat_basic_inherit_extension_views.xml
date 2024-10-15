@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- List view, also called tree view on models -->
+    <record id="cheat_basic_view_list_inherit_ext" model="ir.ui.view">
+      <field name="name">cheat.basic.list.inherit.class_inheritance</field>
+      <field name="model">cheat.basic</field>
+      <field name="mode">extension</field>
+      <field name="inherit_id" ref="cheat_module.cheat_basic_view_list" />
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='computed_field']" position="after">
+            <field name="datetime_field"/>
+            <field name="is_delegation"/>
+        </xpath>
+      </field>
+    </record>
+
+    <!-- Form view on models -->
+    <record id="cheat_basic_view_form_inherit_ext" model="ir.ui.view">
+      <field name="name">cheat.basic.form.inherit.class_inheritance</field>
+      <field name="model">cheat.basic</field>
+      <field name="mode">extension</field>
+      <field name="inherit_id" ref="cheat_module.cheat_basic_view_form" />
+      <field name="arch" type="xml">
+        <header>
+            <button name="action_show_random_string" type="object" string="Show Random String" icon="fa-random" />
+        </header>
+        <xpath expr="//field[@name='computed_field']" position="after">
+            <field name="datetime_field"/>
+        </xpath>
+      </field>
+    </record>
+
+    <!-- Action opening view on model -->
+    <record model="ir.actions.act_window" id="cheat_module.cheat_basic_action_window">
+      <field name="domain">[('is_delegation', '=', False)]</field>
+    </record>
+
+  </data>
+</odoo>

@@ -3,9 +3,8 @@
   <data>
     <!-- List view, also called tree view on models -->
     <record id="cheat_basic_view_list" model="ir.ui.view">
-      <field name="name">cheat.list</field>
+      <field name="name">cheat.basic.list</field>
       <field name="model">cheat.basic</field>
-      <field name="type">tree</field>
       <field name="arch" type="xml">
         <tree string="Cheat">
           <field name="char_field"/>
@@ -18,10 +17,9 @@
     </record>
 
     <!-- Form view on models -->
-    <record model="ir.ui.view" id="cheat_basic_view_form">
-      <field name="name">cheat.form</field>
+    <record id="cheat_basic_view_form" model="ir.ui.view">
+      <field name="name">cheat.basic.form</field>
       <field name="model">cheat.basic</field>
-      <field name="type">form</field>
       <field name="arch" type="xml">
         <form string="Basic Cheat">
           <header>
@@ -53,24 +51,24 @@
 
     <!-- Action opening view on model -->
     <record model="ir.actions.act_window" id="cheat_basic_action_window">
-      <field name="name">Cheat window</field>
+      <field name="name">Cheat Window</field>
       <field name="res_model">cheat.basic</field>
       <!-- (5, 0 , 0) is one2many command to clear the related fields see: odoo\odoo\fields.py -->
       <!-- No need to set the view_ids if you only have the one view for each view type for the model-->
       <!-- Model cheat.basic has multiple form views so we have to set view_ids for this action, see cheat_dialog_template_view.xml -->
       <field name="view_ids" eval="[(5, 0, 0),
-                (0, 0, {'view_mode': 'tree', 'view_id': ref('cheat_basic_view_list')}),
-                (0, 0, {'view_mode': 'form', 'view_id': ref('cheat_basic_view_form')})]"/>
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('cheat_module.cheat_basic_view_list')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('cheat_module.cheat_basic_view_form')})]"/>
       <field name="view_mode">tree,form</field>
     </record>
 
     <!-- Top menu item -->
-    <menuitem name="Cheat Menu" id="cheat_basic_menu_root" />
+    <menuitem name="Cheats" id="cheat_menu_root" />
 
     <!-- Menu item -->
-    <menuitem name="Menu 1" id="cheat_basic_menu_1" parent="cheat_basic_menu_root"/>
+    <menuitem name="Cheat" id="cheat_basic_main_menu_top" parent="cheat_menu_root"/>
 
     <!-- Sub Menu item -->
-    <menuitem name="Basic Cheat" id="cheat_basic_menu_action_window" parent="cheat_basic_menu_1" action="cheat_basic_action_window"/>
+    <menuitem name="Basic" id="cheat_basic_menu_action_window" parent="cheat_basic_main_menu_top" action="cheat_basic_action_window"/>
   </data>
 </odoo>
