@@ -36,3 +36,4 @@ This repository contains source codes presented in youtube channel [Exploring Od
 | POS Custom Email  | pos_custom_email_template | Using AI to generate POS receipt email.                 |
 | Cheat Module      | cheat_module              | Basic cheat module for Odoo module development.         |
 | Cheat Inheritance | cheat_inheritance         | Addition for cheat module to demonstrate inheritances.  |
+| Quickboard        | quickboard                | Simple yet flexible AI powered dashboard                |

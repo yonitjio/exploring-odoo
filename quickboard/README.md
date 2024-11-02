@@ -1,4 +1,4 @@
-# Custom Email Template for POS with AI
+# Quickboard
 > [!WARNING]
 > This module is purely experimental and for educational purpose use only.
 >
@@ -13,10 +13,8 @@
 >
 > Do not use this module unless you have reviewed the source codes thoroughly, understand what it does and in an experimental environment.
 
-This module adds the possibilities to use AI to generate content for POS order receipt email.
+This module demonstrate how to create simple yet flexible dashboard and how to use AI to generate dashboard items and to arrange the dashboard layout.
 
 Please watch this video for more details:
 
-[![EXPLORING_ODOO](https://img.youtube.com/vi/jTSRlOhrNoE/0.jpg)](https://www.youtube.com/watch?v=jTSRlOhrNoE)
-
-
+[![EXPLORING_ODOO](https://img.youtube.com/vi/LfxlUN9pikI/0.jpg)](https://youtu.be/LfxlUN9pikI)
