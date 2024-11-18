@@ -1,0 +1,28 @@
+.quickboard {
+    background-color: #555;
+}
+
+.grid-stack-item-content {
+    background-color: whitesmoke;
+    border: 1px solid black;
+}
+
+.quickboard-item-basic-title {
+    font-weight: 500;
+}
+
+.quickboard-item-basic-value {
+    font-size: 3em;
+}
+
+.quickboard-item-basic-icon {
+    font-size: 3em;
+}
+
+.quickboard-item-chart-title, .quickboard-item-list-title {
+    font-weight: 500;
+}
+
+.quickboard-item-chart-icon, .quickboard-item-list-icon {
+    font-size: 1em !important;
+}

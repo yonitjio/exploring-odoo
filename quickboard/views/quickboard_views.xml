@@ -1,0 +1,14 @@
+<odoo>
+  <data>
+    <record model="ir.actions.client" id="quickboard">
+      <field name="name">Quickboard</field>
+      <field name="tag">quickboard</field>
+    </record>
+
+    <menuitem name="Quickboard" id="quickboard.menu_root"
+        groups="group_quickboard_user" web_icon="quickboard,static/description/icon.png"/>
+
+    <menuitem name="Quickboard" id="quickboard.quickboard_menu"
+        groups="group_quickboard_user" parent="quickboard.menu_root" action="quickboard" sequence="1"/>
+  </data>
+</odoo>

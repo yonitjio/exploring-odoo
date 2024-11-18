@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 135.46666 135.46667"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="icon.svg"
+   inkscape:export-filename="icon.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.4378367"
+     inkscape:cx="97.020753"
+     inkscape:cy="192.65053"
+     inkscape:window-width="3200"
+     inkscape:window-height="1960"
+     inkscape:window-x="-12"
+     inkscape:window-y="-12"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g5" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g5"
+       transform="matrix(1.1612554,0,0,1.1612119,-10.922364,-10.919417)"
+       style="stroke-width:0.861153">
+      <path
+         id="path1"
+         style="fill:#bc5fd3;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.911393;stroke-linejoin:round;stroke-miterlimit:3.2"
+         d="M 67.73333,15.268131 A 52.320512,52.320495 0 0 0 15.412774,67.588688 52.320512,52.320495 0 0 0 67.73333,119.90924 52.320512,52.320495 0 0 0 120.05389,67.588688 52.320512,52.320495 0 0 0 67.73333,15.268131 Z m 0,21.381665 A 30.939746,30.939746 0 0 1 98.672226,67.588688 30.939746,30.939746 0 0 1 67.73333,98.528682 30.939746,30.939746 0 0 1 36.793336,67.588688 30.939746,30.939746 0 0 1 67.73333,36.649796 Z" />
+      <rect
+         style="mix-blend-mode:multiply;fill:#71baf4;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.911385;stroke-linejoin:round;stroke-miterlimit:3.2"
+         id="rect4"
+         width="74.61174"
+         height="24.603153"
+         x="85.679924"
+         y="-11.51065"
+         ry="5.8131294"
+         transform="rotate(45)" />
+    </g>
+  </g>
+</svg>

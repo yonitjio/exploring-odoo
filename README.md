@@ -21,3 +21,24 @@ This repository contains source codes presented in youtube channel [Exploring Od
 > So, again, use it at your own risk.
 >
 > I do not provide support in any kind.
+
+> [!TIP]
+> It is important to watch the related video of the module thoroughly and read the video description too.
+>
+> The information about external libraries used and the links for those libraries are in there.
+>
+> E.g, if you're having trouble with the datalabel extension for chart.js then you must have not watched the video thoroughly. Please watch the video again thoroughly this time.
+>
+
+>[!IMPORTANT]
+> This repo and the youtube channel is to help you learn. Not to provide you with fully functional module.
+>
+> If you're having trouble with the code, ask politely and nicely like a civil person.
+>
+> I WILL block you if you spout non-sense like I have the obligation to help you in anyway.
+
+# Experimental Odoo Modules
+
+| Name              | Folder                    | Description                                             |
+| ----------------- | ------------------------- | ------------------------------------------------------- |
+| Quickboard        | quickboard                | Simple yet flexible AI powered dashboard                |
