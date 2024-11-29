@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- List view, also called list view on models -->
+    <record id="cheat_basic_view_list" model="ir.ui.view">
+      <field name="name">cheat.basic.list</field>
+      <field name="model">cheat.basic</field>
+      <field name="arch" type="xml">
+        <list string="Cheat">
+          <field name="char_field"/>
+          <field name="text_field"/>
+          <field name="boolean_field"/>
+          <field name="selection_field"/>
+          <field name="computed_field"/>
+        </list>
+      </field>
+    </record>
+
+    <!-- Form view on models -->
+    <record id="cheat_basic_view_form" model="ir.ui.view">
+      <field name="name">cheat.basic.form</field>
+      <field name="model">cheat.basic</field>
+      <field name="arch" type="xml">
+        <form string="Basic Cheat">
+          <header>
+            <!-- For button icon see: odoo\addons\web\static\src\libs\fontawesome\css\font-awesome.css -->
+            <!-- or go here: https://fontawesome.com/v4/icons/ -->
+            <button name="action_set_char_field_value" type="object" string="Generate Random String" icon="fa-random" />
+            <button name="action_show_sticky_notification" type="object" string="Sticky Notification" icon="fa-sticky-note" />
+            <button name="action_show_rainbow_man" type="object" string="Rainbow Man" icon="fa-wifi" />
+            <button name="action_do_nothing" type="object" string="Button with Confirmation" confirm="Continue?" icon="fa-check" />
+            <button name="action_raise_error" type="object" string="Raise Error" icon="fa-exclamation" />
+            <button name="action_show_view_in_a_dialog" type="object" string="View in a Dialog" icon="fa-exclamation-triangle" />
+            <button name="action_show_wizard" type="object" string="Wizard" icon="fa-magic" />
+          </header>
+          <div class="alert alert-info text-center" role="alert" invisible="not boolean_field">
+              This message will be displayed depends the value of <strong>boolean_field</strong>.
+          </div>
+          <sheet>
+            <group>
+              <field name="char_field"/>
+              <field name="text_field"/>
+              <field name="boolean_field"/>
+              <field name="selection_field"/>
+              <field name="computed_field"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Action opening view on model -->
+    <record model="ir.actions.act_window" id="cheat_basic_action_window">
+      <field name="name">Cheat Window</field>
+      <field name="res_model">cheat.basic</field>
+      <!-- (5, 0 , 0) is one2many command to clear the related fields see: odoo\odoo\fields.py -->
+      <!-- No need to set the view_ids if you only have the one view for each view type for the model-->
+      <!-- Model cheat.basic has multiple form views so we have to set view_ids for this action, see cheat_dialog_template_view.xml -->
+      <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'list', 'view_id': ref('cheat_module.cheat_basic_view_list')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('cheat_module.cheat_basic_view_form')})]"/>
+      <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Top menu item -->
+    <menuitem name="Cheats" id="cheat_menu_root" />
+
+    <!-- Menu item -->
+    <menuitem name="Cheat" id="cheat_basic_main_menu_top" parent="cheat_menu_root"/>
+
+    <!-- Sub Menu item -->
+    <menuitem name="Basic" id="cheat_basic_menu_action_window" parent="cheat_basic_main_menu_top" action="cheat_basic_action_window"/>
+  </data>
+</odoo>

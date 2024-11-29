@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_cheat_child_proto_model,access_cheat_child_proto_model,model_cheat_child_proto,base.group_user,1,1,1,1
+access_cheat_child_delegation_model,access_cheat_child_delegation_model,model_cheat_child_delegation,base.group_user,1,1,1,1

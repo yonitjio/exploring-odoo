@@ -34,11 +34,13 @@ This repository contains source codes presented in youtube channel [Exploring Od
 > This repo and the youtube channel is to help you learn. Not to provide you with fully functional module.
 >
 > If you're having trouble with the code, ask politely and nicely like a civil person.
->
-> I WILL block you if you spout non-sense like I have the obligation to help you in anyway.
 
 # Experimental Odoo Modules
 
-| Name              | Folder                    | Description                                             |
-| ----------------- | ------------------------- | ------------------------------------------------------- |
-| Quickboard        | quickboard                | Simple yet flexible AI powered dashboard                |
+| Name              | Folder            | Description                                                        |
+| ----------------- | ----------------- | ------------------------------------------------------------------ |
+| Quickboard        | quickboard        | Simple yet flexible AI powered dashboard                           |
+| Cheat Module      | cheat_module      | Basic cheat module for Odoo module development.                    |
+| Cheat Inheritance | cheat_inheritance | Addition for cheat module to demonstrate inheritances.             |
+| Cheat Module      | cheat_module      | Basic cheat module for Odoo module development.                    |
+| Cheat Web         | cheat_web         | Addition for cheat module to demonstrate using Odoo Web Framework. |

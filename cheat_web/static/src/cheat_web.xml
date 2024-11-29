@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="cheat_web" owl="1">
+        <Layout display="{ controlPanel: {} }">
+            <div class="cheat-web-container">
+                <div class="accordion shadow-sm" id="mainAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRpc" aria-expanded="true" aria-controls="collapseRpc">
+                            RPC
+                        </button>
+                        </h2>
+                        <div id="collapseRpc" class="accordion-collapse collapse show" data-bs-parent="#mainAccordion">
+                            <div class="accordion-body">
+                                <div class="container mx-2 my-4 gx-2">
+                                    <div class="btn-group me-2" role="group">
+                                        <button class="btn btn-primary" t-on-click="rpcDoSomething">RPC Call</button>
+                                        <button class="btn btn-primary" t-on-click="rpcDoSomethingElse">RPC Call With Param</button>
+                                        <button class="btn btn-primary" t-on-click="rpcDoSomethingWithRouteParam">RPC Call With Router Param</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOrm" aria-expanded="true" aria-controls="collapseOrm">
+                            ORM
+                        </button>
+                        </h2>
+                        <div id="collapseOrm" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
+                            <div class="accordion-body">
+                                <div class="container mx-2 my-4 gx-2">
+                                    <div class="btn-group me-2" role="group">
+                                        <button class="btn btn-primary" t-on-click="ormCreate">ORM Create</button>
+                                        <button class="btn btn-primary" t-on-click="ormSearch">ORM Search</button>
+                                        <button class="btn btn-primary" t-on-click="ormSearchCount">ORM Search Count</button>
+                                        <button class="btn btn-primary" t-on-click="ormSearchRead">ORM Search Read</button>
+                                        <button class="btn btn-primary" t-on-click="ormRead">ORM Read</button>
+                                        <button class="btn btn-primary" t-on-click="ormWrite">ORM Write</button>
+                                        <button class="btn btn-primary" t-on-click="ormUnlink">ORM Unlink</button>
+                                    </div>
+                                    <div class="btn-group me-2" role="group">
+                                        <button class="btn btn-primary" t-on-click="ormDoSomething">ORM Call</button>
+                                        <button class="btn btn-primary" t-on-click="ormDoSomethingElse">ORM Call With Param</button>
+                                        <button class="btn btn-primary" t-on-click="ormDoModelMethod">ORM Call Model Method</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNotification" aria-expanded="true" aria-controls="collapseNotification">
+                            Notification
+                        </button>
+                        </h2>
+                        <div id="collapseNotification" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
+                            <div class="accordion-body">
+                                <div class="container mx-2 my-4 gx-2">
+                                    <div class="btn-group me-2" role="group">
+                                        <button class="btn btn-primary" t-on-click="notifSimple">Simple Notification</button>
+                                        <button class="btn btn-primary" t-on-click="notifSticky">Sticky Notification</button>
+                                        <button class="btn btn-primary" t-on-click="notifCallback">Notification with On Close Callback</button>
+                                        <button class="btn btn-primary" t-on-click="notifWithButtons">Notification with Buttons</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDialogBox" aria-expanded="true" aria-controls="collapseDialogBox">
+                            Dialog Box
+                        </button>
+                        </h2>
+                        <div id="collapseDialogBox" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
+                            <div class="accordion-body">
+                                <div class="container mx-2 my-4 gx-2">
+                                    <div class="btn-group me-2" role="group">
+                                        <button class="btn btn-primary" t-on-click="dialogAlert">Alert Dialog</button>
+                                        <button class="btn btn-primary" t-on-click="dialogConfirm">Confirmation Dialog</button>
+                                        <button class="btn btn-primary" t-on-click="dialogCustom">Custom Dialog</button>
+                                        <button class="btn btn-primary" t-on-click="dialogCustomWithButtons">Custom Dialog with Buttons</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Layout>
+    </t>
+</templates>

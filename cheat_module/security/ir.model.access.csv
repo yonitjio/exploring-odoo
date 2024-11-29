@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_cheat_model,access_cheat_model,model_cheat_basic,base.group_user,1,1,1,1
+access_cheat_wizard,access_cheat_wizard,model_cheat_wizard,base.group_user,1,1,1,1
+access_cheat_relation_main,access_cheat_relation_main,model_cheat_relation_main,base.group_user,1,1,1,1
+access_cheat_relation_line,access_cheat_relation_line,model_cheat_relation_line,base.group_user,1,1,1,1
+access_cheat_relation_auxiliary,access_cheat_relation_auxiliary,model_cheat_relation_auxiliary,base.group_user,1,1,1,1
