@@ -1,10 +1,17 @@
 <odoo>
   <data>
     <record model="ir.actions.client" id="cheatweb">
-      <field name="name">Cheat Web</field>
+      <field name="name">Web Framework</field>
       <field name="tag">cheatweb</field>
     </record>
 
-    <menuitem name="Cheat Web" id="cheat_web_menu" parent="cheat_module.cheat_menu_root" action="cheatweb" sequence="100"/>
+    <record model="ir.actions.client" id="cheatowl">
+      <field name="name">Web Library</field>
+      <field name="tag">cheatowl</field>
+    </record>
+
+    <menuitem name="Cheat Web" id="cheat_web_menu_top" parent="cheat_module.cheat_menu_root" sequence="100"/>
+    <menuitem name="Web Framework" id="cheat_web_menu" parent="cheat_web_menu_top" action="cheatweb" sequence="10"/>
+    <menuitem name="Web Library" id="cheat_owl_menu" parent="cheat_web_menu_top" action="cheatowl" sequence="20"/>
   </data>
 </odoo>

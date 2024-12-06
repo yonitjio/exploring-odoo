@@ -1,3 +1,63 @@
 .cheat-web-container {
     margin: 2rem !important;
 }
+
+.cheat-web-user-profile {
+    margin: 1rem;
+}
+
+.cheat-web-user-profile .card {
+    width: 400px;
+    border: none;
+    border-radius: 10px;
+
+    background-color: #fff;
+}
+
+.cheat-web-user-profile .stats {
+    background: #f2f5f8 !important;
+
+    color: #000 !important;
+}
+.cheat-web-user-profile .articles {
+    font-size: 10px;
+    color: #a1aab9;
+}
+.cheat-web-user-profile .followers {
+    font-size: 10px;
+    color: #a1aab9;
+}
+.cheat-web-user-profile .rating {
+    font-size: 10px;
+    color: #a1aab9;
+}
+.cheat-web-user-profile .stat-number,
+.cheat-web-user-profile .stat-string {
+    font-weight: 500;
+}
+
+.cheat-web-container .card-header .fa {
+    transition: 0.3s transform ease-in-out;
+}
+
+.cheat-web-container .card-header .collapsed .fa {
+    transform: rotate(90deg);
+}
+
+.hr-sect {
+	display: flex;
+	flex-basis: 100%;
+	align-items: center;
+	color: rgba(0, 0, 0, 0.35);
+	margin: 8px 0px;
+}
+.hr-sect::before,
+.hr-sect::after {
+	content: "";
+	flex-grow: 1;
+	background: rgba(0, 0, 0, 0.35);
+	height: 1px;
+	font-size: 0px;
+	line-height: 0px;
+	margin: 0px 8px;
+}

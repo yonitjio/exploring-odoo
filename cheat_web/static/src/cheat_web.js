@@ -2,16 +2,19 @@
 
 import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";
-import { Component, xml } from "@odoo/owl";
+import { Component, useState, xml } from "@odoo/owl";
 import { standardActionServiceProps } from "@web/webclient/actions/action_service";
 import { Layout } from "@web/search/layout";
 import { AlertDialog, ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { Dialog } from "@web/core/dialog/dialog";
 
 import { rpc } from "@web/core/network/rpc";
+import { user } from "@web/core/user";
+import { url } from "@web/core/utils/urls";
 
 const { DateTime } = luxon;
 
+//#region custom dialog
 class MyDialog extends Component {
     static components = { Dialog };
     static template = xml`
@@ -51,24 +54,68 @@ class MyDialogWithButtons extends Component {
         this.props.close();
     }
 }
+//#endregion
 
 class CheatWeb extends Component {
+    //#region statics
     static template = "cheat_web";
     static components = { Layout };
     static props = {
         ...standardActionServiceProps,
     };
+    //#endregion
 
     setup() {
+        //#region services
         this.orm = useService("orm");
         this.notification = useService("notification");
         this.dialog = useService("dialog");
+        //#endregion
+
+        this.user = user;
+        this.state = useState({
+            userCharValue: user.settings.cheat_web_user_setting_char_field,
+            userIntegerValue: user.settings.cheat_web_user_setting_integer_field
+        });
     }
 
+    //#region user
+    get userImage(){
+        return url("/web/image", {
+            model: 'res.users',
+            id: user.userId,
+            field: "avatar_128",
+         });
+    }
+
+    async dumpUserSettings(){
+        console.log("User:", user);
+        console.log("User settings:", user.settings);
+    }
+
+    async dumpState(){
+        console.log("state:", this.state);
+    }
+
+    async saveUserSettings(){
+        await user.setUserSettings(
+            "cheat_web_user_setting_char_field",
+            this.state.userCharValue
+        );
+        await user.setUserSettings(
+            "cheat_web_user_setting_integer_field",
+            this.state.userIntegerValue
+        );
+    }
+    //#endregion
+
+    //#region misc function
     getRandomInteger(min, max) {
         return Math.floor(Math.random() * (max - min) ) + min;
     }
+    //#endregion
 
+    //#region rpc
     async rpcDoSomething() {
         const res = await rpc("/cheat/webrpc");
         console.log(res);
@@ -85,7 +132,9 @@ class CheatWeb extends Component {
         const res = await rpc(`/cheat/webrpc/${param1}/${param2}`);
         console.log(res);
     }
+    //#endregion
 
+    //#region orm
     async ormCreate() {
         const res = await this.orm.create("cheat.web", [
             {
@@ -162,7 +211,9 @@ class CheatWeb extends Component {
         const res = await this.orm.call("cheat.web", "do_model_method", [], { param1: "3", param2: "4" });
         console.log(res);
     }
+    //#endregion
 
+    //#region notification
     async notifSimple(){
         this.notification.add('This is a simple Notification');
     }
@@ -207,7 +258,9 @@ class CheatWeb extends Component {
             ]
         });
     }
+    //#endregion
 
+    //#region dialog
     async dialogAlert(){
         this.dialog.add(AlertDialog, {
             title: 'This is an Alert Dialog',
@@ -238,6 +291,8 @@ class CheatWeb extends Component {
     async dialogCustomWithButtons(){
         this.dialog.add(MyDialogWithButtons);
     }
+    //#endregion
+
 }
 
 registry.category("actions").add("cheatweb", CheatWeb);
