@@ -37,10 +37,10 @@ This repository contains source codes presented in youtube channel [Exploring Od
 
 # Experimental Odoo Modules
 
-| Name              | Folder            | Description                                                        |
-| ----------------- | ----------------- | ------------------------------------------------------------------ |
-| Quickboard        | quickboard        | Simple yet flexible AI powered dashboard                           |
-| Cheat Module      | cheat_module      | Basic cheat module for Odoo module development.                    |
-| Cheat Inheritance | cheat_inheritance | Addition for cheat module to demonstrate inheritances.             |
-| Cheat Module      | cheat_module      | Basic cheat module for Odoo module development.                    |
-| Cheat Web         | cheat_web         | Addition for cheat module to demonstrate using Odoo Web Framework. |
+| Name              | Folder                 | Description                                                        |
+| ----------------- | ---------------------- | ------------------------------------------------------------------ |
+| Quickboard        | quickboard             | Simple yet flexible AI powered dashboard                           |
+| Cheat Module      | cheat_module           | Basic cheat module for Odoo module development.                    |
+| Cheat Inheritance | cheat_inheritance      | Addition for cheat module to demonstrate inheritances.             |
+| Cheat Web         | cheat_web              | Addition for cheat module to demonstrate using Odoo Web Framework. |
+| Backend Theme     | backend_theme_explorer | Backend Theme ( in development )                                   |

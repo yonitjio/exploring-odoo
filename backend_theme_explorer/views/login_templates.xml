@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="login_page_boxed_right" name="Login Page - Boxed Right">
+        <section t-attf-class="h-100 d-flex align-items-center {{'' if login_page_custom_background else 'bg-primary' }}">
+            <div class="container">
+                <div class="row gy-4 justify-content-center align-items-center">
+                    <div class="col-12 col-md-6 col-xl-8">
+                        <div class="d-flex justify-content-center">
+                            <div class="col-12">
+                                <img src="/login_logo.png" class="mx-auto d-block" style="max-height:256px; max-width: 100%; width:auto"/>
+                                <figure class="login-quote" t-if="login_page_show_motto" t-attf-style="color: {{login_page_motto_text_color}} !important;">
+                                    <blockquote class="blockquote">
+                                        <p class="d-flex">
+                                        <i class="fa fa-quote-left fa-lg align-self-start text-warning me-2"></i>
+                                        <span class="my-2"><t t-out="login_page_motto_text"/></span>
+                                        <i class="fa fa-quote-right fa-lg ms-2 align-self-end text-warning me-2"></i>
+                                        </p>
+                                    </blockquote>
+                                    <figcaption class="blockquote-footer" t-if="login_page_motto_author and login_page_motto_author != ''" t-attf-style="color: {{login_page_motto_text_color}} !important;">
+                                        <t t-out="login_page_motto_author"/>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4">
+                        <div class="card border-0 rounded-4">
+                            <div class="card-body p-3 p-md-4 p-xl-5">
+                                <h2 t-if="login_title_text" class="card-title border-bottom mb-3 pb-2"><t t-out="login_title_text"/></h2>
+                                <t t-out="0"/>
+                                <div class="text-center small mt-4 pt-3 border-top" t-if="not disable_footer">
+                                    <t t-if="not disable_database_manager">
+                                        <a href="/web/database/manager">Manage Databases</a>
+                                    </t>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="login_page_boxed_left" name="Login Page - Boxed Left">
+        <section t-attf-class="h-100 d-flex align-items-center {{'' if login_page_custom_background else 'bg-primary' }}">
+            <div class="container">
+                <div class="row gy-4 justify-content-center align-items-center">
+                    <div class="col-12 col-md-6 col-xl-4">
+                        <div class="card border-0 rounded-4">
+                            <div class="card-body p-3 p-md-4 p-xl-5">
+                                <h2 t-if="login_title_text" class="card-title border-bottom mb-3 pb-2"><t t-out="login_title_text"/></h2>
+                                <t t-out="0"/>
+                                <div class="text-center small mt-4 pt-3 border-top" t-if="not disable_footer">
+                                    <t t-if="not disable_database_manager">
+                                        <a href="/web/database/manager">Manage Databases</a>
+                                    </t>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-8">
+                        <div class="d-flex justify-content-center">
+                            <div class="col-12">
+                                <img src="/login_logo.png" alt="Logo" class="mx-auto d-block" style="max-height:256px; max-width: 100%; width:auto"/>
+                                <figure class="login-quote" t-if="login_page_show_motto" t-attf-style="color: {{login_page_motto_text_color}} !important;">
+                                    <blockquote class="blockquote">
+                                        <p class="d-flex">
+                                        <i class="fa fa-quote-left fa-lg align-self-start text-warning me-2"></i>
+                                        <span class="my-2"><t t-out="login_page_motto_text"/></span>
+                                        <i class="fa fa-quote-right fa-lg ms-2 align-self-end text-warning me-2"></i>
+                                        </p>
+                                    </blockquote>
+                                    <figcaption class="blockquote-footer" t-if="login_page_motto_author and login_page_motto_author != ''" t-attf-style="color: {{login_page_motto_text_color}} !important;">
+                                        <t t-out="login_page_motto_author"/>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="login_page_boxed_center" name="Login Page - Boxed Center">
+        <div class="container py-5">
+            <div t-attf-class="card border-0 mx-auto bg-100 {{login_card_classes}} o_database_list" style="max-width: 300px;">
+                <div class="card-body">
+                    <div class="text-center pb-3 border-bottom mb-4">
+                        <img t-attf-src="/web/binary/company_logo{{ '?dbname='+db if db else '' }}" alt="Logo" style="max-height:120px; max-width: 100%; width:auto"/>
+                    </div>
+                    <t t-out="0"/>
+                    <div class="text-center small mt-4 pt-3 border-top" t-if="not disable_footer">
+                        <t t-if="not disable_database_manager">
+                            <a href="/web/database/manager">Manage Databases</a>
+                        </t>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="login_page_fullscreen_right" name="Login Page - Fullscreen Right">
+        <section t-attf-class="h-100 d-flex align-items-center {{'' if login_page_custom_background else 'bg-primary' }}">
+            <div class="container h-100 w-100 mw-100 m-0 p-0">
+                <div class="row h-100 w-100 mw-100 m-0 p-0">
+                    <div class="d-flex col-12 col-md-6 col-xl-8">
+                        <div class="d-flex justify-content-start align-items-end">
+                            <div class="col-6">
+                                <img src="/login_logo.png" alt="Logo" class="mx-auto d-block" style="max-height:256px; max-width: 100%; width:auto"/>
+                                <figure class="login-quote" t-if="login_page_show_motto" t-attf-style="color: {{login_page_motto_text_color}} !important;">
+                                    <blockquote class="blockquote">
+                                        <p class="d-flex">
+                                        <i class="fa fa-quote-left fa-lg align-self-start text-warning me-2"></i>
+                                        <span class="my-2"><t t-out="login_page_motto_text"/></span>
+                                        <i class="fa fa-quote-right fa-lg ms-2 align-self-end text-warning me-2"></i>
+                                        </p>
+                                    </blockquote>
+                                    <figcaption class="blockquote-footer" t-if="login_page_motto_author and login_page_motto_author != ''" t-attf-style="color: {{login_page_motto_text_color}} !important;">
+                                        <t t-out="login_page_motto_author"/>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-container d-flex col-12 col-md-6 col-xl-4">
+                        <div class="card m-auto col-10 mw-100 border-0">
+                            <div class="card-body p-3 p-md-4 p-xl-5">
+                                <h2 t-if="login_title_text" class="card-title border-bottom mb-3 pb-2"><t t-out="login_title_text"/></h2>
+                                <t t-out="0"/>
+                                <div class="text-center small mt-4 pt-3 border-top" t-if="not disable_footer">
+                                    <t t-if="not disable_database_manager">
+                                        <a href="/web/database/manager">Manage Databases</a>
+                                    </t>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="login_page_fullscreen_left" name="Login Page - Fullscreen Left">
+        <section t-attf-class="h-100 d-flex align-items-center {{'' if login_page_custom_background else 'bg-primary' }}">
+            <div class="container h-100 w-100 mw-100 m-0 p-0">
+                <div class="row h-100 w-100 mw-100 m-0 p-0">
+                    <div class="card-container d-flex col-12 col-md-6 col-xl-4">
+                        <div class="card m-auto col-10 mw-100 border-0">
+                            <div class="card-body p-3 p-md-4 p-xl-5">
+                                <h2 t-if="login_title_text" class="card-title border-bottom mb-3 pb-2"><t t-out="login_title_text"/></h2>
+                                <t t-out="0"/>
+                                <div class="text-center small mt-4 pt-3 border-top" t-if="not disable_footer">
+                                    <t t-if="not disable_database_manager">
+                                        <a href="/web/database/manager">Manage Databases</a>
+                                    </t>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex col-12 col-md-6 col-xl-8">
+                        <div class="d-flex justify-content-end align-items-end">
+                            <div class="col-6">
+                                <img src="/login_logo.png" alt="Logo" class="mx-auto d-block" style="max-height:256px; max-width: 100%; width:auto"/>
+                                <figure class="login-quote" t-if="login_page_show_motto" t-attf-style="color: {{login_page_motto_text_color}} !important;">
+                                    <blockquote class="blockquote">
+                                        <p class="d-flex">
+                                        <i class="fa fa-quote-left fa-lg align-self-start text-warning me-2"></i>
+                                        <span class="my-2"><t t-out="login_page_motto_text"/></span>
+                                        <i class="fa fa-quote-right fa-lg ms-2 align-self-end text-warning me-2"></i>
+                                        </p>
+                                    </blockquote>
+                                    <figcaption class="blockquote-footer" t-if="login_page_motto_author and login_page_motto_author != ''" t-attf-style="color: {{login_page_motto_text_color}} !important;">
+                                        <t t-out="login_page_motto_author"/>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="backend_theme_explorer_login_layout" inherit_id="web.login_layout" name="Login Layout">
+        <xpath expr="t" position="replace">
+            <t t-call="web.frontend_layout">
+                <t t-set="html_data" t-value="{'style': 'height: 100%;'}"/>
+                <t t-set="body_classname" t-value="'bg-100' + (' background-image' if login_page_custom_background else '')"/>
+                <t t-set="no_header" t-value="True"/>
+                <t t-set="no_footer" t-value="True"/>
+
+                <t t-if="login_page_design == 'fullscreen_right'" t-call="backend_theme_explorer.login_page_fullscreen_right" >
+                    <t t-out="0"/>
+                </t>
+                <t t-elif="login_page_design == 'fullscreen_left'" t-call="backend_theme_explorer.login_page_fullscreen_left" >
+                    <t t-out="0"/>
+                </t>
+                <t t-elif="login_page_design == 'boxed_right'" t-call="backend_theme_explorer.login_page_boxed_right" >
+                    <t t-out="0"/>
+                </t>
+                <t t-elif="login_page_design == 'boxed_left'" t-call="backend_theme_explorer.login_page_boxed_left" >
+                    <t t-out="0"/>
+                </t>
+                <t t-else="" t-call="backend_theme_explorer.login_page_boxed_center" >
+                    <t t-out="0"/>
+                </t>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="backend_theme_explorer_login" inherit_id="web.login" name="Login">
+        <xpath expr="//t[@t-call='web.login_layout']" position="before">
+            <t t-set="login_title_text" t-value="'Log In'"/>
+        </xpath>
+    </template>
+
+    <template id="backend_theme_explorer_signup" inherit_id="auth_signup.signup" name="Sign up login">
+        <xpath expr="//t[@t-call='web.login_layout']" position="before">
+            <t t-set="login_title_text" t-value="'Sign Up'"/>
+        </xpath>
+    </template>
+
+    <template id="backend_theme_explorer_reset_password" inherit_id="auth_signup.reset_password" name="Reset password">
+        <xpath expr="//t[@t-call='web.login_layout']" position="before">
+            <t t-set="login_title_text" t-value="'Reset Password'"/>
+        </xpath>
+    </template>
+</odoo>

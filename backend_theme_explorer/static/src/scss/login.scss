@@ -1,0 +1,40 @@
+body {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+#wrapwrap {
+    height: 100% !important;
+}
+
+.background-image {
+    background-image:url("/login_page_background_image.png");
+
+    height: 100%;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login-quote .blockquote {
+    padding: $spacer/2 $spacer;
+    border: none !important;
+    font-style: italic;
+    text-align: center;
+}
+
+.login-quote .blockquote-footer {
+    text-align: center;
+    margin-top: -$blockquote-margin-y;
+    margin-bottom: $blockquote-margin-y;
+    @include font-size($blockquote-footer-font-size);
+
+    &::before,
+    &::after {
+        content: "\2014\00A0"; // em dash, nbsp
+    }
+}
+
+.card-container {
+    background-color: $card-bg;
+}
