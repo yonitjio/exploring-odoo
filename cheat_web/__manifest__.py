@@ -8,7 +8,7 @@
     # Categories are freeform, for existing categories visit https://github.com/odoo/odoo/blob/17.0/odoo/addons/base/data/ir_module_category_data.xml
     "category": "Customizations",
     "description": """
-    Module description
+    Cheat Module for Odoo Web Framework
     """,
     # data files always loaded at installation
     "data": [

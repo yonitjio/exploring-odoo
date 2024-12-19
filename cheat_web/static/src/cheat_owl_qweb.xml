@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="cheat_owl_qweb">
+        <Layout display="{ controlPanel: {} }" className="'overflow-auto h-100'">
+            <HAccordion name="'hacc'" startItem="0">
+                <t t-set-slot="basics-1" title.translate="The Basics - I">
+                    <div class="d-flex w-100 flex-column gap-2 pt-2">
+                        <div class="row g-2 w-100">
+                            <div class="col-xl-4 col-sm-12">
+                                <Collapsible name="'inline-template'" title.translate="Inline Template">
+                                    <CheatOwlQwebInlineTemplate />
+                                </Collapsible>
+                            </div>
+                            <div class="col-xl-4 col-sm-12">
+                                <Collapsible name="'white-spaces'" title.translate="White Spaces">
+                                    <p>
+                                        <span>This is white spaces in a <span class="badge">&lt;span&gt;</span> : '    '
+                                        </span>
+                                    </p>
+                                    <p>
+                                        <span>This is a <span class="badge">&lt;span&gt;</span> with a line break:
+                                        '
+                                        '
+                                        </span>
+                                    </p>
+                                    <p>
+                                        <pre>This is white spaces in a &lt;pre&gt;: '   '</pre>
+                                    </p>
+                                </Collapsible>
+                            </div>
+                            <div class="col-xl-4 col-sm-12">
+                                <Collapsible name="'outputs'" title.translate="Displaying Data">
+                                    <p>
+                                        <span>This is an html fragment <span class="badge">t-out</span> :
+                                            <pre><t t-out="divText" /></pre>
+                                        </span>
+
+                                        <span>This is an html fragment <span class="badge">t-out</span> with markup:
+                                            <pre><t t-out="markupDivText" /></pre>
+                                        </span>
+                                    </p>
+                                    <p>
+                                        <span>This is an html fragment <span class="badge">t-esc</span> :
+                                            <pre><t t-esc="divText" /></pre>
+                                        </span>
+
+                                        <span>This is an html fragment <span class="badge">t-esc</span> with markup:
+                                            <pre><t t-esc="markupDivText" /></pre>
+                                        </span>
+                                    </p>
+                                </Collapsible>
+                            </div>
+                        </div>
+                        <div class="row g-2 w-100">
+                            <div class="col-xl-4 col-sm-12">
+                                <Collapsible name="'variables'" title.translate="Variables">
+                                    <p>
+                                        <t t-set="foo" t-value="'bar'" />
+                                        <span>The variable <span class="badge">foo</span> is set to <span class="badge"><t t-out="foo"/></span>.</span>
+                                    </p>
+                                    <p>
+                                        <t t-set="wal">
+                                            <strong>do</strong>
+                                        </t>
+                                        <span>The variable <span class="badge">wal</span> is set to <span class="badge"><t t-out="wal"/></span> but inside tags.</span>
+                                    </p>
+                                </Collapsible>
+                            </div>
+                            <div class="col-xl-4 col-sm-12">
+                                <Collapsible name="'expressions'" title.translate="Basic Expressions">
+                                    <p>
+                                        <span>This is evaluation result of <span class="badge">1 + 3</span> :
+                                            <pre><t t-out="1 + 3" /></pre>
+                                        </span>
+                                        <span>With <span class="badge">state.randomValue = <t t-out="state.randomValue"/></span>, this expression <span class="badge">1 + state.randomValue</span> will result to:
+                                            <pre><t t-out="1 + state.randomValue" /></pre>
+                                        </span>
+                                    </p>
+                                </Collapsible>
+                            </div>
+                            <div class="col-xl-4 col-sm-12">
+                                <Collapsible name="'logical-expressions'" title.translate="Logical Expressions">
+                                    <p>
+                                        <table class="table table-striped table-hover">
+                                            <thead>
+                                                <tr class="table-dark">
+                                                    <th>Operation</th>
+                                                    <th>Operator</th>
+                                                    <th>Example</th>
+                                                    <th>Result</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Equality</td>
+                                                    <td>==</td>
+                                                    <td>1 == 3</td>
+                                                    <td><t t-out="1 == 3" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>And</td>
+                                                    <td>and</td>
+                                                    <td>true and false</td>
+                                                    <td><t t-out="true and false" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Or</td>
+                                                    <td>or</td>
+                                                    <td>true or false</td>
+                                                    <td><t t-out="true or false" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Greater Than</td>
+                                                    <td>gt</td>
+                                                    <td>1 gt 1</td>
+                                                    <td><t t-out="1 gt 1" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Greater Than or Equal</td>
+                                                    <td>gte</td>
+                                                    <td>1 gte 1</td>
+                                                    <td><t t-out="1 gte 1" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Less Than</td>
+                                                    <td>lt</td>
+                                                    <td>1 lt 1</td>
+                                                    <td><t t-out="1 lt 1" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Less Than or Equal</td>
+                                                    <td>lte</td>
+                                                    <td>1 lte 1</td>
+                                                    <td><t t-out="1 lte 1" /></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </p>
+                                </Collapsible>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+                <t t-set-slot="basics-2" title.translate="The Basics - II">
+                    <div class="d-flex w-100 flex-column gap-2 pt-2">
+                        <div class="row g-2 w-100">
+                            <div class="col-xl-4 col-sm-12">
+                                <Collapsible name="'conditionals'" title.translate="Conditionals">
+                                    <p>
+                                        <div>
+                                            <div class="form-check">
+                                                <input class="form-check-input"
+                                                    type="radio"
+                                                    id="cbConditionalOne"
+                                                    name="cbConditionals"
+                                                    value="one"
+                                                    t-model="state.checkBoxValue" />
+                                                <label class="form-check-label" for="cbConditionalOne">One</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input"
+                                                    type="radio"
+                                                    id="cbConditionalTwo"
+                                                    name="cbConditionals"
+                                                    value="two"
+                                                    t-model="state.checkBoxValue" />
+                                                <label class="form-check-label" for="cbConditionalTwo">Two</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input"
+                                                    type="radio"
+                                                    id="cbConditionalThree"
+                                                    name="cbConditionals"
+                                                    value="three"
+                                                    t-model="state.checkBoxValue" />
+                                                <label class="form-check-label" for="cbConditionalThree">Three</label>
+                                            </div>
+                                        </div>
+                                        <span t-if="state.checkBoxValue === 'one'">This will be displayed if the first radio button above is selected.</span>
+                                        <span t-elif="state.checkBoxValue === 'two'">This will be displayed if the second radio button is checked.</span>
+                                        <span t-else="">This will be displayed if the third radio button is checked.</span>
+                                    </p>
+                                </Collapsible>
+                            </div>
+                            <div class="col-xl-4 col-sm-12">
+                                <Collapsible name="'loops'" title.translate="Loops">
+                                    <p>
+                                        <span>This list is made using <span class="badge">t-foreach</span> loop:</span>
+                                        <ul>
+                                            <t t-foreach="[1, 2, 3]" t-as="i" t-key="i">
+                                                <li><t t-out="'Item: ' + i.toString()"/></li>
+                                            </t>
+                                        </ul>
+                                    </p>
+                                    <p>
+                                        <span>This list is made using <span class="badge">t-foreach</span> loop too but applied to the element instead of the <span class="badge">t</span> element:</span>
+                                        <ul>
+                                            <li t-foreach="[1, 2, 3]" t-as="i" t-key="i"><t t-out="'Item: ' + i.toString()"/></li>
+                                        </ul>
+                                    </p>
+                                    <p>
+                                        <span>These demonstrate the <span class="badge">t-foreach</span>'s special variables:</span>
+                                        <table class="table table-striped table-hover mt-1">
+                                            <thead class="table-dark">
+                                                <tr>
+                                                    <td>x_index</td>
+                                                    <td>x_value</td>
+                                                    <td>x_first</td>
+                                                    <td>x_last</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr t-foreach="arrayOfObjects" t-as="item" t-key="item.id">
+                                                    <td><t t-out="item_index"/></td>
+                                                    <td><t t-out="item_value.toString()"/></td>
+                                                    <td><t t-out="item_first"/></td>
+                                                    <td><t t-out="item_last"/></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </p>
+                                    <p>
+                                        <span>This list is made using <span class="badge">Set</span> and spread operator <span class="badge">...</span> :</span>
+                                        <ul>
+                                            <t t-foreach="[...aSetOfObjects]" t-as="i" t-key="i.id">
+                                                <li><t t-out="i.name"/></li>
+                                            </t>
+                                        </ul>
+                                    </p>
+                                </Collapsible>
+                            </div>
+                            <div class="col-xl-4 col-sm-12">
+                                <Collapsible name="'dynamics'" title.translate="Dynamics">
+                                    <p>
+                                        <span>The placeholder attribute is set using random value:</span>
+                                        <input type="text" class="form-control mt-1" t-att-placeholder="randomString" />
+                                    </p>
+                                    <p>
+                                        <span>The placeholder attribute is set using string interpolation with random value:</span>
+                                        <input type="text" class="form-control mt-1" t-attf-placeholder="This is a random string: {{randomString}}" />
+                                    </p>
+                                    <p>
+                                        <span>The CSS class is set using object with CSS class as key and boolean value to indicate the inclusion
+                                        <span class="badge">{'text-info': true, 'fw-bold': true}</span>:</span>
+                                        <p t-att-class="{'text-info': true, 'fw-bold': true}">This is an example text.</p>
+                                    </p>
+                                    <p>
+                                        <span>This is an exmple of dynamic tag:</span>
+                                        <div>
+                                            <div class="form-check">
+                                                <input class="form-check-input"
+                                                    type="radio"
+                                                    id="cbDynamicTagDiv"
+                                                    name="cbDynamicTag"
+                                                    value="div"
+                                                    t-model="state.dynamicTag" />
+                                                <label class="form-check-label" for="cbDynamicTagDiv">Div</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input"
+                                                    type="radio"
+                                                    id="cbDynamicTagSpan"
+                                                    name="cbDynamicTag"
+                                                    value="pre"
+                                                    t-model="state.dynamicTag" />
+                                                <label class="form-check-label" for="cbDynamicTagSpan">Pre</label>
+                                            </div>
+                                        </div>
+                                        <t t-tag="state.dynamicTag">
+                                            <span>This text is inside <span class="badge"><t t-out="state.dynamicTag"/> element</span></span>
+                                        </t>
+                                    </p>
+                                </Collapsible>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+                <t t-set-slot="more-on-templates" title.translate="More On Templates">
+                    <div class="d-flex w-100 flex-column gap-2 pt-2">
+                        <div class="row g-2 w-100">
+                            <div class="col-xl-6 col-sm-12">
+                                <Collapsible name="'sub-templates'" title.translate="Sub Templates">
+                                    <p>
+                                        <div>Sub templates are called with <span class="badge">t-call</span>:</div>
+                                        <t t-call="cheat_owl_qweb_sub_template_two"/>
+                                    </p>
+                                    <p>
+                                        <div>This templates is using special placeholder <span class="badge">t-out="0"</span>:</div>
+                                        <t t-call="cheat_owl_qweb_sub_template_three">
+                                            <span>This text is rendered inside the sub template.</span>
+                                        </t>
+                                    </p>
+                                    <p>
+                                        <div>Variables are passed down to the sub template:</div>
+                                        <t t-set="parentTemplateVariable" t-value="'This is a string declared on parent template.'"/>
+                                        <t t-call="cheat_owl_qweb_sub_template_four">
+                                            <t t-set="scopedTemplateVariable" t-value="'This is declared inside the t element.'"/>
+                                        </t>
+                                        <!-- scopedTemplateVariable does not exist here -->
+                                    </p>
+                                    <p>
+                                        <span>This is an example of dynamic sub templates:</span>
+                                        <div>
+                                            <div class="form-check">
+                                                <input class="form-check-input"
+                                                    type="radio"
+                                                    id="cbDynamicTemplateOne"
+                                                    name="cbDynamicTemplate"
+                                                    value="one"
+                                                    t-model="state.dynamicTemplate" />
+                                                <label class="form-check-label" for="cbDynamicTemplateOne">One</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input"
+                                                    type="radio"
+                                                    id="cbDynamicTemplateTwo"
+                                                    name="cbDynamicTemplate"
+                                                    value="two"
+                                                    t-model="state.dynamicTemplate" />
+                                                <label class="form-check-label" for="cbDynamicTemplateTwo">Two</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input"
+                                                    type="radio"
+                                                    id="cbDynamicTemplateThree"
+                                                    name="cbDynamicTemplate"
+                                                    value="three"
+                                                    t-model="state.dynamicTemplate" />
+                                                <label class="form-check-label" for="cbDynamicTemplateThree">Three</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input"
+                                                    type="radio"
+                                                    id="cbDynamicTemplateFour"
+                                                    name="cbDynamicTemplate"
+                                                    value="four"
+                                                    t-model="state.dynamicTemplate" />
+                                                <label class="form-check-label" for="cbDynamicTemplateFour">Four</label>
+                                            </div>
+                                        </div>
+                                        <t t-call="{{ dynamicTemplate }}"/>
+                                    </p>
+                                </Collapsible>
+                            </div>
+                            <div class="col-xl-6 col-sm-12">
+                                <Collapsible name="'template-inheritance'" title.translate="Template Inheritance">
+                                    <p>
+                                        <div>We call the parent template, but since there's an extension child which modified the content we get the modified version:</div>
+                                        <t t-call="cheat_owl.qweb_parent_template"/>
+                                    </p>
+                                    <p>
+                                        <div>This is the primary child template, which we can call directly by it's name:</div>
+                                        <t t-call="cheat_owl.qweb_primary_child_template"/>
+                                    </p>
+                                </Collapsible>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+                <t t-set-slot="subscribe" title.translate="Subscribe for more tutorials">
+                    <div class="d-flex d-flex h-100 justify-content-center align-items-start">
+                        <div class="card" style="width: 150px;">
+                            <img src="/cheat_web/static/img/exploring-odoo.png" class="card-img-top" />
+                            <div class="card-body text-center">
+                                <p class="card-text">
+                                    <a href="https://youtube.com/@exploring-odoo">Exploring Odoo</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </HAccordion>
+        </Layout>
+    </t>
+    <t t-name="cheat_owl_qweb_sub_template_one">
+        <div>This text is inside a template <span class="badge">cheat_owl_qweb_sub_template_one</span>.</div>
+    </t>
+    <t t-name="cheat_owl_qweb_sub_template_two">
+        <div>This text is inside a template <span class="badge">cheat_owl_qweb_sub_template_two</span>.</div>
+        <t t-call="cheat_owl_qweb_sub_template_one"/>
+    </t>
+    <t t-name="cheat_owl_qweb_sub_template_three">
+        <div>This text is inside a template <span class="badge">cheat_owl_qweb_sub_template_three</span>.</div>
+        <t t-out="0" />
+    </t>
+    <t t-name="cheat_owl_qweb_sub_template_four">
+        <div>This text is inside a template <span class="badge">cheat_owl_qweb_sub_template_four</span>.</div>
+        <div><t t-out="parentTemplateVariable" /></div>
+        <div><t t-out="scopedTemplateVariable" /></div>
+    </t>
+    <t t-name="cheat_owl.qweb_parent_template">
+        <p>This is parent template.</p>
+    </t>
+    <t t-name="cheat_owl.qweb_primary_child_template" t-inherit="cheat_owl.qweb_parent_template" t-inherit-mode="primary">
+        <xpath expr="//p[1]" position="after">
+            <p>This is primary child template.</p>
+        </xpath>
+    </t>
+    <t t-inherit="cheat_owl.qweb_parent_template" t-inherit-mode="extension">
+        <xpath expr="//p[1]" position="after">
+            <p>This is extension child template.</p>
+        </xpath>
+    </t>
+</templates>

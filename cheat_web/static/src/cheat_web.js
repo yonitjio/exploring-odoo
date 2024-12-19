@@ -295,4 +295,4 @@ class CheatWeb extends Component {
 
 }
 
-registry.category("actions").add("cheatweb", CheatWeb);
+registry.category("actions").add("cheat_web", CheatWeb);

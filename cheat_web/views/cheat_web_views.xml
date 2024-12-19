@@ -1,17 +1,23 @@
 <odoo>
   <data>
-    <record model="ir.actions.client" id="cheatweb">
+    <record model="ir.actions.client" id="cheat_web">
       <field name="name">Web Framework</field>
-      <field name="tag">cheatweb</field>
+      <field name="tag">cheat_web</field>
     </record>
 
-    <record model="ir.actions.client" id="cheatowl">
+    <record model="ir.actions.client" id="cheat_owl">
       <field name="name">Web Library</field>
-      <field name="tag">cheatowl</field>
+      <field name="tag">cheat_owl</field>
+    </record>
+
+    <record model="ir.actions.client" id="cheat_owl_qweb">
+      <field name="name">QWeb</field>
+      <field name="tag">cheat_owl_qweb</field>
     </record>
 
     <menuitem name="Cheat Web" id="cheat_web_menu_top" parent="cheat_module.cheat_menu_root" sequence="100"/>
-    <menuitem name="Web Framework" id="cheat_web_menu" parent="cheat_web_menu_top" action="cheatweb" sequence="10"/>
-    <menuitem name="Web Library" id="cheat_owl_menu" parent="cheat_web_menu_top" action="cheatowl" sequence="20"/>
+    <menuitem name="Web Framework" id="cheat_web_menu" parent="cheat_web_menu_top" action="cheat_web" sequence="10"/>
+    <menuitem name="Web Library" id="cheat_owl_menu" parent="cheat_web_menu_top" action="cheat_owl" sequence="20"/>
+    <menuitem name="QWeb" id="cheat_owl_qweb_menu" parent="cheat_web_menu_top" action="cheat_owl_qweb" sequence="20"/>
   </data>
 </odoo>

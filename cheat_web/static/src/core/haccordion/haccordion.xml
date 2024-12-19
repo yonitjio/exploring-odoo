@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="web.haccordion" owl="1">
+        <div class="haccordion-root">
+            <div t-attf-class="{{ 'haccordion-item ' + (this.state.activeItem === item_index ? 'haccordion-expand' : 'haccordion-fold') }}"
+                t-foreach="itemNames"
+                t-as="item"
+                t-key="item_index"
+                t-on-click="() => this.state.activeItem = item_index" >
+                <div class="haccordion-title-container">
+                    <div class="haccordion-title" t-attf-id="{{ props.name + '-' + item + '-' + item_index.toString()}}">
+                        <h1><t t-out="props.slots[item].title" /></h1>
+                    </div>
+                </div>
+                <div class="haccordion-content p-4">
+                    <h1>
+                        <t t-out="props.slots[item].title" />
+                    </h1>
+                    <t t-slot="{{ item }}"/>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

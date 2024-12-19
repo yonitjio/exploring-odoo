@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="web.collapsible" owl="1">
+        <div class="card">
+            <h5 class="card-header">
+                <a class="d-block" data-bs-toggle="collapse" t-attf-href="{{ '#' + props.name }}" aria-expanded="true" aria-controls="collapse-collapsed">
+                    <t t-out="props.title" />
+                    <i class="fa fa-chevron-down float-end"></i>
+                </a>
+            </h5>
+            <div t-att-id="props.name" t-attf-class="{{ props.collapsed ? 'collapse' : 'collapse show' }}">
+                <div class="card-body">
+                    <p class="card-text text-wrap overflow-auto" t-ref="useRefCardText">
+                        <t t-slot="default"/>
+                    </p>
+                </div>
+                <div class="card-footer" t-if="props.slots['footer']">
+                    <t t-slot="footer"/>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

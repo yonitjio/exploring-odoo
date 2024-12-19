@@ -133,4 +133,4 @@ class CheatOwl extends Component {
     //#endregion
 }
 
-registry.category("actions").add("cheatowl", CheatOwl);
+registry.category("actions").add("cheat_owl", CheatOwl);
