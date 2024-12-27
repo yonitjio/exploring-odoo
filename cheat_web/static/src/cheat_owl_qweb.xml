@@ -83,7 +83,7 @@
                                     <p>
                                         <table class="table table-striped table-hover">
                                             <thead>
-                                                <tr class="table-dark">
+                                                <tr class="table-secondary">
                                                     <th>Operation</th>
                                                     <th>Operator</th>
                                                     <th>Example</th>
@@ -201,8 +201,8 @@
                                     <p>
                                         <span>These demonstrate the <span class="badge">t-foreach</span>'s special variables:</span>
                                         <table class="table table-striped table-hover mt-1">
-                                            <thead class="table-dark">
-                                                <tr>
+                                            <thead>
+                                                <tr class="table-secondary">
                                                     <td>x_index</td>
                                                     <td>x_value</td>
                                                     <td>x_first</td>

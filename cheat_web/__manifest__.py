@@ -3,7 +3,7 @@
     "name": "Cheat Module for Odoo Web Framework",
     # The first 2 numbers are Odoo major version, the last 3 are x.y.z version of the module.
     "version": "18.0.1.0.0",
-    "depends": ["web", "cheat_module"],
+    "depends": ["web", "cheat_module", "contacts"],
     "author": "Yoni Tjio",
     # Categories are freeform, for existing categories visit https://github.com/odoo/odoo/blob/17.0/odoo/addons/base/data/ir_module_category_data.xml
     "category": "Customizations",
@@ -13,7 +13,8 @@
     # data files always loaded at installation
     "data": [
         'security/ir.model.access.csv',
-        'views/cheat_web_views.xml'
+        'views/cheat_web_views.xml',
+        'views/contacts_views.xml'
     ],
     "assets": {
         "web.assets_backend": [

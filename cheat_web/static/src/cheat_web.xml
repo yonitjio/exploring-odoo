@@ -24,7 +24,7 @@
                     </div>
                     <div class="accordion-item">
                         <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOrm" aria-expanded="true" aria-controls="collapseOrm">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOrm" aria-expanded="true" aria-controls="collapseOrm">
                             ORM
                         </button>
                         </h2>
@@ -51,7 +51,7 @@
                     </div>
                     <div class="accordion-item">
                         <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNotification" aria-expanded="true" aria-controls="collapseNotification">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNotification" aria-expanded="true" aria-controls="collapseNotification">
                             Notification
                         </button>
                         </h2>
@@ -70,7 +70,7 @@
                     </div>
                     <div class="accordion-item">
                         <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDialogBox" aria-expanded="true" aria-controls="collapseDialogBox">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDialogBox" aria-expanded="true" aria-controls="collapseDialogBox">
                             Dialog Box
                         </button>
                         </h2>
@@ -89,7 +89,7 @@
                     </div>
                     <div class="accordion-item">
                         <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseUserService" aria-expanded="true" aria-controls="collapseUserService">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseUserService" aria-expanded="true" aria-controls="collapseUserService">
                             User Information
                         </button>
                         </h2>

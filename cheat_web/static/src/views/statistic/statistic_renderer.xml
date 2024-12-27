@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="cheat_web.StatisticRenderer">
+        <div class="row m-3 d-flex justify-content-center align-items-center">
+            <div class="card p-0">
+                <div class="row g-0 ">
+                    <div class="col-md-1 col-2 d-flex flex-column pt-4 justify-content-start align-items-center bg-secondary rounded-start">
+                        <h1><t t-out="props.model.recordCount"/></h1>
+                        <div>records</div>
+                    </div>
+                    <div class="col-md-11 col-10">
+                        <div class="card-body overflow-y-auto">
+                            <h2 class="card-title">Model: <t t-out="props.model.resModel"/></h2>
+                            <div class="card-text">
+                                <div>Fields count: <t t-out="fieldCount()"/></div>
+                                <div style="max-height: 75dvh;">
+                                    <table class="table table-striped table-hover mt-3 no-cellpadding">
+                                        <thead>
+                                            <tr class="table-secondary">
+                                                <th>Name</th>
+                                                <th>Type</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr t-foreach="fieldNames()" t-as="field" t-key="field_index">
+                                                <t t-set="fInfo" t-value="fieldInfo(field)" />
+                                                <td><t t-out="fInfo['name']"/></td>
+                                                <td><t t-out="fInfo['type']"/></td>
+                                                <td><t t-out="fInfo['help']"/></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

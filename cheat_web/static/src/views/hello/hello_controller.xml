@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="cheat_web.HelloView">
+        <div class="h-100" t-ref="root">
+            <Layout display="props.display" className="'h-100'">
+                <div class="d-flex flex-column h-75 justify-content-center align-items-center">
+                    <h1><span><i class="fa fa-smile-o" style="font-size: xxx-large !important;"></i></span></h1>
+                    <h1>Hello there!</h1>
+                </div>
+            </Layout>
+        </div>
+    </t>
+</templates>
