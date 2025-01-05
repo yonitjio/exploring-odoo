@@ -150,7 +150,7 @@ class CheatWeb extends Component {
     }
 
     async ormSearch() {
-        const res = await this.orm.search("cheat.web", [['id', '>=', 0]], { order: "id desc", limit: 1, offset: 0 });
+        const res = await this.orm.search("cheat.web", [['id', '>=', 0]], { order: "id desc", limit: 100, offset: 0 });
         console.log(res);
     }
 

@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <menuitem name="Odoo Faker" id="odoo_faker_example_menu_root" web_icon="odoo_faker_example,static/description/icon.png" />
+        <menuitem name="Odoo Faker" id="odoo_faker_example_menu_top" parent="odoo_faker_example_menu_root"
+            sequence="100" />
+        <menuitem name="Cheat Relation" id="odoo_faker_example_menu_cheat_relation" parent="odoo_faker_example_menu_top"
+            sequence="10" action="action_cheat_web_relation_faker" />
+    </data>
+</odoo>

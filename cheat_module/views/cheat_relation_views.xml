@@ -6,7 +6,7 @@
       <field name="name">cheat.relation.main.view.list</field>
       <field name="model">cheat.relation.main</field>
       <field name="arch" type="xml">
-        <list string="Cheat Relation"  js_class="cheat_relation_buttons">
+        <list string="Cheat Relation"  js_class="cheat_relation_view">
           <field name="main_char_field"/>
           <field name="main_text_field"/>
         </list>
@@ -28,6 +28,7 @@
             <group>
               <field name="main_char_field"/>
               <field name="main_text_field"/>
+              <field name="main_many_to_many_ids" widget="many2many_tags" options="{'no_quick_create': True}"/>
             </group>
             <notebook>
               <page string="Page 1" name="page_one">

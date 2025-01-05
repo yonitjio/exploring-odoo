@@ -16,7 +16,7 @@ export class CheatRelationListController extends ListController {
    }
 }
 
-registry.category("views").add("cheat_relation_buttons", {
+registry.category("views").add("cheat_relation_view", {
    ...listView,
    Controller: CheatRelationListController,
    buttonTemplate: "Cheat.Relation.Buttons",

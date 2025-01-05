@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_cheat_relation_main_view_faker" model="ir.ui.view">
+            <field name="name">cheat.relation.main.faker</field>
+            <field name="model">cheat.relation.main</field>
+            <field name="arch" type="xml">
+                <faker>
+                    <field name="main_char_field" module="person" method="fullName" />
+                    <field name="main_many_to_many_ids" />
+                    <field name="main_one_to_many_ids">
+                        <faker>
+                            <field name="line_char_field" module="phone" method="number" params='{ "style": "international" }' />
+                            <field name="line_int_field" values="1,2,3,4" />
+                        </faker>
+                    </field>
+                </faker>
+            </field>
+        </record>
+
+        <record id="action_cheat_web_relation_faker" model="ir.actions.act_window">
+            <field name="name">Cheat Relation Faker</field>
+            <field name="res_model">cheat.relation.main</field>
+            <field name="view_mode">list,form,faker</field>
+        </record>
+    </data>
+</odoo>

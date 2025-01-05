@@ -6,7 +6,7 @@
       <field name="name">cheat.basic.list</field>
       <field name="model">cheat.basic</field>
       <field name="arch" type="xml">
-        <list string="Cheat">
+        <list string="Basic Cheat">
           <field name="char_field"/>
           <field name="text_field"/>
           <field name="boolean_field"/>
@@ -63,7 +63,7 @@
     </record>
 
     <!-- Top menu item -->
-    <menuitem name="Cheats" id="cheat_menu_root" />
+    <menuitem name="Cheats" id="cheat_menu_root" web_icon="cheat_module,static/description/icon.png" />
 
     <!-- Menu item -->
     <menuitem name="Cheat" id="cheat_basic_main_menu_top" parent="cheat_menu_root"/>

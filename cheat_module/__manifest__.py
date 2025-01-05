@@ -17,7 +17,8 @@
         'views/cheat_dialog_template_views.xml',
         'views/res_config_settings_views.xml',
         'wizard/cheat_wizard_views.xml',
-        'views/cheat_relation_views.xml'
+        'views/cheat_relation_views.xml',
+        'views/cheat_qweb_views.xml'
     ],
      'assets': {
         'web.assets_backend': [

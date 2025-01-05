@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rng:grammar xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/annotation/1.0"
+            datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <rng:define name="faker-field">
+        <rng:attribute name="module"/>
+        <rng:attribute name="method"/>
+        <rng:optional><rng:attribute name="params" /></rng:optional>
+    </rng:define>
+    <rng:define name="faker-field-values">
+        <rng:attribute name="values"/>
+    </rng:define>
+    <rng:define name="faker-field-dep">
+        <rng:attribute name="dep"/>
+        <rng:attribute name="link"/>
+    </rng:define>
+    <rng:define name="faker-field-many2x">
+        <rng:optional><rng:ref name="faker-field-dep" /></rng:optional>
+        <rng:optional><rng:attribute name="domain" /></rng:optional>
+        <rng:empty></rng:empty>
+    </rng:define>
+    <rng:define name="field">
+        <rng:element name="field">
+            <rng:attribute name="name"/>
+            <rng:choice>
+                <rng:ref name="faker-field" />
+                <rng:ref name="faker-field-values" />
+                <rng:ref name="faker-field-many2x" />
+            </rng:choice>
+        </rng:element>
+    </rng:define>
+    <rng:define name="faker-record-action">
+            <rng:attribute name="record-action" />
+            <rng:optional><rng:attribute name="record-action-mode" /></rng:optional>
+    </rng:define>
+    <rng:define name="faker">
+        <rng:element name="faker">
+            <rng:optional><rng:ref name="faker-record-action" /></rng:optional>
+            <rng:oneOrMore>
+                <rng:ref name="field" />
+            </rng:oneOrMore>
+        </rng:element>
+    </rng:define>
+    <rng:start>
+        <rng:choice>
+            <rng:ref name="faker" />
+        </rng:choice>
+    </rng:start>
+</rng:grammar>

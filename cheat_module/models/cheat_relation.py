@@ -16,7 +16,7 @@ class MainModel(models.Model):
     # For more information about Odoo ORM go to https://www.odoo.com/documentation/17.0/developer/reference/backend/orm.html
     # One2Many field REQUIRES the corresponding field on the other model
     main_one_to_many_ids = fields.One2many(comodel_name="cheat.relation.line", inverse_name="line_many_to_one_id", string="Line Model")
-    main_many_to_many_ids = fields.Many2many(comodel_name="cheat.relation.auxiliary", string="Auxiliary Model")
+    main_many_to_many_ids = fields.Many2many("cheat.relation.auxiliary", string="Auxiliary Model")
 
     def _random_string(self):
         res = ''.join(random.choices(string.ascii_letters, k=10))
@@ -85,7 +85,7 @@ class LineModel(models.Model):
     _name = "cheat.relation.line"
 
     line_char_field = fields.Char(string="Line Char Field", required=True)
-    line_int_field = fields.Integer(string="Line Char Field", default=0)
+    line_int_field = fields.Integer(string="Line Int Field", default=0)
     line_computed_field = fields.Char(string="Computed Field", compute="_my_computed_field")
 
     line_many_to_one_id = fields.Many2one(comodel_name="cheat.relation.main", string="Main Model", ondelete="cascade")
@@ -97,7 +97,7 @@ class LineModel(models.Model):
 # Models should be in their own separated files
 class AuxiliaryModel(models.Model):
     _name = "cheat.relation.auxiliary"
-
+    _rec_name = "auxiliary_char_field"
 
     auxiliary_char_field = fields.Char(string="Auxiliary Char Field", required=True)
 
