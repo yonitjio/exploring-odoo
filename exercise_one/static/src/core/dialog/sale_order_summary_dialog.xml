@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="exercise_one.SaleOrderSummary" owl="1">
+        <Dialog title.translate="Sale Order Summary">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr class="table-secondary">
+                        <th>Order</th>
+                        <th>Customer</th>
+                        <th class="text-end">Amount</th>
+                        <th class="text-end">Paid</th>
+                        <th class="text-end"># of Product</th>
+                        <th class="text-end">Qty</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr t-foreach="props.data" t-as="datum" t-key="datum_index">
+                        <td><t t-out="datum.name"/></td>
+                        <td><t t-out="datum.customer"/></td>
+                        <td class="text-end"><t t-out="formatMonetary(datum.amountTotal)"/></td>
+                        <td class="text-end"><t t-out="formatMonetary(datum.amountPaid)"/></td>
+                        <td class="text-end"><t t-out="formatInteger(datum.numOfProduct)"/></td>
+                        <td class="text-end"><t t-out="formatFloat(datum.productQty)"/></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td class="text-end"><t t-out="formatMonetary(getTotal('amountTotal'))"/></td>
+                        <td class="text-end"><t t-out="formatMonetary(getTotal('amountPaid'))"/></td>
+                        <td class="text-end"></td>
+                        <td class="text-end"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <t t-set-slot="footer">
+                <button class="btn btn-primary" t-on-click="_confirm">Ok</button>
+            </t>
+        </Dialog>
+    </t>
+</templates>

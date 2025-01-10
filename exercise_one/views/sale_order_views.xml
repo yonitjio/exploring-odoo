@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_quotation_tree_with_summary" model="ir.ui.view">
+        <field name="name">sale.order.list.summary</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//list" position="attributes">
+                <attribute name="js_class">sale_order_summary_list</attribute>
+            </xpath>
+        </field>
+    </record>
+
+<!-- #region actions -->
+    <record id="view_quotation_tree_with_summary_with_action" model="ir.ui.view">
+        <field name="name">sale.order.list.mod</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="view_quotation_tree_with_summary"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//list/header" position="inside">
+                <button name="action_summary" type="object" string="Summary Wizard"/>
+                <button name="action_summary_alt" type="object" string="Alt. Summary Wizard"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="sale.action_quotations_with_onboarding" model="ir.actions.act_window">
+        <field name="view_id" ref="exercise_one.view_quotation_tree_with_summary_with_action"/>
+    </record>
+    <record id="sale.sale_order_action_view_quotation_tree" model="ir.actions.act_window.view">
+        <field name="view_id" ref="exercise_one.view_quotation_tree_with_summary_with_action"/>
+    </record>
+<!-- #endregion -->
+</odoo>

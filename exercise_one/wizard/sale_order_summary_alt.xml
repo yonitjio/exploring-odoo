@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="sale_order_summary_alt_view" model="ir.ui.view">
+            <field name="name">sale.order.summary.alt.view</field>
+            <field name="model">sale.order.summary.alt</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form edit="false" create="false">
+                    <field name="line_ids">
+                        <list class="sale_order_summary_alt">
+                            <field name="name"/>
+                            <field name="partner_id" string="Customer"/>
+                            <field name="amount_total" sum="Total"/>
+                            <field name="amount_paid"  sum="Total"/>
+                            <field name="number_of_products"/>
+                            <field name="qty"/>
+                            <field name="currency_id" column_invisible="True"/>
+                        </list>
+                    </field>
+                    <footer>
+                        <button string="Close" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

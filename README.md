@@ -46,3 +46,4 @@ This repository contains source codes presented in youtube channel [Exploring Od
 | Odoo Faker         | odoo_faker             | Generate realistic demo data with Faker.js                         |
 | Odoo Faker Example | odoo_faker_example     | Example for Odoo Faker                                             |
 | Backend Theme      | backend_theme_explorer | Backend Theme ( in development )                                   |
+| Exercise One       | exercise_one           | Demonstrate three ways to process selected records on a list view. |
