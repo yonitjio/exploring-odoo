@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+© 2025 Yoni
+This software is experimental and provided "as-is".
+No guarantees, warranties, or liability are assumed.
+See the LICENSE file included with this software for full details.
+-->
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.n2</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <div id="companies" position="after">
+                <block title="N2" id="n2" invisible="1"></block>
+            </div>
+        </field>
+    </record>
+</odoo>

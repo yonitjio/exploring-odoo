@@ -1,0 +1,483 @@
+{
+  "id": "68f1c8d4-6860-4ce8-bcd8-11780adec7f4",
+  "title": "Test 2",
+  "isProcessed": false,
+  "recordId": 2,
+  "nodes": [
+    {
+      "id": "fa368af0-1929-4f90-b9e1-437fb6922437",
+      "label": "Start",
+      "iconUrl": "/n2_ui/static/images/play.svg",
+      "category": "Core",
+      "position": {
+        "x": 298,
+        "y": 144
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 115.024
+      },
+      "ports": [
+        {
+          "id": "9128d454-a23d-4a3c-a779-03e7dbc1c70b",
+          "nodeId": "fa368af0-1929-4f90-b9e1-437fb6922437",
+          "type": "input",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": 0,
+            "y": "50%"
+          },
+          "position": {
+            "x": 0,
+            "y": 57.5081
+          },
+          "data": {
+            "label": "Input Port"
+          },
+          "spec": {
+            "role": "trigger"
+          },
+          "cssClass": "trigger-port"
+        },
+        {
+          "id": "76759271-6f62-45ca-bf23-155a218b1817",
+          "nodeId": "fa368af0-1929-4f90-b9e1-437fb6922437",
+          "type": "output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "100%",
+            "y": "50%"
+          },
+          "position": {
+            "x": 200,
+            "y": 57.5081
+          },
+          "data": {
+            "label": "Output Port"
+          }
+        },
+        {
+          "id": "afe42906-3a9f-4c66-9257-15ac023f8720",
+          "nodeId": "fa368af0-1929-4f90-b9e1-437fb6922437",
+          "type": "aux-input",
+          "maxConnections": 9007199254740991,
+          "screenPosition": {
+            "x": "50%",
+            "y": "100%"
+          },
+          "position": {
+            "x": 100,
+            "y": 115.024
+          },
+          "data": {
+            "label": "Starter Input"
+          },
+          "spec": {
+            "role": "starter"
+          },
+          "cssClass": "starter-port"
+        }
+      ],
+      "type": "StartNode",
+      "data": {
+        "parameters": ""
+      }
+    },
+    {
+      "id": "3281aa5b-abb1-441a-bb08-3a4d28b10eed",
+      "label": "Data Group",
+      "iconUrl": "/n2_data/static/images/table.svg",
+      "category": "Data",
+      "position": {
+        "x": 442,
+        "y": 370.024
+      },
+      "screenSize": {
+        "width": "500px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 500,
+        "height": 300.471
+      },
+      "ports": [
+        {
+          "id": "6551fb8c-4f33-47f3-aacd-3d2ffddb9663",
+          "nodeId": "3281aa5b-abb1-441a-bb08-3a4d28b10eed",
+          "type": "aux-input",
+          "maxConnections": 9007199254740991,
+          "screenPosition": {
+            "x": "50%",
+            "y": "100%"
+          },
+          "position": {
+            "x": 250,
+            "y": 300.471
+          },
+          "data": {
+            "label": "Input Port"
+          },
+          "spec": {
+            "role": "data-filter"
+          },
+          "cssClass": "data-filter-port"
+        },
+        {
+          "id": "19647aab-5f32-42c5-afaf-a6d9cb4f399c",
+          "nodeId": "3281aa5b-abb1-441a-bb08-3a4d28b10eed",
+          "type": "aux-output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "50%",
+            "y": 0
+          },
+          "position": {
+            "x": 250,
+            "y": 0
+          },
+          "data": {
+            "label": "Output Port"
+          },
+          "spec": {
+            "role": "data"
+          },
+          "cssClass": "data-port"
+        }
+      ],
+      "type": "DataGroupNode",
+      "data": {
+        "model": "res.partner",
+        "model_description": "Contact",
+        "key": "data",
+        "selected_fields": [
+          {
+            "label": "Active",
+            "value": "active"
+          }
+        ],
+        "aggregate_function": "count",
+        "group_field": "country_id",
+        "datetime_granularity": "day",
+        "list_row_limit": 50,
+        "output_type": "array"
+      }
+    },
+    {
+      "id": "4ac4f514-0f8f-45ed-9e59-f25c26bbafee",
+      "label": "Domain Filter",
+      "iconUrl": "/n2_data/static/images/filter.svg",
+      "category": "Data",
+      "position": {
+        "x": 802,
+        "y": 769.4965
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 169.521
+      },
+      "ports": [
+        {
+          "id": "b0c09350-a5b8-416f-9ec3-4e761692772b",
+          "nodeId": "4ac4f514-0f8f-45ed-9e59-f25c26bbafee",
+          "type": "aux-output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "50%",
+            "y": 0
+          },
+          "position": {
+            "x": 100,
+            "y": 0
+          },
+          "data": {
+            "label": "Output Port"
+          },
+          "spec": {
+            "role": "data-filter"
+          },
+          "cssClass": "data-filter-port"
+        }
+      ],
+      "type": "DomainFilterNode",
+      "data": {
+        "model": "res.partner",
+        "model_description": "Contact",
+        "domain": "[]"
+      }
+    },
+    {
+      "id": "ab5345c4-8733-4f04-9efa-00bb199099de",
+      "label": "Browse Data",
+      "iconUrl": "/n2_data/static/images/select.svg",
+      "category": "Data",
+      "position": {
+        "x": 592,
+        "y": 90.23349999999999
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 223.028
+      },
+      "ports": [
+        {
+          "id": "e9935850-f70d-49b6-8bc0-fda78f89bcfe",
+          "nodeId": "ab5345c4-8733-4f04-9efa-00bb199099de",
+          "type": "input",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": 0,
+            "y": "50%"
+          },
+          "position": {
+            "x": 0,
+            "y": 111.51
+          },
+          "data": {
+            "label": "Input Port"
+          }
+        },
+        {
+          "id": "35f31d3b-3bf4-479c-b647-80b447638fc5",
+          "nodeId": "ab5345c4-8733-4f04-9efa-00bb199099de",
+          "type": "output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": 200,
+            "y": "50%"
+          },
+          "position": {
+            "x": 200,
+            "y": 111.51
+          },
+          "data": {
+            "label": "Output Port"
+          }
+        },
+        {
+          "id": "17aca375-7c4b-4f1d-9a2e-5db5528f8350",
+          "nodeId": "ab5345c4-8733-4f04-9efa-00bb199099de",
+          "type": "aux-input",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "50%",
+            "y": "100%"
+          },
+          "position": {
+            "x": 100,
+            "y": 223.028
+          },
+          "data": {
+            "label": "Data Port"
+          },
+          "spec": {
+            "role": "data"
+          },
+          "cssClass": "data-port"
+        }
+      ],
+      "type": "BrowseDataNode",
+      "data": {
+        "model": "res.partner",
+        "model_description": "Contact",
+        "reference_values": "",
+        "reference_field": ""
+      }
+    },
+    {
+      "id": "a326891a-c854-4542-bc89-e6efa909c486",
+      "label": "Log",
+      "iconUrl": "/n2_ui/static/images/log.svg",
+      "category": "Core",
+      "position": {
+        "x": 886,
+        "y": 152.0025
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 108.49
+      },
+      "ports": [
+        {
+          "id": "3af38098-0978-4153-94ac-b5020034aa46",
+          "nodeId": "a326891a-c854-4542-bc89-e6efa909c486",
+          "type": "input",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": 0,
+            "y": 50
+          },
+          "position": {
+            "x": 0,
+            "y": 50
+          },
+          "data": {
+            "label": "Input Port"
+          }
+        },
+        {
+          "id": "bb850b32-b21f-4283-ac5a-23ea4b3fc080",
+          "nodeId": "a326891a-c854-4542-bc89-e6efa909c486",
+          "type": "output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": 200,
+            "y": 50
+          },
+          "position": {
+            "x": 200,
+            "y": 50
+          },
+          "data": {
+            "label": "Output Port"
+          }
+        }
+      ],
+      "type": "LogNode",
+      "data": {
+        "tag": "N2-LOG"
+      }
+    },
+    {
+      "id": "4a3cdeb1-abfe-4bc7-af41-391a67979ddc",
+      "label": "Dynamic Date Filter",
+      "iconUrl": "/n2_data/static/images/database-date.svg",
+      "category": "Data",
+      "position": {
+        "x": 417,
+        "y": 750.4775
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 228.019
+      },
+      "ports": [
+        {
+          "id": "2d08bb00-e94a-42d4-8442-fcf2f678a482",
+          "nodeId": "4a3cdeb1-abfe-4bc7-af41-391a67979ddc",
+          "type": "aux-output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "50%",
+            "y": 0
+          },
+          "position": {
+            "x": 100,
+            "y": 0
+          },
+          "data": {
+            "label": "Output Port"
+          },
+          "spec": {
+            "role": "data-filter"
+          },
+          "cssClass": "data-filter-port"
+        }
+      ],
+      "type": "DynamicDateFilterNode",
+      "data": {
+        "model": "res.partner",
+        "model_description": "Contact",
+        "dynamic_date_field": "create_date",
+        "dynamic_date_interval": "day"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "bc9e35f3-c537-4d03-911f-df6e179ab9fb",
+      "fromPortId": "35f31d3b-3bf4-479c-b647-80b447638fc5",
+      "toPortId": "3af38098-0978-4153-94ac-b5020034aa46",
+      "startX": 612.5568084716797,
+      "startY": 204.7346434020996,
+      "endX": 670.5568084716797,
+      "endY": 203.4821434020996,
+      "type": "smoothstep",
+      "direction": "horizontal",
+      "path": "M 792 202 L 839 202\n                    A 0 0 0 0 1 839 202\n                    L 839 202\n                    A 0 0 0 0 0 839 202\n                    L 886 202",
+      "joints": []
+    },
+    {
+      "id": "ef0ae848-9fa5-4f33-a453-057075957183",
+      "fromPortId": "19647aab-5f32-42c5-afaf-a6d9cb4f399c",
+      "toPortId": "17aca375-7c4b-4f1d-9a2e-5db5528f8350",
+      "startX": 294.5568084716797,
+      "startY": 298.98064340209964,
+      "endX": 435.5568084716797,
+      "endY": 260.4821434020996,
+      "type": "smoothstep",
+      "direction": "vertical",
+      "path": "M 692 370 L 692 341.5\n                    A 0 0 0 0 1 692 341.5\n                    L 692 341.5\n                    A 0 0 0 0 0 692 341.5\n                    L 692 313",
+      "joints": []
+    },
+    {
+      "id": "af4cd788-9d7f-456e-ba9d-81b4714450f0",
+      "fromPortId": "76759271-6f62-45ca-bf23-155a218b1817",
+      "toPortId": "e9935850-f70d-49b6-8bc0-fda78f89bcfe",
+      "startX": 596.5568084716797,
+      "startY": 273.4782434020996,
+      "endX": 676.5568084716797,
+      "endY": 282.4821434020996,
+      "type": "smoothstep",
+      "direction": "horizontal",
+      "path": "M 498 202 L 545 202\n                    A 0 0 0 0 1 545 202\n                    L 545 202\n                    A 0 0 0 0 0 545 202\n                    L 592 202",
+      "joints": []
+    },
+    {
+      "id": "afff6908-8c53-43c7-aade-e18c9056b0b8",
+      "fromPortId": "2d08bb00-e94a-42d4-8442-fcf2f678a482",
+      "toPortId": "6551fb8c-4f33-47f3-aacd-3d2ffddb9663",
+      "startX": 870.5568084716797,
+      "startY": 504.2246434020997,
+      "endX": 435.5568084716797,
+      "endY": 605.4821434020996,
+      "type": "smoothstep",
+      "direction": "vertical",
+      "path": "M 517 750 L 517 720\n                    A 10 10 0 0 1 527 710\n                    L 682 710\n                    A 10 10 0 0 0 692 700\n                    L 692 670",
+      "joints": []
+    },
+    {
+      "id": "f9083a03-1648-4292-a188-5043e91fb8f9",
+      "fromPortId": "b0c09350-a5b8-416f-9ec3-4e761692772b",
+      "toPortId": "6551fb8c-4f33-47f3-aacd-3d2ffddb9663",
+      "startX": 697.5568084716797,
+      "startY": 246.72164340209963,
+      "endX": 292.5568084716797,
+      "endY": 601.4821434020996,
+      "type": "smoothstep",
+      "direction": "vertical",
+      "path": "M 902 769 L 902 729.5\n                    A 10 10 0 0 0 892 719.5\n                    L 702 719.5\n                    A 10 10 0 0 1 692 709.5\n                    L 692 670",
+      "joints": []
+    }
+  ],
+  "selected": [
+    {
+      "id": "4a3cdeb1-abfe-4bc7-af41-391a67979ddc",
+      "type": "node"
+    }
+  ],
+  "data": {
+    "active_model": "",
+    "active_model_description": ""
+  },
+  "version": "1.0.0"
+}

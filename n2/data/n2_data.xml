@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+© 2025 Yoni
+This software is experimental and provided "as-is".
+No guarantees, warranties, or liability are assumed.
+See the LICENSE file included with this software for full details.
+-->
+<odoo>
+    <data>
+        <record model="ir.config_parameter" id="n2_monitor_process" forcecreate="False">
+            <field name="key">n2.monitor_process</field>
+            <field name="value">False</field>
+        </record>
+    </data>
+</odoo>

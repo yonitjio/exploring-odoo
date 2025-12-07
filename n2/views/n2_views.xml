@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+© 2025 Yoni
+This software is experimental and provided "as-is".
+No guarantees, warranties, or liability are assumed.
+See the LICENSE file included with this software for full details.
+-->
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="n2.graph_form">
+            <field name="name">n2.graph.form</field>
+            <field name="model">n2.graph</field>
+            <field name="arch" type="xml">
+                <form string="Graph">
+                    <sheet>
+                        <group>
+                            <field name="title"/>
+                            <field name="is_processed" readonly="1" force_save="1"/>
+                        </group>
+                        <group>
+                            <notebook id="n2_graph_form_notebook">
+                                <page name="raw" string="Raw">
+                                    <field name="raw"/>
+                                </page>
+                                <page name="definition" string="Definition">
+                                    <field name="definition" readonly="1" force_save="1"/>
+                                </page>
+                            </notebook>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="n2.graph_list">
+            <field name="name">n2.graph.list</field>
+            <field name="model">n2.graph</field>
+            <field name="arch" type="xml">
+                <list string="Graph">
+                    <field name="title" />
+                    <field name="is_processed" />
+                </list>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="n2_registry_list">
+            <field name="name">n2.registry.list</field>
+            <field name="model">n2.registry</field>
+            <field name="arch" type="xml">
+                <list string="N2 Registry" editable="top" create="1" delete="1">
+                    <field name="category" />
+                    <field name="key" />
+                    <field name="value" />
+                </list>
+            </field>
+        </record>
+
+        <record id="action_n2_registry" model="ir.actions.act_window">
+            <field name="name">N2 Registry</field>
+            <field name="path">n2-registry</field>
+            <field name="res_model">n2.registry</field>
+            <field name="view_mode">list</field>
+        </record>
+
+
+        <record id="action_n2_graph" model="ir.actions.act_window">
+            <field name="name">Graph</field>
+            <field name="path">n2</field>
+            <field name="res_model">n2.graph</field>
+            <field name="view_mode">list</field>
+            <field name="view_id" ref="n2.graph_list"/>
+        </record>
+
+        <menuitem name="N2" id="n2.app_menu" web_icon="n2,static/description/icon.png"/>
+
+        <menuitem name="Graph" id="n2.menu_graph" parent="n2.app_menu" sequence="1" action="n2.action_n2_graph" />
+
+        <menuitem name="Configuration" id="n2.configuration_menu" parent="n2.app_menu" sequence="2" />
+        <menuitem name="Registry" id="n2.registry_menu" parent="n2.configuration_menu"
+            action="n2.action_n2_registry"/>
+    </data>
+</odoo>

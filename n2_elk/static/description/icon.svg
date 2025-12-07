@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512mm"
+   height="512mm"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg1"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient48">
+      <stop
+         style="stop-color:#55ffe5;stop-opacity:1;"
+         offset="0"
+         id="stop48" />
+      <stop
+         style="stop-color:#53a9ff;stop-opacity:1;"
+         offset="1"
+         id="stop49" />
+    </linearGradient>
+    <linearGradient
+       id="swatch47">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop47" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient16">
+      <stop
+         style="stop-color:#ff4141;stop-opacity:1;"
+         offset="0"
+         id="stop15" />
+      <stop
+         style="stop-color:#f2aeff;stop-opacity:1;"
+         offset="1"
+         id="stop16" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient14">
+      <stop
+         style="stop-color:#4eafe0;stop-opacity:1;"
+         offset="0"
+         id="stop13" />
+      <stop
+         style="stop-color:#7aeaff;stop-opacity:1;"
+         offset="1"
+         id="stop14" />
+    </linearGradient>
+    <linearGradient
+       id="swatch50">
+      <stop
+         style="stop-color:#37c657;stop-opacity:1;"
+         offset="0"
+         id="stop50" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#linearGradient14"
+       id="linearGradient8-2"
+       x1="557.22015"
+       y1="-236.00273"
+       x2="200.23343"
+       y2="-238.20605"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0,1.1773546,-1.1773546,0,-47.752123,-104.36325)" />
+    <linearGradient
+       xlink:href="#linearGradient16"
+       id="linearGradient10-2"
+       gradientUnits="userSpaceOnUse"
+       x1="247.38887"
+       y1="-110.8702"
+       x2="385.16711"
+       y2="-109.39808"
+       gradientTransform="matrix(0,2.5435005,-1.1773546,0,252.9981,-710.16668)" />
+    <linearGradient
+       xlink:href="#linearGradient48"
+       id="linearGradient49"
+       x1="267.75833"
+       y1="575.20416"
+       x2="268.81668"
+       y2="284.69168"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.98605006,0,0,0.98605006,38.845692,-27.48663)" />
+  </defs>
+  <g
+     id="layer1">
+    <g
+       id="g49"
+       transform="translate(0,31.601174)">
+      <g
+         id="g9"
+         transform="matrix(0.76275383,0,0,0.76275383,79.495836,-32.782706)"
+         style="stroke-width:1.31104">
+        <path
+           d="m 413.63581,243.32636 h -63.7137 v 47.52057 c 0,29.15713 -16.1984,44.81558 -40.49599,44.81558 -17.27828,0 -29.69705,-8.09921 -35.63647,-34.01664 L 238.69312,148.30105 C 224.65451,86.207187 193.33761,68.388961 133.94347,68.388961 H 78.86893 c -19.978024,0 -29.697064,9.719027 -29.697064,30.236999 V 398.98933 H 112.88556 V 139.12196 c 0,-4.85953 1.61984,-7.01932 7.55926,-7.01932 H 138.803 c 20.51798,0 34.01663,4.85953 39.95604,30.23703 l 34.01664,151.72497 c 13.49867,58.85418 43.73568,84.77161 97.73034,84.77161 66.95336,0 103.12979,-39.41609 103.12979,-109.60916 z"
+           id="text7-4"
+           style="font-size:458.61px;line-height:1.25;font-family:Nasalization;-inkscape-font-specification:'Nasalization, Normal';fill:url(#linearGradient8-2);stroke-width:13.1104;stroke-dasharray:none"
+           aria-label="2" />
+        <path
+           d="m 349.92211,73.07434 v 157.66994 h 63.7137 V 73.270164 Z"
+           id="text7-6-1"
+           style="font-size:458.61px;line-height:1.25;font-family:Nasalization;-inkscape-font-specification:'Nasalization, Normal';fill:url(#linearGradient10-2);stroke-width:13.1104;stroke-dasharray:none"
+           aria-label="2" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:179.333px;line-height:1.25;font-family:Poppins;-inkscape-font-specification:'Poppins, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-decoration-color:#000000;fill:#52c8bd;fill-opacity:1;stroke:none;stroke-width:15;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+         x="764.38403"
+         y="-54.208195"
+         id="text1"
+         transform="scale(0.98983469,1.0102697)"><tspan
+           id="tspan1"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:179.333px;font-family:Poppins;-inkscape-font-specification:'Poppins, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#52c8bd;fill-opacity:1;stroke:none;stroke-width:15;stroke-dasharray:none;stroke-opacity:1"
+           x="764.38403"
+           y="-54.208195" /></text>
+      <text
+         xml:space="preserve"
+         style="font-size:458.61px;line-height:1.25;font-family:Poppins;-inkscape-font-specification:Poppins;text-decoration-color:#000000;fill:#ffffff;stroke-width:0.264583;-inkscape-stroke:none;stop-color:#000000"
+         x="765.05322"
+         y="-117.05624"
+         id="text9"><tspan
+           id="tspan9"
+           style="stroke-width:0.264583"
+           x="765.05322"
+           y="-117.05624" /></text>
+      <text
+         xml:space="preserve"
+         style="font-size:198.573px;line-height:1.25;font-family:'Bebas Neue';-inkscape-font-specification:'Bebas Neue';text-decoration-color:#000000;fill:url(#linearGradient49);fill-opacity:1;stroke:#40bbbc;stroke-width:1.32292;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+         x="141.64925"
+         y="426.88971"
+         id="text2"
+         transform="scale(1.000281,0.99971907)"><tspan
+           id="tspan2"
+           style="fill:url(#linearGradient49);fill-opacity:1;stroke:#40bbbc;stroke-width:1.32292;stroke-dasharray:none;stroke-opacity:1"
+           x="141.64925"
+           y="426.88971">ELK</tspan></text>
+    </g>
+  </g>
+</svg>

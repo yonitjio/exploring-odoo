@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_n2_graph_sys,access_n2_graph_sys,model_n2_graph,base.group_system,1,1,1,1
+access_n2_graph_user,access_n2_graph_user,model_n2_graph,base.group_user,1,0,0,0
+access_n2_registry_sys,access_n2_graph_sys,model_n2_registry,base.group_system,1,1,1,1
+access_n2_registry_user,access_n2_graph_user,model_n2_registry,base.group_user,1,0,0,0
