@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido.nuido-ui">
+        <div id="nuido-selection" t-attf-class="nuido-selection position-absolute {{selectionState.selecting ? 'd-block' : 'd-none'}}" t-attf-style="
+            left:{{selectionState.x}}px;
+            top:{{selectionState.y}}px;
+            width:{{selectionState.w}}px;
+            height:{{selectionState.h}}px;
+            z-index: 10;
+        ">
+        </div>
+        <t t-slot="before_nuido_root"/>
+        <div class="nuido-root d-flex h-100 overflow-hidden position-relative" tabindex="0" style="min-height:-webkit-fill-available;"
+            t-on-keydown="onKeydown">
+            <t t-slot="before_container"/>
+            <div class="nuido-container d-flex flex-column w-100 h-100">
+                <t t-slot="before_nuido"/>
+                <div t-ref="nuido" class="nuido w-100 h-100">
+                    <t t-slot="before_doc"/>
+                    <t t-foreach="documents" t-as="doc" t-key="doc_index">
+                        <t t-if="doc.id + '-' + doc.sessionId == currentDocSessionId">
+                            <div class="nuido-doc-container h-100 w-100" t-on-wheel="onWheel"
+                                t-on-mousedown="onHandleMouseDown" t-on-dblclick="clearSelection"
+                                t-on-contextmenu="onContextMenu">
+                                    <Document document="doc" />
+                            </div>
+                        </t>
+                    </t>
+                    <t t-slot="after_doc"/>
+                </div>
+                <t t-slot="after_nuido"/>
+            </div>
+            <t t-slot="after_container"/>
+        </div>
+        <t t-slot="after_nuido_root"/>
+    </t>
+</templates>

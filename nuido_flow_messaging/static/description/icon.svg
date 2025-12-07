@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512mm"
+   height="512mm"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="nuido-flow-messaging.svg"
+   inkscape:export-filename="..\..\Odoo\18.0.node\custom\addons\nuido_flow_messaging\static\description\icon.png"
+   inkscape:export-xdpi="25.4"
+   inkscape:export-ydpi="25.4"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.35945917"
+     inkscape:cx="307.40626"
+     inkscape:cy="1187.8957"
+     inkscape:window-width="3200"
+     inkscape:window-height="1960"
+     inkscape:window-x="-12"
+     inkscape:window-y="-12"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showgrid="false" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g2"
+       style="fill:none;fill-opacity:1;stroke:#00d1fe;stroke-width:1.32991;stroke-opacity:1"
+       transform="matrix(0.76819754,0,0,0.73601311,123.63519,90.535566)">
+      <path
+         d="m 268.53977,373.29876 c 0,-8.21867 0,-12.328 1.34268,-15.56959 1.79026,-4.32197 5.22411,-7.75582 9.54607,-9.54608 3.24159,-1.34267 7.35092,-1.34267 15.56959,-1.34267 v 0 h 105.83333 v 0 c 8.21884,0 12.32782,0 15.56985,1.34267 4.32153,1.79026 7.75582,5.22411 9.54616,9.54608 1.34232,3.24159 1.34232,7.35092 1.34232,15.56959 v 70.55555 c 0,8.21884 0,12.32782 -1.34232,15.56985 -1.79034,4.32153 -5.22463,7.75582 -9.54616,9.54616 -3.24203,1.34232 -7.35101,1.34232 -15.56985,1.34232 v 0 H 294.99811 v 0 c -8.21867,0 -12.328,0 -15.56959,-1.34232 -4.32196,-1.79034 -7.75581,-5.22463 -9.54607,-9.54616 -1.34268,-3.24203 -1.34268,-7.35101 -1.34268,-15.56985 z"
+         stroke="#323232"
+         stroke-width="23.4581"
+         stroke-linejoin="round"
+         id="path2-7"
+         style="fill:none;fill-opacity:1;stroke:#00d1fe;stroke-opacity:1" />
+      <path
+         d="m 277.35922,355.65987 58.94035,51.57258 c 6.64986,5.81907 16.58055,5.81907 23.23041,0 l 58.94035,-51.57258"
+         stroke="#323232"
+         stroke-width="23.4581"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="path3-1"
+         style="fill:none;fill-opacity:1;stroke:#00d1fe;stroke-opacity:1" />
+    </g>
+    <path
+       id="text3-7"
+       style="font-size:491.201px;line-height:1.25;font-family:'Good Times';-inkscape-font-specification:'Good Times, Normal';fill:#c69a37;stroke-width:0.264584"
+       d="m 375.127,306.42277 h 56.4162 V 67.117474 H 375.127 Z" />
+    <path
+       id="path16"
+       style="font-size:491.201px;line-height:1.25;font-family:'Good Times';-inkscape-font-specification:'Good Times, Normal';fill:#c69a37;stroke-width:0.264584"
+       d="m 110.76278,65.565114 c -18.650015,0 -30.306161,15.007033 -30.306161,39.328866 V 446.43489 H 136.87281 V 171.13232 l 161.74982,180.57812 v -37.21788 c 0,-4.4709 3.79534,-8.06979 8.50956,-8.06979 h 35.30637 L 135.94057,79.01959 C 127.08182,69.187359 119.62153,65.565114 110.76278,65.565114 Z" />
+    <path
+       d="m 308.86122,143.02188 q -33.52186,26.55893 -59.43291,68.23512 -24.71388,40.72754 -51.7452,81.1766 -25.91101,41.67607 -64.22174,72.02914 -14.36654,11.38235 -30.97354,20.31049 -14.289492,9.20663 -33.060042,13.50474 53.070402,12.93557 88.217022,6.23646 36.34377,-7.64754 62.68242,-28.51531 25.14138,-19.91915 43.63824,-49.37699 20.8144,-29.17926 39.46533,-62.98845 18.65082,-33.80923 41.93658,-67.06122 24.40597,-32.02484 57.92786,-58.58376 9.57766,-7.58827 19.07833,-13.00083 10.69793,-6.36111 20.19864,-11.77367 -43.95452,-7.46972 -76.86067,1.68367 -31.70887,8.20483 -56.85032,28.12401 z"
+       id="text1-2-1"
+       style="font-size:1124.7px;line-height:1.25;font-family:'Dancing Script';-inkscape-font-specification:'Dancing Script, Normal';mix-blend-mode:normal;fill:#ff8801;fill-opacity:1;stroke-width:0.264584"
+       aria-label="~" />
+  </g>
+</svg>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido_flow.map-tree-item">
+        <div class="input-group">
+            <span class="d-none"><t t-out="props.id" /></span>
+            <input class="form-control border-primary" type="text" t-model="state.name"
+                t-att-readonly="state.name === 'maproot'"
+                t-on-change="onNameChanged"
+            />
+            <t t-if="!props.hasChildren and state.name !== 'maproot'">
+                <input class="form-control border-primary" type="text" t-model="state.value"
+                    t-on-change="onValueChanged"
+                />
+            </t>
+            <t t-if="state.name !== 'maproot'">
+                <button class="btn btn-primary" t-on-click="() => props.onRemove(props.id)">-</button>
+            </t>
+            <button class="btn btn-primary" t-on-click="() => props.onAddChild(props.id)">+</button>
+         </div>
+    </t>
+</templates>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido_flow.domain-dialog-input">
+        <div class="mb-2" >
+            <label t-attf-id="label-{{props.id}}" t-attf-for="text-{{props.id}}"><t t-out="props.label"/></label>
+            <div class="input-group">
+                <input class="form-control border-primary" readonly="1" t-attf-id="text-{{props.id}}" type="text" t-att-value="trimmedText"></input>
+                <button class="btn btn-primary" type="button"  t-on-click="showDomainDialog">
+                    <i t-attf-class="icon fa fa-ellipsis-h fa-lg align-self-center"></i>
+                </button>
+            </div>
+        </div>
+    </t>
+</templates>

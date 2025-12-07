@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido_flow_data.browse-data-node" t-inherit="nuido.node" t-inherit-mode="primary">
+        <xpath expr="//div[hasclass('node-content')]" position="inside">
+            <div class="mb-2">
+                <label t-attf-id="label-{{props.node.id}}-model-selector" t-att-for="modelSelectorId">Model</label>
+                <ModelSelectorEx
+                    id="modelSelectorId"
+                    value="state.modelDescription"
+                    onModelSelected.bind="onModelSelected"
+                />
+            </div>
+            <div class="mb-2">
+                <label t-attf-id="label-{{props.node.id}}-reference-field-selector">Reference Field</label>
+                <ModelFieldSelectorEx
+                    resModel="props.node.model"
+                    path="props.node.model ? props.node.reference_field : ''"
+                    readonly="props.node.model===''"
+                    followRelations="false"
+                    update.bind="onReferenceFieldUpdate"
+                    allowEmpty="true"
+                />
+            </div>
+            <div class="mb-2">
+                <TextInputDialogInput id="props.node.id" label="'Reference Value(s)'" value="props.node.reference_values"
+                    onChanged.bind="onReferenceValueChanged"/>
+            </div>
+        </xpath>
+    </t>
+</templates>

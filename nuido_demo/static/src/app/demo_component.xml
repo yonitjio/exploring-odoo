@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+ This software is released under the MIT License.
+ https://opensource.org/licenses/MIT
+
+ THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+ DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido_demo.demo_component" >
+        <NuidoUi nbus="state.nbus" channel="channel" edgeType="state.edgeType" documents="state.documents">
+            <t t-set-slot="before_container">
+                <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" t-att-style="nodeMenuStyle">
+                    <ul class="nav nav-pills flex-column mb-auto">
+                        <t t-foreach="actions" t-as="action" t-key="action_index">
+                            <li class="nav-item">
+                                <DemoNodeMenu action="action.action" title="action.title" icon="action.icon"/>
+                            </li>
+                        </t>
+                    </ul>
+                </div>
+            </t>
+            <t t-set-slot="before_nuido">
+                <div class="o-control-panel container-fluid d-flex align-items-center justify-content-between">
+                    <div class="btn-toolbar w-100 w-md-auto my-2 d-flex" role="toolbar">
+                        <div class="btn-group me-2">
+                            <button id="saveDoc" type="button" class="btn btn-secondary" t-on-click="saveDoc">
+                                <i class="fa fa-floppy-o fa-lg align-self-start me-2"></i>
+                                <span class="d-none d-md-inline">Save</span>
+                            </button>
+                            <button id="openDoc" type="button" class="btn btn-secondary" t-on-click="openDoc">
+                                <i class="fa fa-folder-open-o fa-lg align-self-start me-2"></i>
+                                <span class="d-none d-md-inline">Open</span>
+                            </button>
+                        </div>
+                        <Dropdown>
+                            <button class="btn btn-secondary me-2">
+                                <i class="fa fa-plus fa-lg align-self-start me-2"></i>
+                                <span class="d-none d-md-inline">Add</span>
+                            </button>
+                            <t t-set-slot="content">
+                                <t t-foreach="actions" t-as="action" t-key="action_index">
+                                    <DropdownItem onSelected="() => { action.action(50, 50) }">
+                                        <img class="menu-icon me-2" width="24" height="24" t-att-src="action.icon"></img>
+                                        <t t-out="action.title"/>
+                                    </DropdownItem>
+                                </t>
+                            </t>
+                        </Dropdown>
+                        <div class="btn-group me-2">
+                            <button id="deleteSelected" type="button" class="btn btn-secondary" t-on-click="deleteSelected">
+                                <i class="fa fa-minus fa-lg align-self-start me-2"></i>
+                                <span class="d-none d-md-inline">Delete</span>
+                            </button>
+                            <button id="reset" type="button" class="btn btn-secondary" t-on-click="reset">
+                                <i class="fa fa-refresh fa-lg align-self-start me-2"></i>
+                                <span class="d-none d-md-inline">Reset</span>
+                            </button>
+                        </div>
+                        <button id="debug" type="button" class="btn me-2" t-on-click="debug">
+                            <i class="fa fa-bug me-2 " />
+                            <span class="d-none d-md-inline">Debug</span>
+                        </button>
+                    </div>
+                    <div class="d-flex flex-fill my-auto mb-2">
+                    </div>
+                    <div class="btn-group" role="group">
+                        <input id="optEdgeTypeDefault"
+                            autocomplete="off"
+                            name="optEdgeType"
+                            class="btn-check"
+                            type="radio"
+                            t-att-value="DefaultEdgeName"
+                            t-model="state.edgeType"
+                            t-on-change="onUpdateEdgeType">
+                        </input>
+                        <label class="btn btn-primary" for="optEdgeTypeDefault">Default</label>
+                        <input id="optEdgeTypeOrthogonal"
+                            autocomplete="off"
+                            name="optEdgeType"
+                            class="btn-check"
+                            type="radio"
+                            t-att-value="OrthogonalEdgeName"
+                            t-model="state.edgeType"
+                            t-on-change="onUpdateEdgeType">
+                        </input>
+                        <label class="btn btn-primary" for="optEdgeTypeOrthogonal">Orthogonal</label>
+                        <input id="optEdgeTypeCurved"
+                            autocomplete="off"
+                            name="optEdgeType"
+                            class="btn-check"
+                            type="radio"
+                            t-att-value="CurvedEdgeName"
+                            t-model="state.edgeType"
+                            t-on-change="onUpdateEdgeType">
+                        </input>
+                        <label class="btn btn-primary" for="optEdgeTypeCurved">Curved</label>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <button id="debug" type="button" class="btn me-2" t-on-click="zoom_reset">
+                            Zoom
+                        </button>
+                        <span class="text-end" style="width: 20px"><t t-out="zoom"/></span>
+                    </div>
+                </div>
+            </t>
+        </NuidoUi>
+    </t>
+</templates>

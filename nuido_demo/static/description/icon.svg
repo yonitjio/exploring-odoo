@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512mm"
+   height="512mm"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="nuido-demo.svg"
+   inkscape:export-filename="..\..\Odoo\18.0.node\custom\addons\nuido_demo\static\description\icon.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.35945917"
+     inkscape:cx="702.44417"
+     inkscape:cy="1271.3544"
+     inkscape:window-width="3200"
+     inkscape:window-height="1960"
+     inkscape:window-x="-12"
+     inkscape:window-y="-12"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <rect
+       x="356.09052"
+       y="1468.8734"
+       width="1179.5498"
+       height="378.34616"
+       id="rect1" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       transform="matrix(0.3675939,0,0,0.3675939,-29.018016,-173.48534)"
+       id="text1"
+       style="font-size:306.667px;line-height:1.25;font-family:Poppins;-inkscape-font-specification:Poppins;text-decoration-color:#000000;white-space:pre;shape-inside:url(#rect1);display:inline;fill:#3fb6b7;fill-opacity:1;stroke-width:0.71977;-inkscape-stroke:none;stop-color:#000000"><tspan
+         x="356.08984"
+         y="1743.1041"
+         id="tspan4"><tspan
+           style="font-weight:bold;font-family:Comfortaa;-inkscape-font-specification:'Comfortaa Bold'"
+           id="tspan1">demo</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:388.494px;line-height:1.25;font-family:Poppins;-inkscape-font-specification:Poppins;text-decoration-color:#000000;fill:#c69a37;fill-opacity:1;stroke-width:0.264584;-inkscape-stroke:none;stop-color:#000000"
+       x="100.12165"
+       y="339.49915"
+       id="text3"
+       transform="scale(0.94920573,1.0535124)"><tspan
+         sodipodi:role="line"
+         id="tspan2-8"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:388.494px;font-family:'Good Times';-inkscape-font-specification:'Good Times, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#c69a37;fill-opacity:1;stroke-width:0.264584"
+         x="100.12165"
+         y="339.49915">N</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuidoai.chat-dialog">
+        <Dialog size="'md'" title="title" bodyClass="'d-flex'" contentClass="'h-75'">
+            <AiChat
+                userName="props.userName"
+                userAvatarUrl="props.userAvatarUrl"
+
+                assistantName="props.assistantName"
+                assistantAvatarUrl="props.assistantAvatarUrl"
+
+                greetingMessage="props.greetingMessage"
+                greetUser="props.greetUser"
+
+                storeName="props.storeName"
+
+                channel="props.channel"
+                bus="props.bus"
+
+                isProcessing="isProcessing"
+
+                onBeforeSendMessage.bind="onBeforeSendMessage"
+                onSendMessage.bind="onSendMessage"
+            />
+            <t t-set-slot="footer">
+                <button class="btn btn-primary" t-on-click="props.close">Close</button>
+                <button class="btn" t-on-click="reset">Reset</button>
+            </t>
+        </Dialog>
+    </t>
+</templates>

@@ -1,0 +1,64 @@
+// THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+//
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
+//
+// THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+// DO NOT USE IT IN PRODUCTION.
+
+.nuido {
+    .nuido-doc-container {
+        .nuido-doc {
+            .node-container {
+
+                .node:not(.node.sectioned) {
+                    .lookup-port {
+                        --b: 15px;
+                        --h:/calc(var(--b)*0.201) calc(var(--b)*0.201) radial-gradient(50% 50%,#000 99%,#0000 101%) no-repeat;
+
+                        background-color: $nuido-port-border-color;
+                        transform: none;
+                        height: var(--b);
+                        width: var(--b);
+                        mask: calc(50% + var(--b)*0.369) calc(50% + var(--b)*0) var(--h),calc(50% + var(--b)*0.261) calc(50% + var(--b)*0.261) var(--h),calc(50% + var(--b)*0) calc(50% + var(--b)*0.369) var(--h),calc(50% + var(--b)*-0.261) calc(50% + var(--b)*0.261) var(--h),calc(50% + var(--b)*-0.369) calc(50% + var(--b)*0) var(--h),calc(50% + var(--b)*-0.261) calc(50% + var(--b)*-0.261) var(--h),calc(50% + var(--b)*0) calc(50% + var(--b)*-0.369) var(--h),calc(50% + var(--b)*0.261) calc(50% + var(--b)*-0.261) var(--h),radial-gradient(calc(var(--b)*0.418),#000 99%,#0000 101%) subtract,calc(50% + var(--b)*0.447) calc(50% + var(--b)*0.185) var(--h),calc(50% + var(--b)*0.185) calc(50% + var(--b)*0.447) var(--h),calc(50% + var(--b)*-0.185) calc(50% + var(--b)*0.447) var(--h),calc(50% + var(--b)*-0.447) calc(50% + var(--b)*0.185) var(--h),calc(50% + var(--b)*-0.447) calc(50% + var(--b)*-0.185) var(--h),calc(50% + var(--b)*-0.185) calc(50% + var(--b)*-0.447) var(--h),calc(50% + var(--b)*0.185) calc(50% + var(--b)*-0.447) var(--h),calc(50% + var(--b)*0.447) calc(50% + var(--b)*-0.185) var(--h);
+
+                        &::after {
+                            --s: 11px;
+                            --g:/calc(var(--s)*0.201) calc(var(--s)*0.201) radial-gradient(50% 50%,#000 99%,#0000 101%) no-repeat;
+                            transform: none;
+                            content: "";
+                            width: var(--s);
+                            height: var(--s);
+                            position: absolute;
+                            background-color: $teal-500;
+                            left: 10px;
+                            top: 10px;
+                            mask: calc(50% + var(--s)*0.369) calc(50% + var(--s)*0) var(--g),calc(50% + var(--s)*0.261) calc(50% + var(--s)*0.261) var(--g),calc(50% + var(--s)*0) calc(50% + var(--s)*0.369) var(--g),calc(50% + var(--s)*-0.261) calc(50% + var(--s)*0.261) var(--g),calc(50% + var(--s)*-0.369) calc(50% + var(--s)*0) var(--g),calc(50% + var(--s)*-0.261) calc(50% + var(--s)*-0.261) var(--g),calc(50% + var(--s)*0) calc(50% + var(--s)*-0.369) var(--g),calc(50% + var(--s)*0.261) calc(50% + var(--s)*-0.261) var(--g),radial-gradient(calc(var(--s)*0.418),#000 99%,#0000 101%) subtract,calc(50% + var(--s)*0.447) calc(50% + var(--s)*0.185) var(--g),calc(50% + var(--s)*0.185) calc(50% + var(--s)*0.447) var(--g),calc(50% + var(--s)*-0.185) calc(50% + var(--s)*0.447) var(--g),calc(50% + var(--s)*-0.447) calc(50% + var(--s)*0.185) var(--g),calc(50% + var(--s)*-0.447) calc(50% + var(--s)*-0.185) var(--g),calc(50% + var(--s)*-0.185) calc(50% + var(--s)*-0.447) var(--g),calc(50% + var(--s)*0.185) calc(50% + var(--s)*-0.447) var(--g),calc(50% + var(--s)*0.447) calc(50% + var(--s)*-0.185) var(--g);
+                        }
+                    }
+                    .data-filter-port {
+                        background-color: $nuido-port-border-color;
+                        transform: none;
+                        height: 15px;
+                        width: 15px;
+
+                        &::after {
+                            --r: 3px;
+                            transform: none;
+                            content: "";
+                            width: 11px;
+                            height: 11px;
+                            position: absolute;
+                            left: 10px;
+                            top: 10px;
+                            background: $teal-500;
+
+                            border-radius: 2px;
+                            mask: radial-gradient(var(--r) at var(--r),#0000 calc(100% - 1px),#000) calc(-1*var(--r));
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

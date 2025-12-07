@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<odoo>
+    <data>
+        <record id="build_function_sales_plugin" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">SalesPluginNode</field>
+            <field name="value">nuidoai_sales.models.node_info,build_sales_plugin</field>
+        </record>
+        <record id="post_process_function_sales_plugin" model="nuido_base.registry">
+            <field name="category">Post Process Function</field>
+            <field name="key">SalesPlugin</field>
+            <field name="value">nuidoai_sales.models.node_info,post_process_sales_plugin</field>
+        </record>
+        <record id="create_function_sales_plugin" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">SalesPlugin</field>
+            <field name="value">nuidoai_sales.ai.semantic_kernel,create_sales_plugin</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido_flow_ai.assistant-agent-node" t-inherit="nuido.node" t-inherit-mode="primary">
+        <xpath expr="//div[hasclass('node-content')]" position="inside">
+            <div class="mb-2">
+                <TextDialogInput id="'system-message-' + props.node.id" label="'System Message'"
+                    value="props.node.system_message" onChanged.bind="onSystemMessageChanged"/>
+            </div>
+            <div class="mb-2">
+                <TextDialogInput id="'prompt' + props.node.id" label="'Prompt'"
+                    value="props.node.prompt" onChanged.bind="onPromptChanged"/>
+            </div>
+            <div class="mb-2 form-check form-switch">
+                <input t-att-id="isHtmlResultId" type="checkbox" t-att-checked="props.node.is_html_result" t-att-value="props.node.is_html_result"
+                    t-on-click="onIsHtmlResultChanged"
+                    class="form-check-input"/>
+                <label t-attf-id="label-{{props.node.id}}-is-html-result" t-att-for="isHtmlResultId" t-on-click="onIsHtmlResultChanged"
+                    class="form-check-label ms-2 d-inline">Convert result to HTML</label>
+            </div>
+            <div class="mb-2 form-check form-switch">
+                <input t-att-id="isStructuredInputId" type="checkbox" t-att-checked="props.node.is_structured" t-att-value="props.node.is_structured"
+                    t-on-click="onIsStructuredOutputChanged"
+                    class="form-check-input"/>
+                <label t-attf-id="label-{{props.node.id}}-is-structured-output" t-att-for="isStructuredInputId" t-on-click="onIsStructuredOutputChanged"
+                    class="form-check-label ms-2 d-inline">Structured Output</label>
+            </div>
+            <t t-if="props.node.is_structured">
+                <div class="mb-2">
+                    <TextDialogInput id="'schema' + props.node.id" label="'Schema'"
+                        value="props.node.schema" onChanged.bind="onSchemaChanged"/>
+                </div>
+            </t>
+            <div class="mb-2 form-check form-switch">
+                <input t-att-id="isReflectOnToolUseInputId" type="checkbox" t-att-checked="props.node.is_reflect_on_tool_use"
+                    t-att-value="props.node.is_reflect_on_tool_use"
+                    t-on-click="onIsReflectOnToolUseChanged"
+                    class="form-check-input"/>
+                <label t-attf-id="label-{{props.node.id}}-is-stateful" t-att-for="isReflectOnToolUseInputId" t-on-click="onIsReflectOnToolUseChanged"
+                    class="form-check-label ms-2 d-inline">Reflect On Tool Use</label>
+            </div>
+        </xpath>
+    </t>
+</templates>

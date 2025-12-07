@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido_flow_sales.fixed-range-sales-summary-odoo" t-inherit="nuido.node" t-inherit-mode="primary">
+        <xpath expr="//div[hasclass('node-content')]" position="inside">
+            <div class="mb-2">
+                <label t-attf-id="label-{{props.node.id}}-start-date" t-att-for="startDateInputId">Start Date</label>
+                <DateTimeInput id="startDateInputId" type="'date'" value="startDate" onChange.bind="onStartDateValueChange"/>
+                <label t-attf-id="label-{{props.node.id}}-end-date" t-att-for="endDateInputId">End Date</label>
+                <DateTimeInput id="endDateInputId" type="'date'" value="endDate" onChange.bind="onEndDateValueChange"/>
+            </div>
+        </xpath>
+    </t>
+</templates>

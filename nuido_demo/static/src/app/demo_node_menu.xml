@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+ This software is released under the MIT License.
+ https://opensource.org/licenses/MIT
+
+ THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+ DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido_demo.demo-node-menu">
+        <div t-ref="root" class="demo-node-menu w-100 my-2 user-select-none">
+            <div class="demo-node-menu-container text-start">
+                <t t-if="props.icon">
+                    <img class="menu-icon me-2" width="24" height="24" t-att-src="props.icon"></img>
+                </t>
+                <span class="d-none d-md-inline"><t t-out="props.title"/></span>
+            </div>
+        </div>
+    </t>
+</templates>

@@ -1,0 +1,120 @@
+// THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+//
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
+//
+// THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+// DO NOT USE IT IN PRODUCTION.
+
+.nuido {
+    .nuido-doc-container {
+        .nuido-doc {
+            .node-container {
+                &>.o_input {
+                    border: 0 0 0 0;
+                    width: 100%;
+                }
+
+                .node.processing {
+                    box-shadow: 0px 0px 10px 0px yellow;
+                }
+
+                .node.error {
+                    box-shadow: 0px 0px 10px 0px red;
+                }
+
+                .node.processed {
+                    box-shadow: 0px 0px 10px 0px green;
+                }
+
+                .node:not(.node.sectioned) {
+                    label {
+                        display: block;
+                        padding-bottom: 5px;
+                    }
+
+                    table {
+                        border-color: $gray-500;
+                    }
+
+                    .content {
+                        padding-left: 10px;
+                        padding-right: 10px;
+                    }
+
+                    .trigger-port {
+                        background-color: $nuido-port-border-color;
+                        transform: none;
+                        clip-path: polygon(100% 50%, 85.11% 64.54%, 85.36% 85.36%, 64.54% 85.11%, 50% 100%, 35.46% 85.11%, 14.64% 85.36%, 14.89% 64.54%, 0% 50%, 14.89% 35.46%, 14.64% 14.64%, 35.46% 14.89%, 50% 0%, 64.54% 14.89%, 85.36% 14.64%, 85.11% 35.46%);
+                        &::after {
+                            content: "";
+                            width: 13px;
+                            height: 13px;
+                            position: absolute;
+                            left: 0px;
+                            top: 0px;
+                            transform: none;
+                            background-color: $cyan-500;
+                            clip-path: polygon(100% 50%, 85.11% 64.54%, 85.36% 85.36%, 64.54% 85.11%, 50% 100%, 35.46% 85.11%, 14.64% 85.36%, 14.89% 64.54%, 0% 50%, 14.89% 35.46%, 14.64% 14.64%, 35.46% 14.89%, 50% 0%, 64.54% 14.89%, 85.36% 14.64%, 85.11% 35.46%);
+                        }
+
+                        &.output{
+                            height: 19px;
+                            width: 19px;
+                            left: 2px;
+                            position: relative;
+                        }
+
+                        &.input{
+                            height: 19px;
+                            width: 19px;
+                            left: -2px;
+                            position: relative;
+                        }
+                    }
+
+                    .starter-port {
+                        background-color: $nuido-port-border-color;
+                        transform: none;
+                        height: 15px;
+                        width: 15px;
+                        clip-path: circle();
+
+                        &::after {
+                            transform: none;
+                            content: "";
+                            width: 11px;
+                            height: 11px;
+                            position: absolute;
+                            left: 10px;
+                            top: 10px;
+                            border-image: conic-gradient($blue-500 0 0) 50% / calc(40%);
+                            clip-path: circle();
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.nuido-flow-notification {
+    .o_notification_content {
+        max-height: 300px;
+        overflow-y: auto;
+    }
+}
+
+.text-divider {
+    display: flex;
+    align-items: center;
+}
+
+.text-divider::before,
+.text-divider::after {
+    flex: 1;
+    content: '';
+    padding: 1px;
+    background-color: $gray-500;
+    margin: 5px;
+}

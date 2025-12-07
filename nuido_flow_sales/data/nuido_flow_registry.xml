@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<odoo>
+    <data>
+        <!-- Sales Summary -->
+        <record id="build_function_sales_summary_odoo_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">SalesSummaryOdooNode</field>
+            <field name="value">nuido_flow_sales.flows.node_info,build_sales_summary_odoo_node</field>
+        </record>
+        <record id="create_function_sales_summary_odoo_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">SalesSummaryOdooNode</field>
+            <field name="value">nuido_flow_sales.flows.node_info,create_sales_summary_odoo_node</field>
+        </record>
+        <!-- Fixed Range Sales Summary -->
+        <record id="build_function_fixed_range_sales_summary_odoo_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">FixedRangeSalesSummaryOdooNode</field>
+            <field name="value">nuido_flow_sales.flows.node_info,build_fixed_range_sales_summary_odoo_node</field>
+        </record>
+        <record id="create_function_fixed_range_sales_summary_odoo_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">FixedRangeSalesSummaryOdooNode</field>
+            <field name="value">nuido_flow_sales.flows.node_info,create_fixed_range_sales_summary_odoo_node</field>
+        </record>
+    </data>
+</odoo>

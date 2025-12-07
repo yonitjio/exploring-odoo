@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<odoo>
+    <data>
+        <!-- Nodes -->
+        <!-- Assistant Agent -->
+        <record id="build_function_assistant_agent_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">AssistantAgentNode</field>
+            <field name="value">nuido_flow_ai.flows.node_info,build_assistant_agent_node</field>
+        </record>
+        <record id="create_function_assistant_agent_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">AssistantAgentNode</field>
+            <field name="value">nuido_flow_ai.flows.node_info,create_assistant_agent_node</field>
+        </record>
+        <!-- Open AI Chat Completion -->
+        <record id="build_function_openai_chat_completion_client_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">OpenAiChatCompletionClientNode</field>
+            <field name="value">nuido_flow_ai.flows.node_info,build_openai_chat_completion_client_node</field>
+        </record>
+        <record id="create_function_openai_chat_completion_client_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">OpenAiChatCompletionClientNode</field>
+            <field name="value">nuido_flow_ai.flows.node_info,create_openai_chat_completion_client_node</field>
+        </record>
+        <!-- Tool Nodes -->
+        <!-- Date -->
+        <record id="build_function_date_ai_tool_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">DateAiToolNode</field>
+            <field name="value">nuido_flow_ai.flows.node_info,build_date_ai_tool_node</field>
+        </record>
+        <record id="create_function_date_ai_tool_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">DateAiToolNode</field>
+            <field name="value">nuido_flow_ai.flows.node_info,create_date_ai_tool_node</field>
+        </record>
+        <!-- Mcp Nodes -->
+        <!-- Time -->
+        <record id="build_function_time_ai_mcp_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">TimeAiMcpNode</field>
+            <field name="value">nuido_flow_ai.flows.node_info,build_time_ai_mcp_node</field>
+        </record>
+        <record id="create_function_time_ai_mcp_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">TimeAiMcpNode</field>
+            <field name="value">nuido_flow_ai.flows.node_info,create_time_ai_mcp_node</field>
+        </record>
+        <!-- Fetch -->
+        <record id="build_function_fetch_ai_mcp_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">FetchAiMcpNode</field>
+            <field name="value">nuido_flow_ai.flows.node_info,build_fetch_ai_mcp_node</field>
+        </record>
+        <record id="create_function_fetch_ai_mcp_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">FetchAiMcpNode</field>
+            <field name="value">nuido_flow_ai.flows.node_info,create_fetch_ai_mcp_node</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<odoo>
+    <template id="nuido_flow_messaging.nuido_flow_email_template" name="Nuido Flow Email">
+        <table class="body" style="border-collapse:separate;mso-table-lspace:0pt;mso-table-rspace:0pt;" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#f4f5f6">
+            <tbody>
+                <tr>
+                    <td style="font-family:Helvetica, sans-serif;font-size:16px;vertical-align:top;">&amp;nbsp;</td>
+                    <td style="font-family:Helvetica, sans-serif;font-size:16px;margin:0 auto;max-width:800px;padding:24px 0 24px 0;vertical-align:top;width:800px;" width="800">
+                        <div style="box-sizing:border-box;display:block;margin:0 auto;max-width:800px;padding:0;">
+                            <table style="border-collapse:separate;border-radius:16px;border:1px solid #eaebed;mso-table-lspace:0pt;mso-table-rspace:0pt;" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tbody>
+                                    <tr>
+                                        <td style="box-sizing:border-box;font-family:Helvetica, sans-serif;font-size:16px;padding:24px;vertical-align:top;">
+                                        <t t-out="email_message_content"></t>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </td>
+                    <td style="font-family:Helvetica, sans-serif;font-size:16px;vertical-align:top;">&amp;nbsp;</td>
+                </tr>
+            </tbody>
+        </table>
+    </template>
+</odoo>

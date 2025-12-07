@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido_flow.custom-field-starter-node" t-inherit="nuido.node" t-inherit-mode="primary">
+        <xpath expr="//div[hasclass('node-content')]" position="attributes">
+            <attribute name="style" add="max-width: 300px" separator=" "/>
+        </xpath>
+        <xpath expr="//div[hasclass('node-content')]" position="inside">
+            <div class="mb-2">
+                <label t-attf-id="label-{{props.node.id}}-model-selector" t-att-for="modelSelectorId">Model</label>
+                <ModelSelectorEx
+                    id="modelSelectorId"
+                    value="state.modelDescription"
+                    onModelSelected.bind="onModelSelected"
+                />
+            </div>
+            <div class="mb-2">
+                <label t-attf-id="label-{{props.node.id}}-field-name" t-attf-for="text-{{props.node.id}}-field-name">Name</label>
+                <input t-attf-id="text-{{props.node.id}}-field-name" type="text" t-model="props.node.field_name"></input>
+            </div>
+            <div class="mb-2">
+                <label t-attf-id="label-{{props.node.id}}-field-description" t-attf-for="text-{{props.node.id}}-field-description">Description</label>
+                <input t-attf-id="text-{{props.node.id}}-field-description" type="text" t-model="props.node.field_description"></input>
+            </div>
+            <div class="text-danger">WARNING: Removing field means removing the data contained in the field too.</div>
+            <div class="mb-2 form-check form-switch">
+                <input t-att-id="removeFieldInputId" type="checkbox" t-att-checked="props.node.remove_field" t-att-value="props.node.remove_field"
+                    t-on-click="onRemoveFieldChanged"
+                    class="form-check-input"/>
+                <label t-attf-id="label-{{props.node.id}}-sticky" t-att-for="removeFieldInputId" t-on-click="onRemoveFieldChanged"
+                    class="form-check-label ms-2 d-inline">Remove field on reset.</label>
+            </div>
+        </xpath>
+    </t>
+</templates>

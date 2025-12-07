@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="ai_chat_base.AiSidebar">
+        <div class="offcanvas offcanvas-end" tabindex="-1"
+            t-att-id="props.offcanvasId"
+            t-attf-style="width: {{ sizingState.width }};"
+            t-ref="container"
+        >
+            <div class="handle" t-ref="handle"
+                style="height: 100%; width: 5px; float: left; position: absolute; cursor: e-resize;"
+                t-on-mousedown="onHandleMouseDown"
+            >
+            </div>
+            <div class="offcanvas-header m-0 py-1">
+                <h5 class="offcanvas-title me-2" id="offcanvasExampleLabel"><t t-out="props.title"/></h5>
+                <div id="header-buttons">
+                    <button type="button ms-2" class="btn" t-on-click.stop.prevent="reset" >Reset</button>
+                </div>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body m-0 pt-0 p-2 d-flex">
+                <AiChat
+                    userName="props.userName"
+                    userAvatarUrl="props.userAvatarUrl"
+
+                    assistantName="props.assistantName"
+                    assistantAvatarUrl="props.assistantAvatarUrl"
+
+                    greetingMessage="props.greetingMessage"
+                    greetUser="props.greetUser"
+
+                    storeName="props.storeName"
+
+                    channel="props.channel"
+                    bus="props.bus"
+
+                    isProcessing="isProcessing"
+
+                    onBeforeSendMessage.bind="onBeforeSendMessage"
+                    onSendMessage.bind="onSendMessage"
+
+                />
+            </div>
+        </div>
+    </t>
+</templates>

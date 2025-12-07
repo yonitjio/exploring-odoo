@@ -1,0 +1,5 @@
+Vectors and icons by Halfmage via https://www.svgrepo.com:
+curly-braces.svg
+
+Vectors and icons via SVG Repo:
+jinja.svg * Jinja logo and all trademarks are the property of their respective owners.

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido_flow_data.http-header-node" t-inherit="nuido.node" t-inherit-mode="primary">
+        <xpath expr="//div[hasclass('node-content')]" position="inside">
+            <div class="mb-2">
+                <label t-attf-id="label-{{props.node.id}}-tag" t-att-for="headerNameId">Name</label>
+                <input class="o_input" t-att-id="headerNameId" type="text" t-model="state.headerName"/>
+            </div>
+            <div class="mb-2">
+                <label t-attf-id="label-{{props.node.id}}-tag" t-att-for="headerValueId">Value</label>
+                <input class="o_input" t-att-id="headerValueId" t-att-type="headerValueInputType" t-model="state.headerValue"/>
+            </div>
+            <div class="mb-2 form-check form-switch">
+                <input t-att-id="isMaskValueInputId" type="checkbox" t-att-checked="state.isMaskValue"
+                    t-att-value="state.isMaskValue"
+                    t-on-click="onIsMaskValueChanged"
+                    class="form-check-input"/>
+                <label t-attf-id="label-{{props.node.id}}-is-mask-value" t-att-for="isMaskValueInputId"
+                    t-on-click="onIsMaskValueChanged"
+                    class="form-check-label ms-2 d-inline">Mask Value</label>
+            </div>
+            <div class="btn-group my-1 d-flex w-100 justify-content-end">
+                <button class="btn btn-primary" t-on-click.stop.prevent="onAddHeader">
+                    <i class="fa fa-plus"/> or <i class="fa fa-pencil"/>
+                </button>
+            </div>
+            <table class="table table-sm table-bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Value</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-foreach="props.node.http_headers" t-as="header" t-key="header_index">
+                        <tr>
+                            <td><t t-out="header.name"/></td>
+                            <td>
+                                <t t-out="'******'" t-if="header.is_mask_value"/>
+                                <t t-out="header.value" t-else=""/>
+                            </td>
+                            <td>
+                                <button class="btn m-0 p-0" t-on-click.stop.prevent="() => { this.onRemoveHeader(header.name) }">
+                                    <i class="fa fa-minus"/>
+                                </button>
+                            </td>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+    </xpath>
+    </t>
+</templates>

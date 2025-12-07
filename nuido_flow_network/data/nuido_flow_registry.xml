@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<odoo>
+    <data>
+        <!-- Http Request -->
+        <record id="build_function_http_request_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">HttpRequestNode</field>
+            <field name="value">nuido_flow_network.flows.node_info,build_http_request_node</field>
+        </record>
+        <record id="create_function_http_request_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">HttpRequestNode</field>
+            <field name="value">nuido_flow_network.flows.node_info,create_http_request_node</field>
+        </record>
+        <!-- Http Header -->
+        <record id="build_function_http_header_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">HttpHeaderNode</field>
+            <field name="value">nuido_flow_network.flows.node_info,build_http_header_node</field>
+        </record>
+        <record id="create_function_http_header_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">HttpHeaderNode</field>
+            <field name="value">nuido_flow_network.flows.node_info,create_http_header_node</field>
+        </record>
+        <!-- GraphQl Client -->
+        <record id="build_function_graphql_client_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">GraphQlClientNode</field>
+            <field name="value">nuido_flow_network.flows.node_info,build_graphql_client_node</field>
+        </record>
+        <record id="create_function_graphql_client_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">GraphQlClientNode</field>
+            <field name="value">nuido_flow_network.flows.node_info,create_graphql_client_node</field>
+        </record>
+        <!-- GraphQl Variable -->
+        <record id="build_function_graphql_variable_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">GraphQlVariableNode</field>
+            <field name="value">nuido_flow_network.flows.node_info,build_graphql_variable_node</field>
+        </record>
+        <record id="create_function_graphql_variable_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">GraphQlVariableNode</field>
+            <field name="value">nuido_flow_network.flows.node_info,create_graphql_variable_node</field>
+        </record>
+    </data>
+</odoo>

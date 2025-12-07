@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido_flow_data.record-map-node" t-inherit="nuido.node" t-inherit-mode="primary">
+        <xpath expr="//div[hasclass('node-content')]" position="inside">
+            <div class="mb-2">
+                <label t-attf-id="label-{{props.node.id}}-key" t-att-for="keyId">Key</label>
+                <input class="o_input" t-attf-id="keyId" t-model="props.node.key"/>
+            </div>
+            <div class="mb-2">
+                <label t-attf-id="label-{{props.node.id}}-model-selector" t-att-for="modelSelectorId">Model</label>
+                <ModelSelectorEx
+                    id="modelSelectorId"
+                    value="state.modelDescription"
+                    onModelSelected.bind="onModelSelected"
+                />
+            </div>
+            <t t-if="props.node.model !== ''">
+                <div class="text-divider my-1">Records</div>
+                <div class="mb-2">
+                    <label t-attf-id="label-{{props.node.id}}-record">Record</label>
+                    <div class="o_field_many2one_selection">
+                        <Many2XAutocomplete t-props="many2XAutocompleteProps"/>
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <label t-attf-id="label-{{props.node.id}}-tag" t-att-for="mapValueId">Value</label>
+                    <input class="o_input" t-att-id="mapValueId" type="text" t-model="state.mapValue"/>
+                </div>
+                <div class="btn-group my-1 d-flex w-100 justify-content-end">
+                    <button class="btn btn-primary" t-on-click.stop.prevent="onAddRecordMap">
+                        <i class="fa fa-plus"/> or <i class="fa fa-pencil"/>
+                    </button>
+                </div>
+                <table class="table table-sm table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Record</th>
+                            <th>Map To</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="props.node.record_map" t-as="record_map" t-key="record_map_index">
+                            <tr>
+                                <td><t t-out="record_map.id"/></td>
+                                <td><t t-out="record_map.display_name"/></td>
+                                <td><t t-out="record_map.value"/></td>
+                                <td>
+                                    <button class="btn m-0 p-0" t-on-click.stop.prevent="() => { this.onRemoveRecordMap(record_map.id) }">
+                                        <i class="fa fa-minus"/>
+                                    </button>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </t>
+        </xpath>
+    </t>
+</templates>

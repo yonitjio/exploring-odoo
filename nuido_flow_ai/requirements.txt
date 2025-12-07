@@ -1,0 +1,4 @@
+autogen-agentchat==0.5.7
+autogen-ext[openai]==0.5.7
+mcp-server-fetch==2025.4.7
+mcp-server-time==0.6.2

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+ THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+ This software is released under the MIT License.
+ https://opensource.org/licenses/MIT
+
+ THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+ DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido_demo.dumb-node" t-inherit="nuido.node" t-inherit-mode="primary">
+        <xpath expr="//div[hasclass('node-content')]" position="replace">
+            <div class="node-content" t-att-style="contentStyle">
+                <!-- <div class="d-block text-truncate">Id: <t t-out="props.node.id"/></div> -->
+            </div>
+        </xpath>
+    </t>
+
+    <t t-name="nuido_demo.dumb-node-no-input" t-inherit="nuido_demo.dumb-node" t-inherit-mode="primary">
+    </t>
+
+    <t t-name="nuido_demo.dumb-node-multiple-outputs" t-inherit="nuido_demo.dumb-node" t-inherit-mode="primary">
+    </t>
+
+    <t t-name="nuido_demo.dumb-node-multiple-inputs" t-inherit="nuido_demo.dumb-node" t-inherit-mode="primary">
+    </t>
+
+    <t t-name="nuido_demo.dumb-node-no-output" t-inherit="nuido_demo.dumb-node" t-inherit-mode="primary">
+    </t>
+
+    <t t-name="nuido_demo.dumb-node-with-textarea" t-inherit="nuido.node" t-inherit-mode="primary">
+        <xpath expr="//div[hasclass('node-content')]" position="inside">
+            <!-- <div class="text-truncate">Id: <t t-out="props.node.id"/></div> -->
+            <div class="mb-2"><textarea t-model="state.text"></textarea></div>
+            <div class="mb-2"><button class="btn btn-secondary" t-on-click.stop.prevent="onTestButtonClick">Test</button></div>
+            <div class="mb-2"><textarea t-model="stateInfo.text" readonly="1"></textarea></div>
+        </xpath>
+    </t>
+
+    <t t-name="nuido_demo.dumb-node-section-with-input" t-inherit="nuido.node-section" t-inherit-mode="primary">
+        <xpath expr="//div[hasclass('node-section-content')]" position="inside">
+            <div class="mb-2"><textarea t-model="state.text"></textarea></div>
+        </xpath>
+    </t>
+
+    <t t-name="nuido_demo.dumb-label-node-section" t-inherit="nuido.node-section" t-inherit-mode="primary">
+        <xpath expr="//div[hasclass('node-section-content')]" position="inside">
+            <div class="mb-2 py-1">
+                <label t-attf-id="label-{{props.section.id}}"><t t-out="props.section.label"/></label>
+            </div>
+        </xpath>
+    </t>
+</templates>

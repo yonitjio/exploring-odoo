@@ -1,0 +1,28 @@
+ai-chatbot* original icon by uxwing.com
+
+Vectors and icons by Siemens via SVG Repo:
+circle.svg
+random.svg
+
+Vectors and icons by Davey Heuser via SVG Repo:
+date.svg
+
+Vectors and icons by Neuicons via SVG Repo:
+group-chat.svg
+select.svg
+
+Vectors and icons by Adam Whitcroft via SVG Repo:
+list.svg
+
+Vectors and icons by Phosphor via SVG Repo:
+math-operations.svg
+
+Vectors and icons by Zest via SVG Repo:
+robot.svg
+
+Vectors and icons by Lucide Contributors in MIT License via https://www.svgrepo.com:
+stop-circle-line.svg
+
+
+Vectors and icons via SVG Repo:
+openai.svg * OpenAI logo and all trademarks are the property of their respective owners.

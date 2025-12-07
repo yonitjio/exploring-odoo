@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido_flow.map-tree">
+        <t t-set="gotChildren" t-value="hasChildren(props.node.id)"/>
+        <ul class="list-group">
+            <MapTreeItem name="props.node.name" value="props.node.value" id="props.node.id"
+                onAddChild.bind="addNode"
+                onRemove.bind="removeNode"
+                onNodeChanged.bind="onNodeChanged"
+                hasChildren="gotChildren"
+            />
+
+            <t t-if="gotChildren" >
+                <t t-foreach="getChildren(props.node.id)" t-as="node" t-key="node.id">
+                    <li class="list-group-item pe-0 pb-0">
+                        <t t-if="hasChildren(node.id)" >
+                            <MapTree nodes="props.nodes" node="node" onNodesChanged.bind="props.onNodesChanged"/>
+                        </t>
+                        <t t-else="">
+                            <MapTreeItem name="node.name" value="node.value" id="node.id"
+                                onAddChild.bind="addNode"
+                                onRemove.bind="removeNode"
+                                onNodeChanged.bind="onNodeChanged"
+                                hasChildren="false"
+                            />
+                        </t>
+                    </li>
+                </t>
+            </t>
+        </ul>
+    </t>
+</templates>

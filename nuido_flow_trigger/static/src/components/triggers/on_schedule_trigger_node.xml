@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido_flow_trigger.on-schedule-trigger-node" t-inherit="nuido.node" t-inherit-mode="primary">
+        <xpath expr="//div[hasclass('node-content')]" position="inside">
+            <div class="mb-2">
+                <label t-attf-id="label-{{props.node.id}}-interval" t-att-for="intervalInputId">Interval</label>
+                <input class="o_input" t-attf-id="intervalInputId" type="number" t-model="props.node.interval"/>
+                <label t-attf-id="label-{{props.node.id}}-interval" t-att-for="intervalTypeInputId">Type</label>
+                <select t-att-id="intervalTypeInputId" t-on-change.stop.prevent="updateIntervalType" class="form-control">
+                    <option value="minute" t-att-selected="props.node.interval_type === 'minute'">Minute</option>
+                    <option value="hour" t-att-selected="props.node.interval_type === 'hour'">Hour</option>
+                    <option value="day" t-att-selected="props.node.interval_type === 'day'">Day</option>
+                    <option value="month" t-att-selected="props.node.interval_type === 'month'">Month</option>
+                </select>
+            </div>
+        </xpath>
+    </t>
+</templates>

@@ -1,0 +1,29 @@
+Vectors and icons by Basicons via SVG Repo:
+branch-git-fork.svg
+
+Vectors and icons by Michaelampr via SVG Repo:
+branch.svg
+
+Vectors and icons by Iconsax via SVG Repo:
+data-node.svg -> original name data.svg
+data-2.svg
+
+Vectors and icons by Primer via SVG Repo:
+diamond.svg
+
+Vectors and icons by Siemens via SVG Repo:
+log.svg
+random.svg
+
+Vectors and icons by Software Mansion via SVG Repo:
+message-square-dots.svg
+
+Vectors and icons by Zest in MIT License via https://www.svgrepo.com:
+merge-cells.svg
+chat-bubble.svg
+
+Vectors and icons by Denali Design via SVG Repo:
+network-mapping.svg
+
+Vectors and icons by Emblemicons via SVG Repo:
+play.svg

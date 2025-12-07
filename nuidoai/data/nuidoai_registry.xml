@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<odoo>
+    <data>
+        <!--
+            Category: Build Function
+
+            key:
+                Name of the client (javascript/typescript) component
+            value:
+                Python module name and the name of the function to call to build the node info, takes two parameters the raw node json object
+                and raw json object of the edges (array).
+                Separated by comma, i.e., <module_name>,<function_name>
+        -->
+        <record id="build_function_chat_completion_agent_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">ChatCompletionAgentNode</field>
+            <field name="value">nuidoai.models.node_info,build_chat_completion_agent</field>
+        </record>
+        <record id="build_function_chat_group_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">ChatGroupNode</field>
+            <field name="value">nuidoai.models.node_info,build_chat_group</field>
+        </record>
+        <record id="build_function_open_ai_chat_completion_service" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">OpenAiChatCompletionServiceNode</field>
+            <field name="value">nuidoai.models.node_info,build_open_ai_chat_completion_service</field>
+        </record>
+        <record id="build_function_date_plugin" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">DatePluginNode</field>
+            <field name="value">nuidoai.models.node_info,build_date_plugin</field>
+        </record>
+        <record id="build_function_math_plugin" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">MathPluginNode</field>
+            <field name="value">nuidoai.models.node_info,build_math_plugin</field>
+        </record>
+        <record id="build_function_random_number_plugin" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">RandomNumberPluginNode</field>
+            <field name="value">nuidoai.models.node_info,build_random_number_plugin</field>
+        </record>
+        <record id="build_function_prompt_selection_strategy" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">PromptSelectionStrategyNode</field>
+            <field name="value">nuidoai.models.node_info,build_prompt_selection_strategy</field>
+        </record>
+        <record id="build_function_sequential_selection" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">SequentialSelectionStrategyNode</field>
+            <field name="value">nuidoai.models.node_info,build_sequential_selection</field>
+        </record>
+        <record id="build_function_prompt_termination_strategy" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">PromptTerminationStrategyNode</field>
+            <field name="value">nuidoai.models.node_info,build_prompt_termination_strategy</field>
+        </record>
+
+        <!--
+            Category: Post Process Function
+
+            key:
+                Name of the client (javascript/typescript) component without the "Node" suffix
+            value:
+                Name of the function to call to post process the node info, takes three parameters:
+                - The corresponding subject, e.g. the agent info, service info, etc.
+                - Section roles records from the registry
+                - The infos built by the build functions in a dict
+        -->
+        <record id="post_process_function_chat_completion_agent_node" model="nuido_base.registry">
+            <field name="category">Post Process Function</field>
+            <field name="key">ChatCompletionAgent</field>
+            <field name="value">nuidoai.models.node_info,post_process_chat_completion_agent</field>
+        </record>
+        <record id="post_process_function_chat_group_node" model="nuido_base.registry">
+            <field name="category">Post Process Function</field>
+            <field name="key">ChatGroup</field>
+            <field name="value">nuidoai.models.node_info,post_process_chat_group</field>
+        </record>
+        <record id="post_process_function_open_ai_chat_completion_service" model="nuido_base.registry">
+            <field name="category">Post Process Function</field>
+            <field name="key">OpenAiChatCompletionService</field>
+            <field name="value">nuidoai.models.node_info,post_process_open_ai_chat_completion_service</field>
+        </record>
+        <record id="post_process_function_date_plugin" model="nuido_base.registry">
+            <field name="category">Post Process Function</field>
+            <field name="key">DatePlugin</field>
+            <field name="value">nuidoai.models.node_info,post_process_date_plugin</field>
+        </record>
+        <record id="post_process_function_math_plugin" model="nuido_base.registry">
+            <field name="category">Post Process Function</field>
+            <field name="key">MathPlugin</field>
+            <field name="value">nuidoai.models.node_info,post_process_math_plugin</field>
+        </record>
+        <record id="post_process_function_random_number_plugin" model="nuido_base.registry">
+            <field name="category">Post Process Function</field>
+            <field name="key">RandomNumberPlugin</field>
+            <field name="value">nuidoai.models.node_info,post_process_random_number_plugin</field>
+        </record>
+        <record id="post_process_function_prompt_selection_strategy" model="nuido_base.registry">
+            <field name="category">Post Process Function</field>
+            <field name="key">PromptSelectionStrategy</field>
+            <field name="value">nuidoai.models.node_info,post_process_prompt_selection_strategy</field>
+        </record>
+        <record id="post_process_function_sequential_selection" model="nuido_base.registry">
+            <field name="category">Post Process Function</field>
+            <field name="key">SequentialSelectionStrategy</field>
+            <field name="value">nuidoai.models.node_info,post_process_sequential_selection</field>
+        </record>
+        <record id="post_process_function_prompt_termination_strategy" model="nuido_base.registry">
+            <field name="category">Post Process Function</field>
+            <field name="key">PromptTerminationStrategy</field>
+            <field name="value">nuidoai.models.node_info,post_process_prompt_termination_strategy</field>
+        </record>
+
+        <!--
+            Category: Create Function
+
+            key:
+                Name of the client (javascript/typescript) component without the "Node" suffix
+            value:
+                Name of the function to call to create the semantic kernel component, takes 3 parameters:
+                - Odoo environment
+                - Create function registry
+                - The corresponding definition, i.e., the node definition.
+        -->
+        <record id="create_function_chat_completion_agent_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">ChatCompletionAgent</field>
+            <field name="value">nuidoai.ai.semantic_kernel,create_chat_completion_agent</field>
+        </record>
+        <record id="create_function_chat_group_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">ChatGroup</field>
+            <field name="value">nuidoai.ai.semantic_kernel,create_chat_group</field>
+        </record>
+        <record id="create_function_open_ai_chat_completion_service" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">OpenAiChatCompletionService</field>
+            <field name="value">nuidoai.ai.semantic_kernel,create_open_ai_chat_completion_service</field>
+        </record>
+        <record id="create_function_date_plugin" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">DatePlugin</field>
+            <field name="value">nuidoai.ai.semantic_kernel,create_date_plugin</field>
+        </record>
+        <record id="create_function_math_plugin" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">MathPlugin</field>
+            <field name="value">nuidoai.ai.semantic_kernel,create_math_plugin</field>
+        </record>
+        <record id="create_function_random_number_plugin" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">RandomNumberPlugin</field>
+            <field name="value">nuidoai.ai.semantic_kernel,create_random_number_plugin</field>
+        </record>
+        <record id="create_function_prompt_selection_strategy" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">PromptSelectionStrategy</field>
+            <field name="value">nuidoai.ai.semantic_kernel,create_prompt_selection_strategy</field>
+        </record>
+        <record id="create_function_sequential_selection" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">SequentialSelectionStrategy</field>
+            <field name="value">nuidoai.ai.semantic_kernel,create_sequential_selection</field>
+        </record>
+        <record id="create_function_prompt_termination_strategy" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">PromptTerminationStrategy</field>
+            <field name="value">nuidoai.ai.semantic_kernel,create_prompt_termination_strategy</field>
+        </record>
+
+        <!--
+            Category: Section Role
+
+            key:
+                The section role name, must match with the enum used in javascript/ts
+            value:
+                Used to lookup and create the infos
+        -->
+        <record id="section_role_chat_completion_service" model="nuido_base.registry">
+            <field name="category">Section Role</field>
+            <field name="key">chat-completion-service</field>
+            <field name="value">object,service</field>
+        </record>
+        <record id="section_role_agent_name" model="nuido_base.registry">
+            <field name="category">Section Role</field>
+            <field name="key">agent-name</field>
+            <field name="value">text</field>
+        </record>
+        <record id="section_role_agent_plugin" model="nuido_base.registry">
+            <field name="category">Section Role</field>
+            <field name="key">agent-plugin</field>
+            <field name="value">array,plugin</field>
+        </record>
+        <record id="section_role_agent_instruction" model="nuido_base.registry">
+            <field name="category">Section Role</field>
+            <field name="key">agent-instruction</field>
+            <field name="value">text</field>
+        </record>
+        <record id="section_role_chat_group_name" model="nuido_base.registry">
+            <field name="category">Section Role</field>
+            <field name="key">chat-group-name</field>
+            <field name="value">text</field>
+        </record>
+        <record id="section_role_chat_group_agent" model="nuido_base.registry">
+            <field name="category">Section Role</field>
+            <field name="key">chat-group-agent</field>
+            <field name="value">array,agent</field>
+        </record>
+        <record id="section_role_chat_group_termination_strategy" model="nuido_base.registry">
+            <field name="category">Section Role</field>
+            <field name="key">chat-group-termination-strategy</field>
+            <field name="value">object,termination_strategy</field>
+        </record>
+        <record id="section_role_chat_group_selection_strategy" model="nuido_base.registry">
+            <field name="category">Section Role</field>
+            <field name="key">chat-group-selection-strategy</field>
+            <field name="value">object,selection_strategy</field>
+        </record>
+        <record id="section_role_strategy_name" model="nuido_base.registry">
+            <field name="category">Section Role</field>
+            <field name="key">strategy-name</field>
+            <field name="value">text</field>
+        </record>
+        <record id="section_role_strategy_prompt" model="nuido_base.registry">
+            <field name="category">Section Role</field>
+            <field name="key">strategy-prompt</field>
+            <field name="value">text</field>
+        </record>
+        <record id="section_role_strategy_termination_keyword" model="nuido_base.registry">
+            <field name="category">Section Role</field>
+            <field name="key">strategy-termination-keyword</field>
+            <field name="value">text</field>
+        </record>
+        <record id="section_role_strategy_termination_agent" model="nuido_base.registry">
+            <field name="category">Section Role</field>
+            <field name="key">strategy-termination-agent</field>
+            <field name="value">object,agent</field>
+        </record>
+        <record id="section_role_strategy_max_iteration" model="nuido_base.registry">
+            <field name="category">Section Role</field>
+            <field name="key">strategy-max-iteration</field>
+            <field name="value">int</field>
+        </record>
+        <record id="section_role_strategy_initial_agent" model="nuido_base.registry">
+            <field name="category">Section Role</field>
+            <field name="key">strategy-initial-agent</field>
+            <field name="value">object,agent</field>
+        </record>
+        <record id="section_role_strategy_history_variable_name" model="nuido_base.registry">
+            <field name="category">Section Role</field>
+            <field name="key">strategy-history-variable-name</field>
+            <field name="value">text</field>
+        </record>
+        <record id="section_role_service_id" model="nuido_base.registry">
+            <field name="category">Section Role</field>
+            <field name="key">service-id</field>
+            <field name="value">text</field>
+        </record>
+        <record id="section_role_service_base_url" model="nuido_base.registry">
+            <field name="category">Section Role</field>
+            <field name="key">service-base-url</field>
+            <field name="value">text</field>
+        </record>
+        <record id="section_role_service_api_key" model="nuido_base.registry">
+            <field name="category">Section Role</field>
+            <field name="key">service-api-key</field>
+            <field name="value">text</field>
+        </record>
+        <record id="section_role_service_model" model="nuido_base.registry">
+            <field name="category">Section Role</field>
+            <field name="key">service-model</field>
+            <field name="value">text</field>
+        </record>
+
+        <!--
+            Category: Variable
+
+            key:
+                The name of the variable
+            value:
+                The value
+        -->
+        <record id="variable_termination_keyword" model="nuido_base.registry">
+            <field name="category">Variable</field>
+            <field name="key">TerminationKeywordPlaceholder</field>
+            <field name="value">termination_keyword</field>
+        </record>
+        <record id="variable_history" model="nuido_base.registry">
+            <field name="category">Variable</field>
+            <field name="key">HistoryVariableName</field>
+            <field name="value">history</field>
+        </record>
+    </data>
+</odoo>

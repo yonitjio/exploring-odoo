@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+
+<t t-name="nuido_base.text-input-dialog">
+    <Dialog title="props.title">
+        <div class="mb-3 row">
+            <t t-if="props.label">
+                <label for="dialog-input" class="col-sm-2 col-form-label"><t t-out="props.label"/></label>
+            </t>
+            <div class="col-sm-10 flex-fill">
+                <t t-if="props.hidable" >
+                    <div class="input-group">
+                        <input t-att-type="state.type" class="form-control text-primary border-primary"
+                            id="dialog-input" t-model="state.text" />
+                        <button class="btn btn-outline-secondary" t-on-click="onTogglePasswordClick"><i class="fa fa-eye"></i></button>
+                    </div>
+                </t>
+                <t t-else="">
+                    <input type="text" class="form-control text-primary border-primary"
+                        id="dialog-input" t-model="state.text" />
+                </t>
+            </div>
+        </div>
+
+        <t t-set-slot="footer">
+            <button class="btn btn-primary" t-on-click="onClickApply">
+                Ok
+            </button>
+            <button class="btn btn-secondary" t-on-click="props.close">
+                Cancel
+            </button>
+        </t>
+    </Dialog>
+</t>
+
+</templates>

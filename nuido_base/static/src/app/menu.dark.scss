@@ -1,0 +1,51 @@
+// THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+//
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
+//
+// THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+// DO NOT USE IT IN PRODUCTION.
+
+.sidebar-menu-root {
+    background-color: $gray-900;
+
+    a {
+        color: $gray-300;
+    }
+
+    .menu-icon {
+        filter: invert(0.80);
+    }
+
+    .dragging {
+        border: gray dashed 1px;
+    }
+
+    .dragged-placeholder {
+        border: gray dashed 1px;
+    }
+
+    .menu-handle {
+        .btn {
+            color: $gray-200;
+            &.btn-primary {
+                &:after {
+                    background: var(--body-bg);
+                    border-top: white dashed 1px;
+                    border-right: white dashed 1px;
+                }
+            }
+        }
+    }
+
+    .menu-handle .btn.btn-primary:hover,
+    .menu-handle .btn.btn-primary:focus {
+        background: transparent !important;
+        border-color: transparent !important;
+    }
+}
+
+.sidebar-menu-root>.nav>.nav-category,
+.sidebar-menu-root>.nav>.collapse>.nav-category {
+    background: $gray-800;
+}

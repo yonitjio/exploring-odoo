@@ -1,0 +1,6 @@
+Vectors and icons by Vectopus via SVG Repo:
+money-bar-chart.svg
+money-target.svg
+
+Vectors and icons by Will Kelly in MIT License via SVG Repo:
+money-dollars.svg

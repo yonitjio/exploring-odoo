@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido_flow_ai_chat.chat-dialog-button">
+        <div class="my-auto mx-2">
+            <button t-attf-class="btn btn-primary w-100 {{ props.disabled }}" type="button" t-on-click="showChatDialog">
+            Test Chat
+            </button>
+        </div>
+    </t>
+</templates>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512mm"
+   height="512mm"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="nuido-flow-shopify.svg"
+   inkscape:export-filename="..\..\Odoo\18.0.node\custom\addons\nuido_flow_shopify\static\description\icon.png"
+   inkscape:export-xdpi="25.4"
+   inkscape:export-ydpi="25.4"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.35945917"
+     inkscape:cx="663.49677"
+     inkscape:cy="1410.4523"
+     inkscape:window-width="3200"
+     inkscape:window-height="1960"
+     inkscape:window-x="-12"
+     inkscape:window-y="-12"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showgrid="false" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="text3-7"
+       style="font-size:491.201px;line-height:1.25;font-family:'Good Times';-inkscape-font-specification:'Good Times, Normal';fill:#c69a37;stroke-width:0.264584"
+       d="m 376.0804,301.31391 h 56.4162 V 62.008618 h -56.4162 z" />
+    <path
+       id="path16"
+       style="font-size:491.201px;line-height:1.25;font-family:'Good Times';-inkscape-font-specification:'Good Times, Normal';fill:#c69a37;stroke-width:0.264584"
+       d="m 111.71618,60.456258 c -18.650016,0 -30.306162,15.007033 -30.306162,39.328866 V 441.32603 H 137.82621 V 166.02346 L 299.57603,346.60158 V 309.3837 c 0,-4.4709 3.79534,-8.06979 8.50956,-8.06979 h 35.30637 L 136.89397,73.910734 C 128.03522,64.078503 120.57493,60.456258 111.71618,60.456258 Z" />
+    <path
+       d="m 309.81462,137.91302 q -33.52186,26.55893 -59.43291,68.23512 -24.71388,40.72754 -51.7452,81.1766 -25.91101,41.67607 -64.22174,72.02914 -14.36654,11.38235 -30.97354,20.31049 -14.289493,9.20663 -33.060043,13.50474 53.070403,12.93557 88.217023,6.23646 36.34377,-7.64754 62.68242,-28.51531 25.14138,-19.91915 43.63824,-49.37699 20.8144,-29.17926 39.46533,-62.98845 18.65082,-33.80923 41.93658,-67.06122 24.40597,-32.02484 57.92786,-58.58376 9.57766,-7.58827 19.07833,-13.00083 10.69793,-6.36111 20.19864,-11.77367 -43.95452,-7.46972 -76.86067,1.68367 -31.70887,8.20483 -56.85032,28.12401 z"
+       id="text1-2-1"
+       style="font-size:1124.7px;line-height:1.25;font-family:'Dancing Script';-inkscape-font-specification:'Dancing Script, Normal';mix-blend-mode:normal;fill:#ff8801;fill-opacity:1;stroke-width:0.264584"
+       aria-label="~" />
+    <text
+       xml:space="preserve"
+       style="font-size:214.812px;line-height:1.25;font-family:Poppins;-inkscape-font-specification:Poppins;text-decoration-color:#000000;fill:#1bcde3;fill-opacity:1;stroke-width:0.264583;-inkscape-stroke:none;stop-color:#000000"
+       x="321.8017"
+       y="444.68881"
+       id="text17"><tspan
+         sodipodi:role="line"
+         id="tspan17"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:214.812px;font-family:'Lucida Sans';-inkscape-font-specification:'Lucida Sans, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#1bcde3;fill-opacity:1;stroke-width:0.264583"
+         x="321.8017"
+         y="444.68881">s</tspan></text>
+  </g>
+</svg>

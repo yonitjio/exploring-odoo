@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido_flow_data.active-data-node" t-inherit="nuido.node" t-inherit-mode="primary">
+        <xpath expr="//div[hasclass('node-content')]" position="inside">
+            <div class="mb-2">
+                <label t-attf-id="label-{{props.node.id}}-key" t-attf-for="text-{{props.node.id}}-key">Key</label>
+                <input class="o_input" t-attf-id="text-{{props.node.id}}-key" t-model="props.node.key"/>
+            </div>
+            <div class="mb-2">
+                <label t-attf-id="label-{{props.node.id}}-model-selector" t-att-for="modelSelectorId">Model</label>
+                <input class="o_input"  t-att-id="modelSelectorId" readonly="1" t-att-value="props.node.model_description"/>
+            </div>
+            <div class="data-input d-flex flex-column mb-2">
+                <label t-attf-id="label-{{props.node.id}}-model-selector">Fields</label>
+                <ModelFieldTags
+                    model="props.node.model"
+                    fields="props.node.fields"
+                    onAddField.bind="onFieldAdded"
+                    onDeleteField.bind="onFieldDeleted"
+                />
+            </div>
+        </xpath>
+    </t>
+</templates>

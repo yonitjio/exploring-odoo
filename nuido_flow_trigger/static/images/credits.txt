@@ -1,0 +1,10 @@
+Vectors and icons by Zest in MIT License via https://www.svgrepo.com:
+edit.svg
+fire.svg
+webhook.svg
+
+Vectors and icons by Artcoholic in MIT License via https://www.svgrepo.com:
+schedule.svg
+
+Vectors and icons by Framework7io in MIT License via https://www.svgrepo.com:
+delete-left.svg

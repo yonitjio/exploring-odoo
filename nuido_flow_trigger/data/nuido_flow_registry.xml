@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<odoo>
+    <data>
+        <!-- BUILD FUNCTIONS -->
+        <!-- ODOO TRIGGER NODES -->
+        <record id="build_function_on_create_trigger_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">OnCreateTriggerNode</field>
+            <field name="value">nuido_flow_trigger.flows.node_info,build_on_create_trigger_node</field>
+        </record>
+        <record id="build_function_on_delete_trigger_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">OnDeleteTriggerNode</field>
+            <field name="value">nuido_flow_trigger.flows.node_info,build_on_delete_trigger_node</field>
+        </record>
+        <record id="build_function_on_edit_trigger_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">OnEditTriggerNode</field>
+            <field name="value">nuido_flow_trigger.flows.node_info,build_on_edit_trigger_node</field>
+        </record>
+        <record id="build_function_on_schedule_trigger_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">OnScheduleTriggerNode</field>
+            <field name="value">nuido_flow_trigger.flows.node_info,build_on_schedule_trigger_node</field>
+        </record>
+        <record id="build_function_on_webhook_trigger_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">OnWebhookTriggerNode</field>
+            <field name="value">nuido_flow_trigger.flows.node_info,build_on_webhook_trigger_node</field>
+        </record>
+
+        <!-- CREATE FUNCTIONS -->
+        <!-- ODOO TRIGGER NODES -->
+        <record id="create_function_on_create_trigger_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">OnCreateTriggerNode</field>
+            <field name="value">nuido_flow_trigger.flows.node_info,create_on_create_trigger_node</field>
+        </record>
+        <record id="create_function_on_delete_trigger_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">OnDeleteTriggerNode</field>
+            <field name="value">nuido_flow_trigger.flows.node_info,create_on_delete_trigger_node</field>
+        </record>
+        <record id="create_function_on_edit_trigger_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">OnEditTriggerNode</field>
+            <field name="value">nuido_flow_trigger.flows.node_info,create_on_edit_trigger_node</field>
+        </record>
+        <record id="create_function_on_schedule_trigger_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">OnScheduleTriggerNode</field>
+            <field name="value">nuido_flow_trigger.flows.node_info,create_on_schedule_trigger_node</field>
+        </record>
+        <record id="create_function_on_webhook_trigger_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">OnWebhookTriggerNode</field>
+            <field name="value">nuido_flow_trigger.flows.node_info,create_on_webhook_trigger_node</field>
+        </record>
+    </data>
+</odoo>

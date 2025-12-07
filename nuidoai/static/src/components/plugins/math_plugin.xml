@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuidoai.math-plugin-node" t-inherit="nuido.sectioned-node" t-inherit-mode="primary">
+        <xpath expr="//div[hasclass('node')]" position="attributes">
+            <attribute name="style">
+                min-width: 300px;
+            </attribute>
+        </xpath>
+    </t>
+</templates>

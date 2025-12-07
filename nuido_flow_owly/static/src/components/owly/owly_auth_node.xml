@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido_flow_owly.owly-auth-node" t-inherit="nuido.node" t-inherit-mode="primary">
+        <xpath expr="//div[hasclass('node-content')]" position="inside">
+            <div class="mb-2">
+                <TextInputDialogInput id="props.node.id" label="'Secret'" value="props.node.secret"
+                    onChanged.bind="onSecretChanged"
+                    hideValue="true" />
+            </div>
+            <div class="mb-2 form-check form-switch">
+                <input t-att-id="raiseErrorInputId" type="checkbox" t-att-checked="props.node.raise_error"
+                    t-att-value="props.node.raise_error"
+                    t-on-click="onRaiseErrorChanged"
+                    class="form-check-input"/>
+                <label t-attf-id="label-{{props.node.id}}-raise-error" t-att-for="raiseErrorInputId"
+                    t-on-click="onRaiseErrorChanged"
+                    class="form-check-label ms-2 d-inline">Raise Exception on Error</label>
+            </div>
+        </xpath>
+    </t>
+</templates>

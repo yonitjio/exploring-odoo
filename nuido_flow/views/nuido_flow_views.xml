@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<odoo>
+    <data>
+        <record id="action_process_node_definitions" model="ir.actions.server">
+            <field name="name">Process Definitions</field>
+            <field name="model_id" ref="model_nuido_flow_node_definition" />
+            <field name="state">code</field>
+            <field name="code">model.action_process_node_definitions()</field>
+        </record>
+
+        <record model="ir.actions.client" id="action_nuido_flow_studio">
+            <field name="name">Studio</field>
+            <field name="tag">NuidoFlowStudio</field>
+        </record>
+
+        <record model="ir.ui.view" id="nuido_flow_node_definition_form">
+            <field name="name">nuido_flow.node.definition.form</field>
+            <field name="model">nuido_flow.node.definition</field>
+            <field name="arch" type="xml">
+                <form string="Node Definition">
+                    <sheet>
+                        <group>
+                            <field name="title" />
+                            <field name="is_processed" readonly="1" force_save="1" />
+                            <notebook id="nuido_flow_notebook">
+                                <page name="raw" string="Raw">
+                                    <field name="raw" />
+                                </page>
+                                <page name="definition" string="Definition">
+                                    <field name="definition" readonly="1" force_save="1"/>
+                                </page>
+                            </notebook>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="nuido_flow_node_definition_list">
+            <field name="name">nuido_flow.node.definition.list</field>
+            <field name="model">nuido_flow.node.definition</field>
+            <field name="inherit_id" ref="nuido_base.nuido_base_node_definition_list"/>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <xpath expr="//list" position="attributes">
+                    <attribute name="js_class">nuido_flow_node_definition_list</attribute>
+                    <attribute name="action">action_open_flow_designer</attribute>
+                </xpath>
+                <xpath expr="//list/header" position="replace">
+                    <header>
+                        <button display="always" type="action" name="nuido_flow.action_process_node_definitions" string="Process" icon="fa-play" class="oe_link"
+                            confirm="Process node definitions?"
+                        />
+                    </header>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="action_nuido_flow_node_definition" model="ir.actions.act_window">
+            <field name="name">Node Definition</field>
+            <field name="path">nuidoflow</field>
+            <field name="res_model">nuido_flow.node.definition</field>
+            <field name="view_mode">list</field>
+            <field name="view_id" ref="nuido_flow.nuido_flow_node_definition_list"/>
+        </record>
+
+        <menuitem name="Nuido Flow" id="nuido_flow.app_menu" web_icon="nuido_flow,static/description/icon.png"/>
+
+        <menuitem name="Node Definition" id="nuido_flow.menu_doc_ref_links" parent="nuido_flow.app_menu" sequence="1"
+            action="nuido_flow.action_nuido_flow_node_definition" />
+
+        <menuitem name="Nuido Flow" id="nuido_flow.root_menu" parent="nuido_flow.app_menu" sequence="2" />
+        <menuitem name="Registry" id="nuido_flow.registry_menu"
+            parent="nuido_flow.root_menu" action="nuido_base.action_nuido_base_registry"/>
+    </data>
+</odoo>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="ai_chat_base.AiMessage">
+        <div t-attf-class="ai-chat-message {{ isAssistant ? 'assistant' : 'user'}}">
+            <div t-attf-class="ai-chat-message-avatar {{ props.isProcessing ? 'loading' : ''}}"
+                t-attf-style="background-image: url({{ props.avatar }})"/>
+            <div class="ai-chat-message-box">
+                <div class="ai-chat-message-info">
+                    <div class="ai-chat-message-info-name">
+                        <t t-out="props.name"/>
+                    </div>
+                </div>
+                <div class="ai-chat-message-text">
+                    <t t-out="messageText"/>
+                </div>
+                <div t-if="hasAttachments" class="ai-chat-message-attachment-row">
+                    <t t-foreach="attachments" t-as="att" t-key="att_index" >
+                        <div class="ai-chat-message-attachment-container">
+                            <img class="ai-chat-message-attachment-thumbnail" t-att-src="getImageSource(att)"/>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

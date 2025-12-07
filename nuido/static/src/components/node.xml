@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido.node">
+        <div t-ref="root" tabstop="0" class="node-container" t-attf-style="left: {{ props.node.vprops.left }}px; top: {{ props.node.vprops.top }}px;"
+            t-on-click.stop.prevent="onClick">
+            <div t-att-id="props.node.id" class="node">
+                <div class="input-container">
+                    <t t-foreach="props.node.inPorts" t-as="inPort" t-key="inPort.id" >
+                        <t t-component="getPortComponent(inPort)" port="inPort"/>
+                    </t>
+                </div>
+                <div class="content align-self-start">
+                    <div class="aux-out-container">
+                        <t t-foreach="props.node.auxOutPorts" t-as="auxOutPort" t-key="auxOutPort.id" >
+                            <t t-component="getPortComponent(auxOutPort)" port="auxOutPort"/>
+                        </t>
+                    </div>
+                    <div class="node-title">
+                        <img t-att-src="props.node.icon" class="node-icon me-2 pb-1"/>
+                        <span class="node-title-text"><t t-out="props.node.title"/></span>
+                    </div>
+                    <div class="node-content">
+                    </div>
+                    <div class="aux-in-container">
+                        <t t-foreach="props.node.auxInPorts" t-as="auxInPort" t-key="auxInPort.id" >
+                            <t t-component="getPortComponent(auxInPort)" port="auxInPort"/>
+                        </t>
+                    </div>
+                </div>
+                <div class="output-container">
+                    <t t-foreach="props.node.outPorts" t-as="outPort" t-key="outPort.id" >
+                        <t t-component="getPortComponent(outPort)" port="outPort"/>
+                    </t>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

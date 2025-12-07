@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="ai_chat_base.AiChat">
+        <div class="d-flex flex-column h-100 w-100">
+            <div t-ref="ai-chat-messages" class="ai-chat-messages flex-fill border p-2 mb-2 overflow-y-auto">
+                <t t-foreach="store.messages" t-as="message" t-key="message_index">
+                    <AiMessage
+                        name="message.name"
+                        role="message.role"
+                        message="message"
+                        avatar="message.avatar"
+                        isProcessing="message.isProcessing"
+                    />
+                </t>
+                <div class="ai-chat-messages-anchor"></div>
+            </div>
+            <div class="d-flex">
+                <input
+                    t-ref="ai-chat-input"
+                    type="text"
+                    class="ai-chat-input me-1 flex-grow-1"
+                    placeholder="Enter your message..."
+                    t-att-disabled="props.isProcessing"
+                    t-on-keydown="onKeydown" />
+                <FileUploader multiUpload="false" t-if="props.allowUpload" onUploaded.bind="uploadAttachment" acceptedFileExtensions="'.jpg, .jpeg, .png'">
+                    <t t-set-slot="toggler">
+                        <button t-att-disabled="props.isProcessing || state.attachments.length > 0" class="btn btn-secondary me-1" type="button">
+                            <i class="fa fa-fw fa-lg fa-picture-o"/>
+                        </button>
+                    </t>
+                </FileUploader>
+                <button
+                    t-attf-class="ai-chat-send-btn btn btn-secondary {{ props.isProcessing ? 'disabled' : ''}}"
+                    t-on-click="sendMessage">
+                    Send
+                </button>
+            </div>
+            <div t-if="state.attachments.length > 0" class="ai-chat-attachment-row">
+                <t t-foreach="state.attachments" t-as="att" t-key="att_index" >
+                    <div class="ai-chat-attachment-container">
+                        <img class="ai-chat-attachment-thumbnail" t-att-src="getImageSource(att)"/>
+                        <button
+                            t-attf-class="ai-chat-attachment-remove-button btn btn-secondary {{ props.isProcessing ? 'disabled' : ''}}"
+                            t-on-click="() => { this.removeAttachment(att_index) }">
+                            <i class="fa fa-fw fa-lg fa-trash"/>
+                        </button>
+                    </div>
+                </t>
+            </div>
+        </div>
+    </t>
+</templates>

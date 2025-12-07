@@ -1,0 +1,33 @@
+<odoo>
+<!--
+ THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+ This software is released under the MIT License.
+ https://opensource.org/licenses/MIT
+
+ THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+ DO NOT USE IT IN PRODUCTION.
+-->
+  <data>
+    <record model="ir.actions.client" id="nuido_demo_app">
+      <field name="name">Nuido Demo App</field>
+      <field name="tag">NuidoDemoApp</field>
+    </record>
+
+    <record model="ir.actions.client" id="nuido_demo_component">
+      <field name="name">Nuido Demo Component</field>
+      <field name="tag">NuidoDemoComponent</field>
+    </record>
+
+    <menuitem name="Nuido Demo" id="nuido_demo.menu_root" groups="base.group_no_one" />
+
+    <menuitem name="Demo" id="nuido_demo.demo_menu" groups="base.group_no_one"
+        parent="nuido_demo.menu_root" sequence="1"/>
+
+    <menuitem name="As App" id="nuido_demo.demo_app_menu" groups="base.group_no_one"
+        parent="nuido_demo.demo_menu" action="nuido_demo_app" sequence="1"/>
+
+    <menuitem name="As Component" id="nuido_demo.demo_component_menu" groups="base.group_no_one"
+        parent="nuido_demo.demo_menu" action="nuido_demo_component" sequence="1"/>
+  </data>
+</odoo>

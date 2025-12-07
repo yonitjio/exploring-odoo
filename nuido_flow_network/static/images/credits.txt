@@ -1,0 +1,12 @@
+Vectors and icons by Kenan Gundogan via SVG Repo:
+graphql.svg
+graphql-variable.svg -> original graphql.svg
+
+Vectors and icons by Instructure Ui via SVG Repo:
+header.svg
+
+Vectors and icons by Jtblabs via SVG Repo:
+network.svg
+
+Vectors and icons by Humbleicons via SVG Repo:
+upload.svg

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="nuido_flow_trigger_node_definition_form">
+            <field name="name">nuido_flow_trigger.node.definition.form</field>
+            <field name="model">nuido_flow.node.definition</field>
+            <field name="inherit_id" ref="nuido_flow.nuido_flow_node_definition_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//notebook[@id='nuido_flow_notebook']" position="inside">
+                    <page name="trigger_definition" string="Trigger Definition">
+                        <group>
+                            <field name="trigger_definition" readonly="1" force_save="1"/>
+
+                            <field name="trigger_model_id" readonly="1" force_save="1"/>
+                            <field name="trigger_field_ids" readonly="1" force_save="1"/>
+
+                            <field name="trigger_interval" readonly="1" force_save="1"/>
+                            <field name="trigger_interval_type" readonly="1" force_save="1"/>
+
+                            <field name="trigger_last_run" readonly="1" force_save="1"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<odoo>
+    <data>
+        <!-- Nodes -->
+        <!-- Assistant Agent -->
+        <record id="nuido_flow_ai.build_function_assistant_agent_node" model="nuido_base.registry">
+            <field name="value">nuido_flow_ai_chat.flows.node_info,build_assistant_agent_node</field>
+        </record>
+        <record id="nuido_flow_ai.create_function_assistant_agent_node" model="nuido_base.registry">
+            <field name="value">nuido_flow_ai_chat.flows.node_info,create_assistant_agent_node</field>
+        </record>
+        <!-- Manual Response -->
+        <record id="build_function_manual_response_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">ManualResponseNode</field>
+            <field name="value">nuido_flow_ai_chat.flows.node_info,build_manual_response_node</field>
+        </record>
+        <record id="create_function_manual_response_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">ManualResponseNode</field>
+            <field name="value">nuido_flow_ai_chat.flows.node_info,create_manual_response_node</field>
+        </record>
+        <!-- AI Chat Responder -->
+        <record id="build_function_ai_chat_responder_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">AiChatResponderNode</field>
+            <field name="value">nuido_flow_ai_chat.flows.node_info,build_ai_chat_responder_node</field>
+        </record>
+        <record id="create_function_ai_chat_responder_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">AiChatResponderNode</field>
+            <field name="value">nuido_flow_ai_chat.flows.node_info,create_ai_chat_responder_node</field>
+        </record>
+        <!-- Trigger Nodes -->
+        <!-- On Ai Chat Message -->
+        <record id="build_function_on_ai_chat_message_trigger_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">OnAiChatMessageTriggerNode</field>
+            <field name="value">nuido_flow_ai_chat.flows.node_info,build_on_ai_chat_message_trigger_node</field>
+        </record>
+        <record id="create_function_on_ai_chat_message_trigger_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">OnAiChatMessageTriggerNode</field>
+            <field name="value">nuido_flow_ai_chat.flows.node_info,create_on_ai_chat_message_trigger_node</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido.document">
+        <div t-ref="root" class="nuido-doc" t-on-mouseup="onMouseUp">
+            <t t-foreach="props.document.nodes" t-as="node" t-key="node.id">
+                <t t-component="getNodeComponent(node.nodeType)" node="node"/>
+            </t>
+            <t t-foreach="props.document.edges" t-as="edge" t-key="edge.id">
+                <t t-component="edgeComponent" edge="edge" />
+            </t>
+            <t t-if="props.document.newEdge !== undefined">
+                <t t-component="edgeComponent" cssClass="'new-edge'" edge="props.document.newEdge" />
+            </t>
+        </div>
+    </t>
+</templates>

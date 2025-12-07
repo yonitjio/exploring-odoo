@@ -1,0 +1,159 @@
+// THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+//
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
+//
+// THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+// DO NOT USE IT IN PRODUCTION.
+
+.sidebar-menu-root {
+    background-color: $gray-300;
+
+    a {
+        color: $gray-800;
+    }
+
+    * {
+        user-select: none;
+    }
+
+    &>.nav {
+        align-content: start;
+        height: -webkit-fill-available;
+        width: 250px;
+        -webkit-transition: 0.05s;
+        -o-transition: 0.05s;
+        transition: 0.1s;
+    }
+
+    .menu-icon {
+        // filter: invert(0.80);
+        vertical-align: text-bottom;
+        width: 16px;
+        height: 24px;
+    }
+
+    .dragging {
+        // width: fit-content;
+        border: gray dashed 1px;
+        height: 24px;
+        border-radius: 5px;
+        cursor: grabbing;
+    }
+
+    .dragged-placeholder {
+        width: 100%;
+        margin-top: 1px;
+        border: gray dashed 1px;
+        border-radius: 5px;
+        height: 24px;
+        margin-right: 10px;
+
+        &::after {
+            content: '\200b';
+        }
+    }
+
+    .menu-handle {
+        display: inline-block;
+        position: absolute;
+        top: 20px;
+        right: 0;
+        margin-right: -20px;
+        cursor: pointer;
+
+        .btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            position: relative;
+            color: $gray-800;
+
+            i {
+                margin-right: -40px;
+                font-size: 14px;
+            }
+
+            &.btn-primary {
+                background: transparent;
+                border-color: transparent;
+
+                &:after {
+                    z-index: -1;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    content: '';
+                    -webkit-transform: rotate(45deg);
+                    -ms-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                    background: $gray-300;
+                    border-radius: 10px;
+                    border-top: gray dashed 1px;
+                    border-right: gray dashed 1px;
+                }
+            }
+        }
+    }
+
+    .menu-handle .btn.btn-primary:hover,
+    .menu-handle .btn.btn-primary:focus {
+        background: transparent !important;
+        border-color: transparent !important;
+    }
+
+    .menu-item {
+        cursor: default;
+    }
+
+}
+
+.sidebar-menu-root>.nav>.nav-item,
+.sidebar-menu-root>.nav>.collapse>.nav-item {
+    width: 240px;
+}
+
+.sidebar-menu-root>.nav>.nav-category,
+.sidebar-menu-root>.nav>.collapse>.nav-category {
+    background: $gray-200;
+    border-radius: 4px;
+    padding-left: 1em;
+    cursor: pointer;
+}
+
+.toolbar {
+    top: 10px;
+    right: 10px;
+    position: absolute;
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar-menu-root {
+        &>.nav {
+            width: 80px;
+        }
+
+        .menu-icon {
+            width: 32px;
+            height: 36px;
+        }
+
+        .dragging {
+            height: 36px;
+        }
+
+        .dragged-placeholder {
+            height: 36px;
+        }
+    }
+}
+
+@-moz-document url-prefix(){
+    .sidebar-menu-root {
+        &>.nav {
+            height: 100%;
+        }
+    }
+}

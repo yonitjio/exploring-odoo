@@ -1,0 +1,57 @@
+// THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+//
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
+//
+// THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+// DO NOT USE IT IN PRODUCTION.
+
+.nuido {
+    .nuido-doc-container {
+        .nuido-doc {
+            .node-container {
+
+                .node:not(.node.sectioned) {
+                    .http-header-port {
+                        background-color: $nuido-port-border-color;
+                        transform: none;
+                        height: 15px;
+                        width: 15px;
+
+                        &::after {
+                            display: block;
+                            transform: none;
+                            content: "";
+                            width: 11px;
+                            height: 11px;
+                            position: relative;
+                            left: -1px;
+                            top: -1px;
+                            background: $teal-600;
+                            clip-path: polygon(50% -50%,100% 50%,50% 150%,0 50%);
+                        }
+                    }
+                    .graphql-variable-port {
+                        background-color: $nuido-port-border-color;
+                        transform: none;
+                        height: 15px;
+                        width: 15px;
+
+                        &::after {
+                            display: block;
+                            transform: none;
+                            content: "";
+                            width: 11px;
+                            height: 11px;
+                            position: relative;
+                            left: -1px;
+                            top: -1px;
+                            background: $red-600;
+                            clip-path: circle();
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

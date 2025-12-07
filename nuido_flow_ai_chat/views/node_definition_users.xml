@@ -1,0 +1,35 @@
+<!--
+ THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+ This software is released under the MIT License.
+ https://opensource.org/licenses/MIT
+
+ THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+ DO NOT USE IT IN PRODUCTION.
+-->
+<odoo>
+    <data>
+        <record id="node_definition_user_list" model="ir.ui.view">
+            <field name="name">AI Chat Users</field>
+            <field name="model">nuido_flow.node.definition</field>
+            <field name="arch" type="xml">
+                <list string="Users" create="True" edit="True" editable="top">
+                    <field name="display_name" readonly="True" />
+                    <field name="ai_chat_user_ids" widget="many2many_tags" options="{'no_open': True, 'no_create': True}"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="action_nuido_flow_node_definition_users" model="ir.actions.act_window">
+            <field name="name">AI Chat Users</field>
+            <field name="path">nuido_flow_ai_chat_allowed_users</field>
+            <field name="domain">[('is_processed', '=', True), ('is_ai_chat_flow', '=', True)]</field>
+            <field name="res_model">nuido_flow.node.definition</field>
+            <field name="view_mode">list</field>
+            <field name="view_id" ref="nuido_flow_ai_chat.node_definition_user_list"/>
+        </record>
+
+        <menuitem name="AI Chat Users" id="nuido_flow_ai_chat.allowed_users_menu"
+            parent="nuido_flow.root_menu" action="nuido_flow_ai_chat.action_nuido_flow_node_definition_users"/>
+    </data>
+</odoo>

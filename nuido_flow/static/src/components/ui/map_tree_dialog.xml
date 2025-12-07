@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido_base.map-tree-dialog">
+        <Dialog title="Mapper">
+            <div>
+                <MapTree nodes="state.map" node="state.map[0]"/>
+            </div>
+            <t t-set-slot="footer">
+                <button class="btn btn-primary" t-on-click="onClickApply">
+                Apply
+                </button>
+                <button class="btn btn-secondary" t-on-click="props.close">
+                Cancel
+                </button>
+            </t>
+        </Dialog>
+    </t>
+</templates>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido_flow_data.dynamic-date-filter-node" t-inherit="nuido.node" t-inherit-mode="primary">
+        <xpath expr="//div[hasclass('node-content')]" position="inside">
+            <div class="mb-2">
+                <label t-attf-id="label-{{props.node.id}}-model-selector" t-att-for="modelSelectorId">Model</label>
+                <input class="o_input"  t-att-id="modelSelectorId" readonly="1" t-att-value="props.node.model_description"/>
+            </div>
+            <div class="mb-2">
+                <label t-attf-id="label-{{props.node.id}}-dynamic-date-field-selector">Field</label>
+                <ModelFieldSelectorEx
+                    resModel="props.node.model"
+                    path="props.node.model ? props.node.dynamic_date_field : ''"
+                    readonly="props.node.model===''"
+                    followRelations="false"
+                    update.bind="onDynamicDateFieldUpdate"
+                    allowEmpty="true"
+                    filter="dynamicDateFieldFilter"
+                />
+            </div>
+            <div class="mb-2">
+                <label t-attf-id="label-{{props.node.id}}-dynamic-date-interval" t-att-for="dynamicDateIntervalInputId">Type</label>
+                <select t-att-id="dynamicDateIntervalInputId" t-on-change.stop.prevent="onDynamicDateIntervalChanged" class="form-control">
+                    <option value="" t-att-selected="props.node.dynamic_date_interval === ''">None</option>
+                    <option value="day" t-att-selected="props.node.dynamic_date_interval === 'day'">Day</option>
+                    <option value="week" t-att-selected="props.node.dynamic_date_interval === 'week'">Week</option>
+                    <option value="month" t-att-selected="props.node.dynamic_date_interval === 'month'">Month</option>
+                    <option value="year" t-att-selected="props.node.dynamic_date_interval === 'year'">Year</option>
+                </select>
+            </div>
+        </xpath>
+    </t>
+</templates>
