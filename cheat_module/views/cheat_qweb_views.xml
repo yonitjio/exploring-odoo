@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- List view, also called list view on models -->
+    <record id="cheat_qweb_view_list" model="ir.ui.view">
+      <field name="name">cheat.qweb.list</field>
+      <field name="model">cheat.qweb</field>
+      <field name="arch" type="xml">
+        <list string="Cheat Qweb">
+          <field name="char_field"/>
+          <field name="boolean_field"/>
+        </list>
+      </field>
+    </record>
+
+    <!-- Form view on models -->
+    <record id="cheat_qweb_view_form" model="ir.ui.view">
+      <field name="name">cheat.qweb.form</field>
+      <field name="model">cheat.qweb</field>
+      <field name="arch" type="xml">
+        <form string="Cheat Qweb">
+          <sheet>
+            <group>
+              <field name="char_field"/>
+              <field name="boolean_field"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Kanban view on models -->
+    <record id="cheat_qweb_view_kanban" model="ir.ui.view">
+      <field name="name">cheat.qweb.kanban</field>
+      <field name="model">cheat.qweb</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <templates>
+            <t t-name="card">
+                <div>
+                  <field name="char_field"/>
+                </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+    <!-- Action opening view on model -->
+    <record model="ir.actions.act_window" id="cheat_qweb_action_window">
+      <field name="name">Qweb</field>
+      <field name="res_model">cheat.qweb</field>
+      <field name="view_mode">kanban,list,form</field>
+    </record>
+
+    <!-- Qweb Menu item -->
+    <!-- <menuitem name="Qweb" id="cheat_qweb_menu" parent="cheat_menu_root" action="cheat_qweb_action_window"/> -->
+  </data>
+</odoo>
