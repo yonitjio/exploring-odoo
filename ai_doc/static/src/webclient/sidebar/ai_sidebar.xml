@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="ai_doc.AiDocSidebar">
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasAiDocSidebar" aria-labelledby="offcanvasAiDocSidebarLabel"
+            t-attf-style="width: {{ state.width }};" t-ref="container"
+        >
+            <div class="handle" t-ref="handle"
+                style="height: 100%; width: 5px; float: left; position: absolute; cursor: e-resize;"
+                t-on-mousedown="onHandleMouseDown"
+            >
+            </div>
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel"><i class="fa fa-book fa-lg align-self-center me-2"></i>AI Doc</h5>
+                <button type="button" class="btn ms-3" aria-label="Reset" t-on-click.stop.prevent="reset" >Reset</button>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body ms-2">
+                <div t-ref="chat-ui" id="chat-ui-container" class="h-100">
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

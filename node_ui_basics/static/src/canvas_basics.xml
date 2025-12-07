@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="canvas-basics">
+        <div class="d-flex flex-column h-100 w-100 p-1">
+            <div class="d-flex">
+                <div class="m-0 p-1 col-3">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            Rectangle
+                        </div>
+                        <div class="card-body p-1 overflow-hidden">
+                            <canvas id="cvsRectangle">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-0 p-1 col-3">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            Circle
+                        </div>
+                        <div class="card-body p-1 overflow-hidden">
+                            <canvas id="cvsCircle">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-0 p-1 col-3">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            Ellipse
+                        </div>
+                        <div class="card-body p-1 overflow-hidden">
+                            <canvas id="cvsEllipse">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-0 p-1 col-3">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            Line
+                        </div>
+                        <div class="card-body p-1 overflow-hidden">
+                            <canvas id="cvsLine">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex">
+                <div class="m-0 p-1 col-3">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            Round Rect
+                        </div>
+                        <div class="card-body p-1 overflow-hidden">
+                            <canvas id="cvsRoundRect">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-0 p-1 col-3">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            Cubic Bézier Curve
+                        </div>
+                        <div class="card-body p-1 overflow-hidden">
+                            <canvas id="cvsCubicCurve">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-0 p-1 col-3">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            Quadratic Bézier Curved
+                        </div>
+                        <div class="card-body p-1 overflow-hidden">
+                            <canvas id="cvsQuadraticCurve">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-0 p-1 col-3">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            Misc. Shape
+                        </div>
+                        <div class="card-body p-1 overflow-hidden">
+                            <canvas id="cvsMiscShape">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-fill">
+                <div class="m-0 p-1 col-12 h-100">
+                    <div class="card text-center h-100">
+                        <div class="card-header">
+                            Interactive Curve
+                        </div>
+                        <div class="card-body p-1 overflow-hidden">
+                            <canvas id="cvsInteractivePath"
+                                t-ref="interactive-canvas"
+                                t-on-mousedown.stop.prevent="onMouseDown"
+                                t-on-mouseup.stop.prevent="onMouseUp"
+                                t-on-mousemove.stop.prevent="onMouseMove"
+                            >
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

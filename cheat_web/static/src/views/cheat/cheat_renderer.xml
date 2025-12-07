@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="cheat_web.CheatRenderer">
+        <div class="row m-2" t-ref="renderer_root">
+            <t t-foreach="props.records" t-as="record" t-key="record.id">
+                <div class="col-lg-6 col-sm-12 p-2">
+                    <div class="card">
+                        <div class="row g-0">
+                            <div class="col-md-3 d-flex justify-content-center align-items-center bg-secondary rounded-start">
+                                <h1><t t-out="record.id"/></h1>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <h2 class="card-title"><t t-out="record.display_name"/></h2>
+                                    <div class="card-text card-text border rounded">
+                                        <t t-foreach="getFirstFiveFields()" t-as="field" t-key="field_index">
+                                            <div t-attf-class="form-group d-flex {{ field_last ? '' : 'border-bottom' }}">
+                                                <t t-set="fieldId" t-value="getInputId(record, field)"/>
+                                                <label t-att-for="fieldId" class="col-sm-4 col-form-label me-1 px-1 bg-secondary">
+                                                    <t t-out="getLabel(field)"/>
+                                                </label>
+                                                <div class="col-sm-8 px-1">
+                                                    <t t-if="getConserveLineBreakSetting(field)" >
+                                                        <textarea readonly="1" rows="5" class="form-control-plaintext" t-att-id="fieldId">
+                                                            <t t-out="getFieldValue(record, field)" />
+                                                        </textarea>
+                                                    </t>
+                                                    <t t-else="" >
+                                                        <input type="text" readonly="1" class="form-control-plaintext text-truncate"
+                                                            t-att-id="fieldId" t-att-value="getFieldValue(record, field)"/>
+                                                    </t>
+                                                </div>
+                                            </div>
+                                        </t>
+                                    </div>
+                                    <div class="d-flex justify-content-end">
+                                        <button t-on-click="(ev) => this.onEditButtonClick(ev, record)" class="btn btn-primary mt-2">Edit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </div>
+    </t>
+</templates>

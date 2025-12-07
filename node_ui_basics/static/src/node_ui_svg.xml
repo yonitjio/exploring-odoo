@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="node-ui-svg">
+        <div class="d-flex flex-column h-100 w-100 p-1">
+            <div class="d-flex flex-fill">
+                <div class="m-0 p-1 col-12 h-100">
+                    <div class="card text-center h-100">
+                        <div class="card-header">
+                            Node UI Basic with SVG
+                        </div>
+                        <div id="card-body"
+                            class="card-body p-1 overflow-hidden position-relative"
+                            t-on-mousedown.stop.prevent="onMouseDown"
+                            t-on-mouseup.stop.prevent="onMouseUp"
+                            t-on-mousemove.stop.prevent="onMouseMove">
+                            <div t-ref="container"
+                                id="container"
+                                class="h-100 w-100"
+                                style="left: 0px; top: 0px; position: absolute;">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    style="width:100%; height:100%">
+                                    <defs>
+                                        <marker id="arrow"
+                                            viewBox="0 0 15 15"
+                                            refX="5"
+                                            refY="5"
+                                            markerWidth="6"
+                                            markerHeight="6"
+                                            orient="auto-start-reverse">
+                                            <path d="M 0 0 L 5 5 L 0 10 z"
+                                                stroke="context-stroke"
+                                                fill="context-stroke"/>
+                                        </marker>
+                                        <marker id="dot"
+                                            viewBox="0 0 30 30"
+                                            refX="5"
+                                            refY="5"
+                                            markerWidth="15"
+                                            markerHeight="10"
+                                            orient="auto-start-reverse">
+                                            <circle cx="0"
+                                                cy="5"
+                                                r="5"
+                                                fill="context-stroke"/>
+                                        </marker>
+                                    </defs>
+                                    <t t-foreach="state.connections"
+                                        t-as="cnn"
+                                        t-key="cnn.id">
+                                        <line class="path" t-attf-style="stroke-width:3;
+                                            stroke:{{ cnn.id === state.selected ? '#5f5' : '#b58900'}};"
+                                            marker-end="url(#arrow)"
+                                            marker-start="url(#dot)"
+                                            t-att-id="cnn.id"
+                                            t-att-x1="cnn.startX"
+                                            t-att-y1="cnn.startY"
+                                            t-att-x2="cnn.endX"
+                                            t-att-y2="cnn.endY"
+                                            t-on-mousedown.prevent="onLineSelected"/>
+                                    </t>
+                                    <line t-if="state.connecting !== undefined"
+                                        style="stroke-width:3;
+                                        stroke:#b58900;"
+                                        t-att-id="state.connecting.id"
+                                        t-att-x1="state.connecting.startX"
+                                        t-att-y1="state.connecting.startY"
+                                        t-att-x2="state.connecting.endX"
+                                        t-att-y2="state.connecting.endY"/>
+                                </svg>
+                                <t t-foreach="state.nodes"
+                                    t-as="node"
+                                    t-key="node.id">
+                                    <div t-attf-class="node {{ node.type }}"
+                                        t-att-id="node.id"
+                                        t-attf-style="
+                                            left:{{node.type === 'circle' ? node.cX - node.r : node.cX - node.width / 2}}px;
+                                            top:{{node.type === 'circle' ? node.cY - node.r : node.cY - node.height / 2}}px;
+                                            border-color: {{ node.id === state.selected ? '#5f5' : '#999'}}
+                                            "
+                                        t-on-mousedown="onNodeMouseDown"
+                                        t-on-mouseup.prevent="onNodeMouseUp">
+                                        <div class="pe-none h-100 w-100 d-flex justify-content-center align-items-center">
+                                            <i t-attf-class="icon fa {{node.icon}} fa-3x align-self-center"></i>
+                                        </div>
+                                    </div>
+                                </t>
+                            </div>
+                            <div class="btn-group"
+                                style="top:10px; right:10px; position: absolute;">
+                                <button class="btn btn-primary my-0"
+                                    t-on-click="onAddCircleButtonClick">
+                                    <i t-attf-class="icon fa fa-plus fa-lg align-self-center"></i>
+                                    <i t-attf-class="icon fa fa-circle fa-lg align-self-center"></i>
+                                </button>
+                                <button class="btn btn-primary my-0"
+                                    t-on-click="onAddSquareButtonClick">
+                                    <i t-attf-class="icon fa fa-plus fa-lg align-self-center"></i>
+                                    <i t-attf-class="icon fa fa-square fa-lg align-self-center"></i>
+                                </button>
+                                <button class="btn btn-primary my-0"
+                                    t-on-click="onAdd7NodesButtonClick">
+                                    <i t-attf-class="icon fa fa-plus fa-lg align-self-center"></i>
+                                    <i t-attf-class="icon fa fa-stop-circle-o fa-lg align-self-center"></i>
+                                </button>
+                                <button class="btn btn-primary my-0"
+                                    t-on-click="onDeselectButtonClick">
+                                <i t-attf-class="icon fa fa-times fa-lg align-self-center"></i>
+                                </button>
+                                <button class="btn btn-primary my-0"
+                                    t-on-click="onRemoveButtonClick">
+                                <i t-attf-class="icon fa fa-minus fa-lg align-self-center"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

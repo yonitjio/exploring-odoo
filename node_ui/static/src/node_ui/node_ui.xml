@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="node_ui.node-ui">
+        <div class="d-flex h-100 overflow-hidden" style="min-height:-webkit-fill-available;">
+            <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" t-att-style="nodeMenuStyle">
+                <ul class="nav nav-pills flex-column mb-auto">
+                    <t t-foreach="actions" t-as="action" t-key="action_index">
+                        <li class="nav-item">
+                            <NodeMenu action="action.action" title="action.title" icon="action.icon"/>
+                        </li>
+                    </t>
+                </ul>
+            </div>
+            <div class="d-flex flex-column w-100 h-100">
+                <div class="o-control-panel container-fluid d-flex align-items-center justify-content-between">
+                    <div class="btn-toolbar w-100 w-md-auto my-2 d-flex" role="toolbar">
+                        <div class="btn-group me-2">
+                            <button id="saveDoc" type="button" class="btn btn-secondary" t-on-click="saveDoc">
+                                <i class="fa fa-floppy-o fa-lg align-self-start me-2"></i>
+                                <span class="d-none d-md-inline">Save</span>
+                            </button>
+                            <button id="openDoc" type="button" class="btn btn-secondary" t-on-click="openDoc">
+                                <i class="fa fa-folder-open-o fa-lg align-self-start me-2"></i>
+                                <span class="d-none d-md-inline">Open</span>
+                            </button>
+                        </div>
+                        <Dropdown>
+                            <button class="btn btn-secondary me-2">
+                                <i class="fa fa-plus fa-lg align-self-start me-2"></i>
+                                <span class="d-none d-md-inline">Add</span>
+                            </button>
+                            <t t-set-slot="content">
+                                <t t-foreach="actions" t-as="action" t-key="action_index">
+                                    <DropdownItem onSelected="() => { action.action(50, 50) }">
+                                        <img class="menu-icon me-2" width="24" height="24" t-att-src="action.icon"></img>
+                                        <t t-out="action.title"/>
+                                    </DropdownItem>
+                                </t>
+                            </t>
+                        </Dropdown>
+                        <div class="btn-group me-2">
+                            <button id="deleteSelected" type="button" class="btn btn-secondary" t-on-click="deleteSelected">
+                                <i class="fa fa-minus fa-lg align-self-start me-2"></i>
+                                <span class="d-none d-md-inline">Delete</span>
+                            </button>
+                            <button id="reset" type="button" class="btn btn-secondary" t-on-click="reset">
+                                <i class="fa fa-refresh fa-lg align-self-start me-2"></i>
+                                <span class="d-none d-md-inline">Reset</span>
+                            </button>
+                        </div>
+                        <button id="debug" type="button" class="btn me-2" t-on-click="debug">
+                            <i class="fa fa-bug me-2 " />
+                            <span class="d-none d-md-inline">Debug</span>
+                        </button>
+                    </div>
+                    <div class="d-flex flex-fill my-auto mb-2">
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <button id="debug" type="button" class="btn me-2" t-on-click="zoom_reset">
+                            Zoom
+                        </button>
+                        <span class="text-end" style="width: 20px"><t t-out="zoom"/></span>
+                    </div>
+                </div>
+                <div t-ref="node-ui" class="node-ui w-100 h-100">
+                    <t t-foreach="documents" t-as="doc" t-key="doc_index">
+                        <t t-if="doc.id + '-' + doc.sessionId == currentDocSessionId">
+                            <div class="node-ui-doc-container h-100 w-100 p-10" t-on-wheel.prevent="onWheel"
+                                t-on-mousedown="onHandleMouseDown" t-on-dblclick="onDoubleClick" >
+                                    <Document document="doc" />
+                            </div>
+                        </t>
+                    </t>
+                </div>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="node_ui.node-menu">
+        <div t-ref="root" class="node-menu w-100 my-2">
+            <div class="node-menu-container text-start">
+                <t t-if="props.icon">
+                    <img class="menu-icon me-2" width="24" height="24" t-att-src="props.icon"></img>
+                </t>
+                <span class="d-none d-md-inline"><t t-out="props.title"/></span>
+            </div>
+        </div>
+    </t>
+</templates>

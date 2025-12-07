@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="doc_ref_link_crawl_view_form" model="ir.ui.view">
+        <field name="name">doc.ref.link.crawl.view.form</field>
+        <field name="model">doc.ref.link.crawl</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="doc_url"/>
+                </group>
+                <footer>
+                    <button name="action_populate_links" string="Search" type="object" class="oe_highlight"/>
+                    <button string="Close" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_doc_ref_link_crawl" model="ir.actions.act_window">
+        <field name="name">Update Links</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">doc.ref.link.crawl</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="doc_ref_link_crawl_view_form"/>
+    </record>
+</odoo>

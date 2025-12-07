@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="generate_quickboard_view" model="ir.ui.view">
+            <field name="name">quickboard.generator.view</field>
+            <field name="model">quickboard.generator</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <div class="alert alert-danger" role="alert">
+                        <i class="fa fa-exclamation-triangle"/> All quickboard items will be removed.
+                    </div>
+                    <group>
+                        <field name="model_ids"
+                            options="{'no_create_edit':True,'no_create': True}"
+                            domain="[('transient', '=', False)]"
+                            widget="many2many_tags"/>
+                    </group>
+                    <group>
+                        <field name="layout_by_ai" />
+                    </group>
+                    <div class="alert alert-info" role="alert" invisible="not layout_by_ai">
+                        <i class="fa fa-info-circle"/> The result might not what you've expected.
+                    </div>
+                    <footer>
+                        <button name="action_generate_quickboard" string="Ok" type="object" default_focus="1" class="oe_highlight"/>
+                        <button string="Cancel" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
+

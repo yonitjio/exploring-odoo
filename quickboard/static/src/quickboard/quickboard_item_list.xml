@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="quickboard.QuickboardItemList" owl="1">
+        <div t-ref="grid-stack-item" class="grid-stack-item h-100 p-2 pb-5 overflow-hidden">
+            <div class="quickboard-item-list-title d-flex justify-content-between">
+                <div>
+                    <span class="quickboard-item-list-icon mx-1"><i t-att-class="'fa ' + this.state.icon"/></span>
+                    <span><t t-out="state.title"/></span>
+                </div>
+                <span class="quickboard-item-cog me-1"><i class="fa fa-cog" t-on-click="(ev) => this.showItemConfig(ev)"/></span>
+            </div>
+            <div t-ref="container" class="d-flex flex-column flex-fill p-1">
+                <div class="p-3 w-100 h-100">
+                    <div class="h-100 w-100 d-flex">
+                        <t t-if="state.data.length > 0" >
+                            <table class="table table-sm table-hover table-striped align-self-start">
+                                <thead>
+                                    <tr>
+                                    <th scope="col"><t t-out="state.dimensionFieldName"/></th>
+                                    <th scope="col" class="text-end"><t t-out="state.valueFieldName"/></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="state.data" t-as="item" t-key="item.seq">
+                                        <td><t t-out="item['x']"/></td>
+                                        <td class="text-end"><t t-esc="formatValue(item['y'])"/></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </t>
+                        <t t-else="">
+                        <div class="flex-fill text-center align-self-center">
+                        No data to display.
+                        </div>
+                        </t>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

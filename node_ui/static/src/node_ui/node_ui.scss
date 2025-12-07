@@ -1,0 +1,169 @@
+$nui-background: $gray-900;
+$nui-background-color: $nui-background;
+
+$nui-node-color: $gray-500;
+$nui-node-border-color: $gray-500;
+$nui-node-background-color: $gray-800;
+$nui-node-title-bottom-border-color: $gray-600;
+$nui-node-selected-border-color: $primary;
+
+$nui-input-background-color: $nui-node-background-color;
+$nui-input-border-color: $nui-node-border-color;
+
+$nui-output-background-color: $nui-node-background-color;
+$nui-output-border-color: $nui-node-border-color;
+
+$nui-path-color: $gray-500;
+$nui-path-selected-color: $primary;
+
+$nui-point-border-color: $nui-node-border-color;
+$nui-point-background-color: $gray-500;
+
+.node-ui {
+    background-color: $nui-background-color;
+}
+
+.node-ui-doc-container {
+    display: flex;
+    overflow: hidden;
+    touch-action: none;
+
+    .node-ui-doc {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        user-select: none;
+        perspective: 0;
+        // border: 1px dashed red;
+
+        .node-container {
+            position: relative;
+        }
+
+        .node {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            background: $nui-node-background-color;
+            min-width: 160px;
+            min-height: 40px;
+            border-radius: 4px;
+            border: 3px solid $nui-node-border-color;
+            color: $nui-node-color;
+            z-index: 2;
+            padding: 10px;
+
+            .content {
+                .node-title {
+                    padding-bottom: 3px;
+                    border-bottom: $nui-node-title-bottom-border-color solid 1px;
+
+                    &:hover {
+                        cursor: move;
+                    }
+                }
+
+                .node-content {
+                    padding-top: 3px;
+                    padding-bottom: 3px;
+                }
+            }
+
+            .input-ports {
+                width: 0px;
+
+                .input {
+                    position: relative;
+                    width: 20px;
+                    height: 20px;
+                    background: $nui-node-background-color;
+                    border: 3px solid $nui-node-border-color;
+                    border-right: 0px;
+                    border-radius: 4px;
+                    border-top-right-radius: 0px;
+                    border-bottom-right-radius: 0px;
+                    cursor: crosshair;
+                    z-index: 1;
+                    left: -30px;
+                }
+            }
+
+            .output-ports {
+                width: 0px;
+
+                .output {
+                    position: relative;
+                    width: 20px;
+                    height: 20px;
+                    background: $nui-node-background-color;
+                    border: 3px solid $nui-node-border-color;
+                    border-radius: 4px;
+                    border-left: 0px;
+                    border-top-left-radius: 0px;
+                    border-bottom-left-radius: 0px;
+                    cursor: crosshair;
+                    z-index: 1;
+                    right: -10px;
+                }
+            }
+
+            .content {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        .node.selected {
+            border-color: $nui-node-selected-border-color;
+
+            .output-ports {
+                .output {
+                    border-color: $nui-node-selected-border-color;
+                }
+            }
+
+            .input-ports {
+                .input {
+                    border-color: $nui-node-selected-border-color;
+                }
+            }
+        }
+
+        svg.connection {
+            z-index: 0;
+            overflow: visible !important;
+            position: absolute;
+            pointer-events: none;
+            aspect-ratio: 1 / 1;
+
+            .path {
+                fill: none;
+                stroke-width: 3px;
+                stroke: $nui-path-color;
+                pointer-events: all;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            .path.selected {
+                stroke: $nui-path-selected-color
+            }
+
+            .point {
+                cursor: move;
+                stroke: $nui-point-border-color;
+                stroke-width: 2;
+                fill: $nui-point-background-color;
+                pointer-events: all;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

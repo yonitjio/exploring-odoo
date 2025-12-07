@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="scrap_view_form" model="ir.ui.view">
+        <field name="name">scrap.wizard.view.form</field>
+        <field name="model">scrap.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="id"/>
+                    <field name="url"/>
+                </group>
+                <footer>
+                    <button name="action_test_crawl4ai" string="Crawl4AI" type="object" class="oe_highlight"/>
+                    <button name="action_test_playwright" string="Playwright" type="object" class="oe_highlight"/>
+                    <button name="action_test_selenium" string="Selenium" type="object" class="oe_highlight"/>
+                    <button string="Close" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_scrap_test" model="ir.actions.act_window">
+        <field name="name">Scraper Test</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">scrap.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="scrap_view_form"/>
+    </record>
+
+    <menuitem name="Scraper Test" id="menu_doc_ref" parent="base.menu_custom" sequence="9000"
+        action="action_scrap_test"/>
+
+</odoo>

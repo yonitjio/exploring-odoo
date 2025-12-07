@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Dialog Template -->
+        <record id="cheat_wizard_view" model="ir.ui.view">
+            <field name="name">cheat.wizard.view</field>
+            <field name="model">cheat.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="char_field"/>
+                    </group>
+                    <footer>
+                        <button name="action_do_something" string="Ok" type="object" default_focus="1" class="oe_highlight"/>
+                        <button string="Cancel" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
+

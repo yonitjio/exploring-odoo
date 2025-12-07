@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="ai_chat.AiSidebarToggler">
+        <div class="my-auto mx-2">
+            <!-- TODO: Review data-bs-target? Use event bus?  -->
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasAiSidebar" aria-controls="offcanvasAiSidebar">
+            AI Chat
+            </button>
+        </div>
+    </t>
+</templates>

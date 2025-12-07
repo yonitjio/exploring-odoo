@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="canvas-konva">
+        <div class="d-flex flex-column h-100 w-100 p-1">
+            <div class="d-flex flex-fill">
+                <div class="m-0 p-1 col-12 h-100">
+                    <div class="card text-center h-100">
+                        <div class="card-header">
+                            Konva
+                        </div>
+                        <div id="konva-container" class="card-body p-1 overflow-hidden" t-ref="konva">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

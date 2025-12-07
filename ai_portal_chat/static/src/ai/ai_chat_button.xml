@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+<t t-name="ai_portal_chat.AIChatButton">
+    <button
+        part="openAIChatButton"
+        t-if="isShown"
+        class="btn o-ai-portal-chat-AIChatButton d-print-none position-fixed p-3 d-flex justify-content-center align-items-center shadow rounded-circle "
+        t-attf-style="color: black; background-color: white;width: {{size}}px; height: {{size}}px; min-width: {{size}}px; top: {{ position.top }}; left: {{ position.left }};"
+        t-ref="button"
+        t-on-click.prevent="showAiCorner"
+        title="Drag to Move"
+    >
+        <img style="max-height: 42px;" src="/ai_portal_chat/static/images/frodoo.png"/>
+    </button>
+</t>
+
+</templates>

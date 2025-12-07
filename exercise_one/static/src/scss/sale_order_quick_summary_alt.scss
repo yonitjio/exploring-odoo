@@ -1,0 +1,17 @@
+.sale_order_summary_alt {
+    & [data-name="name"] {
+        width: 100px !important;
+    }
+    & [data-name="amount_total"] {
+        width: 100px !important;
+    }
+    & [data-name="amount_paid"] {
+        width: 100px !important;
+    }
+    & [data-name="number_of_products"] {
+        width: 100px !important;
+    }
+    & [data-name="qty"] {
+        width: 100px !important;
+    }
+}

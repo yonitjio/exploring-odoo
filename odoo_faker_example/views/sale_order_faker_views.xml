@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="sale_order_view_faker" model="ir.ui.view">
+            <field name="name">sale.order.view.faker</field>
+            <field name="model">sale.order</field>
+            <field name="arch" type="xml">
+                <faker record-action="action_confirm" record-action-mode="random">
+                    <field name="date_order" module="date" method="between"
+                        params='{ "from": "2020-01-01T00:00:00.000Z", "to": "2030-01-01T00:00:00.000Z" }' />
+                    <field name="partner_id" domain='[("is_company","=", False)]'/>
+                    <field name="user_id" domain='[("share","=", False),("groups_id", "in", [22])]'/>
+                    <field name="order_line">
+                        <faker>
+                            <field name="product_id" domain='[("type","=","consu")]'/>
+                            <field name="product_uom_qty" module="number" method="int" params='{ "min": "1", "max": "10" }'/>
+                        </faker>
+                    </field>
+                </faker>
+            </field>
+        </record>
+
+        <record id="sale.action_orders" model="ir.actions.act_window">
+            <field name="view_mode">list,kanban,form,calendar,pivot,graph,activity,faker</field>
+        </record>
+
+        <record id="sale.action_quotations_with_onboarding" model="ir.actions.act_window">
+            <field name="view_mode">list,kanban,form,calendar,pivot,graph,activity,faker</field>
+        </record>
+    </data>
+</odoo>

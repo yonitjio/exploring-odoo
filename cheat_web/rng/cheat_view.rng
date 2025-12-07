@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rng:grammar xmlns:rng="http://relaxng.org/ns/structure/1.0"
+             xmlns:a="http://relaxng.org/ns/annotation/1.0"
+             datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <rng:define name="cheat">
+        <rng:element name="cheat">
+            <rng:optional><rng:attribute name="limit"/></rng:optional>
+            <rng:zeroOrMore>
+                <rng:element name="field">
+                    <rng:attribute name="name"/>
+                    <rng:optional><rng:attribute name="conserve-line-breaks"/></rng:optional>
+                </rng:element>
+            </rng:zeroOrMore>
+        </rng:element>
+    </rng:define>
+    <rng:start>
+        <rng:choice>
+            <rng:ref name="cheat" />
+        </rng:choice>
+    </rng:start>
+</rng:grammar>

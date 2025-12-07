@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="quickboard.QuickboardItemChart" owl="1">
+        <div t-ref="grid-stack-item" class="grid-stack-item h-100 p-2 pb-5 overflow-hidden">
+            <div class="quickboard-item-chart-title d-flex justify-content-between">
+                <div>
+                    <span class="quickboard-item-chart-icon mx-1"><i t-att-class="'fa ' + this.state.icon"/></span>
+                    <span><t t-out="state.title"/></span>
+                </div>
+                <span class="quickboard-item-cog me-1"><i class="fa fa-cog" t-on-click="(ev) => this.showItemConfig(ev)"/></span>
+            </div>
+            <div class="pt-4 px-3 w-100 h-100">
+                <div class="h-100 w-100">
+                    <canvas t-ref="chartCanvas" />
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

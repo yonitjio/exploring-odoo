@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+    <t t-name="exercise_one.SaleOrderSummaryListController" t-inherit="web.ListView" t-inherit-mode="primary">
+        <xpath expr="//t[@t-set-slot='control-panel-selection-actions']/.//t[@t-foreach='archInfo.headerButtons']" position="before">
+            <button class="btn btn-secondary" t-on-click="onSummaryClick" >Summary Dialog</button>
+        </xpath>
+    </t>
+</templates>

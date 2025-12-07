@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- List view on models -->
+    <record id="cheat_child_proto_view_list" model="ir.ui.view">
+      <field name="name">cheat.child.proto.list</field>
+      <field name="model">cheat.child.proto</field>
+      <field name="type">list</field>
+      <field name="arch" type="xml">
+        <list string="Cheat Proto">
+          <field name="char_field"/>
+          <field name="text_field"/>
+          <field name="float_field"/>
+          <field name="proto_date_field"/>
+        </list>
+      </field>
+    </record>
+    <!-- Form view on models -->
+    <record id="cheat_child_proto_view_form" model="ir.ui.view">
+      <field name="name">cheat.child.proto.form</field>
+      <field name="model">cheat.child.proto</field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+        <form string="Cheat Proto">
+          <header>
+            <button name="action_show_random_string" type="object" string="Show Random String" icon="fa-random" />
+          </header>
+          <sheet>
+            <group>
+              <field name="char_field"/>
+              <field name="text_field"/>
+              <field name="float_field"/>
+              <field name="proto_date_field"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+    <!-- Action opening view on model -->
+    <record model="ir.actions.act_window" id="cheat_child_proto_action_window">
+      <field name="name">Cheat Proto Window</field>
+      <field name="res_model">cheat.child.proto</field>
+      <field name="view_mode">list,form</field>
+    </record>
+    <!-- Sub Menu item -->
+    <menuitem name="Prototype" id="cheat_child_proto_menu_action_window" parent="cheat_inheritance_menu_top" action="cheat_child_proto_action_window"/>
+  </data>
+</odoo>

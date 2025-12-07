@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_doc_ref,access_doc_ref,model_doc_ref,base.group_system,1,1,1,1
+access_doc_ref_link_crawl,access_doc_ref_link_crawl,model_doc_ref_link_crawl,base.group_system,1,1,1,1

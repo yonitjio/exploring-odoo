@@ -1,0 +1,36 @@
+<odoo>
+    <data>
+        <record id="view_partner_hello" model="ir.ui.view">
+            <field name="name">res.partner.hello</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <hello />
+            </field>
+        </record>
+
+        <record id="view_partner_statistic" model="ir.ui.view">
+            <field name="name">res.partner.statistic</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <statistic />
+            </field>
+        </record>
+
+        <record id="view_partner_cheat" model="ir.ui.view">
+            <field name="name">res.partner.cheat</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <cheat>
+                    <field name="complete_name"/>
+                    <field name="contact_address" conserve-line-breaks="true"/>
+                    <field name="email"/>
+                    <field name="type"/>
+                </cheat>
+            </field>
+        </record>
+
+        <record id="contacts.action_contacts" model="ir.actions.act_window">
+            <field name="view_mode">kanban,list,form,activity,hello,statistic,cheat</field>
+        </record>
+    </data>
+</odoo>

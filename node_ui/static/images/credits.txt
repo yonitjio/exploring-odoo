@@ -1,0 +1,27 @@
+Svg files from svgrepo.com
+
+Vectors and icons by Bootstrap in MIT License via SVG Repo:
+align-center.svg
+align-end.svg
+align-start.svg
+node-minus.svg
+node-plus.svg
+
+Vectors and icons by Vmware in MIT License via SVG Repo:
+flow-chart-line.svg
+
+Vectors and icons by Remix Design in Apache v2.0 License via SVG Repo:
+node-tree.svg
+
+Vectors and icons by Hashicorp in MLP License via SVG Repo:
+node.svg
+
+Vectors and icons by Siemens in MIT License via SVG Repo:
+reset.svg
+
+Vectors and icons by Scarlab in MIT License via SVG Repo:
+share-no-fill.svg
+share.svg
+
+Vectors and icons by Framework7io in MIT License via SVG Repo:
+textbox.svg

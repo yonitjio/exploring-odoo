@@ -1,0 +1,76 @@
+<odoo>
+    <data>
+        <record id="action_process_doc_ref_links" model="ir.actions.server">
+            <field name="name">Process Links</field>
+            <field name="model_id" ref="model_doc_ref"/>
+            <field name="state">code</field>
+            <field name="code">model.action_process_links()</field>
+        </record>
+
+        <record id="action_reset_doc_ref_links" model="ir.actions.server">
+            <field name="name">Reset Links</field>
+            <field name="model_id" ref="model_doc_ref"/>
+            <field name="state">code</field>
+            <field name="code">model.action_reset_links()</field>
+        </record>
+
+        <record model="ir.ui.view" id="doc_ref_form">
+            <field name="name">doc.ref.form</field>
+            <field name="model">doc.ref</field>
+            <field name="arch" type="xml">
+                <form string="Odoo Documentation Reference">
+                    <sheet>
+                        <group>
+                            <field name="title"/>
+                            <field name="link"/>
+                            <field name="is_processed" readonly="1" force_save="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="doc_ref_search">
+            <field name="name">doc.ref.search</field>
+            <field name="model">doc.ref</field>
+            <field name="arch" type="xml">
+                <search>
+                    <filter string="Processed" name="processed_doc_ref" domain="[('is_processed', '=', True)]"/>
+                    <filter string="Not Processed" name="processed_doc_ref" domain="[('is_processed', '=', False)]"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="doc_ref_list">
+            <field name="name">doc.ref.list</field>
+            <field name="model">doc.ref</field>
+            <field name="arch" type="xml">
+                <list string="Odoo Documentation Reference">
+                    <header>
+                        <button display="always" type="action" name="ai_doc.action_doc_ref_link_crawl" string="Update" icon="fa-download" class="oe_link"/>
+                        <button display="always" type="action" name="ai_doc.action_process_doc_ref_links" string="Process" icon="fa-play" class="oe_link"
+                            confirm="Process links?"
+                        />
+                        <button display="always" type="action" name="ai_doc.action_reset_doc_ref_links" string="Reset" icon="fa-stop" class="oe_link"
+                            confirm="Reset links?"
+                        />
+                    </header>
+                    <field name="title"/>
+                    <field name="link"/>
+                    <field name="is_processed"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="action_doc_ref" model="ir.actions.act_window">
+            <field name="name">Odoo Documentation</field>
+            <field name="res_model">doc.ref</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <menuitem name="Odoo Documentation" id="menu_doc_ref" parent="base.menu_custom" sequence="1000"/>
+        <menuitem name="Reference Links" id="menu_doc_ref_links" parent="menu_doc_ref" sequence="1"
+            action="action_doc_ref"/>
+
+    </data>
+</odoo>

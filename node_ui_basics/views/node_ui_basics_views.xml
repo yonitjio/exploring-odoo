@@ -1,0 +1,97 @@
+<odoo>
+  <data>
+    <record model="ir.actions.client" id="node_ui_basics_svg">
+      <field name="name">SVG</field>
+      <field name="tag">svg_basics</field>
+    </record>
+
+    <record model="ir.actions.client" id="node_ui_basics_svg_nodes">
+      <field name="name">SVG with Nodes</field>
+      <field name="tag">svg_nodes</field>
+    </record>
+
+    <record model="ir.actions.client" id="node_ui_basics_svg_connection">
+      <field name="name">SVG Connection</field>
+      <field name="tag">svg_connection</field>
+    </record>
+
+    <record model="ir.actions.client" id="node_ui_basics_svg_bezier">
+      <field name="name">SVG Bezier</field>
+      <field name="tag">svg_bezier</field>
+    </record>
+
+    <record model="ir.actions.client" id="node_ui_basics_node_ui_svg">
+      <field name="name">Node UI with SVG</field>
+      <field name="tag">node_ui_svg</field>
+    </record>
+
+    <record model="ir.actions.client" id="node_ui_basics_canvas">
+      <field name="name">Canvas</field>
+      <field name="tag">canvas_basics</field>
+    </record>
+
+    <record model="ir.actions.client" id="node_ui_basics_canvas_nodes">
+      <field name="name">Canvas with Nodes</field>
+      <field name="tag">canvas_nodes</field>
+    </record>
+
+    <record model="ir.actions.client" id="node_ui_basics_canvas_connection">
+      <field name="name">Canvas Connection</field>
+      <field name="tag">canvas_connection</field>
+    </record>
+
+    <record model="ir.actions.client" id="node_ui_basics_canvas_connection">
+      <field name="name">Canvas Connection</field>
+      <field name="tag">canvas_connection</field>
+    </record>
+
+    <record model="ir.actions.client" id="node_ui_basics_konva">
+      <field name="name">Konva</field>
+      <field name="tag">canvas_konva</field>
+    </record>
+
+    <record model="ir.actions.client" id="node_ui_basics_movable_div">
+      <field name="name">movable DIV</field>
+      <field name="tag">movable_div</field>
+    </record>
+
+    <menuitem name="Node UI Basics" id="node_ui_basics.menu_root" />
+
+    <menuitem name="Canvas" id="node_ui_basics.canvas_menu"
+        parent="node_ui_basics.menu_root" sequence="1"/>
+
+    <menuitem name="Basics" id="node_ui_basics.canvas_basics_menu"
+        parent="node_ui_basics.canvas_menu" action="node_ui_basics_canvas" sequence="1"/>
+
+    <menuitem name="Canvas with Nodes" id="node_ui_basics.canvas_nodes_menu"
+        parent="node_ui_basics.canvas_menu" action="node_ui_basics_canvas_nodes" sequence="2"/>
+
+    <menuitem name="Canvas Connection" id="node_ui_basics.canvas_connection_menu"
+        parent="node_ui_basics.canvas_menu" action="node_ui_basics_canvas_connection" sequence="2"/>
+
+    <menuitem name="Konva" id="node_ui_basics.canvas_konva_menu"
+        parent="node_ui_basics.menu_root" action="node_ui_basics_konva" sequence="2"/>
+
+    <menuitem name="SVG" id="node_ui_basics.svg_menu"
+        parent="node_ui_basics.menu_root" sequence="3"/>
+
+    <menuitem name="Basics" id="node_ui_basics.svg_basics_menu"
+        parent="node_ui_basics.svg_menu" action="node_ui_basics_svg" sequence="1"/>
+
+    <menuitem name="SVG with Nodes" id="node_ui_basics.svg_nodes_menu"
+        parent="node_ui_basics.svg_menu" action="node_ui_basics_svg_nodes" sequence="2"/>
+
+    <menuitem name="SVG Connection" id="node_ui_basics.svg_connection_menu"
+        parent="node_ui_basics.svg_menu" action="node_ui_basics_svg_connection" sequence="2"/>
+
+    <menuitem name="SVG Bezier" id="node_ui_basics.svg_bezier_menu"
+        parent="node_ui_basics.svg_menu" action="node_ui_basics_svg_bezier" sequence="3"/>
+
+    <menuitem name="Node UI with SVG" id="node_ui_basics.node_ui_svg_menu"
+        parent="node_ui_basics.svg_menu" action="node_ui_basics_node_ui_svg" sequence="4"/>
+
+    <menuitem name="DIV" id="node_ui_basics.movable_div_menu"
+        parent="node_ui_basics.menu_root" action="node_ui_basics_movable_div" sequence="4"/>
+
+  </data>
+</odoo>

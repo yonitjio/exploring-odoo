@@ -1,0 +1,107 @@
+<odoo>
+    <data>
+        <!-- List view, also called list view on models -->
+        <record id="cheat_web_view_list" model="ir.ui.view">
+            <field name="name">cheat.web.view.list</field>
+            <field name="model">cheat.web</field>
+            <field name="arch" type="xml">
+                <list string="Cheat Web">
+                    <field name="char_field" />
+                    <field name="int_field" />
+                </list>
+            </field>
+        </record>
+
+        <!-- Form view on models -->
+        <record id="cheat_web_view_form" model="ir.ui.view">
+            <field name="name">cheat.web.view.form</field>
+            <field name="model">cheat.web</field>
+            <field name="arch" type="xml">
+                <form string="Cheat Web">
+                    <sheet>
+                        <group>
+                            <field name="char_field" />
+                            <field name="int_field" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Search view on models -->
+        <record id="cheat_web_view_search" model="ir.ui.view">
+            <field name="name">cheat.web.view.search</field>
+            <field name="model">cheat.web</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="char_field" />
+                    <field name="int_field" />
+                </search>
+            </field>
+        </record>
+
+        <!-- Hello view on models -->
+        <record id="cheat_web_view_hello" model="ir.ui.view">
+            <field name="name">cheat.web.view.hello</field>
+            <field name="model">cheat.web</field>
+            <field name="arch" type="xml">
+                <hello/>
+            </field>
+        </record>
+
+        <!-- Statistic view on models -->
+        <record id="cheat_web_view_statistic" model="ir.ui.view">
+            <field name="name">cheat.web.view.statistic</field>
+            <field name="model">cheat.web</field>
+            <field name="arch" type="xml">
+                <statistic/>
+            </field>
+        </record>
+
+        <!-- Cheat view on models -->
+        <record id="cheat_web_view_cheat" model="ir.ui.view">
+            <field name="name">cheat.web.view.cheat</field>
+            <field name="model">cheat.web</field>
+            <field name="arch" type="xml">
+                <cheat limit="20">
+                    <field name="char_field" />
+                    <field name="int_field" />
+                </cheat>
+            </field>
+        </record>
+
+        <!-- Action opening view on model -->
+        <record model="ir.actions.act_window" id="action_cheat_web_custom_view_type">
+            <field name="name">Custom View Type</field>
+            <field name="res_model">cheat.web</field>
+            <field name="view_mode">list,form,hello,statistic,cheat</field>
+        </record>
+
+        <record model="ir.actions.client" id="action_cheat_web">
+            <field name="name">Web Framework</field>
+            <field name="tag">cheat_web</field>
+        </record>
+
+        <record model="ir.actions.client" id="action_cheat_owl">
+            <field name="name">Web Library</field>
+            <field name="tag">cheat_owl</field>
+        </record>
+
+        <record model="ir.actions.client" id="action_cheat_owl_qweb">
+            <field name="name">QWeb</field>
+            <field name="tag">cheat_owl_qweb</field>
+        </record>
+
+        <menuitem name="Web" id="cheat_web_menu_top" parent="cheat_module.cheat_menu_root"
+            sequence="100" />
+        <menuitem name="Web Framework" id="cheat_web_menu" parent="cheat_web_menu_top"
+            action="action_cheat_web" sequence="10" />
+        <menuitem name="Web Library" id="cheat_owl_menu" parent="cheat_web_menu_top"
+            action="action_cheat_owl" sequence="20" />
+        <menuitem name="QWeb" id="cheat_owl_qweb_menu" parent="cheat_web_menu_top"
+            action="action_cheat_owl_qweb" sequence="30" />
+        <menuitem name="Custom View Type" id="cheat_web_custom_view_type"
+            parent="cheat_web_menu_top"
+            action="action_cheat_web_custom_view_type" sequence="40" />
+    </data>
+</odoo>

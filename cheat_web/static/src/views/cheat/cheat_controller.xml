@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="cheat_web.CheatView">
+        <div t-att-class="className" t-ref="root">
+            <Layout display="props.display" className="'h-100 overflow-auto'">
+                <t t-set-slot="control-panel-create-button">
+                    <button type="button" class="btn btn-primary o_list_button_add" t-on-click="onClickCreate">
+                        New
+                    </button>
+                </t>
+                <t t-set-slot="layout-actions">
+                    <SearchBar t-if="searchBarToggler.state.showSearchBar" autofocus="firstLoad"/>
+                </t>
+                <t t-component="props.Renderer" t-props="rendererProps"/>
+            </Layout>
+        </div>
+    </t>
+</templates>

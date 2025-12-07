@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="svg-connection">
+        <div class="d-flex flex-column h-100 w-100 p-1">
+            <div class="d-flex flex-fill">
+                <div class="m-0 p-1 col-12 h-100">
+                    <div class="card text-center h-100">
+                        <div class="card-header">
+                            SVG Connection
+                        </div>
+                        <div id="card-body" class="card-body p-1 overflow-hidden position-relative"
+                            t-on-mousedown.stop.prevent="onMouseDown"
+                            t-on-mouseup.stop.prevent="onMouseUp"
+                            t-on-mousemove.stop.prevent="onMouseMove">
+                            <div t-ref="container" id="container" class="h-100 w-100"
+                                style="left: 0px; top: 0px; position: absolute;">
+                                <svg xmlns="http://www.w3.org/2000/svg" style="width:100%; height:100%">
+                                    <path stroke="#b58900" stroke-width="3" fill="none"
+                                        t-att-d="state.path"
+                                    />
+                                </svg>
+                                <div id="startNode" class="circle"
+                                    t-attf-style="left:{{state.startNode.cx - state.startNode.r}}px;
+                                        top:{{state.startNode.cy - state.startNode.r}}px;">
+                                </div>
+                                <div id="midNode" class="circle"
+                                    t-attf-style="left:{{state.midNode.cx - state.midNode.r}}px;
+                                        top:{{state.midNode.cy - state.midNode.r}}px;">
+                                </div>
+                                <div id="endNode" class="circle"
+                                    t-attf-style="left:{{state.endNode.cx - state.endNode.r}}px;
+                                        top:{{state.endNode.cy - state.endNode.r}}px;">
+                                </div>
+                            </div>
+                            <div class="btn-group" role="group" style="top:10px; right:10px; position: absolute;">
+                                <input id="optOrientationVertical"
+                                    autocomplete="off"
+                                    name="optOrientation"
+                                    class="btn-check"
+                                    type="radio"
+                                    value="vertical"
+                                    t-model="state.orientation"
+                                    t-on-change="updatePath">
+                                </input>
+                                <label class="btn btn-primary" for="optOrientationVertical">Vertical</label>
+                                <input id="optOrientationHorizontal"
+                                    autocomplete="off"
+                                    name="optOrientation"
+                                    class="btn-check"
+                                    type="radio"
+                                    value="horizontal"
+                                    t-model="state.orientation"
+                                    t-on-change="updatePath">
+                                </input>
+                                <label class="btn btn-primary" for="optOrientationHorizontal">Horizontal</label>
+                                <input id="optOrientationAuto"
+                                    autocomplete="off"
+                                    name="optOrientation"
+                                    class="btn-check"
+                                    type="radio"
+                                    value="auto"
+                                    t-model="state.orientation"
+                                    t-on-change="updatePath">
+                                </input>
+                                <label class="btn btn-primary" for="optOrientationAuto">Auto</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

@@ -1,0 +1,20 @@
+.menu-icon {
+    filter: invert(0.80);
+    vertical-align: text-bottom;
+}
+
+.dragging {
+    border: gray dashed 1px;
+    height: 24px;
+}
+
+.dragged-placeholder {
+    width: 100%;
+    margin-top: "gray dashed 1px";
+    border: gray dashed 1px;
+    height: 24px;
+}
+
+.dragged-placeholder::after {
+    content: '\200b';
+}

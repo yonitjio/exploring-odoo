@@ -1,0 +1,68 @@
+.diamond {
+    position: relative;
+    height: 100px;
+    width: 100px;
+    line-height: 200px;
+    text-align: center;
+    margin: 10px 40px;
+    cursor: pointer;
+}
+
+.diamond:after {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    content: '';
+    height: calc(100% - 22px);
+    width: calc(100% - 22px);
+    background: #b58900;
+    border: 1px solid #b58900;
+    transform: rotateX(45deg) rotateZ(45deg);
+}
+
+
+.circle {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: #b58900;
+    border-radius: 50%;
+    cursor: pointer;
+    border-style: solid;
+    border-width: 4px;
+    border-color: #999;
+}
+
+.small-circle {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #b58900;
+    border-radius: 50%;
+    cursor: pointer;
+    border-style: solid;
+    border-width: 4px;
+    border-color: #999;
+}
+
+
+.square {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: #b58900;
+    border-radius: 5px;
+    cursor: pointer;
+    border-style: solid;
+    border-width: 4px;
+    border-color: #999;
+}
+
+
+.node .icon {
+    color: #f6f6f6;
+}
+
+.path {
+    cursor: pointer;
+}

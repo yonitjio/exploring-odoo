@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="quickboard.QbIconPickerField">
+        <SelectMenu
+            choices="icons"
+            value="props.record.data[props.name] || ''"
+            onSelect.bind="this.onSelectIcon"
+            required="false"
+            searchable="true"
+            togglerClass="'fw-normal'"
+            class="'icon-select'">
+            <t t-set-slot="choice" t-slot-scope="choice">
+                <i t-attf-class="{{ 'fa ' + choice.data.value + ' me-1' }}"/><t t-esc="choice.data.label" />
+            </t>
+        </SelectMenu>
+    </t>
+
+</templates>

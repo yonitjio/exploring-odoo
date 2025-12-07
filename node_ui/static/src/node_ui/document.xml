@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="node_ui.document">
+        <div t-ref="root" tabindex="0" class="node-ui-doc" t-on-mouseup="onMouseUp"
+            t-on-keydown="onKeydown">
+            <t t-foreach="props.document.nodes" t-as="node" t-key="node.id">
+                <t t-component="node.component" node="node"/>
+            </t>
+            <t t-foreach="props.document.connections" t-as="cnn" t-key="cnn.id">
+                <t t-component="connectionComponent" connection="cnn" />
+            </t>
+            <t t-if="props.document.newConnection !== undefined">
+                <t t-component="connectionComponent" connection="props.document.newConnection" />
+            </t>
+        </div>
+    </t>
+</templates>

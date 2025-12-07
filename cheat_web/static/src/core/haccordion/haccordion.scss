@@ -1,0 +1,71 @@
+// Variables
+$tab-width: 60px;
+$screen-width: 100vw;
+
+.haccordion-root {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    position: relative;
+    min-height: 100%;
+    height: 100%;
+    width: 100%;
+
+    .haccordion-item {
+        flex-grow: 1;
+        height: 100%;
+        overflow: auto;
+        transition: width 500ms ease;
+    }
+
+    .haccordion-fold {
+        width: $tab-width !important;
+        display: flex;
+        cursor: pointer;
+
+        & .haccordion-title-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            background-color: $o-gray-800 !important;
+
+            & .haccordion-title {
+                white-space: nowrap;
+                transform: rotate(-90deg);
+                align-self: end;
+                position: relative;
+                bottom: 75px;
+                left: 5px;
+                width: 100%;
+
+                & * {
+                    color: $o-gray-600 !important;
+
+                    &:hover {
+                        color: $o-gray-300 !important;
+                    }
+                }
+            }
+        }
+
+        & .haccordion-content {
+            display: none;
+        }
+    }
+
+    .haccordion-expand {
+        width: 100%;
+
+        & .haccordion-title {
+            display: none;
+        }
+
+        & .haccordion-content {
+            padding-left: 10px;
+            display: revert;
+            height: 100%;
+        }
+    }
+}

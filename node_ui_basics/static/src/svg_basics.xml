@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="svg-basics">
+        <div class="d-flex flex-column h-100 w-100 p-1"
+            t-on-mousedown.stop.prevent="onMouseDown"
+            t-on-mouseup.stop.prevent="onMouseUp"
+            t-on-mousemove.stop.prevent="onMouseMove"
+        >
+            <div class="d-flex">
+                <div class="m-0 p-1 col-3">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            Rectangle
+                        </div>
+                        <div class="card-body p-1 overflow-hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" style="width: 340px; height: 125px">
+                                <rect width="100" height="100" x="10" y="10" rx="10" ry="10" fill="grey"/>
+                                <rect width="100" height="100" x="120" y="10"
+                                    style="fill:#b58900;stroke-width:3;stroke:grey"/>
+                                <rect width="100" height="100" x="230" y="10"
+                                    style="fill:grey;stroke:#b58900;stroke-width:3;fill-opacity:0.5;stroke-opacity:0.5"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-0 p-1 col-3">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            Circle
+                        </div>
+                        <div class="card-body p-1 overflow-hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" style="width: 340px; height: 125px">
+                                <circle r="47.5" cx="55" cy="60" fill="#b58900"/>
+                                <circle r="47.5" cx="167.5" cy="60" fill="#123456" stroke="grey" stroke-width="3"/>
+                                <circle r="47.5" cx="280" cy="60" fill="#b58900" stroke="grey" stroke-width="3" opacity="0.5"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-0 p-1 col-3">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            Ellipse
+                        </div>
+                        <div class="card-body p-1 overflow-hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" style="width: 340px; height: 125px">
+                                <ellipse rx="50" ry="20" cx="55" cy="60" style="fill:#b58900;stroke:grey;stroke-width:3"/>
+                                <ellipse rx="20" ry="50" cx="167.5" cy="60" style="fill:#b58900;stroke:grey;stroke-width:3"/>
+                                <ellipse rx="50" ry="20" cx="280" cy="60" style="fill:#b58900;stroke:grey;stroke-width:3"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-0 p-1 col-3">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            Line
+                        </div>
+                        <div class="card-body p-1 overflow-hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" style="width: 340px; height: 125px">
+                                <line x1="55" y1="10" x2="55" y2="115" style="stroke:#b58900;stroke-width:2"/>
+                                <line x1="125" y1="10" x2="225" y2="115" style="stroke:#b58900;stroke-width:2"/>
+                                <line x1="280" y1="55" x2="330" y2="55" style="stroke:#b58900;stroke-width:2"/>
+                                <line x1="280" y1="60" x2="330" y2="60" style="stroke:#b58900;stroke-width:2"/>
+                                <line x1="280" y1="65" x2="330" y2="65" style="stroke:#b58900;stroke-width:2"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex">
+                <div class="m-0 p-1 col-3">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            Polygon
+                        </div>
+                        <div class="card-body p-1 overflow-hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" style="width: 340px; height: 125px">
+                                <polygon points="225,10 320,120 10,120" style="fill:#b58900;stroke:grey;stroke-width:3"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-0 p-1 col-3">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            Polyline
+                        </div>
+                        <div class="card-body p-1 overflow-hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" style="width: 340px; height: 125px">
+                                <polyline points="10,10 50,50 55,55 100,60, 200,100 250,80 320,100"
+                                    style="fill:none;stroke:#b58900;stroke-width:3"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-0 p-1 col-3">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            Simple Path
+                        </div>
+                        <div class="card-body p-1 overflow-hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" style="width: 340px; height: 125px">
+                                <path d="M 10 10 l 330 110" stroke="#b58900" stroke-width="3"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-0 p-1 col-3">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            Curved Path
+                        </div>
+                        <div class="card-body p-1 overflow-hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" style="width: 340px; height: 125px">
+                                <path d="M 10 100 Q 0 0 330 110" stroke="#b58900" stroke-width="3" fill="none"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-fill">
+                <div class="m-0 p-1 col-12 h-100">
+                    <div class="card text-center h-100">
+                        <div class="card-header">
+                            Interactive Path
+                        </div>
+                        <div class="card-body p-1 overflow-hidden" t-ref="svg">
+                            <svg xmlns="http://www.w3.org/2000/svg" style="width:100%; height:100%">
+                                <style>
+                                    circle { cursor: pointer; }
+                                </style>
+                                <t t-set="startX" t-value="state.startX"/>
+                                <t t-set="startY" t-value="state.startY"/>
+                                <t t-set="endX" t-value="state.endX"/>
+                                <t t-set="endY" t-value="state.endY"/>
+                                <t t-set="controlX" t-value="state.controlX"/>
+                                <t t-set="controlY" t-value="state.controlY"/>
+                                <t t-set="midX" t-value="(startX + endX)/2"/>
+                                <t t-set="midY" t-value="(startY + endY)/2"/>
+                                <t t-call="qbc"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+    <t t-name="qbc">
+        <g xmlns="http://www.w3.org/2000/svg" >
+            <path id="qBC" t-attf-d="
+                M {{startX}},{{startY}}
+                Q {{controlX}},{{controlY}} {{midX}},{{midY}}
+                T {{endX}},{{endY}}"
+                stroke="#b58900" stroke-width="3" fill="none"/>
+            <circle id="startPoint" class="point" style="fill:grey"
+                t-att-cx="startX"
+                t-att-cy="startY"
+                r="6"/>
+            <circle id="endPoint" class="point" style="fill:grey"
+                t-att-cx="endX"
+                t-att-cy="endY"
+                r="6"/>
+            <circle id="controlPoint" class="point" style="fill:grey"
+                t-att-cx="controlX"
+                t-att-cy="controlY"
+                r="6"/>
+            <line t-att-x1="startX" t-att-y1="startY"
+                t-att-x2="controlX" t-att-y2="controlY"
+                style="stroke:#b58900;stroke-width:2"
+                stroke-dasharray="10,10"/>
+            <line t-att-x1="controlX" t-att-y1="controlY"
+                t-att-x2="midX" t-att-y2="midY"
+                style="stroke:#b58900;stroke-width:2"
+                stroke-dasharray="10,10"/>
+        </g>
+    </t>
+</templates>

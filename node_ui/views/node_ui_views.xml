@@ -1,0 +1,13 @@
+<odoo>
+  <data>
+    <record model="ir.actions.client" id="node_ui">
+      <field name="name">Node UI</field>
+      <field name="tag">NodeUi</field>
+    </record>
+
+    <menuitem name="Node UI" id="node_ui.menu_root" />
+
+    <menuitem name="Node UI" id="node_ui.node_ui_menu"
+        parent="node_ui.menu_root" action="node_ui" sequence="1"/>
+  </data>
+</odoo>

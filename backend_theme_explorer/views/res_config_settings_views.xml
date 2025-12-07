@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_backend_theme_explorer" model="ir.ui.view">
+        <field name="name">res.config.settings.backend_theme_explorer</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='companies']" position="after">
+                <block title="Explorer Backend Theme " name="contacts_setting_container">
+                    <setting id="login_page_logo" string="Logo">
+                        <field name="login_page_logo" widget="image"/>
+                    </setting>
+                    <setting id="login_page_custom_background" string="Use Custom Background">
+                        <field name="login_page_custom_background"/>
+                        <div class="content-group mb-3" invisible="not login_page_custom_background">
+                            <div id="login_page_background_image">
+                                <field name="login_page_background_image" widget="image"/>
+                            </div>
+                        </div>
+                    </setting>
+                    <setting id="login_page_design" string="Design">
+                        <field name="login_page_design"/>
+                    </setting>
+                    <setting id="login_page_show_motto" string="Show Motto">
+                        <field name="login_page_show_motto"/>
+                        <div class="content-group mb-3" invisible="not login_page_show_motto">
+                            <div id="login_page_motto_text">
+                                <label class="o_form_label col-lg-3" for="login_page_motto_text">Motto</label>
+                                <field name="login_page_motto_text"/>
+                            </div>
+                            <div id="login_page_motto_author">
+                                <label class="o_form_label col-lg-3" for="login_page_motto_author">Author</label>
+                                <field name="login_page_motto_author"/>
+                            </div>
+                            <div id="login_page_motto_text_color">
+                                <label class="o_form_label col-lg-3" for="login_page_motto_text_color">Text Color</label>
+                                <field name="login_page_motto_text_color" widget="color"/>
+                            </div>
+                        </div>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="node_ui.node">
+        <div t-ref="root" tabstop="0" class="node-container" t-attf-style="left: {{ position.left }}; top: {{ position.top }};"
+            t-on-click.stop.prevent="onClick">
+            <div t-att-id="props.node.id" class="node">
+                <div class="input-ports">
+                    <t t-foreach="props.node.inPorts" t-as="inPort" t-key="inPort.id" >
+                        <Port port="inPort"/>
+                    </t>
+                </div>
+                <div class="content overflow-hidden">
+                    <div class="node-title">
+                        <span><t t-out="props.node.title"/></span>
+                    </div>
+                    <div class="node-content">
+                    </div>
+                    <div>
+                        <div>Left: <t t-out="props.node.left"/></div>
+                        <div>Top: <t t-out="props.node.top"/></div>
+                    </div>
+                </div>
+                <div class="output-ports">
+                    <t t-foreach="props.node.outPorts" t-as="outPort" t-key="outPort.id" >
+                        <Port port="outPort"/>
+                    </t>
+                </div>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="node_ui.port">
+        <div t-ref="root" t-att-id="props.id" t-attf-class="'{{props.port.id}}' {{props.port.type === 'out' ? 'output' : 'input'}} my-1"
+            t-on-mousedown.stop.prevent="onMouseDown" t-on-mouseup.stop.prevent="onMouseUp" >
+        </div>
+    </t>
+
+    <t t-name="node_ui.dumb-node" t-inherit="node_ui.node" t-inherit-mode="primary">
+        <xpath expr="//div[hasclass('node-content')]" position="replace">
+            <div class="node-content" t-att-style="contentStyle">
+                <div class="d-block text-truncate">Id: <t t-out="props.node.id"/></div>
+            </div>
+        </xpath>
+    </t>
+
+    <t t-name="node_ui.dumb-node-no-input" t-inherit="node_ui.dumb-node" t-inherit-mode="primary">
+    </t>
+
+    <t t-name="node_ui.dumb-node-multiple-outputs" t-inherit="node_ui.dumb-node" t-inherit-mode="primary">
+    </t>
+
+    <t t-name="node_ui.dumb-node-multiple-inputs" t-inherit="node_ui.dumb-node" t-inherit-mode="primary">
+    </t>
+
+    <t t-name="node_ui.dumb-node-no-output" t-inherit="node_ui.dumb-node" t-inherit-mode="primary">
+    </t>
+
+    <t t-name="node_ui.dumb-node-with-textarea" t-inherit="node_ui.node" t-inherit-mode="primary">
+        <xpath expr="//div[hasclass('node-content')]" position="inside">
+            <div>Id: <t t-out="props.node.id"/></div>
+            <div class="mb-2"><textarea></textarea></div>
+        </xpath>
+    </t>
+
+</templates>

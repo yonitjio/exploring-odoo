@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="odoo_faker.FakerView">
+        <div t-att-class="className" t-ref="root">
+            <Layout display="props.display" className="'h-100 overflow-auto'">
+                <t t-component="props.Renderer" t-props="rendererProps"/>
+            </Layout>
+        </div>
+    </t>
+</templates>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="ai_chat.AiSidebar">
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasAiSidebar" aria-labelledby="offcanvasAiSidebarLabel"
+            t-attf-style="width: {{ state.width }};" t-ref="container"
+        >
+            <div class="handle" t-ref="handle"
+                style="height: 100%; width: 5px; float: left; position: absolute; cursor: e-resize;"
+                t-on-mousedown="onHandleMouseDown"
+            >
+            </div>
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">AI Chat</h5>
+                <label class="form-check-label ms-2">
+                    <input t-on-change="toggleStreamingMode" class="form-check-input" type="checkbox" role="switch" t-att-checked="isStreamingMode"/>
+                    <span class="ms-2">Streaming</span>
+                </label>
+                <button type="button" class="btn" aria-label="Reset" t-on-click.stop.prevent="reset" >Reset</button>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body ms-2">
+                <div t-ref="chat-ui" id="chat-ui-container" class="h-100">
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>
