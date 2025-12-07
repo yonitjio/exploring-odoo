@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido_flow.random-number-node" t-inherit="nuido.node" t-inherit-mode="primary">
+        <xpath expr="//div[hasclass('node-content')]" position="inside">
+            <div class="mb-2">
+                <label t-attf-id="label-{{props.node.id}}-key" t-attf-for="text-{{props.node.id}}-key">Key</label>
+                <input t-attf-id="text-{{props.node.id}}-key" type="text" t-model="props.node.key"></input>
+                <label t-attf-id="label-{{props.node.id}}-from" t-attf-for="text-{{props.node.id}}-from">From</label>
+                <input t-attf-id="text-{{props.node.id}}-from" type="number" t-model="props.node.from"></input>
+                <label t-attf-id="label-{{props.node.id}}-to" t-attf-for="text-{{props.node.id}}-to">To</label>
+                <input t-attf-id="text-{{props.node.id}}-to" type="number" t-model="props.node.to"></input>
+            </div>
+        </xpath>
+    </t>
+</templates>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido_base.studio">
+        <NuidoUi nbus="state.nbus" channel="channel" edgeType="state.edgeType" documents="state.documents">
+            <t t-set-slot="before_container">
+                <SidebarMenu app="appName" action="notifyNewNode.bind(this)" title="currentDoc.title" />
+                <div id="nuido-toolbar" class="toolbar z-3 btn-toolbar justify-content-between" >
+                    <!-- <ChatDialogButton agentDefId="props.action.context.active_id" beforeShow.bind="onBeforeShowChatDialog"/> -->
+                    <div id="nuido-data-button-group" class="btn-group me-1">
+                        <button id="nuido-data-button-save" class="btn btn-primary my-0" t-on-click="onSave" data-tooltip="Save">
+                            <i t-attf-class="icon fa fa-floppy-o fa-lg align-self-center"></i>
+                        </button>
+                        <button id="nuido-data-button-fix-edges" class="btn btn-primary my-0" t-on-click="onFixEdgeEndpoints" data-tooltip="Fix Edges">
+                            <i t-attf-class="icon fa fa-magic fa-lg align-self-center"></i>
+                        </button>
+                        <button id="nuido-data-button-json" class="btn btn-primary my-0" t-on-click="onShowJson" data-tooltip="Json">
+                            <i t-attf-class="icon fa fa-code fa-lg align-self-center"></i>
+                        </button>
+                        <button id="nuido-data-button-clear-select" class="btn btn-primary my-0" t-on-click="clearSelection" data-tooltip="Clear Selection">
+                            <i t-attf-class="icon fa fa-times fa-lg align-self-center"></i>
+                        </button>
+                    </div>
+                    <div id="nuido-zoom-button-group" class="btn-group me-1">
+                        <button id="nuido-data-button-zoom" class="btn btn-primary my-0" t-on-click="zoom_reset" data-tooltip="Reset Zoom">
+                            <div class="d-flex justify-content-stretch h-100" style="width: 50px;" >
+                                <span><i t-attf-class="icon fa fa-search fa-lg align-self-center"></i></span>
+                                <span class="flex-grow-1 text-end"><t t-out="zoom"/></span>
+                            </div>
+                        </button>
+                    </div>
+                    <div id="nuido-delete-button-group" class="btn-group">
+                        <button id="nuido-data-button-delete" class="btn btn-primary my-0" t-on-click="deleteSelected" data-tooltip="Delete">
+                            <i t-attf-class="icon fa fa-minus fa-lg align-self-center"></i>
+                        </button>
+                    </div>
+                </div>
+            </t>
+        </NuidoUi>
+    </t>
+</templates>

@@ -1,0 +1,74 @@
+<odoo>
+    <data>
+        <record id="action_process_knowledge" model="ir.actions.server">
+            <field name="name">Process Knowledge</field>
+            <field name="model_id" ref="model_nuido_flow_ai_mini_knowledge"/>
+            <field name="state">code</field>
+            <field name="code">model.action_process_knowledge()</field>
+        </record>
+
+        <record id="action_reset_knowledge" model="ir.actions.server">
+            <field name="name">Reset Knowledge</field>
+            <field name="model_id" ref="model_nuido_flow_ai_mini_knowledge"/>
+            <field name="state">code</field>
+            <field name="code">model.action_reset_knowledge()</field>
+        </record>
+
+        <record model="ir.ui.view" id="nuido_flow_ai_mini_knowledge_form">
+            <field name="name">nuido.flow.ai.mini.knowledge.form</field>
+            <field name="model">nuido_flow_ai.mini.knowledge</field>
+            <field name="arch" type="xml">
+                <form string="Mini Knowledge">
+                    <sheet>
+                        <group>
+                            <field name="title"/>
+                            <field name="content"/>
+                            <field name="summary" readonly="1" force_save="1"/>
+                            <field name="is_processed" readonly="1" force_save="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="nuido_flow_ai_mini_knowledge_search">
+            <field name="name">nuido.flow.ai.mini.knowledge.search</field>
+            <field name="model">nuido_flow_ai.mini.knowledge</field>
+            <field name="arch" type="xml">
+                <search>
+                    <filter string="Processed" name="processed_doc_ref" domain="[('is_processed', '=', True)]"/>
+                    <filter string="Not Processed" name="processed_doc_ref" domain="[('is_processed', '=', False)]"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="nuido_flow_ai_mini_knowledge_list">
+            <field name="name">nuido.flow.ai.mini.knowledge.list</field>
+            <field name="model">nuido_flow_ai.mini.knowledge</field>
+            <field name="arch" type="xml">
+                <list string="Mini Knowledge">
+                    <header>
+                        <button display="always" type="action" name="nuido_flow_ai_mini_knowledge.action_process_knowledge" string="Process" icon="fa-play" class="oe_link"
+                            confirm="Process knowledge?"
+                        />
+                        <button display="always" type="action" name="nuido_flow_ai_mini_knowledge.action_reset_knowledge" string="Reset" icon="fa-stop" class="oe_link"
+                            confirm="Reset knowledge?"
+                        />
+                    </header>
+                    <field name="title"/>
+                    <field name="is_processed"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="action_mini_knowledge" model="ir.actions.act_window">
+            <field name="name">Mini Knowledge Base</field>
+            <field name="res_model">nuido_flow_ai.mini.knowledge</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <menuitem name="Mini Knowledge Base" id="nuido_flow_ai_mini_knowledge.knowledge_base_menu"
+            parent="nuido_flow.root_menu" action="nuido_flow_ai_mini_knowledge.action_mini_knowledge"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<odoo>
+    <data noupdate="1">
+        <record id="ir_cron_nuido_flow" model="ir.cron">
+            <field name="name">Nuido Flow: check and execute</field>
+            <field name="model_id" ref="nuido_flow.model_nuido_flow_node_definition"/>
+            <field name="state">code</field>
+            <field name="code">model._auto_run()</field>
+            <field name="interval_number">4</field>
+            <field name="interval_type">hours</field>
+            <field name="active" eval="False" />
+        </record>
+    </data>
+</odoo>

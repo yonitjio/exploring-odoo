@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512mm"
+   height="512mm"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="ai-chatbot.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   inkscape:export-filename="ai-chatbot.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <title
+     id="title1">machine-learning</title>
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.5897678"
+     inkscape:cx="624.82218"
+     inkscape:cy="1020.7407"
+     inkscape:window-width="3200"
+     inkscape:window-height="1960"
+     inkscape:window-x="-12"
+     inkscape:window-y="-12"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <defs
+     id="defs1" />
+  <g
+     id="g3"
+     transform="matrix(10.884166,0,0,10.884166,-5.219984,-5.219984)"
+     style="stroke-width:0.40515;fill:#9f5a00;fill-opacity:1">
+    <path
+       d="M 45.6,18.7 41,14.9 V 7.5 A 1,1 0 0 0 40.4,6.6 L 30.5,2.1 H 30.1 L 29.5,2.3 29,2.6 v 6 a 1.5,1.5 0 0 0 3,0 V 7.2 l 5,2.3 v 7.4 l 1.5,1.2 3.5,2.8 v 6.2 l -3.5,2.8 -1.5,1.2 v 7.4 l -5,2.3 v -1.3 a 1.5,1.5 0 0 0 -3,0 v 6 l 0.5,0.3 0.6,0.2 h 0.4 l 9.9,-4.5 A 1,1 0 0 0 41,40.6 v -7.5 l 4.6,-3.8 A 0.9,0.9 0 0 0 46,28.5 v -9 a 0.8,0.8 0 0 0 -0.4,-0.8 z"
+       id="path2-4"
+       style="stroke-width:0.40515;fill:#9f5a00;fill-opacity:1" />
+    <path
+       d="M 17.9,2 H 17.5 L 7.6,6.6 A 1,1 0 0 0 7,7.5 v 7.4 L 2.4,18.7 A 0.8,0.8 0 0 0 2,19.5 v 9 a 0.9,0.9 0 0 0 0.4,0.8 L 7,33.1 v 7.4 a 1,1 0 0 0 0.6,0.9 l 9.9,4.5 h 0.4 l 0.6,-0.2 0.5,-0.3 v -6 a 1.5,1.5 0 0 0 -3,0 v 1.3 L 11,38.4 V 31.1 L 9.5,29.9 6,27.1 V 20.9 L 9.5,18.1 11,16.9 V 9.5 l 5,-2.3 v 1.3 a 1.5,1.5 0 0 0 3,0 v -6 L 18.5,2.2 Z"
+       id="path3-3"
+       style="stroke-width:0.40515;fill:#9f5a00;fill-opacity:1" />
+  </g>
+  <path
+     d="m 331.40041,352.9434 a 21.542977,21.542977 0 0 0 21.543,-21.54299 v -32.31445 h 16.15721 a 16.157237,16.157237 0 0 0 0,-32.31447 h -16.15721 v -21.54297 h 16.15721 a 16.157237,16.157237 0 0 0 0,-32.31447 h -16.15721 v -32.31446 a 21.542977,21.542977 0 0 0 -21.543,-21.54297 h -32.31447 v -16.15725 a 16.157233,16.157233 0 0 0 -32.31445,0 v 16.15725 H 245.2285 v -16.15725 a 16.157233,16.157233 0 0 0 -32.31445,0 v 16.15725 h -32.31447 a 21.542977,21.542977 0 0 0 -21.54298,21.54297 v 32.31446 h -16.15723 a 16.157237,16.157237 0 0 0 0,32.31447 h 16.15723 v 21.54298 h -16.15723 a 16.157237,16.157237 0 0 0 0,32.31446 h 16.15723 v 32.31445 a 21.542977,21.542977 0 0 0 21.54298,21.54299 h 32.31447 v 16.15722 a 16.157233,16.157233 0 0 0 32.31445,0 V 352.9434 h 21.54299 v 16.15722 a 16.157233,16.157233 0 0 0 32.31445,0 V 352.9434 Z M 191.37106,191.37105 H 320.62893 V 320.62894 H 191.37106 Z"
+     id="path1"
+     style="stroke-width:4.40972;stroke:none;stroke-opacity:1;fill:#e89600;fill-opacity:1" />
+  <path
+     style="fill:#808080;fill-opacity:0.03;fill-rule:evenodd;stroke:#fdef00;stroke-width:26.4583;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:3.2;stroke-dasharray:none;stroke-opacity:1"
+     d="m 220.11017,294.58156 c 0,-2.69173 0,-77.16312 0,-77.16312 l 71.77966,77.16312 v -77.16312"
+     id="path2"
+     sodipodi:nodetypes="cccc" />
+</svg>

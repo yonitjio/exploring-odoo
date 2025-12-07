@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<odoo>
+    <data>
+        <!--
+            Category: Build Function
+
+            key:
+                Name of the client (javascript/typescript) component.
+            value:
+                Python module name and the name of the function to call to build the node info, takes two parameters the raw node json object
+                and raw json object of the edges (array).
+                Separated by comma, i.e., <module_name>,<function_name>
+        -->
+        <!-- CORE NODES -->
+        <record id="build_function_start_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">StartNode</field>
+            <field name="value">nuido_flow.flows.node_info,build_start_node</field>
+        </record>
+        <record id="build_function_conditional_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">ConditionalNode</field>
+            <field name="value">nuido_flow.flows.node_info,build_conditional_node</field>
+        </record>
+        <record id="build_function_log_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">LogNode</field>
+            <field name="value">nuido_flow.flows.node_info,build_log_node</field>
+        </record>
+        <record id="build_function_spread_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">SpreadNode</field>
+            <field name="value">nuido_flow.flows.node_info,build_spread_node</field>
+        </record>
+        <record id="build_function_merge_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">MergeNode</field>
+            <field name="value">nuido_flow.flows.node_info,build_merge_node</field>
+        </record>
+        <!-- MISC NODES -->
+        <record id="build_function_random_number_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">RandomNumberNode</field>
+            <field name="value">nuido_flow.flows.node_info,build_random_number_node</field>
+        </record>
+
+        <!--
+            Category: Post Process Function
+
+            key:
+                Name of the client (javascript/typescript) component.
+            value:
+                Name of the function to call to post process the node info, takes three parameters:
+                - The corresponding subject, e.g. the agent info, service info, etc.
+                - The infos built by the build functions in a dict
+        -->
+        <!-- <record id="post_process_function_start_node" model="nuido_base.registry">
+            <field name="category">Post Process Function</field>
+            <field name="key">Start</field>
+            <field name="value">nuido_flow.flows.node_info,post_process_start</field>
+        </record> -->
+
+        <!--
+            Category: Create Function
+
+            key:
+                Name of the client (javascript/typescript) component.
+            value:
+                Name of the function to call to create the semantic kernel component, takes 4 parameters:
+                - Odoo environment
+                - Create function registry
+                - All node definitions
+                - The corresponding definition, i.e., the node definition.
+        -->
+        <!-- CORE NODES -->
+        <record id="create_function_start_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">StartNode</field>
+            <field name="value">nuido_flow.flows.node_info,create_start_node</field>
+        </record>
+        <record id="create_function_conditional_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">ConditionalNode</field>
+            <field name="value">nuido_flow.flows.node_info,create_conditional_node</field>
+        </record>
+        <record id="create_function_log_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">LogNode</field>
+            <field name="value">nuido_flow.flows.node_info,create_log_node</field>
+        </record>
+        <record id="create_function_spread_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">SpreadNode</field>
+            <field name="value">nuido_flow.flows.node_info,create_spread_node</field>
+        </record>
+        <record id="create_function_merge_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">MergeNode</field>
+            <field name="value">nuido_flow.flows.node_info,create_merge_node</field>
+        </record>
+        <!-- MISC NODES -->
+        <record id="create_function_random_number_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">RandomNumberNode</field>
+            <field name="value">nuido_flow.flows.node_info,create_random_number_node</field>
+        </record>
+    </data>
+</odoo>

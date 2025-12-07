@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido_flow_data.update-active-data-node" t-inherit="nuido.node" t-inherit-mode="primary">
+        <xpath expr="//div[hasclass('node-content')]" position="inside">
+            <div class="mb-2">
+                <label t-attf-id="label-{{props.node.id}}-model-selector" t-att-for="modelSelectorId">Model</label>
+                <input class="o_input"  t-att-id="modelSelectorId" readonly="1" t-att-value="props.node.model_description"/>
+            </div>
+            <div class="text-divider my-1">Values</div>
+            <div class="mb-2">
+                <label t-attf-id="label-{{props.node.id}}-field-selector">Field</label>
+                <ModelFieldSelectorEx
+                    resModel="props.node.model"
+                    path="state.fieldName"
+                    readonly="props.node.model===''"
+                    followRelations="false"
+                    update.bind="onModelFieldUpdate"
+                    allowEmpty="true"
+                />
+            </div>
+            <div class="mb-2">
+                <label t-attf-id="label-{{props.node.id}}-tag" t-att-for="fieldValueId">Value</label>
+                <input class="o_input" t-att-id="fieldValueId" type="text" t-model="state.fieldValue"/>
+            </div>
+            <div class="btn-group my-1 d-flex w-100 justify-content-end">
+                <button class="btn btn-primary" t-on-click.stop.prevent="onAddField">
+                    <i class="fa fa-plus"/> or <i class="fa fa-pencil"/>
+                </button>
+            </div>
+            <table class="table table-sm table-bordered">
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Value</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-foreach="props.node.fields" t-as="field" t-key="field_index">
+                        <tr>
+                            <td><t t-out="field.name"/></td>
+                            <td><t t-out="field.value"/></td>
+                            <td>
+                                <button class="btn m-0 p-0" t-on-click.stop.prevent="() => { this.onRemoveField(field.name) }">
+                                    <i class="fa fa-minus"/>
+                                </button>
+                            </td>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+    </xpath>
+    </t>
+</templates>

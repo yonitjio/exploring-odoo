@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido_base.sidebar-menu">
+        <div class="sidebar-menu-root d-flex flex-column flex-shrink-0 position-relative z-3">
+            <div class="menu-handle">
+                <button type="button" class="btn btn-primary" t-on-click="toggleSidebar">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+            <ul id="sidebar-nav" class="nav nav-pills m-3 overflow-y-auto overflow-x-hidden">
+                <div class="nav-item nav-category" t-on-click="() => toggleCategory('sidebar-cat--1')">
+                    <h5 class="mb-0">
+                        <a class="d-none d-md-inline my-1" type="button">
+                            Document Info
+                        </a>
+                    </h5>
+                </div>
+                <div id="sidebar-cat--1" t-attf-class="w-100 collapse show">
+                    <li class="nav-item text-center text-md-start mb-1 mb-md-0">
+                        <span class="d-none d-md-inline">Title:</span> <t t-out="props.title"/>
+                    </li>
+                </div>
+                <hr/>
+                <div class="input-group input-group-sm mb-3 me-2 border border-dark rounded">
+                    <span class="input-group-text"><i class="icon fa fa-search fa-lg align-self-center"></i></span>
+                    <input type="text" class="form-control" t-model="state.filter"/>
+                </div>
+                <t t-foreach="menuItems" t-as="menuItem" t-key="menuItem_index">
+                    <t t-set="category_title" t-value="menuItem.category"/>
+                    <t t-set="sidebar_items" t-value="menuItem.items"/>
+                    <t t-call="nuido_base.sidebar-menu-items"/>
+                </t>
+            </ul>
+        </div>
+    </t>
+
+    <t t-name="nuido_base.sidebar-menu-items">
+        <div class="nav-item nav-category" t-on-click="() => toggleCategory('sidebar-cat-' + category_title)">
+            <h5 class="mb-0">
+                <a class="d-none d-md-inline my-1" type="button">
+                    <t t-out="category_title"/>
+                </a>
+                <hr class="d-block d-md-none my-1" />
+            </h5>
+        </div>
+        <div t-attf-id="sidebar-cat-{{category_title}}" t-attf-class="w-100 collapse show">
+            <t t-foreach="sidebar_items" t-as="item" t-key="item_index">
+                <t t-if="item.title.toLowerCase().includes(state.filter.toLowerCase())">
+                    <li class="nav-item">
+                        <MenuItem action="props.action" title="item.title" icon="item.icon" type="item.type"/>
+                    </li>
+                </t>
+            </t>
+        </div>
+    </t>
+</templates>

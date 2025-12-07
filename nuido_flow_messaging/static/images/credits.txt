@@ -1,0 +1,8 @@
+Vectors and icons by Scarlab in MIT License via https://www.svgrepo.com:
+mail.svg
+
+Vectors and icons by Denali Design in MIT License via https://www.svgrepo.com:
+notification.svg
+
+Vectors and icons by Basicons in MIT License via https://www.svgrepo.com:
+send-message-dm.svg

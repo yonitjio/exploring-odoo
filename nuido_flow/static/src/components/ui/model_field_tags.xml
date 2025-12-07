@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido_flow.model-field-tags">
+        <div style="max-width: 300px">
+            <TagsList tags="tags"/>
+            <div class="o_model_field_selector_controls ms-2" tabindex="0">
+                <i class="fa fa-plus" t-on-click.stop="openPopover"/>
+            </div>
+        </div>
+    </t>
+</templates>

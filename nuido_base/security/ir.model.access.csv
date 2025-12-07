@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_nuido_base_node_definition_sys,access_nuido_base_node_definition_sys,model_nuido_base_node_definition,base.group_system,1,1,1,1
+access_nuido_base_node_definition_user,access_nuido_base_node_definition_user,model_nuido_base_node_definition,base.group_user,1,0,0,0
+access_nuido_base_registry_sys,access_nuido_base_node_definition_sys,model_nuido_base_registry,base.group_system,1,1,1,1
+access_nuido_base_registry_user,access_nuido_base_node_definition_user,model_nuido_base_registry,base.group_user,1,0,0,0

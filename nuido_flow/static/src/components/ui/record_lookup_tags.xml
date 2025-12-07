@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+
+    <t t-name="nuido_flow.record-lookup-tags">
+        <div class="o_field_tags d-inline-flex flex-wrap gap-1 mw-100"
+            t-att-class="{'o_tags_input o_input': !props.readonly}"
+            t-ref="many2ManyTagsField"
+        >
+            <TagsList tags="tags"/>
+            <Many2XAutocomplete t-props="many2XAutocompleteProps"/>
+        </div>
+    </t>
+</templates>

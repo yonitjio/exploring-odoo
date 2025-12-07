@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido_flow_ai_chat.nuido-flow-sidebar-chat-toggler">
+        <div class="my-auto mx-2" id="nuido-flow-sidebar-chat-toggler">
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNuidoFlowSidebarChat">
+                <img style="max-height: 24px;" src="/nuido_flow_ai_chat/static/images/ai-chatbot-small.svg"/>
+            </button>
+        </div>
+    </t>
+</templates>

@@ -1,0 +1,37 @@
+Vectors and icons by Halfmage in MIT License via https://www.svgrepo.com:
+add-column.svg
+
+Vectors and icons by Salesforce / https://www.lightningdesignsystem.com in CC Attribution License via https://www.svgrepo.com:
+data-mapping.svg
+
+Vectors and icons by Denali Design via https://www.svgrepo.com:
+data-source.svg
+
+Vectors and icons by Iconoir via https://www.svgrepo.com:
+db.svg
+database-archive.svg -> modified from db.svg
+database-date.svg -> modified from db.svg
+database-lookup.svg -> modified from db.svg
+database-new.svg -> modified from db.svg
+database-restore.svg -> modified from db.svg
+database-settings.svg
+database-star.svg
+database-update.svg -> modified from db.svg
+
+Vectors and icons by Afnizarnur via https://www.svgrepo.com:
+edit.svg
+
+Vectors and icons by Bootstrap via https://www.svgrepo.com:
+lightning.svg
+
+Vectors and icons by Ant Design via https://www.svgrepo.com:
+select.svg
+
+Vectors and icons by Instructure-ui via https://www.svgrepo.com:
+table.svg
+
+Vectors and icons by Humbleicons via https://www.svgrepo.com:
+upload.svg
+
+Vectors and icons by Primefaces via https://www.svgrepo.com:
+bookmark.svg

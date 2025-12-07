@@ -1,0 +1,25 @@
+// Scrollbar
+::-webkit-scrollbar-corner {
+    background: transparent;
+    width: 0;
+    height: 0;
+    border: none !important;
+    color: transparent;
+}
+
+::-webkit-scrollbar-track {
+    background-color: $o-gray-900;
+    border: none;
+}
+
+::-webkit-scrollbar {
+    background-color: $o-gray-900;
+    border: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $o-gray-500;
+    border-radius: 20px;
+    border: 3px solid transparent;
+    background-clip: padding-box;
+}

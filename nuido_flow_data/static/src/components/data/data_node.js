@@ -1,0 +1,66 @@
+/*!
+// THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+//
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
+//
+// THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+// DO NOT USE IT IN PRODUCTION.
+*/
+import { useState } from "@odoo/owl";
+import { Node } from "@nuido/components/node";
+import { ModelSelectorEx } from "@nuido_flow/components/ui/model_selector_ex";
+import { ModelFieldTags } from "@nuido_flow/components/ui/model_field_tags";
+import { DomainDialogInput } from "@nuido_flow/components/ui/domain_dialog_input";
+import { UpdateDataModelEventType } from "@nuido_flow_data/components/data/events";
+export class DataNode extends Node {
+    static template = "nuido_flow_data.data-node";
+    static components = {
+        ...Node.components,
+        ModelSelectorEx,
+        DomainDialogInput,
+        ModelFieldTags
+    };
+    state;
+    setup() {
+        super.setup();
+        this.state = useState({
+            model: this.props.node.model,
+            modelDescription: this.props.node.model_description
+        });
+    }
+    updateFilterNodes() {
+        this.env.nbus.trigger(this.env.channel + UpdateDataModelEventType, {
+            id: this.props.node.id,
+            model: this.state.model,
+            modelDescription: this.state.modelDescription
+        });
+    }
+    onModelSelected(model) {
+        const { label, technical: value } = model;
+        this.props.node.fields = [];
+        this.state.model = value;
+        this.state.modelDescription = label;
+        this.props.node.model = value;
+        this.props.node.model_description = label;
+        this.updateFilterNodes();
+        this.refreshEdges();
+    }
+    onFieldDeleted(fieldName) {
+        const idx = this.props.node.fields.findIndex(o => o.value === fieldName);
+        if (idx > -1) {
+            this.props.node.fields.splice(idx, 1);
+        }
+        this.refreshEdges();
+    }
+    onFieldAdded(fieldInfo) {
+        this.props.node.fields.push(fieldInfo);
+        this.refreshEdges();
+    }
+    onDomainChanged(domain) {
+        this.props.node.domain = domain;
+    }
+    get modelSelectorId() {
+        return `input-${this.props.node.id}-model-selector`;
+    }
+}

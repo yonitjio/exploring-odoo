@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido_flow_ai.openai-chat-completion-client-node" t-inherit="nuido.node" t-inherit-mode="primary">
+        <xpath expr="//div[hasclass('node-content')]" position="inside">
+            <div class="mb-2">
+                <label t-attf-id="label-{{props.node.id}}-ai-model" t-att-for="aiModelInputId">Model</label>
+                <select t-att-id="aiModelInputId" t-on-change.stop.prevent="onAiModelChanged" class="form-control">
+                    <option t-foreach="state.aiModels" t-as="aiModel" t-key="aiModel_index" t-att-value="aiModel.model_name"
+                        t-att-selected="props.node.model === aiModel.model_name">
+                        <t t-esc="aiModel.model_description" />
+                    </option>
+                </select>
+            </div>
+            <div class="mb-2">
+                <TextInputDialogInput id="props.node.id + '-api-key'" label="'API Key'" value="props.node.api_key"
+                    onChanged.bind="onApiKeyChanged"
+                    hideValue="true"/>
+            </div>
+            <div class="mb-2">
+                <TextInputDialogInput id="props.node.id + '-base-url'" label="'Base URL'" value="props.node.base_url"
+                    onChanged.bind="onBaseUrlChanged"/>
+            </div>
+        </xpath>
+    </t>
+</templates>

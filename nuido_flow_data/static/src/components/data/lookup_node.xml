@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido_flow_data.lookup-node" t-inherit="nuido.node" t-inherit-mode="primary">
+        <xpath expr="//div[hasclass('node-content')]" position="inside">
+            <div class="mb-2">
+                <label t-attf-id="label-{{props.node.id}}-key" t-attf-for="text-{{props.node.id}}-key">Key</label>
+                <input class="o_input" t-attf-id="text-{{props.node.id}}-key" t-model="props.node.key"/>
+            </div>
+            <div class="mb-2">
+                <label t-attf-id="label-{{props.node.id}}-model-selector" t-att-for="modelSelectorId">Model</label>
+                <ModelSelectorEx
+                    id="modelSelectorId"
+                    value="state.modelDescription"
+                    onModelSelected.bind="onModelSelected"
+                />
+            </div>
+            <div class="mb-2">
+                <label t-attf-id="label-{{props.node.id}}-lookup-field-selector">Lookup Field</label>
+                <ModelFieldSelectorEx
+                    resModel="props.node.model"
+                    path="props.node.model ? props.node.lookup_field : ''"
+                    readonly="props.node.model===''"
+                    followRelations="false"
+                    update.bind="onLookupFieldUpdate"
+                    allowEmpty="true"
+                />
+            </div>
+            <div class="mb-2">
+                <label t-attf-id="label-{{props.node.id}}-lookup-field-selector">Value Field</label>
+                <ModelFieldSelectorEx
+                    resModel="props.node.model"
+                    path="props.node.model ? props.node.value_field : ''"
+                    readonly="props.node.model===''"
+                    followRelations="false"
+                    update.bind="onValueFieldUpdate"
+                    allowEmpty="true"
+                />
+            </div>
+        </xpath>
+    </t>
+</templates>

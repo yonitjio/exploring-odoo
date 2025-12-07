@@ -1,0 +1,15 @@
+Vectors and icons by Denali Design in MIT License via https://www.svgrepo.com:
+ai.svg
+machine-learning.svg
+
+Vectors and icons by Sigurdarson in MIT License via https://www.svgrepo.com:
+calendar.svg
+
+Vectors and icons by Primefaces via https://www.svgrepo.com:
+clock.svg
+
+Vectors and icons by Halfmage via https://www.svgrepo.com:
+list-box.svg
+
+Vectors and icons by Icooon Mono in Public Domain via https://svgrepo.com:
+web.svg

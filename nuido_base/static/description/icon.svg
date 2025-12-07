@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512mm"
+   height="512mm"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="nuido-base.svg"
+   inkscape:export-filename="..\..\Odoo\18.0.node\custom\addons\nuido_base\static\description\icon.png"
+   inkscape:export-xdpi="25.4"
+   inkscape:export-ydpi="25.4"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.50835203"
+     inkscape:cx="911.76974"
+     inkscape:cy="1197.9887"
+     inkscape:window-width="3200"
+     inkscape:window-height="1960"
+     inkscape:window-x="-12"
+     inkscape:window-y="-12"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showgrid="false" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="text3"
+       style="font-size:491.201px;line-height:1.25;font-family:Poppins;-inkscape-font-specification:Poppins;text-decoration-color:#000000;fill:#c69a37;fill-opacity:1;stroke-width:0.264584;-inkscape-stroke:none;stop-color:#000000"
+       d="m 331.42784,259.54066 v 32.13319 c 0,3.84481 -3.43511,6.93982 -7.70242,6.93982 h -41.95174 l 113.42724,114.09296 c 8.8416,8.84161 18.1747,13.26256 28.48991,13.26256 18.17442,0 30.94525,-13.75405 30.94525,-37.33168 V 61.497909 H 395.20092 V 322.81669 Z"
+       transform="scale(0.94920573,1.0535124)" />
+    <path
+       id="path1"
+       style="font-size:491.201px;line-height:1.25;font-family:Poppins;-inkscape-font-specification:Poppins;text-decoration-color:#000000;fill:#c69a37;fill-opacity:1;stroke-width:0.264584;-inkscape-stroke:none;stop-color:#000000"
+       d="m 116.68993,60.0244 c -19.648022,0 -31.927918,14.244761 -31.927918,37.331185 V 421.54817 H 144.19717 V 160.22939 l 63.77308,64.14768 v -30.05733 c 0,-3.84482 3.43565,-6.94031 7.70297,-6.94031 h 43.02641 L 143.21504,72.795466 C 133.88223,63.462657 126.02274,60.0244 116.68993,60.0244 Z"
+       transform="scale(0.94920573,1.0535124)" />
+    <text
+       xml:space="preserve"
+       style="font-size:137.696px;line-height:1.25;font-family:Poppins;-inkscape-font-specification:Poppins;text-decoration-color:#000000;fill:#00d9ff;fill-opacity:1;stroke-width:0.264583;-inkscape-stroke:none;stop-color:#000000"
+       x="207.02472"
+       y="301.95996"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:137.696px;font-family:Nasalization;-inkscape-font-specification:'Nasalization, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#00d9ff;fill-opacity:1;stroke-width:0.264583"
+         x="207.02472"
+         y="301.95996">B</tspan></text>
+  </g>
+</svg>

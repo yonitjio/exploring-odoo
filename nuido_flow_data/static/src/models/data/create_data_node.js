@@ -1,0 +1,51 @@
+/*!
+// THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+//
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
+//
+// THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+// DO NOT USE IT IN PRODUCTION.
+*/
+import { ModelNodeModel } from "@nuido_flow_data/models/data/model_node";
+import { Default } from "@nuido/utils/registry";
+import { LookupPort } from "@nuido_flow_data/components/ports/lookup_port";
+export class CreateDataNodeModel extends ModelNodeModel {
+    fields;
+    setup() {
+        super.setup();
+        const inId = "in-" + this.id + "-1";
+        this.addInPort(inId, Default, 1);
+        const outId = "out-" + this.id + "-1";
+        this.addOutPort(outId, Default, 1);
+        const auxInId = "aux-in-" + this.id + "-1";
+        this.addAuxInPort(auxInId, LookupPort.name, Number.MAX_SAFE_INTEGER, {
+            role: "lookup"
+        });
+        this.fields = [];
+    }
+    addOrUpdateField(name, value) {
+        const field = this.fields.find(o => o.name === name);
+        if (field) {
+            field.value = value;
+        }
+        else {
+            this.fields.push({
+                name: name,
+                value: value
+            });
+        }
+    }
+    removeField(name) {
+        const field_idx = this.fields.findIndex(o => o.name === name);
+        if (field_idx > -1) {
+            this.fields.splice(field_idx, 1);
+        }
+    }
+    getData() {
+        const res = super.getData();
+        return Object.assign(res, {
+            fields: this.fields,
+        });
+    }
+}

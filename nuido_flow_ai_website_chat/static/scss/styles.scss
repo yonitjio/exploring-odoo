@@ -1,0 +1,8 @@
+body.editor_enable .o-ai-portal-root::part(openChatButton) {
+    visibility: hidden;
+}
+
+.ai-chat-input {
+    color: $o-gray-300;
+    background-color: $o-gray-800;
+}

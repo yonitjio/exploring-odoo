@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+
+<templates xml:space="preserve">
+
+<t t-name="nuido_flow_ai_website_chat.ChatButton">
+    <button
+        part="openChatButton"
+        t-if="isShown"
+        class="btn o-nuido-flow-ai-website-chat-ChatButton d-print-none position-fixed p-3 d-flex justify-content-center align-items-center shadow rounded-circle "
+        t-attf-style="color: black; background-color: white;width: {{size}}px; height: {{size}}px; min-width: {{size}}px; top: {{ position.top }}; left: {{ position.left }};"
+        t-ref="button"
+        t-on-click.prevent="showChatCorner"
+        title="Drag to Move"
+    >
+        <img style="max-height: 42px;" src="/nuido_flow_ai_website_chat/static/images/frodoo.png"/>
+    </button>
+</t>
+
+</templates>

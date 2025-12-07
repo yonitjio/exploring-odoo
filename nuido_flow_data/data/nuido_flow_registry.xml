@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<odoo>
+    <data>
+        <!-- BUILD FUNCTIONS -->
+        <!-- ODOO NODES -->
+        <record id="build_function_data_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">DataNode</field>
+            <field name="value">nuido_flow_data.flows.node_info,build_data_node</field>
+        </record>
+        <record id="build_function_data_group_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">DataGroupNode</field>
+            <field name="value">nuido_flow_data.flows.node_info,build_data_group_node</field>
+        </record>
+        <record id="build_function_active_data_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">ActiveDataNode</field>
+            <field name="value">nuido_flow_data.flows.node_info,build_active_data_node</field>
+        </record>
+        <record id="build_function_update_active_data_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">UpdateActiveDataNode</field>
+            <field name="value">nuido_flow_data.flows.node_info,build_update_active_data_node</field>
+        </record>
+        <record id="build_function_record_map_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">RecordMapNode</field>
+            <field name="value">nuido_flow_data.flows.node_info,build_record_map_node</field>
+        </record>
+        <record id="build_function_browse_data_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">BrowseDataNode</field>
+            <field name="value">nuido_flow_data.flows.node_info,build_browse_data_node</field>
+        </record>
+        <record id="build_function_update_data_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">UpdateDataNode</field>
+            <field name="value">nuido_flow_data.flows.node_info,build_update_data_node</field>
+        </record>
+        <record id="build_function_create_data_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">CreateDataNode</field>
+            <field name="value">nuido_flow_data.flows.node_info,build_create_data_node</field>
+        </record>
+        <record id="build_function_reference_map_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">ReferenceMapNode</field>
+            <field name="value">nuido_flow_data.flows.node_info,build_reference_map_node</field>
+        </record>
+        <record id="build_function_lookup_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">LookupNode</field>
+            <field name="value">nuido_flow_data.flows.node_info,build_lookup_node</field>
+        </record>
+        <record id="build_function_archive_data_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">ArchiveDataNode</field>
+            <field name="value">nuido_flow_data.flows.node_info,build_archive_data_node</field>
+        </record>
+        <record id="build_function_dynamic_date_filter_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">DynamicDateFilterNode</field>
+            <field name="value">nuido_flow_data.flows.node_info,build_dynamic_date_filter_node</field>
+        </record>
+        <record id="build_function_action_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">ActionNode</field>
+            <field name="value">nuido_flow_data.flows.node_info,build_action_node</field>
+        </record>
+        <!-- STARTER NODES -->
+        <record id="build_function_custom_field_starter_node" model="nuido_base.registry">
+            <field name="category">Build Function</field>
+            <field name="key">CustomFieldStarterNode</field>
+            <field name="value">nuido_flow_data.flows.node_info,build_custom_field_starter_node</field>
+        </record>
+
+        <!-- CREATE FUNCTIONS -->
+        <!-- ODOO NODES -->
+        <record id="create_function_data_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">DataNode</field>
+            <field name="value">nuido_flow_data.flows.node_info,create_data_node</field>
+        </record>
+        <record id="create_function_data_group_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">DataGroupNode</field>
+            <field name="value">nuido_flow_data.flows.node_info,create_data_group_node</field>
+        </record>
+        <record id="create_function_active_data_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">ActiveDataNode</field>
+            <field name="value">nuido_flow_data.flows.node_info,create_active_data_node</field>
+        </record>
+        <record id="create_function_update_active_data_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">UpdateActiveDataNode</field>
+            <field name="value">nuido_flow_data.flows.node_info,create_update_active_data_node</field>
+        </record>
+        <record id="create_function_record_map_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">RecordMapNode</field>
+            <field name="value">nuido_flow_data.flows.node_info,create_record_map_node</field>
+        </record>
+        <record id="create_function_browse_data_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">BrowseDataNode</field>
+            <field name="value">nuido_flow_data.flows.node_info,create_browse_data_node</field>
+        </record>
+        <record id="create_function_update_data_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">UpdateDataNode</field>
+            <field name="value">nuido_flow_data.flows.node_info,create_update_data_node</field>
+        </record>
+        <record id="create_function_create_data_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">CreateDataNode</field>
+            <field name="value">nuido_flow_data.flows.node_info,create_create_data_node</field>
+        </record>
+        <record id="create_function_reference_map_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">ReferenceMapNode</field>
+            <field name="value">nuido_flow_data.flows.node_info,create_reference_map_node</field>
+        </record>
+        <record id="create_function_lookup_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">LookupNode</field>
+            <field name="value">nuido_flow_data.flows.node_info,create_lookup_node</field>
+        </record>
+        <record id="create_function_archive_data_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">ArchiveDataNode</field>
+            <field name="value">nuido_flow_data.flows.node_info,create_archive_data_node</field>
+        </record>
+        <record id="create_function_dynamic_date_filter_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">DynamicDateFilterNode</field>
+            <field name="value">nuido_flow_data.flows.node_info,create_dynamic_date_filter_node</field>
+        </record>
+        <record id="create_function_action_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">ActionNode</field>
+            <field name="value">nuido_flow_data.flows.node_info,create_action_node</field>
+        </record>
+        <!-- STARTER NODES -->
+        <record id="create_function_custom_field_starter_node" model="nuido_base.registry">
+            <field name="category">Create Function</field>
+            <field name="key">CustomFieldStarterNode</field>
+            <field name="value">nuido_flow_data.flows.node_info,create_custom_field_starter_node</field>
+        </record>
+    </data>
+</odoo>

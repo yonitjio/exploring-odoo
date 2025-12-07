@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido_flow_ai.list-memory-node" t-inherit="nuido.node" t-inherit-mode="primary">
+        <xpath expr="//div[hasclass('node-content')]" position="inside">
+            <div class="mb-2">
+                <label t-attf-id="label-{{props.node.id}}-tag" t-att-for="memoryId">Memory</label>
+                <input class="o_input" t-att-id="memoryId" type="text" t-model="state.memory"/>
+            </div>
+            <div class="btn-group my-1 d-flex w-100 justify-content-end">
+                <button class="btn btn-primary" t-on-click.stop.prevent="onAddMemory">
+                    <i class="fa fa-plus"/>
+                </button>
+            </div>
+            <table class="table table-sm table-bordered">
+                <thead>
+                    <tr>
+                        <th>Memory</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-foreach="props.node.memories" t-as="memory" t-key="memory_index">
+                        <tr>
+                            <td><t t-out="memory"/></td>
+                            <td>
+                                <button class="btn m-0 p-0" t-on-click.stop.prevent="() => { this.onRemoveMemory(memory_index) }">
+                                    <i class="fa fa-minus"/>
+                                </button>
+                            </td>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+        </xpath>
+    </t>
+</templates>

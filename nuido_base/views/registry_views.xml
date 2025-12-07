@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="nuido_base_registry_list">
+            <field name="name">nuido_base.registry.list</field>
+            <field name="model">nuido_base.registry</field>
+            <field name="arch" type="xml">
+                <list string="Nuido Registry" editable="top" create="1" delete="1">
+                    <field name="category" />
+                    <field name="key" />
+                    <field name="value" />
+                </list>
+            </field>
+        </record>
+
+        <record id="action_nuido_base_registry" model="ir.actions.act_window">
+            <field name="name">Nuido Registry</field>
+            <field name="path">nuido-registry</field>
+            <field name="res_model">nuido_base.registry</field>
+            <field name="view_mode">list</field>
+        </record>
+    </data>
+</odoo>

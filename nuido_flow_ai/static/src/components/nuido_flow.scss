@@ -1,0 +1,92 @@
+// THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+//
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
+//
+// THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+// DO NOT USE IT IN PRODUCTION.
+
+.nuido {
+    .nuido-doc-container {
+        .nuido-doc {
+            .node-container {
+                .node:not(.node.sectioned) {
+                    .ai-chat-completion-port {
+                        background-color: $nuido-port-border-color;
+                        transform: none;
+                        height: 15px;
+                        width: 15px;
+
+                        &::after {
+                            transform: none;
+                            content: "";
+                            display: block;
+                            width: 13px;
+                            height: 12px;
+                            position: relative;
+                            left: -2px;
+                            top: -1px;
+                            background: $yellow-500;
+                            clip-path: polygon(50% -50%,100% 50%,50% 150%,0 50%);
+                        }
+                    }
+                    .ai-tool-port {
+                        background-color: $nuido-port-border-color;
+                        transform: none;
+                        height: 15px;
+                        width: 15px;
+
+                        &::after {
+                            transform: none;
+                            content: "";
+                            display: block;
+                            width: 11px;
+                            height: 11px;
+                            position: relative;
+                            left: -1px;
+                            top: -1px;
+                            background: $pink-500;
+                            clip-path: polygon(50% 0, 100% 100%, 0 100%);
+                        }
+                    }
+                    .ai-mcp-port {
+                        background-color: $nuido-port-border-color;
+                        transform: none;
+                        height: 15px;
+                        width: 15px;
+
+                        &::after {
+                            transform: none;
+                            content: "";
+                            display: block;
+                            width: 11px;
+                            height: 11px;
+                            position: relative;
+                            left: -1px;
+                            top: -1px;
+                            background: linear-gradient($orange-500 50%,#0000 0) top/100% 40% repeat-y;;
+                        }
+                    }
+                    .ai-memory-port {
+                        background-color: $nuido-port-border-color;
+                        transform: none;
+                        height: 15px;
+                        width: 15px;
+
+                        &::after {
+                            transform: rotate(90deg);
+                            content: "";
+                            display: block;
+                            width: 11px;
+                            height: 11px;
+                            position: relative;
+                            left: -1px;
+                            top: -1px;
+                            background: linear-gradient($blue-500 50%,#0000 0) top/100% 40% repeat-y;;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

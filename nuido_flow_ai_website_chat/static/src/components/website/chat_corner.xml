@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido_flow_ai_website_chat.ChatCorner">
+        <div class="d-flex position-fixed" t-att-style="style">
+            <div class="card d-flex flex-column w-100 h-100" t-att-style="cardStyle">
+                <div class="card-header d-flex align-items-center">
+                    <div class="me-3"><bold><t t-out="props.title"/></bold></div>
+                    <button type="button" class="btn btn-tertiary p-1" t-on-click="reset">
+                        Reset
+                    </button>
+                    <div class="flex-grow-1"></div>
+                    <button type="button" class="btn p-1" t-on-click="close">
+                        <i class="fa fa-times" style="font-size: 18px;"/>
+                    </button>
+                </div>
+                <div class="card-body h-100 p-2 overflow-hidden">
+                    <AiChat
+                        userName="props.userName"
+                        userAvatarUrl="props.userAvatarUrl"
+
+                        assistantName="props.assistantName"
+                        assistantAvatarUrl="props.assistantAvatarUrl"
+
+                        greetingMessage="props.greetingMessage"
+                        greetUser="props.greetUser"
+
+                        storeName="props.storeName"
+
+                        channel="props.channel"
+                        bus="props.bus"
+
+                        isProcessing="isProcessing"
+
+                        onBeforeSendMessage.bind="onBeforeSendMessage"
+                        onSendMessage.bind="onSendMessage"
+
+                        allowUpload="false"
+                    />
+                </div>
+                </div>
+        </div>
+    </t>
+</templates>

@@ -1,0 +1,24 @@
+ai-chatbot* original icon by uxwing.com
+
+Vectors and icons by Denali Design in MIT License via https://www.svgrepo.com:
+ai.svg
+machine-learning.svg
+
+Vectors and icons by Lucide Contributors in MIT License via https://www.svgrepo.com:
+bot.svg
+
+Vectors and icons by Sigurdarson in MIT License via https://www.svgrepo.com:
+calendar.svg
+
+Vectors and icons by Element Plus in MIT License via https://svgrepo.com:
+chat-round.svg
+chat-dot-round.svg
+
+Vectors and icons by Primefaces via https://www.svgrepo.com:
+clock.svg
+
+Vectors and icons by Teenyicons in MIT License via https://svgrepo.com:
+chatbot.svg
+
+Vectors and icons by Icooon Mono in Public Domain via https://svgrepo.com:
+web.svg

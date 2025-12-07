@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido_flow_data.data-group-node" t-inherit="nuido.node" t-inherit-mode="primary">
+        <xpath expr="//div[hasclass('node-content')]" position="inside">
+            <div class="row">
+                <div class="col-6">
+                    <div class="mb-2">
+                        <label t-attf-id="label-{{props.node.id}}-key" t-attf-for="text-{{props.node.id}}-key">Key</label>
+                        <input class="o_input" t-attf-id="text-{{props.node.id}}-key" t-model="props.node.key"/>
+                    </div>
+                    <div class="mb-2">
+                        <label t-attf-id="label-{{props.node.id}}-model-selector" t-att-for="modelSelectorId">Model</label>
+                        <ModelSelectorEx
+                            id="modelSelectorId"
+                            value="state.modelDescription"
+                            onModelSelected.bind="onModelSelected"
+                        />
+                    </div>
+                    <div class="data-input d-flex flex-column mb-2">
+                        <label t-attf-id="label-{{props.node.id}}-model-selector">Value Fields</label>
+                        <ModelFieldTags
+                            model="props.node.model"
+                            fields="props.node.fields"
+                            onAddField.bind="onFieldAdded"
+                            onDeleteField.bind="onFieldDeleted"
+                        />
+                    </div>
+                    <div class="text-divider">Grouping Parameters</div>
+                    <label t-attf-id="label-{{props.node.id}}-aggregate-function" t-att-for="aggregateFunctionInputId">Aggregate Func.</label>
+                    <select t-att-id="aggregateFunctionInputId" t-on-change.stop.prevent="onAggregateFunctionChanged" class="form-control">
+                        <option value="avg" t-att-selected="props.node.aggregate_function === 'avg'">Average</option>
+                        <option value="count" t-att-selected="props.node.aggregate_function === 'count'">Count</option>
+                        <option value="max" t-att-selected="props.node.aggregate_function === 'max'">Max</option>
+                        <option value="min" t-att-selected="props.node.aggregate_function === 'min'">Min</option>
+                        <option value="sum" t-att-selected="props.node.aggregate_function === 'sum'">Sum</option>
+                    </select>
+                    <div class="mb-2">
+                        <label t-attf-id="label-{{props.node.id}}-group-field">Group Field</label>
+                        <ModelFieldSelectorEx
+                            resModel="props.node.model"
+                            path="props.node.model ? props.node.group_field : ''"
+                            readonly="props.node.model===''"
+                            followRelations="false"
+                            update.bind="onGroupFieldUpdate"
+                            allowEmpty="true"
+                        />
+                    </div>
+                    <div class="mb-2">
+                        <label t-attf-id="label-{{props.node.id}}-datetime-granularity" t-att-for="datetimeGranularityInputId">Datetime Granularity</label>
+                        <select t-att-id="datetimeGranularityInputId" t-on-change.stop.prevent="onDatetimeGranularityChanged" class="form-control">
+                            <option value="day" t-att-selected="props.node.datetime_granularity === 'day'">Day</option>
+                            <option value="month" t-att-selected="props.node.datetime_granularity === 'month'">Month</option>
+                            <option value="year" t-att-selected="props.node.datetime_granularity === 'year'">Year</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="text-divider">Filter</div>
+                    <div class="mb-2">
+                        <DomainDialogInput id="props.node.id" label="'Domain'"
+                            domain="props.node.domain" model="props.node.model" onChanged.bind="onDomainChanged"/>
+                    </div>
+                    <div class="text-divider">Options</div>
+                    <div class="mb-2">
+                        <label t-attf-id="label-{{props.node.id}}-output-type" t-att-for="outputTypeInputId">Output Type</label>
+                        <select t-att-id="outputTypeInputId" t-on-change.stop.prevent="onOutputTypeChanged" class="form-control">
+                            <option value="array" t-att-selected="props.node.output_type === 'array'">Array</option>
+                            <option value="dataframe" t-att-selected="props.node.output_type === 'dataframe'">Dataframe</option>
+                            <option value="html" t-att-selected="props.node.output_type === 'html'">HTML</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </t>
+</templates>

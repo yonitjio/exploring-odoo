@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido_flow.flow-studio" t-inherit="nuido_base.studio" t-inherit-mode="primary">
+        <xpath expr="//div[@id='nuido-data-button-group']" position="before">
+            <div class="btn-group mx-1">
+                <button id="nuido-data-button-run" t-on-click.stop.prevent="onRunButtonClick" class="btn btn-primary text-danger" data-tooltip="Run">
+                    <i class="fa fa-play"/>
+                </button>
+                <button id="nuido-data-button-process" t-on-click.stop.prevent="onProcessButtonClick" class="btn btn-primary text-danger" data-tooltip="Process">
+                    <i class="fa fa-check"/>
+                </button>
+                <button id="nuido-data-button-reset-states" t-on-click.stop.prevent="onResetProcessingStateButtonClick" class="btn btn-primary text-danger" data-tooltip="Clear Node States">
+                    <i class="fa fa-backward"/>
+                </button>
+            </div>
+        </xpath>
+    </t>
+</templates>

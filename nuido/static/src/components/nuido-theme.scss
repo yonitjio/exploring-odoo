@@ -1,0 +1,44 @@
+// THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+// 
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
+// 
+// THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+// DO NOT USE IT IN PRODUCTION.
+
+$nuido-border-color: $gray-500 !default;
+
+$nuido-background-color: $gray-200 !default;
+$nuido-background-dot-color: $gray-400 !default;
+$nuido-background-size: 20px !default;
+$nuido-background-image: radial-gradient(circle at 1px 1px, $nuido-background-dot-color 1px, transparent 0px) !default;
+
+$nuido-node-background-color: $gray-200 !default;
+$nuido-node-border-color: $gray-500 !default;
+$nuido-node-color: $gray-600 !default;
+
+$nuido-node-border-width: 3px !default;
+
+$nuido-node-title-bottom-color: $gray-400 !default;
+$nuido-node-selected-background-color: $nuido-node-background-color !default;
+$nuido-node-selected-border-color: $o-brand-primary !default;
+
+$nuido-node-hover-background-color: $nuido-node-background-color !default;
+$nuido-node-hover-border-color: $blue-500 !default;
+
+$nuido-port-border-color: $nuido-node-border-color !default;
+$nuido-port-border-width: 3px !default;
+$nuido-input-port-background-color: $blue-200 !default;
+$nuido-ouput-port-background-color: $orange-200 !default;
+$nuido-aux-in-port-background-color: $blue-200 !default;
+$nuido-aux-out-port-background-color: $orange-200 !default;
+
+$nuido-path-width: 3px !default;
+$nuido-path-color: $gray-500 !default;
+$nuido-path-hover-color: $blue-500 !default;
+$nuido-path-selected-color: $o-brand-primary !default;
+
+$nuido-joint-border-color: $nuido-node-border-color !default;
+$nuido-joint-border-selected-color: $o-brand-primary !default;
+$nuido-joint-background-color: $gray-200 !default;
+

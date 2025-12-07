@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido_flow_ai_chat.assistant-agent-node" t-inherit="nuido_flow_ai.assistant-agent-node" t-inherit-mode="primary">
+        <xpath expr="//div[hasclass('node-content')]" position="inside">
+            <div class="mb-2 form-check form-switch">
+                <input t-att-id="isStreamingInputId" type="checkbox" t-att-checked="props.node.is_streaming" t-att-value="props.node.is_streaming"
+                    t-on-click="onIsStreamingResponseChanged"
+                    class="form-check-input"/>
+                <label t-attf-id="label-{{props.node.id}}-is-streaming-response" t-att-for="isStreamingInputId" t-on-click="onIsStreamingResponseChanged"
+                    class="form-check-label ms-2 d-inline">Streaming Response</label>
+            </div>
+            <div class="mb-2 form-check form-switch">
+                <input t-att-id="isStatefulInputId" type="checkbox" t-att-checked="props.node.is_stateful" t-att-value="props.node.is_stateful"
+                    t-on-click="onIsStatefulChanged"
+                    class="form-check-input"/>
+                <label t-attf-id="label-{{props.node.id}}-is-stateful" t-att-for="isStatefulInputId" t-on-click="onIsStatefulChanged"
+                    class="form-check-label ms-2 d-inline">Stateful</label>
+            </div>
+        </xpath>
+    </t>
+</templates>

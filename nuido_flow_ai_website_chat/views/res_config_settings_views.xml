@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.nuido.flow.ai.website.chat</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="website.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <block id="website_info_settings" position="after">
+                <block title="Nuido Flow for Website" id="website_nuido_flow_settings" invisible="not website_id">
+                    <setting string="AI Chat" help="Node definition for AI Chat on website">
+                        <div class="content-group">
+                            <div class="row">
+                                <label
+                                    string="Guest users"
+                                    for="guest_node_definition_id"
+                                    class="o_light_label col-lg-3"
+                                />
+                                <field name="guest_node_definition_id" options="{'no_open': True, 'no_create': True}" />
+                            </div>
+                            <div class="row">
+                                <label
+                                    string="Logged-in users"
+                                    for="logged_in_users_node_definition_id"
+                                    class="o_light_label col-lg-3"
+                                />
+                                <field name="logged_in_users_node_definition_id" options="{'no_open': True, 'no_create': True}" />
+                            </div>
+                        </div>
+                    </setting>
+                </block>
+            </block>
+        </field>
+    </record>
+</odoo>

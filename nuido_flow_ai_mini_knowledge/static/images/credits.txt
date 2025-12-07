@@ -1,0 +1,3 @@
+Vectors and icons by Neuicons via https://www.svgrepo.com:
+book.svg
+book-open.svg

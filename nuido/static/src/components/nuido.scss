@@ -1,0 +1,236 @@
+// THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+// 
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
+// 
+// THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+// DO NOT USE IT IN PRODUCTION.
+
+.nuido-root:focus-visible {
+    outline: none;
+}
+
+.nuido-selection {
+    border: $gray-500 dashed 1px;
+}
+
+.nuido {
+    background-color: $nuido-background-color;
+    background-size: $nuido-background-size $nuido-background-size;
+    background-image: $nuido-background-image;
+    border: $nuido-border-color dashed 1px;
+
+    .nuido-doc-container {
+        display: flex;
+        overflow: hidden;
+        touch-action: none;
+        outline: $nuido-border-color solid 1px;
+
+        .nuido-doc {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            user-select: none;
+            perspective: 0;
+            background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20version%3D'1.1'%20height%3D'200px'%20width%3D'200px'%3E%3Ctext%20transform%3D'translate(20%2C%20100)%20rotate(-45)'%20fill%3D'rgba(0%2C0%2C0%2C0.05)'%20font-size%3D'20'%20font-family%3D'Arial%2CHelvetica%2Csans-serif'%3Eexploring-odoo%3C%2Ftext%3E%3C%2Fsvg%3E");
+
+            .node-container {
+                position: relative;
+
+                .node, .node.sectioned {
+                    display: flex;
+                    align-items: center;
+                    position: absolute;
+                    min-height: 40px;
+                    min-width: 100px;
+                    // z-index: 0;
+                    padding: 10px;
+                    border-radius: 4px;
+                    background: $nuido-node-background-color;
+                    border: $nuido-node-border-width solid $nuido-node-border-color;
+                    color: $nuido-node-color;
+
+
+                    .content {
+                        height: 100%;
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        margin-right: -12px;
+
+                        .node-title {
+                            display: flex;
+                            padding-top: 5px;
+                            padding-bottom: 3px;
+                            border-bottom: $nuido-node-title-bottom-color solid 1px;
+
+                            .node-icon {
+                                max-height: 24px;
+                                max-width: 100%;
+                                width: auto;
+                                filter: invert(0.80);
+                            }
+
+                            .node-title-text {
+                                text-wrap: nowrap;
+                                margin-right: 5em;
+                            }
+                        }
+
+                        .node-title:hover {
+                            cursor: move;
+                        }
+
+                        .node-content {
+                            padding-top: 3px;
+                            padding-bottom: 3px;
+
+                            .node-sections {
+                                display: flex;
+                                flex-direction: column;
+
+                                .node-section {
+                                    display: flex;
+
+                                    .node-section-content {
+                                        width: 100%;
+                                    }
+                                }
+                            }
+
+                            table {
+                                user-select: text;
+                            }
+                        }
+                    }
+
+                    %port-container {
+                        position: relative;
+                    }
+
+                    .input-container {
+                        @extend %port-container;
+                        left: -19px;
+                    }
+
+                    .input-container:has(> :last-child:nth-child(n)):has(+ .content) + .content{
+                        margin-left: -12px;
+                    }
+
+                    .output-container {
+                        @extend %port-container;
+                        right: -19px;
+                    }
+
+                    %aux-container {
+                        height: 0px;
+                        position: relative;
+                        left: auto;
+                        align-self: center;
+                        display: flex;
+                        justify-content: space-between;
+                    }
+
+                    .aux-in-container {
+                        @extend %aux-container;
+                        bottom: 4px;
+                    }
+
+                    .aux-out-container {
+                        @extend %aux-container;
+                        top: -27px;
+                    }
+
+                    %port {
+                        width: 15px;
+                        height: 15px;
+                        border-radius: 50%;
+                        cursor: crosshair;
+                        // z-index: -1;
+                        border: $nuido-port-border-width solid $nuido-port-border-color;
+                    }
+
+                    .input {
+                        @extend %port;
+                        background: $nuido-input-port-background-color;
+                    }
+
+                    .output {
+                        @extend %port;
+                        background: $nuido-ouput-port-background-color;
+                    }
+
+                    .aux-in {
+                        @extend %port;
+                        border-radius: 10%;
+                        transform: rotate(45deg);
+                        background: $nuido-aux-in-port-background-color;
+                    }
+
+                    .aux-out {
+                        @extend %port;
+                        border-radius: 10%;
+                        transform: rotate(45deg);
+                        background: $nuido-aux-out-port-background-color;
+                    }
+                }
+
+                .node:hover {
+                    background: $nuido-node-hover-background-color;
+                    border: $nuido-node-border-width solid $nuido-node-hover-border-color;
+                }
+
+                .node.selected {
+                    background: $nuido-node-selected-background-color;
+                    border: $nuido-node-border-width solid $nuido-node-selected-border-color;
+                }
+            }
+
+            svg.edge {
+                z-index: -2;
+                overflow: visible !important;
+                position: absolute;
+                pointer-events: none;
+                aspect-ratio: 1 / 1;
+
+                .path {
+                    fill: none;
+                    stroke-width: $nuido-path-width;
+                    stroke: $nuido-path-color;
+                    pointer-events: all;
+
+                    &.selected {
+                        stroke: $nuido-path-selected-color;
+                    }
+                }
+
+                .path:hover {
+                    stroke: $nuido-path-hover-color;
+                    cursor: pointer;
+                }
+
+                .joint {
+                    cursor: move;
+                    stroke: $nuido-joint-border-color;
+                    stroke-width: 2;
+                    fill: $nuido-joint-background-color;
+                    pointer-events: all;
+
+                    &.selected {
+                        stroke: $nuido-joint-border-selected-color;
+                    }
+                }
+            }
+
+            svg.edge.new-edge {
+                .path:hover {
+                    stroke: $nuido-path-color;
+                }
+
+                .path.selected {
+                    stroke: $nuido-path-color;
+                }
+            }
+        }
+    }
+}

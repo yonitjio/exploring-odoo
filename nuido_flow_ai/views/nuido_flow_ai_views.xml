@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="nuido_flow_ai_model_list">
+            <field name="name">nuido_flow_ai.model.list</field>
+            <field name="model">nuido_flow_ai.model</field>
+            <field name="arch" type="xml">
+                <list editable="bottom">
+                    <field name="sequence" widget="handle" />
+                    <field name="model_name" />
+                    <field name="model_description"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="action_nuido_flow_ai_model" model="ir.actions.act_window">
+            <field name="name">AI Model</field>
+            <field name="res_model">nuido_flow_ai.model</field>
+            <field name="view_mode">list</field>
+        </record>
+
+        <menuitem name="AI Models" id="nuido_flow_ai.model"
+            parent="nuido_flow.root_menu" action="nuido_flow_ai.action_nuido_flow_ai_model"/>
+    </data>
+</odoo>

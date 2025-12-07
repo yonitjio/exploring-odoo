@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido_flow_messaging.mail-node" t-inherit="nuido.node" t-inherit-mode="primary">
+        <xpath expr="//div[hasclass('node-content')]" position="inside">
+            <div class="mb-2">
+                <label t-attf-id="label-{{props.node.id}}-subject" t-attf-for="text-{{props.node.id}}-subject">Subject</label>
+                <input t-attf-id="text-{{props.node.id}}-subject" type="text" t-model="props.node.subject"></input>
+            </div>
+            <div class="mb-2" style="max-width:300px">
+                <label t-attf-id="label-{{props.node.id}}-email-to">Email To</label>
+                <RecordLookupTags t-props="recordLookupTagsProps"/>
+            </div>
+            <div class="mb-2">
+                <HtmlDialogInput id="props.node.id" label="'Template'" value="props.node.template" onChanged.bind="onTemplateChanged"/>
+            </div>
+        </xpath>
+    </t>
+</templates>

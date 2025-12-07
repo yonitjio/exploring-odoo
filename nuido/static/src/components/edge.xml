@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL AND FOR EDUCATIONAL PURPOSE ONLY.
+DO NOT USE IT IN PRODUCTION.
+-->
+<templates xml:space="preserve">
+    <t t-name="nuido.edge">
+        <svg xmlns="http://www.w3.org/2000/svg" t-attf-class="edge {{props.cssClass}}" t-ref="root"
+            t-on-click.stop.prevent="onClick" t-on-dblclick.stop.prevent="onDoubleClick">
+            <g class="path" t-att-id="props.edge.id" >
+                <t t-foreach="props.edge.paths" t-as="path" t-key="path.id">
+                    <Path path="path" />
+                </t>
+            </g>
+            <t t-foreach="props.edge.joints" t-as="joint" t-key="joint.id">
+                <Joint joint="joint"/>
+            </t>
+        </svg>
+    </t>
+</templates>
