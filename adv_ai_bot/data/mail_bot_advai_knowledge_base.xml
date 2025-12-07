@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="kb_001" model="mail.bot.advai.knowledge.base">
+            <field name="title">How much is total sales amount of current week?</field>
+            <field name="content"><![CDATA[SELECT SUM(so.amount_total)
+FROM sale_order so WHERE so.date_order >= DATE_TRUNC('week', CURRENT_DATE);]]></field>
+            <field name="kb_type">qa</field>
+        </record>
+        <record id="kb_002" model="mail.bot.advai.knowledge.base">
+            <field name="title">What is the quantity of all product sold this week?</field>
+            <field name="content"><![CDATA[SELECT COALESCE(SUM(sol.product_uom_qty), 0) AS total_qty_sold
+FROM sale_order so
+INNER JOIN sale_order_line sol ON sol.order_id = so.id
+WHERE so.date_order >= DATE_TRUNC('week', CURRENT_DATE);]]></field>
+            <field name="kb_type">qa</field>
+        </record>
+        <record id="kb_003" model="mail.bot.advai.knowledge.base">
+            <field name="title">What is the total amount and quantity sold of last month sales?</field>
+            <field name="content"><![CDATA[SELECT COALESCE(SUM(sol.price_unit), 0) AS total_amount, COALESCE(SUM(sol.product_uom_qty), 0) AS total_qty_sold
+FROM sale_order so
+INNER JOIN sale_order_line sol ON sol.order_id = so.id
+WHERE so.date_order >= DATE_TRUNC('month', current_date - interval '1 month')
+and so.date_order < DATE_TRUNC('month', current_date);]]></field>
+            <field name="kb_type">qa</field>
+        </record>
+        <record id="kb_004" model="mail.bot.advai.knowledge.base">
+            <field name="title">What is last month top 5 best selling products?</field>
+            <field name="content"><![CDATA[SELECT pt."name"->>'en_US' AS product_name, pp.default_code, COALESCE(SUM(sol.price_unit), 0) AS total_sales_amount, COALESCE(SUM(sol.product_uom_qty), 0) AS total_qty_sold
+FROM sale_order so
+INNER JOIN sale_order_line sol ON sol.order_id = so.id
+INNER JOIN product_product pp ON sol.product_id = pp.id
+INNER JOIN product_template pt ON pp.product_tmpl_id = pt.id
+WHERE so.date_order >= DATE_TRUNC('month', current_date - interval '1 month')
+and so.date_order < DATE_TRUNC('month', current_date)
+GROUP BY pt."name"->>'en_US', pp.default_code
+ORDER BY COALESCE(SUM(sol.price_unit), 0) DESC
+LIMIT 5;]]></field>
+            <field name="kb_type">qa</field>
+        </record>
+        <record id="kb_005" model="mail.bot.advai.knowledge.base">
+            <field name="title">How much purchases made last week?</field>
+            <field name="content"><![CDATA[SELECT SUM(po.amount_total) FROM purchase_order po WHERE po.date_order >= DATE_TRUNC('week', current_date - interval '1 week');]]></field>
+            <field name="kb_type">qa</field>
+        </record>
+        <record id="kb_006" model="mail.bot.advai.knowledge.base">
+            <field name="title">How many products purchased last week?</field>
+            <field name="content"><![CDATA[SELECT SUM(pol.product_uom_qty) AS total_qty_purchased
+FROM purchase_order po
+INNER JOIN purchase_order_line pol ON pol.order_id = po.id
+WHERE po.date_order >= DATE_TRUNC('week', CURRENT_DATE);]]></field>
+            <field name="kb_type">qa</field>
+        </record>
+        <record id="kb_007" model="mail.bot.advai.knowledge.base">
+            <field name="title">What are the variants of product with the name 'Conference Chair'?</field>
+            <field name="content"><![CDATA[WITH product_variants (product_name, product_code, variant_name, variant_value) AS
+(
+    SELECT pt."name"->>'en_US' AS product_name, pp.default_code, pa."name"->>'en_US' AS variant_name, pav."name"->>'en_US' AS variant_value
+    FROM product_template pt
+    INNER JOIN product_template_attribute_line ptal ON ptal.product_tmpl_id = pt.id
+    INNER JOIN product_template_attribute_value ptav ON ptav.product_tmpl_id = pt.id and ptav.attribute_line_id = ptal.id
+    INNER JOIN product_attribute pa ON ptav.attribute_id = pa.id
+    INNER JOIN product_attribute_value pav ON ptav.product_attribute_value_id = pav.id
+    INNER JOIN product_product pp ON pp.product_tmpl_id = pt.id
+    INNER JOIN product_variant_combination pvc ON pvc.product_product_id = pp.id and pvc.product_template_attribute_value_id = ptav.id
+    ORDER BY pt."name", pp.default_code
+) SELECT pv.product_name, pv.product_code, STRING_AGG(pv.variant_name || ':' || pv.variant_value, ', ' ORDER BY pv.product_name, pv.product_code) AS variant
+FROM product_variants pv
+WHERE product_name = 'Conference Chair'
+GROUP BY pv.product_name, pv.product_code;]]></field>
+            <field name="kb_type">qa</field>
+        </record>
+        <record id="kb_008" model="mail.bot.advai.knowledge.base">
+            <field name="title">Do we have customer named 'Billy'?</field>
+            <field name="content"><![CDATA[SELECT rp.name as customer_name, count(rp.id) AS customer_count FROM res_partner rp
+WHERE rp.name ILIKE '%billy%'
+AND rp.customer_rank > 0
+GROUP BY rp.name;]]></field>
+            <field name="kb_type">qa</field>
+        </record>
+        <record id="kb_009" model="mail.bot.advai.knowledge.base">
+            <field name="title">Is there any supplier named 'Tom' in our database?</field>
+            <field name="content"><![CDATA[SELECT rp.name as supplier_name, count(rp.id) AS supplier_count FROM res_partner rp
+WHERE rp.name ILIKE '%tom%'
+AND rp.supplier_rank > 0
+GROUP BY rp.name;]]></field>
+            <field name="kb_type">qa</field>
+        </record>
+        <record id="kb_100" model="mail.bot.advai.knowledge.base">
+            <field name="title">Querying Sales Data Guide</field>
+            <field name="content"><![CDATA[To query sales data, the most common things are to query these tables:
+* "sale_order"
+* "sale_order_line"
+* "product_product"
+* "product_template"
+* "res_partner"
+
+Join table "sale_order" and "sale_order_line" with "sales_order"."id" = "sales_order_line"."order_id"
+Table "sale_order_line" and "product_template" can be joined with "sale_order_line"."product_id" = "product_product.id"
+For retrieving product names, table "product_product" must be joined with table "product_template" with "product_product"."product_tmpl_id" = "product_template"."id"
+To retrieve customer name, table "sales_order"."partner_id" = "res_partner"."id"
+
+Remember with table "product_template" the field for product name is a jsonb field to accomodate localization.
+You may have to use jsonb operators, for example, to query product name in english you need to query like the following:
+
+SELECT pt."name"->>'en_US' as product_name FROM product_template pt;
+
+For date and time related field, if you want to specify condition for it, you may need to cast your condition to explicit data type, date or timestamp.
+For example:
+
+SELECT SUM(so.amount_total) AS total_sales_amount
+FROM sale_order so
+WHERE so.date_order >= DATE_TRUNC('month', '2024-04-01'::date)
+AND so.date_order < DATE_TRUNC('month', '2024-05-01'::date);]]></field>
+            <field name="kb_type">article</field>
+        </record>
+        <record id="kb_101" model="mail.bot.advai.knowledge.base">
+            <field name="title">Determining if A Partner is a Customer or a Supplier</field>
+            <field name="content"><![CDATA[Table "res_partner" contains all of our company's contact data.
+A partner can be both customer and supplier. It is indicated by field "customer_rank" and/or "supplier_rank".
+Positive value in field "customer_rank" means the partner is a customer.
+While positive value in field "supplier_rank" means the partner is a supplier.]]></field>
+            <field name="kb_type">article</field>
+        </record>
+    </data>
+</odoo>

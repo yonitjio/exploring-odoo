@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="email_generator_test_view_form" model="ir.ui.view">
+        <field name="name">email.generator.test.view.form</field>
+        <field name="model">email.generator.test</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="tone"/>
+                    <field name="result_text"/>
+                </group>
+                <footer>
+                    <button name="action_generate_email" string="Generate" type="object" class="oe_highlight"/>
+                    <button name="action_reset_entries" string="Clear" type="object"/>
+                    <button string="Close" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_email_generator_test" model="ir.actions.act_window">
+        <field name="name">Test email generator</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">email.generator.test</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="email_generator_test_view_form"/>
+    </record>
+
+    <menuitem name="Email Generator Test" id="email_generator_test_menu" parent="point_of_sale.menu_point_config_product"
+        action="action_email_generator_test" sequence="200"/>
+</odoo>

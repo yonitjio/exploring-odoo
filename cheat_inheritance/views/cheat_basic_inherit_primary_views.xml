@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- List view, also called tree view on models -->
+    <record id="cheat_basic_view_list_inherit_primary" model="ir.ui.view">
+      <field name="name">cheat.basic.list.inherit.class_inheritance</field>
+      <field name="model">cheat.basic</field>
+      <field name="mode">primary</field>
+      <field name="inherit_id" ref="cheat_module.cheat_basic_view_list" />
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='datetime_field']" position="after">
+            <field name="float_field"/>
+        </xpath>
+      </field>
+    </record>
+
+    <!-- Form view on models -->
+    <record id="cheat_basic_view_form_inherit_primary" model="ir.ui.view">
+      <field name="name">cheat.basic.form.inherit.class_inheritance</field>
+      <field name="model">cheat.basic</field>
+      <field name="mode">primary</field>
+      <field name="inherit_id" ref="cheat_module.cheat_basic_view_form" />
+      <field name="arch" type="xml">
+        <xpath expr="//header" position="replace">
+          <header>
+            <button name="action_show_random_string" type="object" string="Show Random String" icon="fa-random" />
+          </header>
+        </xpath>
+        <xpath expr="//field[@name='datetime_field']" position="after">
+            <field name="float_field"/>
+        </xpath>
+      </field>
+    </record>
+
+    <!-- Action opening view on model -->
+    <record model="ir.actions.act_window" id="cheat_inherit_action_window">
+      <field name="name">Cheat Inherit Window</field>
+      <field name="res_model">cheat.basic</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('cheat_inheritance.cheat_basic_view_list_inherit_primary')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('cheat_inheritance.cheat_basic_view_form_inherit_primary')})]"/>
+    </record>
+
+    <!-- Menu item -->
+    <menuitem name="Inheritance" id="cheat_inheritance_menu_top" parent="cheat_module.cheat_menu_root"/>
+
+    <!-- Sub Menu item -->
+    <menuitem name="Class" id="cheat_inherit_menu_action_window" parent="cheat_inheritance_menu_top" action="cheat_inherit_action_window"/>
+  </data>
+</odoo>

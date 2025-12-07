@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="user_calendar_bot" model="res.users">
+            <field name="login">calendarbot</field>
+            <field name="password">calendarbot</field>
+            <field name="partner_id" ref="calendar_bot.partner_calendar_bot"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="company_ids" eval="[Command.link(ref('base.main_company'))]"/>
+            <field name="groups_id" eval="[Command.link(ref('base.group_user'))]"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="quickboard.QuickboardItem" owl="1">
+        <t t-component="_itemComponent" t-props="_itemProps"/>
+    </t>
+</templates>

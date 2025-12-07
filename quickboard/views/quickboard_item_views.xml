@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- List view, also called tree view on models -->
+    <record id="quickboard_item_view_list" model="ir.ui.view">
+      <field name="name">quickboard.item.list</field>
+      <field name="model">quickboard.item</field>
+      <field name="arch" type="xml">
+        <tree string="Quickboard Item">
+          <field name="name"/>
+          <field name="model_name"/>
+          <field name="chart_type"/>
+          <field name="type"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Form view on models -->
+    <record id="quickboard_item_view_form" model="ir.ui.view">
+      <field name="name">quickboard.item.form</field>
+      <field name="model">quickboard.item</field>
+      <field name="arch" type="xml">
+        <form string="Quickboard Item">
+          <sheet>
+            <group>
+                <field name="name" required="1"/>
+                <field name="model_id"
+                    required="1"
+                    options="{'no_create_edit':True,'no_create': True}"
+                    domain="[('transient', '=', False)]"/>
+                <field name="type"
+                    required="1"
+                    readonly="context.get('quick_edit', False)"/>
+                <field name="model_name" invisible="1" />
+                <field name="icon"/>
+            </group>
+            <div class="alert">
+                <span> Visit <a href="https://fontawesome.com/v4/icons/" target="new">here</a> for icon values.</span>
+            </div>
+            <group>
+                <field name="text_color" widget="color" invisible="type != 'basic'" />
+                <field name="background_color" widget="color" invisible="type != 'basic'" />
+                <field name="chart_type" required="[('type', '=', 'chart')]" invisible="type != 'chart'"/>
+                <field name="value_field_id"
+                    required="1"
+                    options="{'no_create_edit':True,'no_create': True}"
+                    domain="[('model_id','=',model_id), ('store', '=', True)]"/>
+                <field name="dimension_field_id"
+                    required="type != 'basic'"
+                    options="{'no_create_edit':True,'no_create': True}"
+                    domain="[('model_id','=',model_id), ('store', '=', True)]"
+                    invisible="type == 'basic'"/>
+                <field name="datetime_granularity"
+                    required="[('dimension_field_id.ttype', 'in', ['date', 'datetime'])]"
+                    invisible="type != 'chart'"/>
+                <field name="list_row_limit"
+                    required="type == 'list'"
+                    invisible="type != 'list'"/>
+                <field name="aggregate_function" required="1" />
+                <field name="domain_filter" widget="domain" options="{'model': 'model_name'}"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="quickboard_item_action_window" model="ir.actions.act_window">
+      <field name="name">Quickboard Item</field>
+      <field name="res_model">quickboard.item</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Sub Menu item -->
+    <menuitem name="Items" id="quickboard_item_menu_action_window" parent="quickboard.menu_root"
+      groups="group_quickboard_user" action="quickboard_item_action_window"/>
+  </data>
+</odoo>

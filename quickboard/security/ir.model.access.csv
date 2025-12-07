@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ir_model_quick_board,access_ir_model_quick_board,base.model_ir_model,group_quickboard_user,1,0,0,0
+access_ir_field_quick_board,access_ir_field_quick_board,base.model_ir_model_fields,group_quickboard_user,1,0,0,0
+access_quickboard_item,access_quickboard_item,model_quickboard_item,group_quickboard_user,1,1,1,1
+access_quickboard_generator,access_quickboard_generator,model_quickboard_generator,group_quickboard_user,1,1,1,1

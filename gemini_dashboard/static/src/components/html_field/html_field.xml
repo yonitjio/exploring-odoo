@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="gemini_dashboard.GeminiDashboardHtmlField" t-inherit="web_editor.HtmlField" t-inherit-mode="primary" owl="1">
+        <xpath expr="//t[@t-name='web_editor.HtmlField']" position="inside">
+            <div id="gemini-dashboard-html-field-container">
+                <div id="describe-button" style="margin-top: 5px;">
+                    <button t-on-click="onBeginDescribing" class="btn btn-primary">
+                        <i class="fa fa-play"></i>
+                        Describe
+                        <audio t-ref="audioPlayer">
+                        </audio>
+                    </button>
+                </div>
+            </div>
+        </xpath>
+    </t>
+</templates>

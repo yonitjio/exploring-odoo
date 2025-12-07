@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mail_bot_advai_message,mail.bot.advai.message,model_mail_bot_advai_message,base.group_user,1,1,1,1
+access_mail_bot_advai_knowledge_base,mail.bot.advai.knowledge.base,model_mail_bot_advai_knowledge_base,base.group_system,1,1,1,1
+access_mail_bot_advai_knowledge_base_search,mail.bot.advai.knowledge.base.search,model_mail_bot_advai_knowledge_base_search,base.group_system,1,1,1,1

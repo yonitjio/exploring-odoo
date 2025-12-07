@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="partner_adv_ai_bot" model="res.partner">
+            <field name="name">Advanced AI Bot</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="is_adv_ai_bot" eval="True"/>
+            <field name="image_1920" type="base64" file="adv_ai_bot/static/description/advaibot.png"/>
+        </record>
+    </data>
+</odoo>

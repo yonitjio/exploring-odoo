@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="gemini_dashboard.LineChart">
+        <div class="position-relative h-100 mt-auto d-flex align-items-end">
+            <canvas t-ref="canvas" />
+        </div>
+    </t>
+</templates>

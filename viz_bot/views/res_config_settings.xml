@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="viz_bot_res_config_settings_view" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.viz.bot.inherit</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='contacts_settings']" position="before">
+                        <div id="viz_bot">
+                            <block title="Viz Bot" id="viz_bot_setting_container" groups="base.group_no_one">
+                                <setting id="viz_bot_allowed_ip_setting" help="Your AI server IP address">
+                                    <field name="ai_server_address" placeholder="AI server IP address"/>
+                                </setting>
+                                <setting id="viz_bot_default_supplier" help="Default supplier when importing purchase order">
+                                    <field name="ai_assisted_import_purchase_default_supplier_id" placeholder="Default supplier"/>
+                                </setting>
+                            </block>
+                        </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

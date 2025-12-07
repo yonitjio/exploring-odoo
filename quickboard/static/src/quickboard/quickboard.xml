@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="quickboard" owl="1">
+        <div class="quickboard h-100 overflow-auto" style="min-height:-webkit-fill-available;">
+            <div class="container-fluid flex-column flex-md-row bg-light d-flex align-items-center justify-content-between">
+                <div class="btn-toolbar w-100 w-md-auto my-2 d-flex" role="toolbar">
+                    <div class="btn-group me-1 flex-grow-1" role="group">
+                        <button id="save" type="button" class="btn btn-primary" t-on-click="(ev) => this.saveQuickboard(ev)">
+                            <i class="fa fa-floppy-o me-2 d-none d-md-inline" />Save
+                        </button>
+                        <button id="compant" type="button" class="btn btn-secondary" t-on-click="(ev) => this.compact(ev)">
+                            <i class="fa fa-th me-2 d-none d-md-inline" />Arrange
+                        </button>
+                    </div>
+                    <div class="btn-group ms-1 flex-grow-1" role="group">
+                        <button id="generate" type="button" class="btn btn-secondary" t-on-click="(ev) => this.addItem(ev)">
+                            <i class="fa fa-plus me-2 d-none d-md-inline" />New
+                        </button>
+                        <button id="generate" type="button" class="btn btn-secondary" t-on-click="(ev) => this.generateQuickboard(ev)">
+                            <i class="fa fa-magic me-2 d-none d-md-inline" />Generate
+                        </button>
+                    </div>
+                </div>
+                <div class="d-flex my-auto mb-2">
+                    <div class="input-group input-group-sm ms-1 me-1">
+                        <span class="input-group-text d-none d-md-block">Start Date</span>
+                        <div class="form-control">
+                            <DateTimeInput type="'date'" value="state.startDate" placeholder="'Start Date'"
+                                onChange="(d) => this.onStartDateChanged(d)"/>
+                        </div>
+                    </div>
+                    <div class="input-group input-group-sm ms-1 me-1">
+                        <span class="input-group-text d-none d-md-block">End Date</span>
+                        <div class="form-control">
+                            <DateTimeInput type="'date'" value="state.endDate" placeholder="'End Date'"
+                                onChange="(d) => this.onEndDateChanged(d)"/>
+                        </div>
+                    </div>
+                    <button id="applyFilter" type="button" class="btn btn-primary" t-on-click="(ev) => this.applyFilter(ev)">
+                        Apply
+                    </button>
+                </div>
+            </div>
+            <div class="grid-stack " t-ref="grid-stack">
+                <div t-foreach="state.items" t-as="item" t-key="item.id"
+                        t-attf-gs-id="{{item.id}}"
+                        t-attf-gs-x="{{item.x_pos}}"
+                        t-attf-gs-y="{{item.y_pos}}"
+                        t-attf-gs-w="{{item.width}}"
+                        t-attf-gs-h="{{item.height}}"
+                        t-attf-id="grid-stack-item-{{item.id}}">
+                    <div class="grid-stack-item-content rounded">
+                        <QuickboardItem itemType="item.type"
+                                itemId="item.id"
+                                dialogService="dialog"
+                                actionService="action"
+
+                                startDate="state.startDate"
+                                endDate="state.endDate"
+                            />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

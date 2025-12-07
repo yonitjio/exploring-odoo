@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_ai_assisted_import" model="ir.ui.view">
+            <field name="name">view.vizbot.ai.import</field>
+            <field name="model">vizbot.ai.import.purchase</field>
+            <field name="arch" type="xml">
+                <form string="Import">
+                    <group>
+                        <field name="prompt" widget="text" class="o_prompt_text"/>
+                        <field name="file_for_import"/>
+                        <field name="ai_response_text" widget="text" groups="base.group_no_one"/>
+                        <field name="info_message" widget="text" readonly="true"/>
+                        <field name="generated_po_url" widget="url" readonly="true"/>
+                    </group>
+                    <footer>
+                        <button name="action_import_from_image" string="Import" type="object" class="btn-primary" data-hotkey="q"/>
+                        <button string="Discard" class="btn-secondary" special="cancel" data-hotkey="x"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
