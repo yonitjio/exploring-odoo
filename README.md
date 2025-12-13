@@ -2,7 +2,7 @@
 
 ## Current State of N2 Development
 
-The N2 project is currently under private development. You can read more about this decision [here](https://github.com/yonitjio/exploring-odoo/discussions/15).
+The N2 project is currently under private development. 
 
 ### About N2
 N2 is a personal, experimental project designed as a learning reference and guide. It’s not a commercial product—its main goal is to explore ideas and provide a resource for anyone curious to learn.
@@ -12,7 +12,7 @@ Development is private for now.
 ---
 
 ### Note on availability
-The https://n2.skysize.io is not available anymore. Unfortunately, I could not fix it. As it's a free tier, I also would not rely on their support.
+The https://n2.skysize.io is not available anymore. Unfortunately, I could not fix it. As it's on free tier, I also could not rely on their support.
 
 ---
 
