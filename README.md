@@ -7,18 +7,12 @@ The N2 project is currently under private development. You can read more about t
 ### About N2
 N2 is a personal, experimental project designed as a learning reference and guide. It’s not a commercial product—its main goal is to explore ideas and provide a resource for anyone curious to learn.
 
-Development is private for now, and updates are shared exclusively through the [N2 website](https://n2.skysize.io).
-
-To explore N2:
-- Star this repository — your star helps keep the project visible.
-- Sign in to the [N2 website](https://n2.skysize.io) with your GitHub account.
-
-Once signed in, you can download N2 modules and I plan to put other modules there too. This project is meant as a learning reference, and your interest and participation are warmly appreciated.
+Development is private for now.
 
 ---
 
 ### Note on availability
-The [N2 website](https://n2.skysize.io) runs on a free-tier host, so availability depends on the provider’s policies. Registered users who have starred the repo can access the modules, so grab them while the site’s up and explore locally. Enjoy!
+The https://n2.skysize.io is not available anymore. Unfortunately, I could not fix it. As it's a free tier, I also would not rely on their support.
 
 ---
 
