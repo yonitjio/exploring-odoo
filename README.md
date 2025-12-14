@@ -18,36 +18,7 @@ N2 is a personal, experimental project designed as a learning reference and guid
 
 ---
 
-### Note on Availability
-
-The site at https://n2.skysize.io is no longer available and could not be restored. As it was hosted on a free tier and used a free subdomain, occasional disruptions like this are unfortunately possible, and support options were limited.
-
-To minimize any impact on users, no critical data is stored on the website. You can always sign in using your GitHub account, so your access and work are not tied to a specific domain.
-
-For transparency, the website only requests the `user:email` scope during GitHub OAuth. This permission is used solely for authentication and to check whether the user has starred the repository, and is not used for any other purpose.
-
-### Quick Update
-
--   The website is now available under a new domain: https://nuido2.skysize.io.  
-    Please update your bookmarks accordingly.
--   The following modules are currently available on the website:
-
-    -   `n2`
-    -   `n2_ui`
-    -   `n2_trigger`
-    -   `n2_data`
-    -   `n2_messaging`
-    -   `n2_elk`
-    -   `n2_ai`
-
-        More modules are coming.
-
--   Basic documentation for **N2** is now available, including:
-    -   Quick start
-    -   Core concepts
-    -   Base framework
-    -   Creating custom nodes
-    -   Documentation for core nodes and extension nodes, such as trigger nodes, data nodes, and more will be added.
+For more information about N2 related news and updates, please visit the discussion page.
 
 ---
 
@@ -68,9 +39,11 @@ The roadmap below outlines current and planned improvements.
     -   [x] Trigger Nodes
     -   [x] Data Nodes
     -   [x] Messaging Nodes
-    -   [x] AI Nodes
+    -   [x] AI Nodes (LLM)
     -   [x] Action Nodes
--   [ ] ???
+-   [ ] **Data Analysis Nodes**
+-   [ ] **Documentation**
+-   [ ] **Tutorials**
 
 ---
 
@@ -130,7 +103,7 @@ The dark mode screenshots above use my custom theme based on the Solarized color
 
 #### Demo
 
--   Basic demo available at [N2 Website](https://nuido2.skysize.io/). The demo includes only basic nodes, as N2 depends on actual data to deliver meaningful functionality.
+-   Basic demo available at N2 Website. The demo includes only basic nodes, as N2 depends on actual data to deliver meaningful functionality.
 -   The simulation is limited to generating a random graph traversal. It does not make any backend calls, and consequently no data is handled or processed.
 
 ---
