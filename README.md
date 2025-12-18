@@ -41,7 +41,8 @@ The roadmap below outlines current and planned improvements.
     -   [x] Messaging Nodes
     -   [x] AI Nodes (LLM)
     -   [x] Action Nodes
--   [ ] **Data Analysis Nodes**
+-   [ ] **Data Analysis Nodes** (TBD)
+-   [ ] **Forecasting Nodes** (TBD)
 -   [ ] **Documentation**
 -   [ ] **Tutorials**
 
