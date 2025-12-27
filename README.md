@@ -24,6 +24,13 @@ For more information about N2 related news and updates, please visit the discuss
 
 ### 🧭 Roadmap
 
+#### Coming Soon: **Advanced Forecasting with N2 Forecast**
+
+<p align="center">
+  <img src="./images/n2-forecast.png" width="800px" alt="preview" />
+</p>
+
+#### Implemented and Planned Features
 The roadmap below outlines current and planned improvements.
 
 -   [x] **Undo / Redo** — Add reversible actions for node editing and movement.
@@ -41,8 +48,7 @@ The roadmap below outlines current and planned improvements.
     -   [x] Messaging Nodes
     -   [x] AI Nodes (LLM)
     -   [x] Action Nodes
--   [ ] **Data Analysis Nodes** (TBD)
--   [ ] **Forecasting Nodes** (TBD)
+-   [ ] **Forecasting Nodes**
 -   [ ] **Documentation**
 -   [ ] **Tutorials**
 
