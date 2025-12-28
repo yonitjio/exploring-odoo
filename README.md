@@ -47,8 +47,10 @@ The roadmap below outlines current and planned improvements.
     -   [x] Data Nodes
     -   [x] Messaging Nodes
     -   [x] AI Nodes (LLM)
+-   [ ]  **New Nodes**
     -   [x] Action Nodes
--   [ ] **Forecasting Nodes**
+    -   [x] Forecasting Nodes
+    -   [ ] TBD
 -   [ ] **Documentation**
 -   [ ] **Tutorials**
 
@@ -154,12 +156,13 @@ Please read and understand these points before using the code.
 
 ### 🧩 Bug Fixes & Feature Development
 
--   **Bug fixes, enhancements, or new features will only be implemented when they align with planned or upcoming content** for the **[Exploring Odoo](https://www.youtube.com/@exploring-odoo)** YouTube channel.
--   Development priorities are guided **exclusively** by the channel’s educational roadmap — **not by external requests or issue reports**.
--   If you’d like to see certain features or topics explored, the best way to **influence future development** is by **⭐ starring this repository** and **📺 subscribing to the channel**.
-    Both actions help signal community interest and directly motivate which areas receive attention in future videos.
--   Requests and suggestions are always welcome for discussion, but **implementation is not guaranteed** unless they align with upcoming content.
--   This ensures the project remains focused on its core purpose as a **teaching and exploration resource**, rather than evolving into a general-purpose or production-ready framework.
+- **Visitors can create discussions** to propose features, ideas, or topics for exploration.
+- Community interest is measured through **⭐ starring this repository**, **📺 subscribing to the channel**, and **💬 discussion engagement**.
+- Features, enhancements, and bug fixes are **only implemented when they align with planned or upcoming content** for the **[Exploring Odoo](https://www.youtube.com/@exploring-odoo)** YouTube channel.
+- Development decisions follow the channel’s **educational roadmap**, not external issue requests.
+- All suggestions are welcome for discussion, but **implementation is not guaranteed** unless they fit future video plans.
+- This keeps the project focused on its role as a **learning and exploration resource**, not a production-ready framework.
+
 
 ### ❌ No Upgrade Path
 
