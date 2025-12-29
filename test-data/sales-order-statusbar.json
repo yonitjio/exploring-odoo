@@ -1,0 +1,380 @@
+{
+  "id": "e66edc09-e746-4ddd-9aa1-398a601e9342",
+  "title": "Test Statusbar",
+  "isProcessed": true,
+  "recordId": 3,
+  "nodes": [
+    {
+      "id": "19053132-14b7-48ea-847c-9efa9eb9cda9",
+      "label": "Start",
+      "iconUrl": "/n2_ui/static/images/play.svg",
+      "category": "Core",
+      "position": {
+        "x": 607.705,
+        "y": 12
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 115.024
+      },
+      "ports": [
+        {
+          "id": "b723f33f-21fe-4938-863f-f69fa181bc15",
+          "nodeId": "19053132-14b7-48ea-847c-9efa9eb9cda9",
+          "type": "input",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": 0,
+            "y": "50%"
+          },
+          "position": {
+            "x": 0,
+            "y": 57.5081
+          },
+          "data": {
+            "label": "Input Port"
+          },
+          "spec": {
+            "role": "trigger"
+          },
+          "cssClass": "trigger-port"
+        },
+        {
+          "id": "9497c966-6719-4543-af89-d020457369fb",
+          "nodeId": "19053132-14b7-48ea-847c-9efa9eb9cda9",
+          "type": "output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "100%",
+            "y": "50%"
+          },
+          "position": {
+            "x": 200,
+            "y": 57.5081
+          },
+          "data": {
+            "label": "Output Port"
+          }
+        },
+        {
+          "id": "89864dcf-dc4a-4706-813b-7af8c09fa080",
+          "nodeId": "19053132-14b7-48ea-847c-9efa9eb9cda9",
+          "type": "aux-input",
+          "maxConnections": 9007199254740991,
+          "screenPosition": {
+            "x": "50%",
+            "y": "100%"
+          },
+          "position": {
+            "x": 100,
+            "y": 115.024
+          },
+          "data": {
+            "label": "Starter Input"
+          },
+          "spec": {
+            "role": "starter"
+          },
+          "cssClass": "starter-port"
+        }
+      ],
+      "type": "StartNode",
+      "data": {
+        "parameters": ""
+      }
+    },
+    {
+      "id": "54d2e7b9-0c29-440a-a277-74abd37cbb77",
+      "label": "View Header",
+      "iconUrl": "/n2_action/static/images/header.svg",
+      "category": "Starters",
+      "position": {
+        "x": 607.705,
+        "y": 167.02400000000006
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 329.968
+      },
+      "ports": [
+        {
+          "id": "f2f77932-4f76-4fb4-9b31-768320631c98",
+          "nodeId": "54d2e7b9-0c29-440a-a277-74abd37cbb77",
+          "type": "aux-output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "50%",
+            "y": 0
+          },
+          "position": {
+            "x": 100,
+            "y": 0
+          },
+          "spec": {
+            "role": "starter"
+          },
+          "cssClass": "starter-port"
+        },
+        {
+          "id": "77a9517f-8d22-405a-b80f-4f41990d7a84",
+          "nodeId": "54d2e7b9-0c29-440a-a277-74abd37cbb77",
+          "type": "aux-input",
+          "maxConnections": 9007199254740991,
+          "screenPosition": {
+            "x": "50%",
+            "y": "100%"
+          },
+          "position": {
+            "x": 100,
+            "y": 329.968
+          },
+          "spec": {
+            "role": "view-header-component"
+          },
+          "cssClass": "view-header-component-port"
+        }
+      ],
+      "type": "ViewHeaderStarterNode",
+      "data": {
+        "model": "sale.order",
+        "model_description": "Sales Order",
+        "view_id": 2087,
+        "view_name": "sale.order.form",
+        "invisible": "x_approval == 'approved_two'",
+        "group_ids": [],
+        "use_existing": false,
+        "remove_on_reset": true,
+        "action_id": -1,
+        "action_name": ""
+      }
+    },
+    {
+      "id": "8ca1e2c1-dbce-4a23-ae48-346fdbe38f24",
+      "label": "Form Button",
+      "iconUrl": "/n2_action/static/images/button.svg",
+      "category": "Starters",
+      "position": {
+        "x": 387.70500000000004,
+        "y": 536.992
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 380.974
+      },
+      "ports": [
+        {
+          "id": "74968c86-7486-47da-8ba6-88bd326078da",
+          "nodeId": "8ca1e2c1-dbce-4a23-ae48-346fdbe38f24",
+          "type": "aux-output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "50%",
+            "y": 0
+          },
+          "position": {
+            "x": 100,
+            "y": 0
+          },
+          "spec": {
+            "role": "view-header-component"
+          },
+          "cssClass": "view-header-component-port"
+        }
+      ],
+      "type": "FormActionButtonStarterNode",
+      "data": {
+        "model": "sale.order",
+        "model_description": "Sales Order",
+        "action_id": 496,
+        "action_name": "Lv 1",
+        "disabled": "x_approval != 'waiting'",
+        "caption": "Level 1",
+        "icon": "fa-check",
+        "group_ids": []
+      }
+    },
+    {
+      "id": "99a7a53c-16c2-4f29-933b-80c9568de6fb",
+      "label": "Form Button",
+      "iconUrl": "/n2_action/static/images/button.svg",
+      "category": "Starters",
+      "position": {
+        "x": 607.705,
+        "y": 536.992
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 403.993
+      },
+      "ports": [
+        {
+          "id": "2a01c930-e85a-4b28-9453-4b6041295c2c",
+          "nodeId": "99a7a53c-16c2-4f29-933b-80c9568de6fb",
+          "type": "aux-output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "50%",
+            "y": 0
+          },
+          "position": {
+            "x": 100,
+            "y": 0
+          },
+          "spec": {
+            "role": "view-header-component"
+          },
+          "cssClass": "view-header-component-port"
+        }
+      ],
+      "type": "FormActionButtonStarterNode",
+      "data": {
+        "model": "sale.order",
+        "model_description": "Sales Order",
+        "action_id": 497,
+        "action_name": "Lv 2",
+        "disabled": "x_approval != 'approved_one'",
+        "caption": "Level 2",
+        "icon": "fa-check-circle-o",
+        "group_ids": [
+          4
+        ]
+      }
+    },
+    {
+      "id": "32cf3a9f-cbb2-4d4c-920d-878600ddef7c",
+      "label": "Status Bar",
+      "iconUrl": "/n2_action/static/images/chevron-bar-right.svg",
+      "category": "Starters",
+      "position": {
+        "x": 827.705,
+        "y": 536.9920000000001
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 330.479
+      },
+      "ports": [
+        {
+          "id": "c5ea3fa6-aa2c-48c1-a163-8729459e5fd5",
+          "nodeId": "32cf3a9f-cbb2-4d4c-920d-878600ddef7c",
+          "type": "aux-output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "50%",
+            "y": 0
+          },
+          "position": {
+            "x": 100,
+            "y": 0
+          },
+          "spec": {
+            "role": "view-header-component"
+          },
+          "cssClass": "view-header-component-port"
+        }
+      ],
+      "type": "StatusBarStarterNode",
+      "data": {
+        "model": "sale.order",
+        "model_description": "Sales Order",
+        "field_name": "x_approval",
+        "visible": "waiting,approved_one,approved_two",
+        "invisible": "",
+        "group_ids": []
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "1dced599-470d-4c4b-874b-6d5b2682f9a7",
+      "fromPortId": "f2f77932-4f76-4fb4-9b31-768320631c98",
+      "toPortId": "89864dcf-dc4a-4706-813b-7af8c09fa080",
+      "startX": 686.5568084716797,
+      "startY": 393.1941434020996,
+      "endX": 708.9205169677734,
+      "endY": 349.0795555114746,
+      "type": "smoothstep",
+      "direction": "vertical",
+      "data": {
+        "indexOnFromPort": 0,
+        "indexOnToPort": 0
+      },
+      "path": "M 708 167 L 708 147\n                    A 0 0 0 0 1 708 147\n                    L 708 147\n                    A 0 0 0 0 0 708 147\n                    L 708 127",
+      "joints": []
+    },
+    {
+      "id": "0259e7e4-51f8-44ab-ab82-2bfae3603fdc",
+      "fromPortId": "74968c86-7486-47da-8ba6-88bd326078da",
+      "toPortId": "77a9517f-8d22-405a-b80f-4f41990d7a84",
+      "startX": 190.5568084716797,
+      "startY": 506.48213968648554,
+      "endX": 707.8815765380859,
+      "endY": 498.4301987685168,
+      "type": "smoothstep",
+      "direction": "vertical",
+      "data": {
+        "indexOnFromPort": 0,
+        "indexOnToPort": 3
+      },
+      "path": "M 488 537 L 488 527\n                    A 10 10 0 0 1 498 517\n                    L 698 517\n                    A 10 10 0 0 0 708 507\n                    L 708 497",
+      "joints": []
+    },
+    {
+      "id": "c209e801-7d9e-4a54-86d6-853924f44ec7",
+      "fromPortId": "2a01c930-e85a-4b28-9453-4b6041295c2c",
+      "toPortId": "77a9517f-8d22-405a-b80f-4f41990d7a84",
+      "startX": 404.5568084716797,
+      "startY": 565.4821396864855,
+      "endX": 707.8815765380859,
+      "endY": 497.3912888564074,
+      "type": "smoothstep",
+      "direction": "vertical",
+      "data": {
+        "indexOnFromPort": 0,
+        "indexOnToPort": 4
+      },
+      "path": "M 708 537 L 708 517\n                    A 0 0 0 0 1 708 517\n                    L 708 517\n                    A 0 0 0 0 0 708 517\n                    L 708 497",
+      "joints": []
+    },
+    {
+      "id": "f3662e80-c194-421d-bc1f-d5edd323dfd5",
+      "fromPortId": "c5ea3fa6-aa2c-48c1-a163-8729459e5fd5",
+      "toPortId": "77a9517f-8d22-405a-b80f-4f41990d7a84",
+      "startX": 612.5568084716797,
+      "startY": 584.4821396864855,
+      "endX": 707.8815765380859,
+      "endY": 499.9886704482043,
+      "type": "smoothstep",
+      "direction": "vertical",
+      "data": {
+        "indexOnFromPort": 0,
+        "indexOnToPort": 5
+      },
+      "path": "M 928 537 L 928 527\n                    A 10 10 0 0 0 918 517\n                    L 718 517\n                    A 10 10 0 0 1 708 507\n                    L 708 497",
+      "joints": []
+    }
+  ],
+  "selected": [],
+  "data": {},
+  "version": "1.0.0"
+}

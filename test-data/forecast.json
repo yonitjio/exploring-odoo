@@ -1,0 +1,1426 @@
+{
+  "id": "da997a8f-c386-43ef-8f5a-360d9425e307",
+  "title": "Forecast",
+  "isProcessed": true,
+  "recordId": 11,
+  "nodes": [
+    {
+      "id": "67dd3126-76ef-4e4a-8753-fb154923f941",
+      "label": "Start",
+      "iconUrl": "/n2_ui/static/images/play.svg",
+      "category": "Core",
+      "position": {
+        "x": 10,
+        "y": 471.1404
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 115.024
+      },
+      "ports": [
+        {
+          "id": "58b88670-498f-40d4-a0bd-79c219264183",
+          "nodeId": "67dd3126-76ef-4e4a-8753-fb154923f941",
+          "type": "input",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": 0,
+            "y": "50%"
+          },
+          "position": {
+            "x": 0,
+            "y": 57.5081
+          },
+          "data": {
+            "label": "Input Port"
+          },
+          "spec": {
+            "role": "trigger"
+          },
+          "cssClass": "trigger-port"
+        },
+        {
+          "id": "8444e7b6-45e1-46a3-85b9-54e5e5dc0161",
+          "nodeId": "67dd3126-76ef-4e4a-8753-fb154923f941",
+          "type": "output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "100%",
+            "y": "50%"
+          },
+          "position": {
+            "x": 200,
+            "y": 57.5081
+          },
+          "data": {
+            "label": "Output Port"
+          }
+        },
+        {
+          "id": "e59c9f3b-7996-408f-b743-ab56a459e9b9",
+          "nodeId": "67dd3126-76ef-4e4a-8753-fb154923f941",
+          "type": "aux-input",
+          "maxConnections": 9007199254740991,
+          "screenPosition": {
+            "x": "25%",
+            "y": "100%"
+          },
+          "position": {
+            "x": 50,
+            "y": 115.024
+          },
+          "data": {
+            "label": "Starter Input"
+          },
+          "spec": {
+            "role": "starter"
+          },
+          "cssClass": "starter-port"
+        },
+        {
+          "id": "7aa370d4-3438-4809-88d6-2e371382a8a4",
+          "nodeId": "67dd3126-76ef-4e4a-8753-fb154923f941",
+          "type": "aux-input",
+          "maxConnections": 9007199254740991,
+          "screenPosition": {
+            "x": "75%",
+            "y": "100%"
+          },
+          "position": {
+            "x": 150,
+            "y": 115.024
+          },
+          "data": {
+            "label": "Starter Input"
+          },
+          "spec": {
+            "role": "context"
+          },
+          "cssClass": "context-port"
+        }
+      ],
+      "type": "StartNode",
+      "data": {
+        "parameters": ""
+      }
+    },
+    {
+      "id": "f29411ff-be47-4398-80d4-273332034530",
+      "label": "Forecast Context",
+      "iconUrl": "/n2_forecast/static/images/category-list.svg",
+      "category": "Forecast",
+      "position": {
+        "x": 60,
+        "y": 626.1644
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 169.521
+      },
+      "ports": [
+        {
+          "id": "ccd0cb90-da8b-4abd-95dc-b278930a1904",
+          "nodeId": "f29411ff-be47-4398-80d4-273332034530",
+          "type": "aux-output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "50%",
+            "y": 0
+          },
+          "position": {
+            "x": 100,
+            "y": 0
+          },
+          "data": {
+            "label": "Context Port"
+          },
+          "spec": {
+            "role": "context"
+          },
+          "cssClass": "context-port"
+        }
+      ],
+      "type": "ForecastContextNode",
+      "data": {
+        "forecast_store_id": 1,
+        "forecast_store_name": "Sales Forecast",
+        "cleanup_action": "keep_all"
+      }
+    },
+    {
+      "id": "4b2e1cca-7300-4ce4-9f45-2af71ee79c93",
+      "label": "Browse Data",
+      "iconUrl": "/n2_data/static/images/select.svg",
+      "category": "Data",
+      "position": {
+        "x": 350,
+        "y": 417.1385
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 223.028
+      },
+      "ports": [
+        {
+          "id": "9c6db0c0-ac80-4541-a2a5-5aac45733454",
+          "nodeId": "4b2e1cca-7300-4ce4-9f45-2af71ee79c93",
+          "type": "input",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": 0,
+            "y": "50%"
+          },
+          "position": {
+            "x": 0,
+            "y": 111.51
+          },
+          "data": {
+            "label": "Input Port"
+          }
+        },
+        {
+          "id": "0c7bc7e9-625f-46f2-a8d0-810a1abf91e2",
+          "nodeId": "4b2e1cca-7300-4ce4-9f45-2af71ee79c93",
+          "type": "output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": 200,
+            "y": "50%"
+          },
+          "position": {
+            "x": 200,
+            "y": 111.51
+          },
+          "data": {
+            "label": "Output Port"
+          }
+        },
+        {
+          "id": "277e2cdc-9906-43e8-9036-7b2d79391981",
+          "nodeId": "4b2e1cca-7300-4ce4-9f45-2af71ee79c93",
+          "type": "aux-input",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "50%",
+            "y": "100%"
+          },
+          "position": {
+            "x": 100,
+            "y": 223.028
+          },
+          "data": {
+            "label": "Data Port"
+          },
+          "spec": {
+            "role": "data"
+          },
+          "cssClass": "data-port"
+        }
+      ],
+      "type": "BrowseDataNode",
+      "data": {
+        "model": "sale.order",
+        "model_description": "Sales Order",
+        "reference_values": "",
+        "reference_field": ""
+      }
+    },
+    {
+      "id": "e195ab5d-732e-4b6a-bd70-022464c36639",
+      "label": "Forecast Data",
+      "iconUrl": "/n2_forecast/static/images/data-source-solid.svg",
+      "category": "Forecast",
+      "position": {
+        "x": 300,
+        "y": 680.1665
+      },
+      "screenSize": {
+        "width": "300px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 300,
+        "height": 591.599
+      },
+      "ports": [
+        {
+          "id": "af7c3028-cb13-4db6-9399-661317aff676",
+          "nodeId": "e195ab5d-732e-4b6a-bd70-022464c36639",
+          "type": "aux-input",
+          "maxConnections": 9007199254740991,
+          "screenPosition": {
+            "x": "50%",
+            "y": "100%"
+          },
+          "position": {
+            "x": 150,
+            "y": 591.599
+          },
+          "data": {
+            "label": "Input Port"
+          },
+          "spec": {
+            "role": "data-filter"
+          },
+          "cssClass": "data-filter-port"
+        },
+        {
+          "id": "cf9d4945-126f-4c6b-946d-64065bafc51e",
+          "nodeId": "e195ab5d-732e-4b6a-bd70-022464c36639",
+          "type": "aux-output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "50%",
+            "y": 0
+          },
+          "position": {
+            "x": 150,
+            "y": 0
+          },
+          "data": {
+            "label": "Output Port"
+          },
+          "spec": {
+            "role": "data"
+          },
+          "cssClass": "data-port"
+        }
+      ],
+      "type": "ForecastDataNode",
+      "data": {
+        "model": "sale.order",
+        "model_description": "Sales Order",
+        "key": "data",
+        "order_by": "date_order",
+        "field_name": "",
+        "field_map_to": "",
+        "field_role": "f",
+        "selected_fields": [
+          {
+            "name": "amount_total",
+            "map_to": "amount,t"
+          },
+          {
+            "name": "date_order",
+            "map_to": "date,d"
+          }
+        ]
+      }
+    },
+    {
+      "id": "711b3f33-0971-4df6-b51e-40d60e657ef6",
+      "label": "Time Aggregate",
+      "iconUrl": "/n2_forecast/static/images/sort.svg",
+      "category": "Forecast",
+      "position": {
+        "x": 1794,
+        "y": 409.99199999999996
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 176.055
+      },
+      "ports": [
+        {
+          "id": "c9b5a359-2801-4bb6-af71-ac57db10865c",
+          "nodeId": "711b3f33-0971-4df6-b51e-40d60e657ef6",
+          "type": "aux-output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "50%",
+            "y": 0
+          },
+          "position": {
+            "x": 100,
+            "y": 0
+          },
+          "data": {
+            "label": "Forecast Preprocessor Port"
+          },
+          "spec": {
+            "role": "forecast-preprocessor"
+          },
+          "cssClass": "forecast-preprocessor-port"
+        },
+        {
+          "id": "9998901a-5fd4-4d8a-b744-3edf99a108fd",
+          "nodeId": "711b3f33-0971-4df6-b51e-40d60e657ef6",
+          "type": "aux-input",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "50%",
+            "y": "100%"
+          },
+          "position": {
+            "x": 100,
+            "y": 176.055
+          },
+          "data": {
+            "label": "Forecast Preprocessor Port"
+          },
+          "spec": {
+            "role": "forecast-preprocessor"
+          },
+          "cssClass": "forecast-preprocessor-port"
+        }
+      ],
+      "type": "TimeAggregateNode",
+      "data": {
+        "freq": "ME",
+        "method": "sum"
+      }
+    },
+    {
+      "id": "35e75a6e-8cdd-4ec5-b48b-7161447a60ea",
+      "label": "Fill Gaps",
+      "iconUrl": "/n2_forecast/static/images/sort.svg",
+      "category": "Forecast",
+      "position": {
+        "x": 1794,
+        "y": 228.74450000000002
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 115.024
+      },
+      "ports": [
+        {
+          "id": "d6fd4d34-65c1-46a7-b313-8c7d5b49527c",
+          "nodeId": "35e75a6e-8cdd-4ec5-b48b-7161447a60ea",
+          "type": "aux-output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "50%",
+            "y": 0
+          },
+          "position": {
+            "x": 100,
+            "y": 0
+          },
+          "data": {
+            "label": "Forecast Preprocessor Port"
+          },
+          "spec": {
+            "role": "forecast-preprocessor"
+          },
+          "cssClass": "forecast-preprocessor-port"
+        },
+        {
+          "id": "5fb556b2-20c0-4cca-a308-a4fc66c7da98",
+          "nodeId": "35e75a6e-8cdd-4ec5-b48b-7161447a60ea",
+          "type": "aux-input",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "50%",
+            "y": "100%"
+          },
+          "position": {
+            "x": 100,
+            "y": 115.024
+          },
+          "data": {
+            "label": "Forecast Preprocessor Port"
+          },
+          "spec": {
+            "role": "forecast-preprocessor"
+          },
+          "cssClass": "forecast-preprocessor-port"
+        }
+      ],
+      "type": "FillGapsNode",
+      "data": {
+        "freq": "ME"
+      }
+    },
+    {
+      "id": "0ddbea03-3080-486e-8660-cf77ce58ed8a",
+      "label": "Forecast Persistence",
+      "iconUrl": "/n2_forecast/static/images/database-stats.svg",
+      "category": "Forecast",
+      "position": {
+        "x": 1651,
+        "y": 53.76620000000001
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 61.9886
+      },
+      "ports": [
+        {
+          "id": "e345c6b2-5a4d-4883-b397-370905b8ebd0",
+          "nodeId": "0ddbea03-3080-486e-8660-cf77ce58ed8a",
+          "type": "input",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": 0,
+            "y": "50%"
+          },
+          "position": {
+            "x": 0,
+            "y": 30.9903
+          },
+          "data": {
+            "label": "Input Port"
+          }
+        },
+        {
+          "id": "197ec764-1505-4628-b8c5-2eb303d503b7",
+          "nodeId": "0ddbea03-3080-486e-8660-cf77ce58ed8a",
+          "type": "output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "100%",
+            "y": "50%"
+          },
+          "position": {
+            "x": 200,
+            "y": 30.9903
+          },
+          "data": {
+            "label": "Output Port"
+          }
+        }
+      ],
+      "type": "ForecastPersistenceNode",
+      "data": {}
+    },
+    {
+      "id": "ed4124f1-cec9-4015-af72-0a4c69bec245",
+      "label": "TrainNode",
+      "iconUrl": "/n2_forecast/static/images/shuffle-data-model.svg",
+      "category": "Forecast",
+      "position": {
+        "x": 1370,
+        "y": 0
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 169.521
+      },
+      "ports": [
+        {
+          "id": "acd22f08-920c-470e-ad91-d734f5835c79",
+          "nodeId": "ed4124f1-cec9-4015-af72-0a4c69bec245",
+          "type": "input",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": 0,
+            "y": "50%"
+          },
+          "position": {
+            "x": 0,
+            "y": 84.7565
+          },
+          "data": {
+            "label": "Input Port"
+          }
+        },
+        {
+          "id": "551c2aee-f77a-4b31-b979-5408005a0df8",
+          "nodeId": "ed4124f1-cec9-4015-af72-0a4c69bec245",
+          "type": "output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "100%",
+            "y": "50%"
+          },
+          "position": {
+            "x": 200,
+            "y": 84.7565
+          },
+          "data": {
+            "label": "Output Port"
+          }
+        },
+        {
+          "id": "c4c351ca-3a5f-40b3-bb31-fd608025d173",
+          "nodeId": "ed4124f1-cec9-4015-af72-0a4c69bec245",
+          "type": "aux-input",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "75%",
+            "y": "100%"
+          },
+          "position": {
+            "x": 150,
+            "y": 169.521
+          },
+          "data": {
+            "label": "Forecast Preprocessor Port"
+          },
+          "spec": {
+            "role": "forecast-preprocessor"
+          },
+          "cssClass": "forecast-preprocessor-port"
+        },
+        {
+          "id": "04d7789e-09f5-4f6a-a438-5801434705ef",
+          "nodeId": "ed4124f1-cec9-4015-af72-0a4c69bec245",
+          "type": "aux-input",
+          "maxConnections": 9007199254740991,
+          "screenPosition": {
+            "x": "25%",
+            "y": "100%"
+          },
+          "position": {
+            "x": 50,
+            "y": 169.521
+          },
+          "data": {
+            "label": "Forecast Model Port"
+          },
+          "spec": {
+            "role": "forecast-model"
+          },
+          "cssClass": "forecast-model-port"
+        }
+      ],
+      "type": "TrainNode",
+      "data": {
+        "model_name": "trained_model",
+        "freq": "ME"
+      }
+    },
+    {
+      "id": "a8292635-8655-4dde-96c7-42b13ddde0c4",
+      "label": "Forecast Persistence",
+      "iconUrl": "/n2_forecast/static/images/database-stats.svg",
+      "category": "Forecast",
+      "position": {
+        "x": 1136,
+        "y": 715.5502
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 61.9886
+      },
+      "ports": [
+        {
+          "id": "774ee073-6464-415e-828e-dc7ebed397cb",
+          "nodeId": "a8292635-8655-4dde-96c7-42b13ddde0c4",
+          "type": "input",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": 0,
+            "y": "50%"
+          },
+          "position": {
+            "x": 0,
+            "y": 30.9903
+          },
+          "data": {
+            "label": "Input Port"
+          }
+        },
+        {
+          "id": "636de766-71b7-4d51-be78-efc2ed78569f",
+          "nodeId": "a8292635-8655-4dde-96c7-42b13ddde0c4",
+          "type": "output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "100%",
+            "y": "50%"
+          },
+          "position": {
+            "x": 200,
+            "y": 30.9903
+          },
+          "data": {
+            "label": "Output Port"
+          }
+        }
+      ],
+      "type": "ForecastPersistenceNode",
+      "data": {}
+    },
+    {
+      "id": "ef4eef56-e2bd-4761-8802-eeaa165bd5e4",
+      "label": "Spread",
+      "iconUrl": "/n2_ui/static/images/git-branch.svg",
+      "category": "Core",
+      "position": {
+        "x": 640,
+        "y": 497.6582
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 61.9886
+      },
+      "ports": [
+        {
+          "id": "47e0de48-eb4f-41d8-a8b9-b06801e74ded",
+          "nodeId": "ef4eef56-e2bd-4761-8802-eeaa165bd5e4",
+          "type": "input",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": 0,
+            "y": "50%"
+          },
+          "position": {
+            "x": 0,
+            "y": 30.9903
+          },
+          "data": {
+            "label": "Input Port"
+          }
+        },
+        {
+          "id": "73bceb9f-1403-417e-be43-9cb835033155",
+          "nodeId": "ef4eef56-e2bd-4761-8802-eeaa165bd5e4",
+          "type": "output",
+          "maxConnections": 9007199254740991,
+          "screenPosition": {
+            "x": 200,
+            "y": "50%"
+          },
+          "position": {
+            "x": 200,
+            "y": 30.9903
+          },
+          "data": {
+            "label": "Output Port"
+          }
+        }
+      ],
+      "type": "SpreadNode",
+      "data": {}
+    },
+    {
+      "id": "a706d7c9-e807-45be-b7b6-07323204b971",
+      "label": "Forecast",
+      "iconUrl": "/n2_forecast/static/images/line-chart-01.svg",
+      "category": "Forecast",
+      "position": {
+        "x": 879,
+        "y": 665.0470000000003
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 162.987
+      },
+      "ports": [
+        {
+          "id": "7c85724e-df02-40b9-b0d3-b183fd1353c1",
+          "nodeId": "a706d7c9-e807-45be-b7b6-07323204b971",
+          "type": "input",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": 0,
+            "y": "50%"
+          },
+          "position": {
+            "x": 0,
+            "y": 81.4935
+          },
+          "data": {
+            "label": "Input Port"
+          }
+        },
+        {
+          "id": "3c197432-a2e4-459d-bb06-3329adbb84c1",
+          "nodeId": "a706d7c9-e807-45be-b7b6-07323204b971",
+          "type": "output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "100%",
+            "y": "50%"
+          },
+          "position": {
+            "x": 200,
+            "y": 81.4935
+          },
+          "data": {
+            "label": "Output Port"
+          }
+        },
+        {
+          "id": "7f97d535-330a-4143-98f1-e73f84546c0f",
+          "nodeId": "a706d7c9-e807-45be-b7b6-07323204b971",
+          "type": "aux-input",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "50%",
+            "y": "100%"
+          },
+          "position": {
+            "x": 100,
+            "y": 162.987
+          },
+          "data": {
+            "label": "Forecast Preprocessor Port"
+          },
+          "spec": {
+            "role": "forecast-preprocessor"
+          },
+          "cssClass": "forecast-preprocessor-port"
+        }
+      ],
+      "type": "ForecastNode",
+      "data": {
+        "horizon": 12,
+        "forecast_model_id": 4,
+        "forecast_model_name": "trained_model",
+        "forecast_store_id": 1,
+        "forecast_store_name": "Sales Forecast Store"
+      }
+    },
+    {
+      "id": "edcabc51-17f8-4050-ad18-76aa84731309",
+      "label": "ARIMA",
+      "iconUrl": "/n2_forecast/static/images/line-chart.svg",
+      "category": "Forecast",
+      "position": {
+        "x": 1100,
+        "y": 219.52100000000002
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 435.471
+      },
+      "ports": [
+        {
+          "id": "86dc20a6-461d-48c2-a546-4539ff83fe6a",
+          "nodeId": "edcabc51-17f8-4050-ad18-76aa84731309",
+          "type": "aux-output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "50%",
+            "y": 0
+          },
+          "position": {
+            "x": 100,
+            "y": 0
+          },
+          "data": {
+            "label": "Forecast Model Port"
+          },
+          "spec": {
+            "role": "forecast-model"
+          },
+          "cssClass": "forecast-model-port"
+        }
+      ],
+      "type": "ArimaNode",
+      "data": {
+        "p": 1,
+        "d": 1,
+        "q": 0,
+        "P": 0,
+        "D": 0,
+        "Q": 0,
+        "m": 1
+      }
+    },
+    {
+      "id": "b2c37079-bcfc-4725-b3cb-51b29ff69675",
+      "label": "Fill Gaps",
+      "iconUrl": "/n2_forecast/static/images/sort.svg",
+      "category": "Forecast",
+      "position": {
+        "x": 879,
+        "y": 868.0340000000001
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 115.024
+      },
+      "ports": [
+        {
+          "id": "324493a8-3d87-4077-a2b0-ba6ab5f730e0",
+          "nodeId": "b2c37079-bcfc-4725-b3cb-51b29ff69675",
+          "type": "aux-output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "50%",
+            "y": 0
+          },
+          "position": {
+            "x": 100,
+            "y": 0
+          },
+          "data": {
+            "label": "Forecast Preprocessor Port"
+          },
+          "spec": {
+            "role": "forecast-preprocessor"
+          },
+          "cssClass": "forecast-preprocessor-port"
+        },
+        {
+          "id": "7ce20c38-7ec1-4841-8abb-7282d34eb968",
+          "nodeId": "b2c37079-bcfc-4725-b3cb-51b29ff69675",
+          "type": "aux-input",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "50%",
+            "y": "100%"
+          },
+          "position": {
+            "x": 100,
+            "y": 115.024
+          },
+          "data": {
+            "label": "Forecast Preprocessor Port"
+          },
+          "spec": {
+            "role": "forecast-preprocessor"
+          },
+          "cssClass": "forecast-preprocessor-port"
+        }
+      ],
+      "type": "FillGapsNode",
+      "data": {
+        "freq": "ME"
+      }
+    },
+    {
+      "id": "04449f74-622b-4875-aa8e-d453761bdb2c",
+      "label": "Time Aggregate",
+      "iconUrl": "/n2_forecast/static/images/sort.svg",
+      "category": "Forecast",
+      "position": {
+        "x": 879,
+        "y": 1023.0580000000002
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 176.055
+      },
+      "ports": [
+        {
+          "id": "0ae7f54d-aba4-4064-899e-42bacc65fc78",
+          "nodeId": "04449f74-622b-4875-aa8e-d453761bdb2c",
+          "type": "aux-output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "50%",
+            "y": 0
+          },
+          "position": {
+            "x": 100,
+            "y": 0
+          },
+          "data": {
+            "label": "Forecast Preprocessor Port"
+          },
+          "spec": {
+            "role": "forecast-preprocessor"
+          },
+          "cssClass": "forecast-preprocessor-port"
+        },
+        {
+          "id": "ebe383cb-f9d2-477b-9623-db09304015aa",
+          "nodeId": "04449f74-622b-4875-aa8e-d453761bdb2c",
+          "type": "aux-input",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "50%",
+            "y": "100%"
+          },
+          "position": {
+            "x": 100,
+            "y": 176.055
+          },
+          "data": {
+            "label": "Forecast Preprocessor Port"
+          },
+          "spec": {
+            "role": "forecast-preprocessor"
+          },
+          "cssClass": "forecast-preprocessor-port"
+        }
+      ],
+      "type": "TimeAggregateNode",
+      "data": {
+        "freq": "ME",
+        "method": "sum"
+      }
+    },
+    {
+      "id": "76f3f243-39b4-4731-9906-e316252957ad",
+      "label": "AutoARIMA",
+      "iconUrl": "/n2_forecast/static/images/line-chart.svg",
+      "category": "Forecast",
+      "position": {
+        "x": 880,
+        "y": 219.52100000000002
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 275.471
+      },
+      "ports": [
+        {
+          "id": "7e083437-25e3-4219-9f1d-8f5080e26416",
+          "nodeId": "76f3f243-39b4-4731-9906-e316252957ad",
+          "type": "aux-output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "50%",
+            "y": 0
+          },
+          "position": {
+            "x": 100,
+            "y": 0
+          },
+          "data": {
+            "label": "Forecast Model Port"
+          },
+          "spec": {
+            "role": "forecast-model"
+          },
+          "cssClass": "forecast-model-port"
+        }
+      ],
+      "type": "AutoArimaNode",
+      "data": {
+        "d": 1,
+        "D": 0,
+        "season_length": 1,
+        "seasonal": false,
+        "approximation": false
+      }
+    },
+    {
+      "id": "60d52cc8-7aec-4526-b7d2-16289f948ddc",
+      "label": "AutoETS",
+      "iconUrl": "/n2_forecast/static/images/line-chart.svg",
+      "category": "Forecast",
+      "position": {
+        "x": 1540,
+        "y": 219.52100000000002
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 285.049
+      },
+      "ports": [
+        {
+          "id": "58182fdf-71b3-4c16-98e2-2e75f4112524",
+          "nodeId": "60d52cc8-7aec-4526-b7d2-16289f948ddc",
+          "type": "aux-output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "50%",
+            "y": 0
+          },
+          "position": {
+            "x": 100,
+            "y": 0
+          },
+          "data": {
+            "label": "Forecast Model Port"
+          },
+          "spec": {
+            "role": "forecast-model"
+          },
+          "cssClass": "forecast-model-port"
+        }
+      ],
+      "type": "AutoEtsNode",
+      "data": {
+        "season_length": 1,
+        "model": "ZZZ",
+        "damped": true,
+        "phi": 0.9
+      }
+    },
+    {
+      "id": "2289f3d9-3a80-435f-bdf3-93b331ece244",
+      "label": "AutoTheta",
+      "iconUrl": "/n2_forecast/static/images/line-chart.svg",
+      "category": "Forecast",
+      "position": {
+        "x": 1320,
+        "y": 219.52099999999996
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 230.552
+      },
+      "ports": [
+        {
+          "id": "93da84cf-6041-4875-8619-0edfe688f419",
+          "nodeId": "2289f3d9-3a80-435f-bdf3-93b331ece244",
+          "type": "aux-output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "50%",
+            "y": 0
+          },
+          "position": {
+            "x": 100,
+            "y": 0
+          },
+          "data": {
+            "label": "Forecast Model Port"
+          },
+          "spec": {
+            "role": "forecast-model"
+          },
+          "cssClass": "forecast-model-port"
+        }
+      ],
+      "type": "AutoThetaNode",
+      "data": {
+        "season_length": 1,
+        "model": null,
+        "decomposition_type": "additive"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "7529a6b1-8596-42ba-9613-e9b2fb17b39c",
+      "fromPortId": "ccd0cb90-da8b-4abd-95dc-b278930a1904",
+      "toPortId": "7aa370d4-3438-4809-88d6-2e371382a8a4",
+      "startX": 463.48052978515625,
+      "startY": 469.4821434020996,
+      "endX": 573.376708984375,
+      "endY": 355.3133201599121,
+      "type": "smoothstep",
+      "direction": "vertical",
+      "data": {
+        "indexOnFromPort": 0,
+        "indexOnToPort": 0
+      },
+      "path": "M 160 626 L 160 606\n                    A 0 0 0 0 1 160 606\n                    L 160 606\n                    A 0 0 0 0 0 160 606\n                    L 160 586",
+      "joints": []
+    },
+    {
+      "id": "bc67fdcc-30ca-4fe5-938a-bcb6cc40315d",
+      "fromPortId": "8444e7b6-45e1-46a3-85b9-54e5e5dc0161",
+      "toPortId": "9c6db0c0-ac80-4541-a2a5-5aac45733454",
+      "startX": 624.4805297851562,
+      "startY": 297.9902434020996,
+      "endX": 732.3377685546875,
+      "endY": 315.832820892334,
+      "type": "smoothstep",
+      "direction": "horizontal",
+      "data": {
+        "indexOnFromPort": 0,
+        "indexOnToPort": 0
+      },
+      "path": "M 210 529 L 280 529\n                    A 0 0 0 0 1 280 529\n                    L 280 529\n                    A 0 0 0 0 0 280 529\n                    L 350 529",
+      "joints": []
+    },
+    {
+      "id": "5ed502a6-dc5b-4910-8c20-d1b4d482ef09",
+      "fromPortId": "cf9d4945-126f-4c6b-946d-64065bafc51e",
+      "toPortId": "277e2cdc-9906-43e8-9036-7b2d79391981",
+      "startX": 845.4805297851562,
+      "startY": 571.4821434020996,
+      "endX": 836.2339477539062,
+      "endY": 430.63796615600586,
+      "type": "smoothstep",
+      "direction": "vertical",
+      "data": {
+        "indexOnFromPort": 0,
+        "indexOnToPort": 0
+      },
+      "path": "M 450 680 L 450 660\n                    A 0 0 0 0 1 450 660\n                    L 450 660\n                    A 0 0 0 0 0 450 660\n                    L 450 640",
+      "joints": []
+    },
+    {
+      "id": "bcba35ce-d498-4685-81ab-3e3a28ee162b",
+      "fromPortId": "c9b5a359-2801-4bb6-af71-ac57db10865c",
+      "toPortId": "5fb556b2-20c0-4cca-a308-a4fc66c7da98",
+      "startX": 1272.2338562011719,
+      "startY": 394.65099716186523,
+      "endX": 1254.4158630371094,
+      "endY": 325.7029685974121,
+      "type": "smoothstep",
+      "direction": "vertical",
+      "data": {
+        "indexOnFromPort": 0,
+        "indexOnToPort": 0
+      },
+      "path": "M 1894 410 L 1894 377\n                    A 0 0 0 0 1 1894 377\n                    L 1894 377\n                    A 0 0 0 0 0 1894 377\n                    L 1894 344",
+      "joints": []
+    },
+    {
+      "id": "4e12d1c7-3c6d-4969-a55a-dde4032b0bf6",
+      "fromPortId": "d6fd4d34-65c1-46a7-b313-8c7d5b49527c",
+      "toPortId": "c4c351ca-3a5f-40b3-bb31-fd608025d173",
+      "startX": 991.17,
+      "startY": 267.25649999999985,
+      "endX": 930.7792358398438,
+      "endY": 197.13150014505743,
+      "type": "smoothstep",
+      "direction": "vertical",
+      "data": {
+        "indexOnFromPort": 0,
+        "indexOnToPort": 0
+      },
+      "path": "M 1894 229 L 1894 197.3350720387048 A 10 10 0 0 0 1884 187.3350720387048 L 1820.0269052076374 187.3350720387048 L 1528.6675360193524 187.3350720387048 A 8.667536019352397 8.667536019352397 0 0 1 1520 178.66753601935238 L 1520 170",
+      "joints": [
+        {
+          "x": 1820.0269052076374,
+          "y": 187.3350720387048
+        }
+      ]
+    },
+    {
+      "id": "80546077-118d-45f2-b8c3-eb1115e7ea8c",
+      "fromPortId": "551c2aee-f77a-4b31-b979-5408005a0df8",
+      "toPortId": "e345c6b2-5a4d-4883-b397-370905b8ebd0",
+      "startX": 1221.17,
+      "startY": 136.26199999999994,
+      "endX": 1279.8703002929688,
+      "endY": 90.6380309067762,
+      "type": "smoothstep",
+      "direction": "horizontal",
+      "data": {
+        "indexOnFromPort": 0,
+        "indexOnToPort": 0
+      },
+      "path": "M 1570 85 L 1610.5 85\n                    A 0 0 0 0 1 1610.5 85\n                    L 1610.5 85\n                    A 0 0 0 0 0 1610.5 85\n                    L 1651 85",
+      "joints": []
+    },
+    {
+      "id": "a514d075-b20c-472b-b77a-c60763a930f5",
+      "fromPortId": "0c7bc7e9-625f-46f2-a8d0-810a1abf91e2",
+      "toPortId": "47e0de48-eb4f-41d8-a8b9-b06801e74ded",
+      "startX": 550,
+      "startY": 136.26199999999994,
+      "endX": 609.0486910692919,
+      "endY": 2.722363983746671,
+      "type": "smoothstep",
+      "direction": "horizontal",
+      "data": {
+        "indexOnFromPort": 0,
+        "indexOnToPort": 0
+      },
+      "path": "M 550 529 L 595 529\n                    A 0 0 0 0 1 595 529\n                    L 595 529\n                    A 0 0 0 0 0 595 529\n                    L 640 529",
+      "joints": []
+    },
+    {
+      "id": "fd39545a-2623-46ba-8f54-ed55778943c6",
+      "fromPortId": "73bceb9f-1403-417e-be43-9cb835033155",
+      "toPortId": "acd22f08-920c-470e-ad91-d734f5835c79",
+      "startX": 809.025969998755,
+      "startY": 3.7840750663545,
+      "endX": 1084.3733173912894,
+      "endY": -84.93996964409351,
+      "type": "smoothstep",
+      "direction": "horizontal",
+      "data": {
+        "indexOnFromPort": 0,
+        "indexOnToPort": 0
+      },
+      "path": "M 840 529 L 849.5595100580235 529 A 9.559510058023534 9.559510058023534 0 0 0 859.1190201160471 519.4404899419765 L 859.1190201160471 277.0371617443814 L 859.1190201160471 95 A 10 10 0 0 1 869.1190201160471 85 L 1370 85",
+      "joints": [
+        {
+          "x": 859.1190201160471,
+          "y": 277.0371617443814
+        }
+      ]
+    },
+    {
+      "id": "8941b61e-5722-4d11-8fa1-9219fb2c14d6",
+      "fromPortId": "3c197432-a2e4-459d-bb06-3329adbb84c1",
+      "toPortId": "774ee073-6464-415e-828e-dc7ebed397cb",
+      "startX": 1196.89599609375,
+      "startY": 711.6379969177246,
+      "endX": 1464.8050537109375,
+      "endY": 755.8328514099121,
+      "type": "smoothstep",
+      "direction": "horizontal",
+      "data": {
+        "indexOnFromPort": 0,
+        "indexOnToPort": 0
+      },
+      "path": "M 1079 747 L 1107.5 747\n                    A 0 0 0 0 1 1107.5 747\n                    L 1107.5 747\n                    A 0 0 0 0 0 1107.5 747\n                    L 1136 747",
+      "joints": []
+    },
+    {
+      "id": "5cdfcb76-3bbc-4383-ae52-c30faa9ad132",
+      "fromPortId": "86dc20a6-461d-48c2-a546-4539ff83fe6a",
+      "toPortId": "04d7789e-09f5-4f6a-a438-5801434705ef",
+      "startX": 853.621479847819,
+      "startY": 349.4817681305147,
+      "endX": 1038.9971353247674,
+      "endY": 220.89274856101719,
+      "type": "smoothstep",
+      "direction": "vertical",
+      "data": {
+        "indexOnFromPort": 0,
+        "indexOnToPort": 1
+      },
+      "path": "M 1200 220 L 1200 205\n                    A 10 10 0 0 1 1210 195\n                    L 1410 195\n                    A 10 10 0 0 0 1420 185\n                    L 1420 170",
+      "joints": []
+    },
+    {
+      "id": "4be4017d-3f0f-4503-b1e2-9ffc2d0e3192",
+      "fromPortId": "73bceb9f-1403-417e-be43-9cb835033155",
+      "toPortId": "7c85724e-df02-40b9-b0d3-b183fd1353c1",
+      "startX": 840,
+      "startY": 119.67524999999996,
+      "endX": 1142.5766610121077,
+      "endY": 580.5461465415144,
+      "type": "smoothstep",
+      "direction": "horizontal",
+      "data": {
+        "indexOnFromPort": 1,
+        "indexOnToPort": 0
+      },
+      "path": "M 840 529 L 849.5 529\n                    A 10 10 0 0 1 859.5 539\n                    L 859.5 737\n                    A 10 10 0 0 0 869.5 747\n                    L 879 747",
+      "joints": []
+    },
+    {
+      "id": "2516bde3-1d2f-4632-a3aa-88866c2b52d5",
+      "fromPortId": "324493a8-3d87-4077-a2b0-ba6ab5f730e0",
+      "toPortId": "7f97d535-330a-4143-98f1-e73f84546c0f",
+      "startX": 1244,
+      "startY": 747.6632500000001,
+      "endX": 1242.1686304791092,
+      "endY": 662.9952155779497,
+      "type": "smoothstep",
+      "direction": "vertical",
+      "data": {
+        "indexOnFromPort": 0,
+        "indexOnToPort": 0
+      },
+      "path": "M 979 868 L 979 848\n                    A 0 0 0 0 1 979 848\n                    L 979 848\n                    A 0 0 0 0 0 979 848\n                    L 979 828",
+      "joints": []
+    },
+    {
+      "id": "08eb2aa8-8c7f-42ba-b198-812ab0b39360",
+      "fromPortId": "0ae7f54d-aba4-4064-899e-42bacc65fc78",
+      "toPortId": "7ce20c38-7ec1-4841-8abb-7282d34eb968",
+      "startX": 1406,
+      "startY": 957.91075,
+      "endX": 1242.984940802015,
+      "endY": 867.0769205370004,
+      "type": "smoothstep",
+      "direction": "vertical",
+      "data": {
+        "indexOnFromPort": 0,
+        "indexOnToPort": 0
+      },
+      "path": "M 979 1023 L 979 1003\n                    A 0 0 0 0 1 979 1003\n                    L 979 1003\n                    A 0 0 0 0 0 979 1003\n                    L 979 983",
+      "joints": []
+    },
+    {
+      "id": "1d89db1b-e36f-4396-be69-3f89699d1ba7",
+      "fromPortId": "7e083437-25e3-4219-9f1d-8f5080e26416",
+      "toPortId": "04d7789e-09f5-4f6a-a438-5801434705ef",
+      "startX": 1288.545654296875,
+      "startY": 17.28731918334961,
+      "endX": 1274.1561279296875,
+      "endY": -38.45293045043945,
+      "type": "smoothstep",
+      "direction": "vertical",
+      "data": {
+        "indexOnFromPort": 0,
+        "indexOnToPort": 1
+      },
+      "path": "M 980 220 L 980 205\n                    A 10 10 0 0 1 990 195\n                    L 1410 195\n                    A 10 10 0 0 0 1420 185\n                    L 1420 170",
+      "joints": []
+    },
+    {
+      "id": "d9cfa60f-a3e3-4478-ae1c-c166b8ef1016",
+      "fromPortId": "58182fdf-71b3-4c16-98e2-2e75f4112524",
+      "toPortId": "04d7789e-09f5-4f6a-a438-5801434705ef",
+      "startX": 1513.376708984375,
+      "startY": 68.00164413452148,
+      "endX": 1276.2339477539062,
+      "endY": -34.29704666137695,
+      "type": "smoothstep",
+      "direction": "vertical",
+      "data": {
+        "indexOnFromPort": 0,
+        "indexOnToPort": 2
+      },
+      "path": "M 1640 220 L 1640 205\n                    A 10 10 0 0 0 1630 195\n                    L 1430 195\n                    A 10 10 0 0 1 1420 185\n                    L 1420 170",
+      "joints": []
+    },
+    {
+      "id": "780bf3f4-6bc8-49f8-8173-5fc614e87757",
+      "fromPortId": "93da84cf-6041-4875-8619-0edfe688f419",
+      "toPortId": "04d7789e-09f5-4f6a-a438-5801434705ef",
+      "startX": 1718.7401123046875,
+      "startY": 57.715938568115234,
+      "endX": 1276.2337036132812,
+      "endY": -40.01132583618164,
+      "type": "smoothstep",
+      "direction": "vertical",
+      "data": {
+        "indexOnFromPort": 0,
+        "indexOnToPort": 3
+      },
+      "path": "M 1420 220 L 1420 195\n                    A 0 0 0 0 1 1420 195\n                    L 1420 195\n                    A 0 0 0 0 0 1420 195\n                    L 1420 170",
+      "joints": []
+    }
+  ],
+  "selected": [],
+  "data": {
+    "forecast_store_id": 1,
+    "forecast_store_name": "Sales Forecast Store"
+  },
+  "version": "1.0.0"
+}

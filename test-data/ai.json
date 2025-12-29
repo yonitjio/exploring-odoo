@@ -1,0 +1,560 @@
+{
+  "id": "9fff5699-9df0-46e7-9da7-874af8a943d3",
+  "title": "Test AI",
+  "isProcessed": false,
+  "recordId": 7,
+  "nodes": [
+    {
+      "id": "7259f4c2-4d70-4339-ad05-bd2182ca99c2",
+      "label": "AI Calculator Mcp Tool",
+      "iconUrl": "/n2_ai/static/images/calculator.svg",
+      "category": "AI",
+      "position": {
+        "x": 717.705,
+        "y": 525.7915
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 61.9886
+      },
+      "ports": [
+        {
+          "id": "b3a0cbc6-3275-4329-8143-632b6dec00d9",
+          "nodeId": "7259f4c2-4d70-4339-ad05-bd2182ca99c2",
+          "type": "aux-output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "50%",
+            "y": 0
+          },
+          "position": {
+            "x": 100,
+            "y": 0
+          },
+          "data": {
+            "label": "AI Tool Port"
+          },
+          "spec": {
+            "role": "ai-tool"
+          },
+          "cssClass": "ai-tool-port"
+        }
+      ],
+      "type": "AiCalculatorMcpToolNode",
+      "data": {}
+    },
+    {
+      "id": "dfeabaf8-341b-4d77-999b-d2a91c337fdf",
+      "label": "Start",
+      "iconUrl": "/n2_ui/static/images/play.svg",
+      "category": "Core",
+      "position": {
+        "x": 37.70500000000004,
+        "y": 274.0134
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 115.024
+      },
+      "ports": [
+        {
+          "id": "57c10fcf-dce9-4222-a96f-ca4ecec03765",
+          "nodeId": "dfeabaf8-341b-4d77-999b-d2a91c337fdf",
+          "type": "input",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": 0,
+            "y": "50%"
+          },
+          "position": {
+            "x": 0,
+            "y": 57.5081
+          },
+          "data": {
+            "label": "Input Port"
+          },
+          "spec": {
+            "role": "trigger"
+          },
+          "cssClass": "trigger-port"
+        },
+        {
+          "id": "4a30dd9b-3cd5-4f30-a3f7-854c694d6791",
+          "nodeId": "dfeabaf8-341b-4d77-999b-d2a91c337fdf",
+          "type": "output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "100%",
+            "y": "50%"
+          },
+          "position": {
+            "x": 200,
+            "y": 57.5081
+          },
+          "data": {
+            "label": "Output Port"
+          }
+        },
+        {
+          "id": "3bd7251a-b71c-4dcb-bebd-9dc33f25e030",
+          "nodeId": "dfeabaf8-341b-4d77-999b-d2a91c337fdf",
+          "type": "aux-input",
+          "maxConnections": 9007199254740991,
+          "screenPosition": {
+            "x": "50%",
+            "y": "100%"
+          },
+          "position": {
+            "x": 100,
+            "y": 115.024
+          },
+          "data": {
+            "label": "Starter Input"
+          },
+          "spec": {
+            "role": "starter"
+          },
+          "cssClass": "starter-port"
+        }
+      ],
+      "type": "StartNode",
+      "data": {
+        "parameters": ""
+      }
+    },
+    {
+      "id": "8225690a-4cc6-4fe9-8ae3-21ef400c06f6",
+      "label": "Log",
+      "iconUrl": "/n2_ui/static/images/log.svg",
+      "category": "Core",
+      "position": {
+        "x": 1177.705,
+        "y": 277.27639999999997
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 108.49
+      },
+      "ports": [
+        {
+          "id": "0fb004c0-317f-4aeb-bfe1-51ecc4c6049b",
+          "nodeId": "8225690a-4cc6-4fe9-8ae3-21ef400c06f6",
+          "type": "input",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": 0,
+            "y": "50%"
+          },
+          "position": {
+            "x": 0,
+            "y": 54.2451
+          },
+          "data": {
+            "label": "Input Port"
+          }
+        },
+        {
+          "id": "c84a79e0-3d09-4590-a736-a5e6ed322b1d",
+          "nodeId": "8225690a-4cc6-4fe9-8ae3-21ef400c06f6",
+          "type": "output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": 200,
+            "y": "50%"
+          },
+          "position": {
+            "x": 200,
+            "y": 54.2451
+          },
+          "data": {
+            "label": "Output Port"
+          }
+        }
+      ],
+      "type": "LogNode",
+      "data": {
+        "tag": "N2-LOG"
+      }
+    },
+    {
+      "id": "3664dd79-dce2-4da2-8b09-26df1f1294df",
+      "label": "AI Client",
+      "iconUrl": "/n2_ai/static/images/ai-chip.svg",
+      "category": "AI",
+      "position": {
+        "x": 277.70500000000004,
+        "y": 525.7915
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 237.086
+      },
+      "ports": [
+        {
+          "id": "a611ec30-45d2-4786-aa5e-3ea1adc58d97",
+          "nodeId": "3664dd79-dce2-4da2-8b09-26df1f1294df",
+          "type": "aux-output",
+          "maxConnections": 9007199254740991,
+          "screenPosition": {
+            "x": "50%",
+            "y": 0
+          },
+          "position": {
+            "x": 100,
+            "y": 0
+          },
+          "data": {
+            "label": "AI Client Port"
+          },
+          "spec": {
+            "role": "ai-client"
+          },
+          "cssClass": "ai-client-port"
+        }
+      ],
+      "type": "AiClientNode",
+      "data": {
+        "model": "qwen/qwen3-4b-2507",
+        "api_key": "__NOT_USED__",
+        "base_url": "http://localhost:1234/v1"
+      }
+    },
+    {
+      "id": "50fdb8a3-1915-45a0-991d-4f824035810f",
+      "label": "AI Date Tool",
+      "iconUrl": "/n2_ai/static/images/calendar.svg",
+      "category": "AI",
+      "position": {
+        "x": 497.70500000000004,
+        "y": 525.7915
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 61.9886
+      },
+      "ports": [
+        {
+          "id": "6fdd27d6-53fd-4dcb-8440-ba017eff9237",
+          "nodeId": "50fdb8a3-1915-45a0-991d-4f824035810f",
+          "type": "aux-output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "50%",
+            "y": 0
+          },
+          "position": {
+            "x": 100,
+            "y": 0
+          },
+          "data": {
+            "label": "AI Tool Port"
+          },
+          "spec": {
+            "role": "ai-tool"
+          },
+          "cssClass": "ai-tool-port"
+        }
+      ],
+      "type": "AiDateToolNode",
+      "data": {}
+    },
+    {
+      "id": "bf8ea76f-5360-42f1-a767-3dc5b8792790",
+      "label": "AI Agent",
+      "iconUrl": "/n2_ai/static/images/ai.svg",
+      "category": "AI",
+      "position": {
+        "x": 607.705,
+        "y": 187.2525
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 288.539
+      },
+      "ports": [
+        {
+          "id": "7b168b92-7448-4304-9138-185f3718a4a2",
+          "nodeId": "bf8ea76f-5360-42f1-a767-3dc5b8792790",
+          "type": "input",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": 0,
+            "y": "50%"
+          },
+          "position": {
+            "x": 0,
+            "y": 144.269
+          },
+          "data": {
+            "label": "Input Port"
+          }
+        },
+        {
+          "id": "a4ae8936-4e52-40dc-b144-b2abfca119a1",
+          "nodeId": "bf8ea76f-5360-42f1-a767-3dc5b8792790",
+          "type": "output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "100%",
+            "y": "50%"
+          },
+          "position": {
+            "x": 200,
+            "y": 144.269
+          },
+          "data": {
+            "label": "Output Port"
+          }
+        },
+        {
+          "id": "d8dd438c-f859-4779-a52d-eb78b66e37f0",
+          "nodeId": "bf8ea76f-5360-42f1-a767-3dc5b8792790",
+          "type": "aux-input",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "25%",
+            "y": "100%"
+          },
+          "position": {
+            "x": 50,
+            "y": 288.539
+          },
+          "data": {
+            "label": "AI Client Port"
+          },
+          "spec": {
+            "role": "ai-client"
+          },
+          "cssClass": "ai-client-port"
+        },
+        {
+          "id": "45de6d3e-5021-424e-b59d-92d3fa5b4988",
+          "nodeId": "bf8ea76f-5360-42f1-a767-3dc5b8792790",
+          "type": "aux-input",
+          "maxConnections": 9007199254740991,
+          "screenPosition": {
+            "x": "50%",
+            "y": "100%"
+          },
+          "position": {
+            "x": 100,
+            "y": 288.539
+          },
+          "data": {
+            "label": "AI Tools Port"
+          },
+          "spec": {
+            "role": "ai-tool"
+          },
+          "cssClass": "ai-tool-port"
+        },
+        {
+          "id": "32b5e7da-a96d-47d9-898d-8e3c0e2bdcf5",
+          "nodeId": "bf8ea76f-5360-42f1-a767-3dc5b8792790",
+          "type": "aux-input",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "75%",
+            "y": "100%"
+          },
+          "position": {
+            "x": 150,
+            "y": 288.539
+          },
+          "data": {
+            "label": "AI Context Port"
+          },
+          "spec": {
+            "role": "ai-context"
+          },
+          "cssClass": "ai-context-port"
+        }
+      ],
+      "type": "AiAgentNode",
+      "data": {
+        "name": "Agent 001",
+        "system_message": "You are a helpful AI assistant.",
+        "prompt": "Hello! Could you tell me what Odoo version we're using?",
+        "is_html_result": false,
+        "is_structured": false,
+        "schema": ""
+      }
+    },
+    {
+      "id": "28837dee-fde1-4af2-8e96-d2eb87ec8ac5",
+      "label": "Manual Context Provider",
+      "iconUrl": "/n2_ai/static/images/tag.svg",
+      "category": "AI",
+      "position": {
+        "x": 937.705,
+        "y": 525.7915
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 115.024
+      },
+      "ports": [
+        {
+          "id": "5e54204a-e9e3-4045-8e94-601f61c5e8ed",
+          "nodeId": "28837dee-fde1-4af2-8e96-d2eb87ec8ac5",
+          "type": "aux-output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "50%",
+            "y": 0
+          },
+          "position": {
+            "x": 100,
+            "y": 0
+          },
+          "data": {
+            "label": "AI Context Port"
+          },
+          "spec": {
+            "role": "ai-context"
+          },
+          "cssClass": "ai-context-port"
+        }
+      ],
+      "type": "ManualContextProviderNode",
+      "data": {
+        "context": "Use this to give context to your responses:\n- The environment is Odoo 19"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e2ff8043-a6d7-4f13-ab40-9f624796771a",
+      "fromPortId": "4a30dd9b-3cd5-4f30-a3f7-854c694d6791",
+      "toPortId": "7b168b92-7448-4304-9138-185f3718a4a2",
+      "startX": 457.70500000000004,
+      "startY": 336.5215,
+      "endX": 610.2192230224609,
+      "endY": 296.09255599975586,
+      "type": "smoothstep",
+      "direction": "horizontal",
+      "data": {
+        "indexOnFromPort": 0,
+        "indexOnToPort": 0
+      },
+      "path": "M 238 332 L 423 332\n                    A 0 0 0 0 1 423 332\n                    L 423 332\n                    A 0 0 0 0 0 423 332\n                    L 608 332",
+      "joints": []
+    },
+    {
+      "id": "63befcde-3214-466f-ac07-ed6a534b1f2e",
+      "fromPortId": "a4ae8936-4e52-40dc-b144-b2abfca119a1",
+      "toPortId": "0fb004c0-317f-4aeb-bfe1-51ecc4c6049b",
+      "startX": 809.5568084716797,
+      "startY": 295.4816434020996,
+      "endX": 961.3879852294922,
+      "endY": 337.65099716186523,
+      "type": "smoothstep",
+      "direction": "horizontal",
+      "data": {
+        "indexOnFromPort": 0,
+        "indexOnToPort": 0
+      },
+      "path": "M 808 332 L 993 332\n                    A 0 0 0 0 1 993 332\n                    L 993 332\n                    A 0 0 0 0 0 993 332\n                    L 1178 332",
+      "joints": []
+    },
+    {
+      "id": "1b204d30-d908-4c8a-b0b4-5e1c51b898f5",
+      "fromPortId": "a611ec30-45d2-4786-aa5e-3ea1adc58d97",
+      "toPortId": "d8dd438c-f859-4779-a52d-eb78b66e37f0",
+      "startX": 413.70500000000004,
+      "startY": 521.7915,
+      "endX": 661.1282196044922,
+      "endY": 443.1055564880371,
+      "type": "smoothstep",
+      "direction": "vertical",
+      "data": {
+        "indexOnFromPort": 0,
+        "indexOnToPort": 0
+      },
+      "path": "M 378 526 L 378 511\n                    A 10 10 0 0 1 388 501\n                    L 648 501\n                    A 10 10 0 0 0 658 491\n                    L 658 476",
+      "joints": []
+    },
+    {
+      "id": "4401aaa4-52d0-4409-b23e-a4bae62273a2",
+      "fromPortId": "b3a0cbc6-3275-4329-8143-632b6dec00d9",
+      "toPortId": "45de6d3e-5021-424e-b59d-92d3fa5b4988",
+      "startX": 624.705,
+      "startY": 550.7915,
+      "endX": 710.9984588623047,
+      "endY": 439.4691734313965,
+      "type": "smoothstep",
+      "direction": "vertical",
+      "data": {
+        "indexOnFromPort": 0,
+        "indexOnToPort": 0
+      },
+      "path": "M 818 526 L 818 511\n                    A 10 10 0 0 0 808 501\n                    L 718 501\n                    A 10 10 0 0 1 708 491\n                    L 708 476",
+      "joints": []
+    },
+    {
+      "id": "45cbdfba-76d9-483e-b8ed-532565d3af35",
+      "fromPortId": "6fdd27d6-53fd-4dcb-8440-ba017eff9237",
+      "toPortId": "45de6d3e-5021-424e-b59d-92d3fa5b4988",
+      "startX": 867.5568084716797,
+      "startY": 570.4878434020997,
+      "endX": 708.9205169677734,
+      "endY": 438.94970321655273,
+      "type": "smoothstep",
+      "direction": "vertical",
+      "data": {
+        "indexOnFromPort": 0,
+        "indexOnToPort": 1
+      },
+      "path": "M 598 526 L 598 511\n                    A 10 10 0 0 1 608 501\n                    L 698 501\n                    A 10 10 0 0 0 708 491\n                    L 708 476",
+      "joints": []
+    },
+    {
+      "id": "6f99fed4-cd41-4a8c-90d3-917b8d620720",
+      "fromPortId": "5e54204a-e9e3-4045-8e94-601f61c5e8ed",
+      "toPortId": "32b5e7da-a96d-47d9-898d-8e3c0e2bdcf5",
+      "startX": 1150.5568084716797,
+      "startY": 441.4706434020996,
+      "endX": 757.7516937255859,
+      "endY": 438.94970321655273,
+      "type": "smoothstep",
+      "direction": "vertical",
+      "data": {
+        "indexOnFromPort": 0,
+        "indexOnToPort": 0
+      },
+      "path": "M 1038 526 L 1038 511\n                    A 10 10 0 0 0 1028 501\n                    L 768 501\n                    A 10 10 0 0 1 758 491\n                    L 758 476",
+      "joints": []
+    }
+  ],
+  "selected": [],
+  "data": {},
+  "version": "1.0.0"
+}

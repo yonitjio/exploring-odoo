@@ -1,0 +1,551 @@
+{
+  "id": "b9b7fe31-64f2-4aa7-9785-e690557afc6b",
+  "title": "Test Approval",
+  "isProcessed": true,
+  "recordId": 1,
+  "nodes": [
+    {
+      "id": "b1ccb3ae-80c7-431f-bf56-96c8a4688a12",
+      "label": "Start",
+      "iconUrl": "/n2_ui/static/images/play.svg",
+      "category": "Core",
+      "position": {
+        "x": 367.70500000000004,
+        "y": 115.4325
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 115.024
+      },
+      "ports": [
+        {
+          "id": "06cf44c8-f209-442c-83e1-9d9d29edade7",
+          "nodeId": "b1ccb3ae-80c7-431f-bf56-96c8a4688a12",
+          "type": "input",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": 0,
+            "y": "50%"
+          },
+          "position": {
+            "x": 0,
+            "y": 57.5081
+          },
+          "data": {
+            "label": "Input Port"
+          },
+          "spec": {
+            "role": "trigger"
+          },
+          "cssClass": "trigger-port"
+        },
+        {
+          "id": "fe12382a-bee0-4aea-8b89-8ec84bc9e660",
+          "nodeId": "b1ccb3ae-80c7-431f-bf56-96c8a4688a12",
+          "type": "output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "100%",
+            "y": "50%"
+          },
+          "position": {
+            "x": 200,
+            "y": 57.5081
+          },
+          "data": {
+            "label": "Output Port"
+          }
+        },
+        {
+          "id": "aa3935f1-e9b2-44eb-897f-3dbd3bc90472",
+          "nodeId": "b1ccb3ae-80c7-431f-bf56-96c8a4688a12",
+          "type": "aux-input",
+          "maxConnections": 9007199254740991,
+          "screenPosition": {
+            "x": "50%",
+            "y": "100%"
+          },
+          "position": {
+            "x": 100,
+            "y": 115.024
+          },
+          "data": {
+            "label": "Starter Input"
+          },
+          "spec": {
+            "role": "starter"
+          },
+          "cssClass": "starter-port"
+        }
+      ],
+      "type": "StartNode",
+      "data": {
+        "parameters": ""
+      }
+    },
+    {
+      "id": "17474e1d-c74f-4c58-8112-a3404683d980",
+      "label": "Code",
+      "iconUrl": "/n2_action/static/images/database-script.svg",
+      "category": "Starters",
+      "position": {
+        "x": 122.70500000000004,
+        "y": 270.4565
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 282.005
+      },
+      "ports": [
+        {
+          "id": "2d258dd7-9197-482e-88c6-b413b35ce252",
+          "nodeId": "17474e1d-c74f-4c58-8112-a3404683d980",
+          "type": "aux-output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "50%",
+            "y": 0
+          },
+          "position": {
+            "x": 100,
+            "y": 0
+          },
+          "spec": {
+            "role": "starter"
+          },
+          "cssClass": "starter-port"
+        }
+      ],
+      "type": "CodeServerActionStarterNode",
+      "data": {
+        "model": "sale.order",
+        "model_description": "Sales Order",
+        "name": "Lv 1",
+        "code": "if (record[\"x_approval\"] == \"waiting\") or (not record[\"x_approval\"]):\n    record[\"x_approval\"] = \"approved_one\"",
+        "use_existing": false,
+        "remove_on_reset": true
+      }
+    },
+    {
+      "id": "31df6fc0-a9c5-49e0-a7e3-d79dd10d6288",
+      "label": "Select Field",
+      "iconUrl": "/n2_data/static/images/select-field.svg",
+      "category": "Starters",
+      "position": {
+        "x": 342.70500000000004,
+        "y": 270.4565
+      },
+      "screenSize": {
+        "width": "250px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 250,
+        "height": 631.753
+      },
+      "ports": [
+        {
+          "id": "a912eccd-9204-4562-a143-903a1e9a0347",
+          "nodeId": "31df6fc0-a9c5-49e0-a7e3-d79dd10d6288",
+          "type": "aux-output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "50%",
+            "y": 0
+          },
+          "position": {
+            "x": 125,
+            "y": 0
+          },
+          "spec": {
+            "role": "starter"
+          },
+          "cssClass": "starter-port"
+        }
+      ],
+      "type": "CustomSelectFieldStarterNode",
+      "data": {
+        "model": "sale.order",
+        "model_description": "Sales Order",
+        "field_name": "x_approval",
+        "field_description": "Manager Approval",
+        "select_value": "",
+        "select_label": "",
+        "select_items": [
+          {
+            "value": "waiting",
+            "label": "Waiting"
+          },
+          {
+            "value": "approved_one",
+            "label": "Approved Level One"
+          },
+          {
+            "value": "approved_two",
+            "label": "Approved Level Two"
+          }
+        ],
+        "use_existing": false,
+        "remove_on_reset": true
+      }
+    },
+    {
+      "id": "9e32577e-4884-4b76-95e9-5fcd3de49147",
+      "label": "Code",
+      "iconUrl": "/n2_action/static/images/database-script.svg",
+      "category": "Starters",
+      "position": {
+        "x": 612.705,
+        "y": 270.4565
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 282.005
+      },
+      "ports": [
+        {
+          "id": "36be4729-8a85-4685-94d2-3414a1893164",
+          "nodeId": "9e32577e-4884-4b76-95e9-5fcd3de49147",
+          "type": "aux-output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "50%",
+            "y": 0
+          },
+          "position": {
+            "x": 100,
+            "y": 0
+          },
+          "spec": {
+            "role": "starter"
+          },
+          "cssClass": "starter-port"
+        }
+      ],
+      "type": "CodeServerActionStarterNode",
+      "data": {
+        "model": "sale.order",
+        "model_description": "Sales Order",
+        "name": "Lv 2",
+        "code": "if record[\"x_approval\"] == \"approved_one\":\n    record[\"x_approval\"] = \"approved_two\"",
+        "use_existing": false,
+        "remove_on_reset": true
+      }
+    },
+    {
+      "id": "b1700bc2-9464-4994-8d08-194af6aa7a2a",
+      "label": "Conditional",
+      "iconUrl": "/n2_ui/static/images/git-fork.svg",
+      "category": "Core",
+      "position": {
+        "x": 852.705,
+        "y": 115.4325
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 115.024
+      },
+      "ports": [
+        {
+          "id": "b58e4f1a-86ae-4e3b-aa8e-67948ba06cdc",
+          "nodeId": "b1700bc2-9464-4994-8d08-194af6aa7a2a",
+          "type": "input",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": 0,
+            "y": "50%"
+          },
+          "position": {
+            "x": 0,
+            "y": 57.5081
+          },
+          "data": {
+            "label": "Input Port"
+          }
+        },
+        {
+          "id": "4d3b3dfc-6933-4892-8c93-4a28f2f62e32",
+          "nodeId": "b1700bc2-9464-4994-8d08-194af6aa7a2a",
+          "type": "output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": 200,
+            "y": "calc(50% - 10px)"
+          },
+          "position": {
+            "x": 200,
+            "y": 47.5081
+          },
+          "data": {
+            "label": "Output Port: True",
+            "condition": "True"
+          }
+        },
+        {
+          "id": "f38e812d-e58d-41dc-b81a-2d209df2ed4b",
+          "nodeId": "b1700bc2-9464-4994-8d08-194af6aa7a2a",
+          "type": "output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": 200,
+            "y": "calc(50% + 10px)"
+          },
+          "position": {
+            "x": 200,
+            "y": 67.5081
+          },
+          "data": {
+            "label": "Output Port: False",
+            "condition": "False"
+          }
+        }
+      ],
+      "type": "ConditionalNode",
+      "data": {
+        "condition": "active_record[\"x_approval\"] == \"approved_two\""
+      }
+    },
+    {
+      "id": "c8f948da-13bc-4d98-b03d-82c6d23a9bed",
+      "label": "Value",
+      "iconUrl": "/n2_ui/static/images/curly-braces.svg",
+      "category": "Core",
+      "position": {
+        "x": 1092.705,
+        "y": 47.920500000000004
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 115.024
+      },
+      "ports": [
+        {
+          "id": "ee722eb8-88d0-4bea-9a9a-d1e24e4e01c0",
+          "nodeId": "c8f948da-13bc-4d98-b03d-82c6d23a9bed",
+          "type": "input",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": 0,
+            "y": "50%"
+          },
+          "position": {
+            "x": 0,
+            "y": 57.5081
+          },
+          "data": {
+            "label": "Input Port"
+          }
+        },
+        {
+          "id": "a4c66db3-e363-4522-99d1-e5057f94913e",
+          "nodeId": "c8f948da-13bc-4d98-b03d-82c6d23a9bed",
+          "type": "output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "100%",
+            "y": "50%"
+          },
+          "position": {
+            "x": 200,
+            "y": 57.5081
+          },
+          "data": {
+            "label": "Output Port"
+          }
+        }
+      ],
+      "type": "ValueNode",
+      "data": {
+        "value": "{\n    \"run_original\": True\n}"
+      }
+    },
+    {
+      "id": "e1e75d3a-620e-4d3f-88ac-11d08b3bdb51",
+      "label": "Value",
+      "iconUrl": "/n2_ui/static/images/curly-braces.svg",
+      "category": "Core",
+      "position": {
+        "x": 1092.705,
+        "y": 182.9445
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 115.024
+      },
+      "ports": [
+        {
+          "id": "cac16cb2-6184-4e64-80a1-f851b84d00e8",
+          "nodeId": "e1e75d3a-620e-4d3f-88ac-11d08b3bdb51",
+          "type": "input",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": 0,
+            "y": "50%"
+          },
+          "position": {
+            "x": 0,
+            "y": 57.5081
+          },
+          "data": {
+            "label": "Input Port"
+          }
+        },
+        {
+          "id": "a97bc085-3587-4558-be11-b686680a384e",
+          "nodeId": "e1e75d3a-620e-4d3f-88ac-11d08b3bdb51",
+          "type": "output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "100%",
+            "y": "50%"
+          },
+          "position": {
+            "x": 200,
+            "y": 57.5081
+          },
+          "data": {
+            "label": "Output Port"
+          }
+        }
+      ],
+      "type": "ValueNode",
+      "data": {
+        "value": "{\n  \"action\": {\n      \"type\": \"ir.actions.client\",\n      \"tag\": \"message_box\",\n      \"params\": {\n          \"title\": \"Approval Required\",\n          \"message\": \"Contact your manager to approve this order\"\n      }\n  }\n}"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "7a617f72-54af-4123-84ca-bfa4ca9c8b1b",
+      "fromPortId": "2d258dd7-9197-482e-88c6-b413b35ce252",
+      "toPortId": "aa3935f1-e9b2-44eb-897f-3dbd3bc90472",
+      "startX": 100.12013244628906,
+      "startY": 319.4796434020996,
+      "endX": 297.27598571777344,
+      "endY": 226.11855697631836,
+      "type": "smoothstep",
+      "direction": "vertical",
+      "data": {
+        "indexOnFromPort": 0,
+        "indexOnToPort": 1
+      },
+      "path": "M 223 270 L 223 260\n                    A 10 10 0 0 1 233 250\n                    L 458 250\n                    A 10 10 0 0 0 468 240\n                    L 468 230",
+      "joints": []
+    },
+    {
+      "id": "57a82fc5-53e5-4261-a799-5167811f52a0",
+      "fromPortId": "a912eccd-9204-4562-a143-903a1e9a0347",
+      "toPortId": "aa3935f1-e9b2-44eb-897f-3dbd3bc90472",
+      "startX": 811.5568084716797,
+      "startY": 310.6211434020996,
+      "endX": 707.8815765380859,
+      "endY": 241.5470848083496,
+      "type": "smoothstep",
+      "direction": "vertical",
+      "data": {
+        "indexOnFromPort": 0,
+        "indexOnToPort": 1
+      },
+      "path": "M 468 270 L 468 250\n                    A 0 0 0 0 1 468 250\n                    L 468 250\n                    A 0 0 0 0 0 468 250\n                    L 468 230",
+      "joints": []
+    },
+    {
+      "id": "c7c6d086-b35f-41db-8adb-55b3d1bc5885",
+      "fromPortId": "36be4729-8a85-4685-94d2-3414a1893164",
+      "toPortId": "aa3935f1-e9b2-44eb-897f-3dbd3bc90472",
+      "startX": 953.031160426987,
+      "startY": 252.81941155852422,
+      "endX": 597.4468098410495,
+      "endY": 223.13364861907107,
+      "type": "smoothstep",
+      "direction": "vertical",
+      "data": {
+        "indexOnFromPort": 0,
+        "indexOnToPort": 2
+      },
+      "path": "M 713 270 L 713 260\n                    A 10 10 0 0 0 703 250\n                    L 478 250\n                    A 10 10 0 0 1 468 240\n                    L 468 230",
+      "joints": []
+    },
+    {
+      "id": "b4ff2ce4-b233-4e11-a71d-0e6a43023131",
+      "fromPortId": "fe12382a-bee0-4aea-8b89-8ec84bc9e660",
+      "toPortId": "b58e4f1a-86ae-4e3b-aa8e-67948ba06cdc",
+      "startX": 813.705,
+      "startY": 104.17729999999996,
+      "endX": 1091.9923420676118,
+      "endY": 28.847912535086692,
+      "type": "smoothstep",
+      "direction": "horizontal",
+      "data": {
+        "indexOnFromPort": 0,
+        "indexOnToPort": 0
+      },
+      "path": "M 568 173 L 710.5 173\n                    A 0 0 0 0 1 710.5 173\n                    L 710.5 173\n                    A 0 0 0 0 0 710.5 173\n                    L 853 173",
+      "joints": []
+    },
+    {
+      "id": "3779c143-125d-4ce3-9ff5-081b705dd9e8",
+      "fromPortId": "4d3b3dfc-6933-4892-8c93-4a28f2f62e32",
+      "toPortId": "ee722eb8-88d0-4bea-9a9a-d1e24e4e01c0",
+      "startX": 1143.0311604269868,
+      "startY": 93.81801155852419,
+      "endX": 1232.2518635519868,
+      "endY": 14.30238030852422,
+      "type": "smoothstep",
+      "direction": "horizontal",
+      "data": {
+        "indexOnFromPort": 0,
+        "indexOnToPort": 0
+      },
+      "path": "M 1053 163 L 1063 163\n                    A 10 10 0 0 0 1073 153\n                    L 1073 115\n                    A 10 10 0 0 1 1083 105\n                    L 1093 105",
+      "joints": []
+    },
+    {
+      "id": "669e95f2-5722-432b-bfaa-0b100fa82521",
+      "fromPortId": "f38e812d-e58d-41dc-b81a-2d209df2ed4b",
+      "toPortId": "cac16cb2-6184-4e64-80a1-f851b84d00e8",
+      "startX": 1052.705,
+      "startY": 186.5648,
+      "endX": 1127.6221160888672,
+      "endY": 279.98867416381836,
+      "type": "smoothstep",
+      "direction": "horizontal",
+      "data": {
+        "indexOnFromPort": 0,
+        "indexOnToPort": 0
+      },
+      "path": "M 1053 183 L 1063 183\n                    A 10 10 0 0 1 1073 193\n                    L 1073 230\n                    A 10 10 0 0 0 1083 240\n                    L 1093 240",
+      "joints": []
+    }
+  ],
+  "selected": [],
+  "data": {
+    "active_model": "",
+    "active_model_description": ""
+  },
+  "version": "1.0.0"
+}

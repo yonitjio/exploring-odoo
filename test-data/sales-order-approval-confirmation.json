@@ -1,0 +1,239 @@
+{
+  "id": "ef04c26d-5045-44bc-b600-5b4eacc579a4",
+  "title": "Test Run",
+  "isProcessed": true,
+  "recordId": 2,
+  "nodes": [
+    {
+      "id": "9ce48a76-2cbb-465b-a2c8-19274fe760ea",
+      "label": "On Method",
+      "iconUrl": "/n2_action/static/images/function-square.svg",
+      "category": "Triggers",
+      "position": {
+        "x": 362.70500000000004,
+        "y": 393.5715
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 162.987
+      },
+      "ports": [
+        {
+          "id": "be30a7cd-aa73-4cb9-8ae4-8c14133240d5",
+          "nodeId": "9ce48a76-2cbb-465b-a2c8-19274fe760ea",
+          "type": "output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "100%",
+            "y": "50%"
+          },
+          "position": {
+            "x": 200,
+            "y": 81.4935
+          },
+          "data": {
+            "label": "Output Port"
+          },
+          "spec": {
+            "role": "trigger"
+          },
+          "cssClass": "trigger-port"
+        }
+      ],
+      "type": "OnMethodTriggerNode",
+      "data": {
+        "model": "sale.order",
+        "model_description": "Sales Order",
+        "method_name": "action_confirm"
+      }
+    },
+    {
+      "id": "95ac4db7-0a31-4c45-b3e9-ac0992d5aceb",
+      "label": "Start",
+      "iconUrl": "/n2_ui/static/images/play.svg",
+      "category": "Core",
+      "position": {
+        "x": 602.705,
+        "y": 417.55690000000004
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 115.024
+      },
+      "ports": [
+        {
+          "id": "34246b48-dbfd-4dd7-aa7a-afa124ae9ac5",
+          "nodeId": "95ac4db7-0a31-4c45-b3e9-ac0992d5aceb",
+          "type": "input",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": 0,
+            "y": "50%"
+          },
+          "position": {
+            "x": 0,
+            "y": 57.5081
+          },
+          "data": {
+            "label": "Input Port"
+          },
+          "spec": {
+            "role": "trigger"
+          },
+          "cssClass": "trigger-port"
+        },
+        {
+          "id": "a849cbd1-0665-4cab-a3a9-7203d2a70605",
+          "nodeId": "95ac4db7-0a31-4c45-b3e9-ac0992d5aceb",
+          "type": "output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": "100%",
+            "y": "50%"
+          },
+          "position": {
+            "x": 200,
+            "y": 57.5081
+          },
+          "data": {
+            "label": "Output Port"
+          }
+        },
+        {
+          "id": "78a9c7e6-53c0-4ea4-9ad7-cf4874996606",
+          "nodeId": "95ac4db7-0a31-4c45-b3e9-ac0992d5aceb",
+          "type": "aux-input",
+          "maxConnections": 9007199254740991,
+          "screenPosition": {
+            "x": "50%",
+            "y": "100%"
+          },
+          "position": {
+            "x": 100,
+            "y": 115.024
+          },
+          "data": {
+            "label": "Starter Input"
+          },
+          "spec": {
+            "role": "starter"
+          },
+          "cssClass": "starter-port"
+        }
+      ],
+      "type": "StartNode",
+      "data": {
+        "parameters": ""
+      }
+    },
+    {
+      "id": "5f5e8cb3-cf54-4802-bf50-6f0679def7d0",
+      "label": "Run",
+      "iconUrl": "/n2_action/static/images/external-link.svg",
+      "category": "Actions",
+      "position": {
+        "x": 842.705,
+        "y": 420.8199
+      },
+      "screenSize": {
+        "width": "200px",
+        "height": "auto"
+      },
+      "size": {
+        "width": 200,
+        "height": 108.49
+      },
+      "ports": [
+        {
+          "id": "f295d999-8710-4d14-878e-b8534fee110f",
+          "nodeId": "5f5e8cb3-cf54-4802-bf50-6f0679def7d0",
+          "type": "input",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": 0,
+            "y": "50%"
+          },
+          "position": {
+            "x": 0,
+            "y": 54.2451
+          },
+          "data": {
+            "label": "Input Port"
+          }
+        },
+        {
+          "id": "073b08a7-7916-4bbc-9f64-07e10eee14a5",
+          "nodeId": "5f5e8cb3-cf54-4802-bf50-6f0679def7d0",
+          "type": "output",
+          "maxConnections": 1,
+          "screenPosition": {
+            "x": 200,
+            "y": "50%"
+          },
+          "position": {
+            "x": 200,
+            "y": 54.2451
+          },
+          "data": {
+            "label": "Output Port"
+          }
+        }
+      ],
+      "type": "RunNode",
+      "data": {
+        "record_id": 1,
+        "record_name": "Test Approval"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "5ef26145-ff35-47b3-8e0a-db2ebabb092d",
+      "fromPortId": "be30a7cd-aa73-4cb9-8ae4-8c14133240d5",
+      "toPortId": "34246b48-dbfd-4dd7-aa7a-afa124ae9ac5",
+      "startX": 467.5568084716797,
+      "startY": 368.4821434020996,
+      "endX": 573.8555755615234,
+      "endY": 352.71593856811523,
+      "type": "smoothstep",
+      "direction": "horizontal",
+      "data": {
+        "indexOnFromPort": 0,
+        "indexOnToPort": 0
+      },
+      "path": "M 563 475 L 583 475\n                    A 0 0 0 0 1 583 475\n                    L 583 475\n                    A 0 0 0 0 0 583 475\n                    L 603 475",
+      "joints": []
+    },
+    {
+      "id": "f007b450-4684-45f6-8059-2eb45b445d4a",
+      "fromPortId": "a849cbd1-0665-4cab-a3a9-7203d2a70605",
+      "toPortId": "f295d999-8710-4d14-878e-b8534fee110f",
+      "startX": 735.5568084716797,
+      "startY": 368.4782434020996,
+      "endX": 834.1154022216797,
+      "endY": 350.11855697631836,
+      "type": "smoothstep",
+      "direction": "horizontal",
+      "data": {
+        "indexOnFromPort": 0,
+        "indexOnToPort": 0
+      },
+      "path": "M 803 475 L 823 475\n                    A 0 0 0 0 1 823 475\n                    L 823 475\n                    A 0 0 0 0 0 823 475\n                    L 843 475",
+      "joints": []
+    }
+  ],
+  "selected": [],
+  "data": {
+    "active_model": "sale.order",
+    "active_model_description": "Sales Order"
+  },
+  "version": "1.0.0"
+}
