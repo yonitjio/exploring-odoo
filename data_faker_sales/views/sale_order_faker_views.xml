@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+© 2025 Yoni
+This software is experimental and provided "as-is".
+No guarantees, warranties, or liability are assumed.
+See the LICENSE file included with this software for full details.
+-->
+<odoo>
+    <data>
+        <record id="sale_order_view_faker" model="ir.ui.view">
+            <field name="name">sale.order.view.faker</field>
+            <field name="model">sale.order</field>
+            <field name="arch" type="xml">
+                <faker record-action="action_confirm" record-action-mode="random" record-max-count="5000">
+                    <field name="date_order" module="date" method="between" business-hours="true"
+                        params='{ "from": "2025-01-01T00:00:00.000Z", "to": "2026-01-01T00:00:00.000Z" }' />
+                    <field name="partner_id" domain='[("is_company","=", False)]'/>
+                    <field name="user_id" domain='[("share","=", False),("group_ids", "in", [26])]'/>
+                    <field name="order_line">
+                        <faker>
+                            <field name="product_id" domain='[("type","in",["consu", "service"]), ("list_price", ">", 0)]'/>
+                            <field name="product_uom_qty" values="1"/>
+                        </faker>
+                    </field>
+                </faker>
+            </field>
+        </record>
+
+        <record id="sale.action_orders" model="ir.actions.act_window">
+            <field name="view_mode">list,kanban,form,calendar,pivot,graph,activity,faker</field>
+        </record>
+
+        <record id="sale.action_quotations_with_onboarding" model="ir.actions.act_window">
+            <field name="view_mode">list,kanban,form,calendar,pivot,graph,activity,faker</field>
+        </record>
+    </data>
+</odoo>
