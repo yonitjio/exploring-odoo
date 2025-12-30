@@ -1,5 +1,12 @@
 # 🚀 Exploring Odoo - N2 Branch
 
+
+This repository contains the **source code** featured on the YouTube channel **[Exploring Odoo](https://www.youtube.com/@exploring-odoo)**.
+
+**⚠️ IMPORTANT:** Make sure you are on the **correct branch** for the code you're seeking.
+
+---
+
 ## ⚙️ About the N2 Branch
 
 This branch is specifically dedicated to **N2-related modules**.
@@ -8,29 +15,20 @@ If you find this useful, consider giving the repo a **star ⭐️** — it helps
 
 ---
 
-## Current State of N2 Development
+## 📌 Current State of N2 Development
 
 The N2 project is currently under private development.
 
-### About N2
-
-N2 is a personal, experimental project designed as a learning reference and guide. It’s not a commercial product—its main goal is to explore ideas and provide a resource for anyone curious to learn.
-
----
-
-For more information about N2 related news and updates, please visit the discussion page.
+Visit the discussion page for more N2 related news, updates and information on how to get N2 modules.
 
 ---
 
 ### 🧭 Roadmap
 
-#### Coming Soon: **Advanced Forecasting with N2 Forecast**
+#### Planned Features
+The forecasting nodes (N2 Forecast module) mark the end of the first iteration of the N2 experiment. Future development will focus on improving documentation and code clarity to make the logic easier for beginners to follow.
 
-<p align="center">
-  <img src="./images/n2-forecast.png" width="800px" alt="preview" />
-</p>
-
-#### Implemented and Planned Features
+#### Implemented Features
 The roadmap below outlines current and planned improvements.
 
 -   [x] **Undo / Redo** — Add reversible actions for node editing and movement.
@@ -47,20 +45,14 @@ The roadmap below outlines current and planned improvements.
     -   [x] Data Nodes
     -   [x] Messaging Nodes
     -   [x] AI Nodes (LLM)
--   [ ]  **New Nodes**
+-   [x]  **New Nodes**
     -   [x] Action Nodes
     -   [x] Forecasting Nodes
-    -   [ ] TBD
--   [ ] **Documentation**
--   [ ] **Tutorials**
 
----
+#### Documentation and Tutorials
 
-This repository contains the **source code** featured on the YouTube channel **[Exploring Odoo](https://www.youtube.com/@exploring-odoo)**.
+The N2 documentation and tutorials are maintained in a separate repository, which contains the Hugo-based site source code: https://github.com/yonitjio/n2-doc
 
-**⚠️ IMPORTANT:** Make sure you are on the **correct branch** for the code you're seeking.
-
----
 
 ### Introduction Video
 
