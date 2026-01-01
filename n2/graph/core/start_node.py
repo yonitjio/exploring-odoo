@@ -11,11 +11,4 @@ from .base_node import BaseNode
 
 class StartNode(BaseNode):
     def _process(self, params):
-        super()._process(params)
-
-        parametersJson = {}
-        if len(self.definition["parameters"]) > 0:
-            parameters = self.definition["parameters"]
-            parametersJson = json.loads(parameters)
-
-        return params | parametersJson
+        return params

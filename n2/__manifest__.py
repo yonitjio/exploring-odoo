@@ -4,7 +4,7 @@
 #  See the LICENSE file included with this software for full details.
 {
     "name": "Nuido v2",
-    "version": "19.0.1.0.202511281256",
+    "version": "19.0.1.0.202512300612",
     "summary": """Automation App for Odoo""",
     "description": """
         Automation workflow with node based UI for Odoo.

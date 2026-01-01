@@ -45,7 +45,7 @@ class Graph(models.Model):
 
     def write(self, vals):
         cleanup = False
-        starter_nodes = []
+        cleanable_nodes = []
 
         if "raw" in vals:
             vals["definition"] = ""
@@ -57,64 +57,69 @@ class Graph(models.Model):
 
             if self.is_processed:
                 cleanup = True
-                starter_nodes = self._get_starter_nodes(self.definition)
+                cleanable_nodes = self._get_cleanable_nodes(self.definition)
 
             vals["raw"] = json.dumps(jsonRaw, indent=4)
-
 
         res = super(Graph, self).write(vals)
 
         if cleanup:
-            for starter_definition, starter_node in starter_nodes:
-                if starter_definition is not None and starter_node is not None:
-                    starter_node.cleanup(self)
+            for cleanable_node in cleanable_nodes:
+                if cleanable_node is not None:
+                    cleanable_node.cleanup(self)
 
         return res
 
     def unlink(self):
-        starter_nodes = []
+        cleanable_nodes = []
 
         for rec in self:
             if rec.is_processed:
-                starter_nodes = self._get_starter_nodes(rec.definition)
+                cleanable_nodes = self._get_cleanable_nodes(rec.definition)
 
         res = super(Graph, self).unlink()
 
-        for starter_node in starter_nodes:
-            starter_node.cleanup()
+        for cleanable_node in cleanable_nodes:
+            cleanable_node.cleanup(self)
 
         return res
 
-    def _get_starter_nodes(self, definition):
+    def _get_aux_nodes(self, definition, roles=[]):
         res = []
 
         definitions = json.loads(definition)
-        create_function_registry = self.env["n2.registry"].search_read(
-            [("category", "=", rcat.CREATE_FUNCTION)]
-        )
+        create_function_registry = self.env["n2.registry"].search_read([("category", "=", rcat.CREATE_FUNCTION)])
 
-        node_def = next((o for o in definitions if o["type"] == "StartNode"), None)
-        if node_def is not None:
-            for starter_def in node_def["aux_nodes"]:
-                if "spec" in starter_def and starter_def["spec"]["role"].endswith("starter"):
-                    starter_node_def = next((o for o in definitions if o["id"] == starter_def["id"]), None)
-                    if starter_node_def:
-                        starter_definition = json.dumps(starter_node_def, default=json_default)
-                        starter_node: N2Node | None = create_object(
+        start_node_def = next((o for o in definitions if o["type"] == "StartNode"), None)
+        if start_node_def is not None:
+            for aux_nodes in start_node_def["aux_nodes"]:
+                if "spec" in aux_nodes and aux_nodes["spec"]["role"] in roles:
+                    aux_node_def = next((o for o in definitions if o["id"] == aux_nodes["id"]), None)
+                    if aux_node_def:
+                        aux_node: N2Node | None = create_object(
                             self.env,
                             create_function_registry,
                             definitions,
-                            starter_node_def["type"],
-                            starter_node_def,
+                            aux_node_def["type"],
+                            aux_node_def,
                         )
-                        res.append((starter_definition, starter_node))
+                        res.append(aux_node)
 
         return res
 
+    def _get_cleanable_nodes(self, definition):
+        return self._get_aux_nodes(definition, ["context", "starter"])
+
+    def _get_starter_nodes(self, definition):
+        return self._get_aux_nodes(definition, ["starter"])
+
+    def _get_context_nodes(self, definition):
+        return self._get_aux_nodes(definition, ["context"])
+
     def _process_record(self, rec):
         starter_nodes = self._get_starter_nodes(rec.definition)
-        for starter_definition, starter_node in starter_nodes:
-            if starter_definition is not None and starter_node is not None:
+        for starter_node in starter_nodes:
+            if starter_node is not None:
                 starter_node.process(rec)
 
     def _process_graph(self, raw):
@@ -122,9 +127,7 @@ class Graph(models.Model):
 
         node_infos = []
 
-        build_function_registry = self.env["n2.registry"].search_read(
-            [("category", "=", rcat.BUILD_FUNCTION)]
-        )
+        build_function_registry = self.env["n2.registry"].search_read([("category", "=", rcat.BUILD_FUNCTION)])
         for node in obj["nodes"]:
             node_type: str = node["type"]
             build_function = get_function(build_function_registry, node_type)
@@ -141,9 +144,7 @@ class Graph(models.Model):
         )
 
         for info in node_infos:
-            post_process_function = get_function(
-                post_process_function_registry, info["type"]
-            )
+            post_process_function = get_function(post_process_function_registry, info["type"])
             if post_process_function:
                 post_process_function(info, node_infos)
 
@@ -196,19 +197,20 @@ class Graph(models.Model):
 
     def process_graph(self):
         self.ensure_one()
-        self._do_process_graph(self)
+        context = {
+            "active_graph_id": self.id,
+            "active_graph_uuid": self.uuid,
+        }
+
+        self.with_context(**context)._do_process_graph(self)
 
     def _send_monitoring_notification(self, type):
         monitor_context = {"graph_id": self.uuid}
         send_monitoring_notification(self.env, type, monitor_context)
 
     def _run(self, definitions, node_def, params):
-        create_function_registry = self.env["n2.registry"].search_read(
-            [("category", "=", rcat.CREATE_FUNCTION)]
-        )
-        res = run_nodes(
-            self.env, create_function_registry, definitions, node_def, params
-        )
+        create_function_registry = self.env["n2.registry"].search_read([("category", "=", rcat.CREATE_FUNCTION)])
+        res = run_nodes(self.env, create_function_registry, definitions, node_def, params)
         return res
 
     def run(self, params):
@@ -219,25 +221,32 @@ class Graph(models.Model):
         definitions = json.loads(self.definition)
 
         res = None
-        node_def = next((o for o in definitions if o["type"] == "StartNode"), None)
-        if node_def is not None:
-            monitor_process = (
-                self.env["ir.config_parameter"]
-                .sudo()
-                .get_param("n2.monitor_process", False)
-            )
+        start_node_def = next((o for o in definitions if o["type"] == "StartNode"), None)
+
+        if start_node_def is not None:
+            monitor_process = self.env["ir.config_parameter"].sudo().get_param("n2.monitor_process", False)
 
             if monitor_process:
                 self._send_monitoring_notification("start_graph")
 
             parametersJson = {}
-            if len(node_def["parameters"].strip()) > 0:
-                parameters = node_def["parameters"]
+            if len(start_node_def["parameters"].strip()) > 0:
+                parameters = start_node_def["parameters"]
                 parametersJson = json.loads(parameters)
 
-            res = self.with_context(
-                run_params=params, start_params=parametersJson
-            )._run(definitions, node_def, params)
+            context = {
+                "run_params": params,
+                "start_params": parametersJson,
+                "active_graph_id": self.id,
+                "active_graph_uuid": self.uuid,
+            }
+
+            context_nodes = self._get_context_nodes(self.definition)
+            for context_node in context_nodes:
+                custom_context = context_node.process(context)
+                context.update(custom_context)
+
+            res = self.with_context(**context)._run(definitions, start_node_def, params)
 
             if monitor_process:
                 self._send_monitoring_notification("end_graph")

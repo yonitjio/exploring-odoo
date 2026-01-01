@@ -10,8 +10,6 @@ from ..core.base_node import BaseNode
 
 class RandomNumberNode(BaseNode):
     def _process(self, params):
-        super()._process(params)
-
         fr = self.definition["from"]
         to = self.definition["to"]
         res = random.randrange(fr, to)

@@ -13,6 +13,7 @@ from ..graph.core import for_loop_node
 from ..graph.core import loop_node
 from ..graph.core import looper_node
 from ..graph.core import value_node
+from ..graph.core import error_node
 
 from ..graph.misc import random_number_node
 from ..graph.misc import dummy_node
@@ -203,6 +204,17 @@ def create_value_node(environment, create_function_registry, definitions, defini
     return value_node.ValueNode(
         environment, create_function_registry, definitions, definition
     )
+
+# Value Node
+def build_error_node(node, nodes, edges):
+    info = getBasicInfo(node, nodes, edges)
+    info["message"] = node["data"]["message"]
+
+    return info
+
+
+def create_error_node(environment, create_function_registry, definitions, definition):
+    return error_node.ErrorNode(environment, create_function_registry, definitions, definition)
 
 # MISC. NODES
 # Random Number Node

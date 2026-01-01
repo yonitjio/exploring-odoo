@@ -21,8 +21,6 @@ _logger = logging.getLogger(__name__)
 
 class LoopNode(BaseNode):
     def _process(self, params):
-        super()._process(params)
-
         iterable_def = self.definition["iterable"]
 
         loop_start_node_def = get_aux_node_def_by_role(self, "loop")

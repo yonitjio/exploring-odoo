@@ -18,7 +18,6 @@ from .function_tool import create_object
 _logger = logging.getLogger(__name__)
 html = wrap_module(__import__("html"), ["escape"])
 
-
 def send_monitoring_notification(env, type, context):
     try:
         with Registry(env.cr.dbname).cursor() as cr:
@@ -26,7 +25,6 @@ def send_monitoring_notification(env, type, context):
             my_env["bus.bus"]._sendone("broadcast", type, context)
     except Exception as e:
         _logger.debug(f"Unable to send {type} notification.", e)
-
 
 def run_nodes(env, create_function_registry, definitions, start_node_def, start_params):
     node = create_object(

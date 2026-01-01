@@ -14,7 +14,7 @@ from ..tools.tools import get_default_context_for_eval, get_active_record_info
 _logger = logging.getLogger(__name__)
 
 class ConditionalNode(BaseNode):
-    def _process(self, params):
+    def _set_next_node(self, params):
         context = get_default_context_for_eval(self.env)
         if params is not None:
             context["params"] = params
@@ -45,5 +45,3 @@ class ConditionalNode(BaseNode):
             self.next_node_info = true_node if res else false_node
         else:
             self.next_node_info = None
-
-        return params

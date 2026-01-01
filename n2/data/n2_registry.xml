@@ -63,6 +63,11 @@ See the LICENSE file included with this software for full details.
             <field name="key">ValueNode</field>
             <field name="value">n2.graph.node_info,build_value_node</field>
         </record>
+        <record id="build_function_error_node" model="n2.registry">
+            <field name="category">Build Function</field>
+            <field name="key">ErrorNode</field>
+            <field name="value">n2.graph.node_info,build_error_node</field>
+        </record>
         <!-- MISC NODES -->
         <record id="build_function_random_number_node" model="n2.registry">
             <field name="category">Build Function</field>
@@ -148,6 +153,11 @@ See the LICENSE file included with this software for full details.
             <field name="category">Create Function</field>
             <field name="key">ValueNode</field>
             <field name="value">n2.graph.node_info,create_value_node</field>
+        </record>
+        <record id="create_function_error_node" model="n2.registry">
+            <field name="category">Create Function</field>
+            <field name="key">ErrorNode</field>
+            <field name="value">n2.graph.node_info,create_error_node</field>
         </record>
         <!-- MISC NODES -->
         <record id="create_function_random_number_node" model="n2.registry">

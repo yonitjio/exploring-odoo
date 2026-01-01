@@ -10,5 +10,4 @@ from ..core.base_node import BaseNode
 
 class DummyNode(BaseNode):
     def _process(self, params):
-        super()._process(params)
         raise Exception("This is an exception")

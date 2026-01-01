@@ -10,8 +10,6 @@ from .base_node import BaseNode
 
 class MergeNode(BaseNode):
     def _process(self, params):
-        super()._process(params)
-
         result = params
         for node_id in self.definition["aux_nodes"]:
             node_def = next(

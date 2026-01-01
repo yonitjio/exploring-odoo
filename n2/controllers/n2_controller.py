@@ -4,7 +4,11 @@ This software is experimental and provided "as-is".
 No guarantees, warranties, or liability are assumed.
 See the LICENSE file included with this software for full details.
 """
+
 import logging
+import ast
+
+from werkzeug.routing import ValidationError
 
 _logger = logging.getLogger(__name__)
 
@@ -29,18 +33,14 @@ class N2Controller(http.Controller):
 
         graph = env["n2.graph"].browse(gid)
         if not graph.is_processed:
-            graph.process_graph()
+            raise ValidationError("Graph is not processed.")
 
-        monitor_process = (
-            env["ir.config_parameter"].get_param("n2.monitor_process", False) == "True"
-        )
+        monitor_process = env["ir.config_parameter"].sudo().get_param("n2.monitor_process", False) == "True"
 
         context = {
             "uid": env.user.id,
             "user": env.user,
             "is_debug": env.user.has_group("base.group_no_one"),
-            "active_graph_id": gid,
-            "active_graph_uuid": graph.uuid,
             "monitor_process": monitor_process,
             "skip_monitor": False,
         }
@@ -74,3 +74,17 @@ class N2Controller(http.Controller):
         #     return False
 
         return True
+
+    @http.route("/n2/toggleprocessmonitor", type="jsonrpc", auth="user", website=True)
+    def toggle_process_monitor(self):
+        """
+        Toggle process monitor.
+        Returns:
+            bool: True if process monitor is on, False otherwise.
+        """
+
+        status = ast.literal_eval(request.env['ir.config_parameter'].sudo().get_param("n2.monitor_process"))
+        request.env['ir.config_parameter'].sudo().set_param("n2.monitor_process", str(not status))
+        status = ast.literal_eval(request.env['ir.config_parameter'].sudo().get_param("n2.monitor_process"))
+
+        return status

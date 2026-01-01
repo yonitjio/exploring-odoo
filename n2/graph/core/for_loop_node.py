@@ -16,8 +16,6 @@ _logger = logging.getLogger(__name__)
 
 class ForLoopNode(BaseNode):
     def _process(self, params):
-        super()._process(params)
-
         start_value = self.definition["start_value"]
         end_value = self.definition["end_value"]
         step = self.definition["step"]
