@@ -11,7 +11,10 @@ let portToNodeIndex;
 const defaultLayoutOptions = {
     'elk.algorithm': 'layered',
     'org.eclipse.elk.alignment': 'LEFT',
+    'org.eclipse.elk.padding': '[top=0,left=0,bottom=0,right=0]',
     'org.eclipse.elk.layered.nodePlacement.bk.fixedAlignment': 'BALANCED',
+    'org.eclipse.elk.layered.considerModelOrder.strategy': 'PREFER_NODES',
+    'elk.portConstraints': 'FIXED_POS',
 };
 export function convertToElk(graph) {
     nodeAuxMap = new Map();
@@ -30,6 +33,7 @@ export function convertToElk(graph) {
     });
     const elkRoot = {
         id: 'root',
+        originalId: '',
         width: 0,
         height: 0,
         children: [],
@@ -39,32 +43,46 @@ export function convertToElk(graph) {
             'elk.direction': 'RIGHT'
         }
     };
-    const startNode = Array.from(graph.nodes.values()).find(n => n.type === 'StartNode');
-    if (!startNode) {
-        throw new GraphError('Graph must have a "StartNode" to determine layout root.');
+    let startId;
+    const triggerNode = Array.from(graph.nodes.values()).find(n => n.type.endsWith('TriggerNode'));
+    if (triggerNode) {
+        startId = triggerNode.id;
+    }
+    else {
+        const startNode = Array.from(graph.nodes.values()).find(n => n.type === 'StartNode');
+        if (startNode) {
+            startId = startNode.id;
+        }
+        else {
+            throw new GraphError('Graph must have a StartNode or a TriggerNode to determine layout root.');
+        }
     }
     const visited = new Set();
-    processNode(startNode.id, elkRoot, visited, graph);
+    const elkNodes = new Array();
+    const edgeCreated = new Set();
+    processNode(startId, elkRoot, visited, elkNodes, edgeCreated, graph);
     graph.nodes.forEach(node => {
         if (!visited.has(node.id)) {
             const isAux = Array.from(nodeAuxMap.values()).includes([createIdentifier(node.id)]);
             if (!isAux) {
-                processNode(node.id, elkRoot, visited, graph);
+                processNode(node.id, elkRoot, visited, elkNodes, edgeCreated, graph);
             }
         }
     });
     return elkRoot;
 }
-function processNode(nodeId, parentElkNode, visited, graph) {
+function processNode(nodeId, parentElkNode, visited, elkNodes, edgeCreated, graph) {
     if (visited.has(nodeId))
         return;
     visited.add(nodeId);
     const node = graph.nodes.get(nodeId);
     const auxChildrenIds = nodeAuxMap.get(nodeId);
     const outgoingWorkflowEdges = getEdgesByType(node, graph, ["output"]);
-    if (auxChildrenIds && auxChildrenIds.length > 0) {
+    const childredNotVisited = auxChildrenIds ? auxChildrenIds.filter(id => visited.has(id)).length === 0 : true;
+    if (auxChildrenIds && auxChildrenIds.length > 0 && childredNotVisited) {
         const groupNode = {
             id: `group-${String(node.id)}`,
+            originalId: String(node.id),
             labels: [{
                     text: `group-${String(node.type)}`,
                 }],
@@ -75,25 +93,31 @@ function processNode(nodeId, parentElkNode, visited, graph) {
             layoutOptions: {
                 ...defaultLayoutOptions,
                 'elk.direction': 'UP',
-                'elk.portConstraints': 'FIXED_POS',
-                'org.eclipse.elk.padding': '[top=0,left=0,bottom=0,right=0]',
             }
         };
-        groupNode.parent = parentElkNode,
-            parentElkNode.children.push(groupNode);
-        const elkNode = createSimpleElkNode(node);
+        groupNode.parent = parentElkNode;
+        parentElkNode.children.push(groupNode);
+        visited.add(createIdentifier(groupNode.id));
+        elkNodes.push(groupNode);
+        const elkNode = createSimpleElkNode(node, elkNodes);
         elkNode.parent = groupNode;
         groupNode.children.push(elkNode);
         createElkPorts(node, elkNode, ["aux-input"]);
-        createElkPorts(node, groupNode, ["input", "output"]);
+        createElkPorts(node, groupNode, ["input", "output", "aux-output"]);
         const inputAuxEdges = getEdgesByType(node, graph, ["aux-input"]);
-        inputAuxEdges.forEach(edge => groupNode.edges.push(createElkEdge(edge.id, edge.fromPortId, edge.toPortId)));
+        inputAuxEdges.forEach(edge => {
+            if (!edgeCreated.has(edge.id)) {
+                groupNode.edges.push(createElkEdge(edge.id, edge.fromPortId, edge.toPortId));
+                edgeCreated.add(edge.id);
+            }
+        });
         auxChildrenIds.forEach(auxId => {
             const auxChildrenNode = graph.nodes.get(auxId);
             let auxChildrenElkNode;
             if (getEdgesByType(auxChildrenNode, graph, ["output"]).length > 0) {
                 const subGraphNode = {
                     id: `subgraph-${String(auxChildrenNode.id)}`,
+                    originalId: String(auxChildrenNode.id),
                     labels: [{
                             text: `subgraph-${String(auxChildrenNode.type)}`,
                         }],
@@ -105,19 +129,18 @@ function processNode(nodeId, parentElkNode, visited, graph) {
                     layoutOptions: {
                         ...defaultLayoutOptions,
                         'elk.direction': 'RIGHT',
-                        'elk.portConstraints': 'FIXED_POS',
-                        'org.eclipse.elk.padding': '[top=0,left=0,bottom=0,right=0]',
                     }
                 };
                 subGraphNode.parent = groupNode;
                 groupNode.children.push(subGraphNode);
+                visited.add(createIdentifier(subGraphNode.id));
                 createElkPorts(auxChildrenNode, subGraphNode, ["aux-input", "aux-output"]);
-                processNode(auxId, subGraphNode, visited, graph);
+                processNode(auxId, subGraphNode, visited, elkNodes, edgeCreated, graph);
                 auxChildrenElkNode = subGraphNode;
             }
             else {
                 visited.add(auxId);
-                const auxElkNode = createSimpleElkNode(auxChildrenNode);
+                const auxElkNode = createSimpleElkNode(auxChildrenNode, elkNodes);
                 auxElkNode.parent = groupNode;
                 groupNode.children.push(auxElkNode);
                 createElkPorts(auxChildrenNode, auxElkNode, ["input", "output", "aux-output"]);
@@ -126,19 +149,81 @@ function processNode(nodeId, parentElkNode, visited, graph) {
             if (getEdgesByType(auxChildrenNode, graph, ["aux-input"]).length > 0) {
                 createElkPorts(auxChildrenNode, auxChildrenElkNode, ["aux-input"]);
                 const inputAuxEdges = getEdgesByType(auxChildrenNode, graph, ["aux-input"]);
-                inputAuxEdges.forEach(edge => groupNode.edges.push(createElkEdge(edge.id, edge.fromPortId, edge.toPortId)));
+                inputAuxEdges.forEach(edge => {
+                    if (!edgeCreated.has(edge.id)) {
+                        groupNode.edges.push(createElkEdge(edge.id, edge.fromPortId, edge.toPortId));
+                        edgeCreated.add(edge.id);
+                    }
+                });
                 const auxChildrenAuxSiblingIds = nodeAuxMap.get(auxId);
                 if (!auxChildrenElkNode.children) {
                     auxChildrenElkNode.children = [];
                 }
                 auxChildrenAuxSiblingIds.forEach(acacId => {
-                    processNode(acacId, groupNode, visited, graph);
+                    processNode(acacId, groupNode, visited, elkNodes, edgeCreated, graph);
                 });
             }
         });
     }
+    else if (auxChildrenIds && auxChildrenIds.length > 0) {
+        const groupNode = {
+            id: `group-${String(node.id)}`,
+            originalId: String(node.id),
+            labels: [{
+                    text: `group-${String(node.type)}`,
+                }],
+            width: 0, height: 0,
+            children: [],
+            ports: [],
+            edges: [],
+            layoutOptions: {
+                ...defaultLayoutOptions,
+                'elk.direction': 'UP',
+            }
+        };
+        groupNode.parent = parentElkNode;
+        parentElkNode.children.push(groupNode);
+        const groupId = createIdentifier(groupNode.id);
+        visited.add(groupId);
+        elkNodes.push(groupNode);
+        const elkNode = createSimpleElkNode(node, elkNodes);
+        elkNode.parent = groupNode;
+        groupNode.children.push(elkNode);
+        createElkPorts(node, elkNode, ["aux-input"]);
+        createElkPorts(node, groupNode, ["input", "output", "aux-output"]);
+        const inputAuxEdges = getEdgesByType(node, graph, ["aux-input"]);
+        inputAuxEdges.forEach(edge => {
+            if (!edgeCreated.has(edge.id)) {
+                groupNode.edges.push(createElkEdge(edge.id, edge.fromPortId, edge.toPortId));
+                edgeCreated.add(edge.id);
+            }
+        });
+        const childNodes = elkNodes.filter(n => (auxChildrenIds.includes(createIdentifier(n.originalId)) && n.id.startsWith("group-")) ||
+            (auxChildrenIds.includes(createIdentifier(n.id)) && elkNodes.findIndex(o => o.id === `group-${String(n.id)}`) < 0));
+        if (childNodes.length > 0) {
+            childNodes.forEach(n => {
+                if (n.id === groupNode.id) {
+                    return;
+                }
+                if (n.parent) {
+                    const idxInParent = n.parent.children.indexOf(n);
+                    n.parent.children.splice(idxInParent, 1);
+                }
+                groupNode.children.push(n);
+                n.parent = groupNode;
+                const workflowPorts = n.ports.filter(v => ["WEST", "EAST"].includes(v.layoutOptions['port.side']));
+                workflowPorts.forEach(p => {
+                    groupNode.ports.push(p);
+                });
+                n.ports = n.ports.filter(v => ["NORTH", "SOUTH"].includes(v.layoutOptions['port.side']));
+                if (n.id.startsWith("group")) {
+                    n.layoutOptions["elk.portConstraints"] = "FIXED_SIDE";
+                }
+            });
+        }
+    }
     else {
-        const simpleNode = createSimpleElkNode(node);
+        const simpleNode = createSimpleElkNode(node, elkNodes);
         simpleNode.parent = parentElkNode;
         parentElkNode.children.push(simpleNode);
         if ((parentElkNode.id.startsWith("subgraph") && (parentElkNode.children?.length > 0) && (parentElkNode.children[0].id === node.id))) {
@@ -149,27 +234,32 @@ function processNode(nodeId, parentElkNode, visited, graph) {
         }
     }
     outgoingWorkflowEdges.forEach(edge => {
-        parentElkNode.edges.push(createElkEdge(edge.id, edge.fromPortId, edge.toPortId));
-        const nextNodeId = portToNodeIndex.get(edge.toPortId);
-        if (nextNodeId) {
-            processNode(nextNodeId, parentElkNode, visited, graph);
+        if (!edgeCreated.has(edge.id)) {
+            parentElkNode.edges.push(createElkEdge(edge.id, edge.fromPortId, edge.toPortId));
+            edgeCreated.add(edge.id);
+            const nextNodeId = portToNodeIndex.get(edge.toPortId);
+            if (nextNodeId) {
+                processNode(nextNodeId, parentElkNode, visited, elkNodes, edgeCreated, graph);
+            }
         }
     });
 }
-function createSimpleElkNode(node) {
-    return {
+function createSimpleElkNode(node, elkNodes) {
+    const res = {
         id: String(node.id),
+        originalId: '',
         labels: [{
                 text: `${String(node.type)}`,
             }],
         layoutOptions: {
             ...defaultLayoutOptions,
-            'elk.portConstraints': 'FIXED_POS',
         },
         width: node.size?.width,
         height: node.size?.height,
         ports: [],
     };
+    elkNodes.push(res);
+    return res;
 }
 function createElkEdge(id, fromId, toId) {
     return {

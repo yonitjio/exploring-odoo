@@ -38,4 +38,3 @@ Please watch this videos for more details:
 
 ## N2
 [![EXPLORING_ODOO](https://img.youtube.com/vi/GIeGJpBWBvQ/0.jpg)](https://youtu.be/GIeGJpBWBvQ)
-[![EXPLORING_ODOO](https://img.youtube.com/vi/Kj5S1AL4HXw/0.jpg)](https://youtu.be/Kj5S1AL4HXw)

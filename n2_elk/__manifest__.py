@@ -5,7 +5,7 @@
 
 {
     "name": "N2 Elk Layout Addon",
-    "version": "19.0.1.0.202511281256",
+    "version": "19.0.1.0.202512300612",
     "summary": """N2 Elk Layout Addon""",
     "description": """
         N2 Elk Layout Addon
