@@ -51,8 +51,9 @@ The roadmap below outlines current and planned improvements.
 
 #### Documentation and Tutorials
 
-The N2 documentation and tutorials are maintained in a separate repository, which contains the Hugo-based site source code: https://github.com/yonitjio/n2-doc
+The N2 documentation and tutorials are maintained in a separate repository, which contains the Hugo-based site source code: https://github.com/yonitjio/n2-doc.
 
+The live documentation can be accessed on the N2 website or directly: https://yonitjio.github.io/n2-doc/
 
 ### Introduction Video
 
