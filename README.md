@@ -15,18 +15,22 @@ If you find this useful, consider giving the repo a **star ⭐️** — it helps
 
 ---
 
-## 📌 Current State of N2 Development
+## 📌 Closing the First Iteration
 
-The N2 project is currently under private development.
+The forecasting nodes (N2 Forecast module) mark the conclusion of the first iteration of the N2 experiment.
 
-Visit the discussion page for more N2 related news, updates and information on how to get N2 modules.
+Future development will most likely focus on improving documentation and overall code clarity, making the underlying logic easier for beginners to understand. At the moment, there are no concrete plans beyond that.
+
+Thank you to everyone who has starred the repositories, subscribed to the channel, and followed along on this experimental journey—your support truly means a lot.
+
+For more N2-related news, updates, and information on how to access N2 modules, please visit the discussion page.
 
 ---
 
 ### 🧭 Roadmap
 
 #### Planned Features
-The forecasting nodes (N2 Forecast module) mark the end of the first iteration of the N2 experiment. Future development will focus on improving documentation and code clarity to make the logic easier for beginners to follow.
+There are currently no specific features planned. If you have ideas or suggestions, feel free to start a discussion and share your thoughts.
 
 #### Implemented Features
 The roadmap below outlines current and planned improvements.
