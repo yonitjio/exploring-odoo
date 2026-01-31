@@ -87,6 +87,7 @@ If you’re new to Tryton or just want a hands-on way to explore it with a moder
 ### Dark Mode
 
 <details>
+
 ![alt text](doc/images/nucleus-tree.png)
 
 ![alt text](doc/images/nucleus-date.png)
