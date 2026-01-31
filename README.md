@@ -29,57 +29,57 @@ Nucleus isn’t meant to be production-ready. Instead, it focuses on exploration
 If you’re new to Tryton or just want a hands-on way to explore it with a modern tech stack, this repo is a good place to start 🚀
 
 ### Screenshots
-![alt text](nucleus-login.png)
+![alt text](doc/images/nucleus-login.png)
 
 <details>
   <summary>Login</summary>
 
-![alt text](sao-login.png)
+![alt text](doc/images/sao-login.png)
 
-![alt text](nucleus-login-light.png)
+![alt text](doc/images/nucleus-login-light.png)
 
 </details>
 
 <details>
   <summary>One 2 Many</summary>
 
-![alt text](sao-o2m.png)
+![alt text](doc/images/sao-o2m.png)
 
-![alt text](nucleus-o2m.png)
+![alt text](doc/images/nucleus-o2m.png)
 
 </details>
 
 <details>
   <summary>Tree View</summary>
 
-![alt text](sao-tree.png)
+![alt text](doc/images/sao-tree.png)
 
-![alt text](nucleus-tree.png)
+![alt text](doc/images/nucleus-tree.png)
 
 </details>
 
 <details>
   <summary>Dates</summary>
 
-![alt text](sao-date.png)
+![alt text](doc/images/sao-date.png)
 
-![alt text](nucleus-date.png)
+![alt text](doc/images/nucleus-date.png)
 
 </details>
 
 <details>
   <summary>Selection</summary>
 
-![alt text](sao-select.png)
+![alt text](doc/images/sao-select.png)
 
-![alt text](nucleus-select.png)
+![alt text](doc/images/nucleus-select.png)
 
 </details>
 
 <details>
   <summary>Presets</summary>
 
-![alt text](nucleus-presets.png)
+![alt text](doc/images/nucleus-presets.png)
 
 </details>
 
