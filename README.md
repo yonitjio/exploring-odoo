@@ -31,6 +31,7 @@ If you’re new to Tryton or just want a hands-on way to explore it with a moder
 ### Screenshots
 ![alt text](doc/images/nucleus-login.png)
 
+### Comparison with Tryton SAO
 <details>
   <summary>Login</summary>
 
@@ -45,7 +46,7 @@ If you’re new to Tryton or just want a hands-on way to explore it with a moder
 
 ![alt text](doc/images/sao-o2m.png)
 
-![alt text](doc/images/nucleus-o2m.png)
+![alt text](doc/images/nucleus-o2m-light.png)
 
 </details>
 
@@ -54,7 +55,7 @@ If you’re new to Tryton or just want a hands-on way to explore it with a moder
 
 ![alt text](doc/images/sao-tree.png)
 
-![alt text](doc/images/nucleus-tree.png)
+![alt text](doc/images/nucleus-tree-light.png)
 
 </details>
 
@@ -63,7 +64,7 @@ If you’re new to Tryton or just want a hands-on way to explore it with a moder
 
 ![alt text](doc/images/sao-date.png)
 
-![alt text](doc/images/nucleus-date.png)
+![alt text](doc/images/nucleus-date-light.png)
 
 </details>
 
@@ -72,7 +73,7 @@ If you’re new to Tryton or just want a hands-on way to explore it with a moder
 
 ![alt text](doc/images/sao-select.png)
 
-![alt text](doc/images/nucleus-select.png)
+![alt text](doc/images/nucleus-select-light.png)
 
 </details>
 
@@ -82,6 +83,26 @@ If you’re new to Tryton or just want a hands-on way to explore it with a moder
 ![alt text](doc/images/nucleus-presets.png)
 
 </details>
+
+### Dark Mode
+
+<details>
+![alt text](doc/images/nucleus-tree.png)
+
+![alt text](doc/images/nucleus-date.png)
+
+![alt text](doc/images/nucleus-select.png)
+
+![alt text](doc/images/nucleus-o2m.png)
+
+![alt text](doc/images/nucleus-m2m.png)
+
+![alt text](doc/images/nucleus-m2o.png)
+
+![alt text](doc/images/nucleus-special.png)
+
+</details>
+
 
 ---
 
@@ -102,7 +123,7 @@ Please read and understand these points before using the code.
 
 -   **Do not use this code, repository, or any of its components in any live, production, mission-critical, or commercial environment.**
 -   This project is developed and maintained **solely for experimental, educational, and personal learning purposes.**
--   While this code is **open-source** under the **MIT License**, and the license may technically allow commercial use, deploying it in a production setting is **strongly discouraged and counterproductive** to the project's goal.
+-   While most of the code is **open-source**, and the license may technically allow commercial use, deploying it in a production setting is **strongly discouraged and counterproductive** to the project's goal.
 -   Its use in commercial settings would be entirely at your own risk. Moreover, the **pressure and demands** resulting from production usage may unfortunately force the maintainers to **stop or significantly slow down development**. Please respect the project's educational focus to ensure its continued evolution.
 -   I am **not responsible** for any damage or harm resulting from the use of anything from this repo. **Use it at your own risk.**
 
