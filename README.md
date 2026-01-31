@@ -13,6 +13,76 @@ This branch is specifically dedicated to **Tryton 7.8 modules**.
 
 If you find this useful, consider giving the repo a **star ⭐️** — it helps keep the project visible and motivates continued work!
 
+### 🌱 Nucleus
+
+Nucleus is a small playground project for learning and experimenting with Tryton. It’s meant to be a safe place to try things out, break stuff, and understand how Tryton can work with a modern frontend.
+
+The project is built using:
+- TypeScript
+- Vue
+- PrimeVue
+- Tailwind CSS
+- The SAKAI template as a starting point
+
+Nucleus isn’t meant to be production-ready. Instead, it focuses on exploration and learning—testing ideas, experimenting with UI components, and getting comfortable with Tryton in a real project setup.
+
+If you’re new to Tryton or just want a hands-on way to explore it with a modern tech stack, this repo is a good place to start 🚀
+
+### Screenshots
+![alt text](nucleus-login.png)
+
+<details>
+  <summary>Login</summary>
+
+![alt text](sao-login.png)
+
+![alt text](nucleus-login-light.png)
+
+</details>
+
+<details>
+  <summary>One 2 Many</summary>
+
+![alt text](sao-o2m.png)
+
+![alt text](nucleus-o2m.png)
+
+</details>
+
+<details>
+  <summary>Tree View</summary>
+
+![alt text](sao-tree.png)
+
+![alt text](nucleus-tree.png)
+
+</details>
+
+<details>
+  <summary>Dates</summary>
+
+![alt text](sao-date.png)
+
+![alt text](nucleus-date.png)
+
+</details>
+
+<details>
+  <summary>Selection</summary>
+
+![alt text](sao-select.png)
+
+![alt text](nucleus-select.png)
+
+</details>
+
+<details>
+  <summary>Presets</summary>
+
+![alt text](nucleus-presets.png)
+
+</details>
+
 ---
 
 ## 📺 Essential Usage Tip
@@ -75,6 +145,8 @@ Since this repository is maintained purely for archiving and proof-of-concept pu
 
 Most modules in this repository are licensed under the **MIT License**.
 However, **not all modules share the same license**.
+
+This branch uses **GPL-3-or-later**
 
 To avoid confusion and ensure clarity:
 
