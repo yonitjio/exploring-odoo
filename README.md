@@ -165,7 +165,7 @@ Since this repository is maintained purely for archiving and proof-of-concept pu
 
 ## 📄 Licensing of Modules
 
-Most modules in this repository are licensed under the **MIT License**.
+Modules in this repository are licensed under open source licenses.
 However, **not all modules share the same license**.
 
 This branch uses **GPL-3-or-later**
