@@ -1,0 +1,6 @@
+@use './code.scss';
+@use './flags/flags.css';
+
+:root[class*='app-dark'] {
+    --p-form-field-placeholder-color: var(--p-surface-700);
+}
