@@ -148,7 +148,7 @@ Please read and understand these points before using the code.
 ### ❌ No Upgrade Path
 
 -   **There are no upgrade/update paths for these modules.**
--   If you want to use an updated version, you will most likely need to **uninstall the previous version first** or install it on a fresh Odoo instance.
+-   If you want to use an updated version, you will most likely need to **uninstall the previous version first** or install it on a fresh Tryton instance.
 
 ---
 
