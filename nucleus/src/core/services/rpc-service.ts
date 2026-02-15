@@ -134,7 +134,7 @@ export class RpcService implements IService {
             }
 
             const headers = Object.assign({ 'Content-Type': 'application/json' }, authHeader)
-            const url = database ? this._getUrl(database) : this._getUrl()
+            const url = this._getUrl(database)
 
             const response = await fetch(url, {
                 method: 'POST',
@@ -150,6 +150,10 @@ export class RpcService implements IService {
             }
 
             const data: JsonRpcResponse<T> = await response.json()
+
+            if (data.id !== request.id) {
+                throw new TrytonRpcError(`Invalid response Id, expected ${request.id}, got ${data.id}`, 'Warning', data.error)
+            }
 
             if (data.error) {
                 const error = data.error
@@ -177,7 +181,7 @@ export class RpcService implements IService {
      * List available databases
      */
     async listDatabases(): Promise<string[]> {
-        const result = await this._call<unknown>('common.db.list', [])
+        const result = await this._call('common.db.list', [])
         return Array.isArray(result) ? result : []
     }
 

@@ -1,5 +1,8 @@
-export function utoa(str: string) {
-    return window.btoa(unescape(encodeURIComponent(str)))
+export function utoa(str: string): string {
+    const bytes = new TextEncoder().encode(str);
+    let binary = "";
+    bytes.forEach(b => binary += String.fromCharCode(b));
+    return btoa(binary);
 }
 
 export function toTitleCase(str: string | null | undefined): string {
