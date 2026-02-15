@@ -1,0 +1,90 @@
+<tryton>
+    <data>
+        <record model="demo_fields.dict"
+            id="demo_fields_reference">
+            <field name="name">demo_reference</field>
+            <field name="string">Demo Reference</field>
+            <field name="type_">char</field>
+        </record>
+
+        <record model="ir.ui.view" id="demo_fields_tree">
+            <field name="model">demo_fields.demo</field>
+            <field name="type">tree</field>
+            <field name="name">demo_fields_tree</field>
+        </record>
+
+        <record model="ir.ui.view" id="demo_fields_form">
+            <field name="model">demo_fields.demo</field>
+            <field name="type">form</field>
+            <field name="name">demo_fields_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="demo_fields_child_tree">
+            <field name="model">demo_fields.child</field>
+            <field name="type">tree</field>
+            <field name="name">demo_fields_child_tree</field>
+        </record>
+
+        <record model="ir.ui.view" id="demo_fields_child_form">
+            <field name="model">demo_fields.child</field>
+            <field name="type">form</field>
+            <field name="name">demo_fields_child_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="demo_fields_another_child_tree">
+            <field name="model">demo_fields.another.child</field>
+            <field name="type">tree</field>
+            <field name="name">demo_fields_another_child_tree</field>
+        </record>
+
+        <record model="ir.ui.view" id="demo_fields_another_child_form">
+            <field name="model">demo_fields.another.child</field>
+            <field name="type">form</field>
+            <field name="name">demo_fields_another_child_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="demo_fields_target_tree">
+            <field name="model">demo_fields.target</field>
+            <field name="type">tree</field>
+            <field name="name">demo_fields_target_tree</field>
+        </record>
+
+        <record model="ir.ui.view" id="demo_fields_target_form">
+            <field name="model">demo_fields.target</field>
+            <field name="type">form</field>
+            <field name="name">demo_fields_target_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="demo_fields_source_tree">
+            <field name="model">demo_fields.source</field>
+            <field name="type">tree</field>
+            <field name="name">demo_fields_source_tree</field>
+        </record>
+
+        <record model="ir.ui.view" id="demo_fields_source_form">
+            <field name="model">demo_fields.source</field>
+            <field name="type">form</field>
+            <field name="name">demo_fields_source_form</field>
+        </record>
+
+        <record model="ir.action.act_window" id="act_demo_fields">
+            <field name="name">Fields Demo</field>
+            <field name="res_model">demo_fields.demo</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_opportunity_tree_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="demo_fields_tree"/>
+            <field name="act_window" ref="act_demo_fields"/>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_opportunity_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="demo_fields_form"/>
+            <field name="act_window" ref="act_demo_fields"/>
+        </record>
+
+        <menuitem name="Demo" sequence="100" id="menu_demo_fields_main"/>
+        <menuitem name="Fields" sequence="100" id="menu_demo_fields_menu" parent="menu_demo_fields_main" action="act_demo_fields"/>
+    </data>
+</tryton>

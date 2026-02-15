@@ -1,0 +1,2 @@
+[trytond.modules]
+demo_fields = trytond.modules.demo_fields

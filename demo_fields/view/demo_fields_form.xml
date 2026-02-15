@@ -1,0 +1,114 @@
+<form>
+    <group id="main" colspan="4">
+        <label name="name"/>
+        <field name="name"/>
+        <label name="demo_reference_field"/>
+        <field name="demo_reference_field"/>
+    </group>
+
+    <group id="basic" string="Basic Types" colspan="4">
+        <label name="demo_boolean_field"/>
+        <field name="demo_boolean_field"/>
+
+        <label name="demo_integer_field"/>
+        <field name="demo_integer_field"/>
+
+        <label name="demo_char_field"/>
+        <field name="demo_char_field"/>
+
+        <label name="demo_text_field"/>
+        <field name="demo_text_field"/>
+
+        <label name="demo_float_field"/>
+        <field name="demo_float_field"/>
+
+        <label name="demo_numeric_field"/>
+        <field name="demo_numeric_field"/>
+    </group>
+
+    <notebook>
+        <page name="page_date_time" string="Date/Time Types">
+            <label name="demo_date_field"/>
+            <field name="demo_date_field"/>
+
+            <label name="demo_time_field"/>
+            <field name="demo_time_field"/>
+
+            <label name="demo_datetime_field"/>
+            <field name="demo_datetime_field"/>
+
+            <label name="demo_timestamp_field"/>
+            <field name="demo_timestamp_field"/>
+
+            <label name="demo_timedelta_field"/>
+            <field name="demo_timedelta_field"/>
+        </page>
+
+        <page name="page_selections" string="Selection Types">
+            <label name="demo_selection_field"/>
+            <field name="demo_selection_field"/>
+
+            <label name="demo_dynamic_selection_field"/>
+            <field name="demo_dynamic_selection_field"/>
+
+            <label name="demo_multiselection_field"/>
+            <field name="demo_multiselection_field"/>
+
+            <label name="demo_dynamic_multiselection_field"/>
+            <field name="demo_dynamic_multiselection_field"/>
+        </page>
+
+        <page name="page_one2many" string="One 2 Many ">
+            <field name="demo_one2many_field"/>
+        </page>
+        <page name="page_many2many" string="Many 2 Many">
+            <field name="demo_many2many_field"/>
+        </page>
+        <page name="page_many2one" string="Many 2 One">
+            <label name="demo_many2one_field"/>
+            <field name="demo_many2one_field"/>
+        </page>
+
+        <page name="page_specials" string="Special Types">
+            <label name="demo_binary_field"/>
+            <field name="demo_binary_field"/>
+            
+            <label name="demo_dict_field"/>
+            <field name="demo_dict_field"/>
+
+            <!-- <label name="demo_function_field"/>
+            <field name="demo_function_field"/> -->
+        </page>
+        <page name="page_misc" string="Misc. Types">
+            <label name="demo_password_field"/>
+            <field name="demo_password_field" widget="password"/>
+
+            <label name="demo_email_field"/>
+            <field name="demo_email_field" widget="email"/>
+
+            <label name="demo_url_field"/>
+            <field name="demo_url_field" widget="url"/>
+
+            <label name="demo_callto_field"/>
+            <field name="demo_callto_field" widget="callto"/>
+
+            <label name="demo_sip_field"/>
+            <field name="demo_sip_field" widget="sip"/>
+        </page>
+        <page name="page_buttons" string="Buttons">
+            <button name="a_method" string="Call a method" type="object"/>
+            <button name="a_button" string="A button with icon" icon="tryton-launch"/>
+        </page>
+
+    </notebook>
+    <group id="field_attributes" string="Field Attributes">
+        <label name="demo_required_char_field"/>
+        <field name="demo_required_char_field"/>
+
+        <label name="demo_readonly_char_field"/>
+        <field name="demo_readonly_char_field"/>
+
+        <label name="demo_translate_char_field"/>
+        <field name="demo_translate_char_field"/>
+    </group>
+</form>  

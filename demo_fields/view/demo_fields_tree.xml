@@ -1,0 +1,35 @@
+<tree>
+    <field name="name"/>
+    <field name="demo_boolean_field" optional="1" />
+    <field name="demo_char_field" optional="1"/>
+
+    <field name="demo_date_field" optional="1"/>
+    <field name="demo_time_field" optional="1"/>
+    <!-- Error on Sao <field name="demo_datetime_field" optional="1"/> -->
+    <!-- Sao does not support timestamp column <field name="demo_timestamp_field" optional="1"/> -->
+    <field name="demo_timedelta_field" optional="1"/>
+
+    <field name="demo_selection_field" widget="selection"  optional="1"/>
+    <field name="demo_dynamic_selection_field" widget="selection"  optional="1"/>
+    <field name="demo_multiselection_field" widget="multiselection"  optional="1"/>
+    <field name="demo_dynamic_multiselection_field" widget="selection"  optional="1"/>
+
+    <field name="demo_one2many_field" optional="1"/>
+    <field name="demo_many2many_field" optional="1"/>
+    <field name="demo_many2one_field" optional="1"/>
+
+    <field name="demo_dict_field" optional="1"/>
+
+    <field name="demo_float_field" optional="1"/>
+    <field name="demo_integer_field" optional="1"/>
+    <field name="demo_numeric_field" optional="1"/>
+
+    <field name="demo_text_field" optional="1"/>
+
+    <field name="demo_reference_field" optional="1"/>
+
+    <field name="demo_email_field" widget="email" optional="1"/>
+    <field name="demo_url_field" widget="url" optional="1"/>
+    <field name="demo_sip_field" widget="sip" optional="1"/>
+    <field name="demo_callto_field" widget="callto" optional="1"/>
+</tree>  
