@@ -1,3 +1,7 @@
+/*
+* SPDX-License-Identifier: GPL-3.0-or-later
+*/
+
 import { RpcError, TrytonRpcError } from '../errors'
 import type { IService } from './service'
 import type { TContext } from './session-service'

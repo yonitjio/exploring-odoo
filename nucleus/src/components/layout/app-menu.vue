@@ -1,3 +1,6 @@
+<!--
+* SPDX-License-Identifier: MIT OR GPL-3.0-or-later
+-->
 <script setup lang="ts">
 import { ref } from 'vue'
 

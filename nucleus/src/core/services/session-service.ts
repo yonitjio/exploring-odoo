@@ -1,3 +1,7 @@
+/*
+* SPDX-License-Identifier: GPL-3.0-or-later
+*/
+
 import type { IService } from './service'
 
 export type TContext = Record<string, any>

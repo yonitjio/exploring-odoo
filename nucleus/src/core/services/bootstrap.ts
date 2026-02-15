@@ -1,3 +1,7 @@
+/*
+* SPDX-License-Identifier: GPL-3.0-or-later
+*/
+
 import { registry } from './service-registry'
 import { RpcService } from './rpc-service'
 import { SessionService } from './session-service'

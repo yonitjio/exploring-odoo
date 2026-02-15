@@ -1,3 +1,7 @@
+<!--
+* SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
 <script setup lang="ts">
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { PiniaColadaDevtools } from '@pinia/colada-devtools'

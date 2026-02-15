@@ -1,3 +1,7 @@
+/*
+* SPDX-License-Identifier: GPL-3.0-or-later
+*/
+
 import { defineStore } from 'pinia'
 
 import { registry } from '@/core/services/service-registry'

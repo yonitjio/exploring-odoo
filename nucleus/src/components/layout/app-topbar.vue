@@ -1,3 +1,7 @@
+<!--
+* SPDX-License-Identifier: MIT OR GPL-3.0-or-later
+-->
+
 <script setup lang="ts">
 import { useLayout } from '@/composables/useLayout'
 import AppConfigurator from './app-configurator.vue'

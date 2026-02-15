@@ -1,3 +1,6 @@
+<!--
+* SPDX-License-Identifier: MIT OR GPL-3.0-or-later
+-->
 <script setup lang="ts">
 import { useLayout } from '@/composables/useLayout'
 import { onBeforeUnmount, ref, watch } from 'vue'

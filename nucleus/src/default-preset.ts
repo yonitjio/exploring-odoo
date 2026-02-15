@@ -1,3 +1,7 @@
+/*
+* SPDX-License-Identifier: MIT OR GPL-3.0-or-later
+*/
+
 import { definePreset } from '@primeuix/themes'
 import Aura from '@primeuix/themes/aura'
 import type { AuraBaseDesignTokens } from '@primeuix/themes/aura/base'

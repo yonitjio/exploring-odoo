@@ -1,3 +1,7 @@
+/*
+* SPDX-License-Identifier: GPL-3.0-or-later
+*/
+
 export function utoa(str: string): string {
     const bytes = new TextEncoder().encode(str);
     let binary = "";

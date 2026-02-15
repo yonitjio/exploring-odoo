@@ -1,3 +1,7 @@
+<!--
+* SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'

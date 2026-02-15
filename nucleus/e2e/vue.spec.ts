@@ -1,3 +1,7 @@
+/*
+* SPDX-License-Identifier: GPL-3.0-or-later
+*/
+
 import { test, expect } from '@playwright/test';
 
 // See here how to get started:

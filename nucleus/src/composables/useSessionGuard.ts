@@ -1,3 +1,7 @@
+/*
+* SPDX-License-Identifier: GPL-3.0-or-later
+*/
+
 import { ref } from 'vue'
 import { registry } from '@/core/services'
 import type { SessionService } from '@/core/services/session-service'

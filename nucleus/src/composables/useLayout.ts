@@ -1,3 +1,7 @@
+/*
+* SPDX-License-Identifier: GPL-3.0-or-later
+*/
+
 import type { LayoutConfig } from '@/default-preset';
 import { computed, reactive } from 'vue'
 

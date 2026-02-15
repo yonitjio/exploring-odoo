@@ -1,3 +1,7 @@
+<!--
+* SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
 <template>
     <button type="button" class="layout-topbar-action" @click="handleLogout">
         <i class="pi pi-sign-out"></i>
