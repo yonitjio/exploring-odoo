@@ -1,0 +1,7 @@
+id,name,model_id,group_id/id,operation,domain
+access_cheat_model,access_cheat_model,cheat.basic,base.group_user,crud,
+access_cheat_wizard,access_cheat_wizard,cheat.wizard,base.group_user,crud,
+access_cheat_relation_main,access_cheat_relation_main,cheat.relation.main,base.group_user,crud,
+access_cheat_relation_line,access_cheat_relation_line,cheat.relation.line,base.group_user,crud,
+access_cheat_relation_auxiliary,access_cheat_relation_auxiliary,cheat.relation.auxiliary,base.group_user,crud,
+access_cheat_qweb,access_cheat_qweb,cheat.qweb,base.group_user,crud,
