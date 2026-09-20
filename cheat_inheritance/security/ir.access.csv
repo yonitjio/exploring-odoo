@@ -1,0 +1,3 @@
+id,name,model_id,group_id/id,operation,domain
+access_cheat_child_proto_model,access_cheat_child_proto_model,cheat.child.proto,base.group_user,crud,
+access_cheat_child_delegation_model,access_cheat_child_delegation_model,cheat.child.delegation,base.group_user,crud,
