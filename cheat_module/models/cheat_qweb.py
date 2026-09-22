@@ -10,6 +10,7 @@ from odoo.exceptions import ValidationError
 
 class CheatQweb(models.Model):
     _name = "cheat.qweb"
+    _description = "Cheat QWeb"
 
     char_field = fields.Char(string="Char Field", required=True)
     boolean_field = fields.Boolean(string="Boolean Field")

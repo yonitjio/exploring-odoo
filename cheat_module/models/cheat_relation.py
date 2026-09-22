@@ -9,6 +9,7 @@ from odoo import _, fields, models, api, Command
 # Main model should be in it's own file
 class MainModel(models.Model):
     _name = "cheat.relation.main"
+    _description = "Main model for relation"
 
     main_char_field = fields.Char(string="Main Char Field", required=True)
     main_text_field = fields.Text(string="Main Text Field")
@@ -83,6 +84,7 @@ class MainModel(models.Model):
 # If the line (details) model contains complex logic or other codes, consider make a separate file for it.
 class LineModel(models.Model):
     _name = "cheat.relation.line"
+    _description = "Line model for relation"
 
     line_char_field = fields.Char(string="Line Char Field", required=True)
     line_int_field = fields.Integer(string="Line Int Field", default=0)
@@ -98,9 +100,11 @@ class LineModel(models.Model):
 class AuxiliaryModel(models.Model):
     _name = "cheat.relation.auxiliary"
     _rec_name = "auxiliary_char_field"
+    _description = "Auxiliary model "
 
     auxiliary_char_field = fields.Char(string="Auxiliary Char Field", required=True)
 
-    _sql_constraints = [
-        ('uniq_aux_char_field', 'unique(auxiliary_char_field)', 'The char field must be unique.'),
-    ]
+    _uniq_aux_char_field = models.Constraint(
+        'unique(auxiliary_char_field)',
+        'The char field must be unique.'
+    )

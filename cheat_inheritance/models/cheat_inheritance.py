@@ -16,6 +16,7 @@ from odoo.exceptions import ValidationError
 # Stored in same table
 class CheatChild(models.Model):
     _inherit = "cheat.basic"
+    _description = "Inheriting basic model"
 
     char_field = fields.Char(string="Char Field", required=False)
     float_field = fields.Float(string="Float Field")
@@ -55,6 +56,7 @@ class CheatChild(models.Model):
 class CheatChildProto(models.Model):
     _name = "cheat.child.proto"
     _inherit = "cheat.basic"
+    _description = "Proto child"
 
     proto_date_field = fields.Date(string="Proto Date Field")
 
@@ -83,6 +85,7 @@ class CheatChildProto(models.Model):
 # *WARNING* Chained delegation inheritance is essentially not implemented
 class CheatChildDelegation(models.Model):
     _name = "cheat.child.delegation"
+    _description = "Delegation child"
 
     _inherits = {
         'cheat.basic': 'cheat_basic_id',

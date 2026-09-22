@@ -6,6 +6,7 @@ from odoo.exceptions import ValidationError
 
 class CheatWizard(models.TransientModel):
     _name = "cheat.wizard"
+    _description = "Cheat wizard"
 
     # Char field is usually displayed as a single-line string
     char_field = fields.Char(string="Char field", required=True)

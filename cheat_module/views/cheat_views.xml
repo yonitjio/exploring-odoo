@@ -23,8 +23,6 @@
       <field name="arch" type="xml">
         <form string="Basic Cheat">
           <header>
-            <!-- For button icon see: odoo\addons\web\static\src\libs\fontawesome\css\font-awesome.css -->
-            <!-- or go here: https://fontawesome.com/v4/icons/ -->
             <button name="action_set_char_field_value" type="object" string="Generate Random String" icon="shuffle" />
             <button name="action_show_sticky_notification" type="object" string="Sticky Notification" icon="sticky_note_2" />
             <button name="action_show_rainbow_man" type="object" string="Rainbow Man" icon="wifi" />

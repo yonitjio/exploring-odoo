@@ -10,6 +10,7 @@ from odoo.exceptions import ValidationError
 
 class BasicCheat(models.Model):
     _name = "cheat.basic"
+    _description = "Basic model"
 
     # Char field is usually displayed as a single-line string
     char_field = fields.Char(string="Char Field", required=True)
