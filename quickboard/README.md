@@ -1,4 +1,4 @@
-# Cheat Module for Odoo Development
+# Quickboard
 > [!WARNING]
 > This module is purely experimental and for educational purpose use only.
 >
@@ -9,12 +9,18 @@
 > Use it at your own risk.
 
 > [!CAUTION]
+> AI might generate commands that negatively impact your data.
+>
 > Do not use this module unless you have reviewed the source codes thoroughly, understand what it does and in an experimental environment.
 
-This module is addition for cheat_module to demonstrate inheritances in Odoo.
+This module demonstrate how to create simple yet flexible dashboard.
 
-Please watch this videos for more details:
+Quickboard for Odoo 19 does not include AI features.
 
-[![EXPLORING_ODOO](https://img.youtube.com/vi/q7NADJYorOw/0.jpg)](https://youtu.be/q7NADJYorOw)
+Please watch this video for more details:
+
+[![EXPLORING_ODOO](https://img.youtube.com/vi/LfxlUN9pikI/0.jpg)](https://youtu.be/LfxlUN9pikI)
+
+[![EXPLORING_ODOO](https://img.youtube.com/vi/y_prYVEp9mk/0.jpg)](https://youtu.be/y_prYVEp9mk)
 
 [![EXPLORING_ODOO](https://img.youtube.com/vi/bySHDQeX6tk/0.jpg)](https://youtu.be/bySHDQeX6tk)

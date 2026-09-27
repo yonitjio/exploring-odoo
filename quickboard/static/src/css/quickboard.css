@@ -1,0 +1,40 @@
+/* THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+SPDX-License-Identifier: MIT
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL, NO GUARANTEES OR LIABILITY ASSUMED. */
+
+.quickboard {
+    background-color: #555;
+}
+
+.grid-stack-item-content {
+    background-color: whitesmoke;
+    border: 1px solid black;
+}
+
+.quickboard-item-basic-title {
+    font-weight: 500;
+}
+
+.quickboard-item-basic-value {
+    font-size: 3em;
+}
+
+.quickboard-item-basic-icon {
+    font-size: 3em;
+}
+
+.quickboard-item-chart-title, .quickboard-item-list-title {
+    font-weight: 500;
+}
+
+.quickboard-item-chart-icon, .quickboard-item-list-icon {
+    font-size: 1em !important;
+}
+
+.theme-popup {
+    width: auto !important;
+}

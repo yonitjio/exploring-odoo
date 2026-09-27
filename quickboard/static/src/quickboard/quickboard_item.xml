@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+SPDX-License-Identifier: MIT
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL, NO GUARANTEES OR LIABILITY ASSUMED.
+
+-->
+<templates xml:space="preserve">
+
+    <t t-name="quickboard.QuickboardItem">
+        <t t-component="this._itemComponent" t-props="this._itemProps"/>
+    </t>
+</templates>

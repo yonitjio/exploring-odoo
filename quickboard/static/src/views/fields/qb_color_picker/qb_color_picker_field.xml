@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+SPDX-License-Identifier: MIT
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL, NO GUARANTEES OR LIABILITY ASSUMED.
+
+-->
+<templates xml:space="preserve">
+
+    <t t-name="quickboard.QbColorPickerField">
+        <QbColorList canToggle="this.props.canToggle"
+            colors="this.currentColorPalette()"
+            forceExpanded="this.isExpanded"
+            onColorSelected.bind="this.switchColor"
+            selectedColor="this.props.record.data[this.props.name] || 0"/>
+    </t>
+
+</templates>

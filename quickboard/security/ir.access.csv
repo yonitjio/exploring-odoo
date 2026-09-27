@@ -1,0 +1,4 @@
+id,name,model_id,group_id/id,operation,domain
+access_ir_model_quick_board,access_ir_model_quick_board,ir.model,group_quickboard_user,r,
+access_ir_field_quick_board,access_ir_field_quick_board,ir.model.fields,group_quickboard_user,r,
+access_quickboard_item,access_quickboard_item,quickboard.item,group_quickboard_user,crud,"[('create_uid', '=', user.id)]"
