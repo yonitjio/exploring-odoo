@@ -69,13 +69,13 @@ class QuickboardItem(models.Model):
                         val["width"] = 4
                         val["height"] = 2
 
-                sql = f"""WITH item_dim AS (
+                sql = """WITH item_dim AS (
                             SELECT y_pos, CASE WHEN height = 0 THEN 1 ELSE height END AS height
-                            FROM quickboard_item sdi WHERE create_uid = {self.env.uid}
+                            FROM quickboard_item sdi WHERE create_uid = %s
                         )
                         SELECT max(y_pos + height) as max_y_pos FROM item_dim WHERE y_pos = (SELECT max(y_pos) FROM item_dim);
                     """
-                self.env.cr.execute(sql)
+                self.env.cr.execute(sql, (self.env.uid,))
                 res = self.env.cr.dictfetchall()
                 max_y_pos = res[0].get("max_y_pos")
                 val["y_pos"] = max_y_pos
