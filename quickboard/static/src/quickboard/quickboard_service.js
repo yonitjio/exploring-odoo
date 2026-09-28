@@ -14,7 +14,7 @@ import { proxy } from "@odoo/owl";
 import { rpc } from "@web/core/network/rpc";
 
 const quickboardService = {
-    start(env, services) {
+    start(services) {
         const quickboard = proxy({
             items: {},
             isReady: false

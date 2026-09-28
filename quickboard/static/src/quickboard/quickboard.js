@@ -9,7 +9,7 @@
  *
  */
 
-import { Component, useEffect, signal, proxy, onPatched } from "@odoo/owl";
+import { Component, useEffect, signal, proxy, onPatched, useProps } from "@odoo/owl";
 import { standardActionServiceProps } from "@web/webclient/actions/action_plugin";
 import { registry } from "@web/core/registry";
 import { user } from "@web/core/user";
@@ -23,9 +23,9 @@ import { QUICKBOARD_BG_COLORS } from "../core/colors"
 class Quickboard extends Component {
     static template = "quickboard";
     static components = { SelectMenu, DateTimeInput, QuickboardItem };
-    static props = {
+    props = useProps({
         ...standardActionServiceProps,
-    };
+    });
 
     setup() {
         this.action = useService("action");

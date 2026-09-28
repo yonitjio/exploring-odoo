@@ -15,7 +15,7 @@ import { standardFieldProps } from "@web/views/fields/standard_field_props";
 import { QbColorList } from "../../../core/qb_color_list/qb_color_list";
 
 import { user } from "@web/core/user";
-import { Component } from "@odoo/owl";
+import { Component, useProps, t } from "@odoo/owl";
 
 import { QUICKBOARD_BG_COLORS, QUICKBOARD_FG_COLORS } from "../../../core/colors";
 
@@ -24,11 +24,11 @@ export class QbColorPickerField extends Component {
     static components = {
         QbColorList,
     };
-    static props = {
+    props = useProps({
         ...standardFieldProps,
-        canToggle: { type: Boolean },
-        mode: { type: String },
-    };
+        canToggle: t.boolean(),
+        mode: t.string(),
+    });
 
     currentColorPalette() {
         let theme = user.settings.quickboard_theme;

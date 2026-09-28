@@ -45,7 +45,7 @@ THIS SOFTWARE IS EXPERIMENTAL, NO GUARANTEES OR LIABILITY ASSUMED.
                   <field name="model_name" invisible="1" />
               </group>
               <group string="Options">
-                  <field name="icon" widget="qb_icon_picker"/>
+                  <field name="icon" widget="qb_icon_picker" required="1"/>
                   <field name="text_color" widget="qb_color_picker" options="{'mode': 'foreground'}" invisible="type != 'basic'" />
                   <field name="background_color" widget="qb_color_picker" options="{'mode': 'background'}" invisible="type != 'basic'" />
                   <field name="chart_type" required="[('type', '=', 'chart')]" invisible="type != 'chart'"/>

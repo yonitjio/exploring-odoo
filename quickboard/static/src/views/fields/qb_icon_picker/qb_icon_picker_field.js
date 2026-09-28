@@ -13,7 +13,7 @@ import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
 import { standardFieldProps } from "@web/views/fields/standard_field_props";
 import { SelectMenu } from "@web/core/select_menu/select_menu";
-import { Component } from "@odoo/owl";
+import { Component, useProps } from "@odoo/owl";
 
 import { iconList } from "./icon_list";
 
@@ -22,9 +22,7 @@ export class QbIconPickerField extends Component {
     static components = {
         SelectMenu,
     };
-    static props = {
-        ...standardFieldProps,
-    };
+    props = useProps(standardFieldProps);
 
     async onSelectIcon(val) {
         this.props.record.update({ [this.props.name]: val });
@@ -33,7 +31,6 @@ export class QbIconPickerField extends Component {
     get icons() {
         return iconList;
     }
-
 }
 
 export const qbIconPickerField = {

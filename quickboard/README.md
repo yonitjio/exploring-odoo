@@ -22,5 +22,3 @@ Please watch this video for more details:
 [![EXPLORING_ODOO](https://img.youtube.com/vi/LfxlUN9pikI/0.jpg)](https://youtu.be/LfxlUN9pikI)
 
 [![EXPLORING_ODOO](https://img.youtube.com/vi/y_prYVEp9mk/0.jpg)](https://youtu.be/y_prYVEp9mk)
-
-[![EXPLORING_ODOO](https://img.youtube.com/vi/bySHDQeX6tk/0.jpg)](https://youtu.be/bySHDQeX6tk)
