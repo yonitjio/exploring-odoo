@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="cheat_owl_simple_box">
+        <div class="border border-primary rounded p-2">
+            <div>
+                <t t-out="this.props.title" />
+            </div>
+            <hr/>
+            <SimpleText text="this.state.text"
+                onClick.bind="this.onTextClick" />
+            <hr/>
+            <button class="btn btn-primary"
+                t-on-click="this.onChangeText">
+                Change Text
+            </button>
+        </div>
+    </t>
+</templates>

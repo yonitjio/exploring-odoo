@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="cheat_owl_imperative_text">
+        <div>
+            <t t-out="this.state.text" />
+        </div>
+    </t>
+</templates>

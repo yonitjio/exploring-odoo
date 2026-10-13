@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="cheat_owl_imperative_box">
+        <div class="border border-primary rounded p-2">
+            <div>Imperative Box</div>
+            <hr/>
+            <ImperativeText handle="this.imperativeTextHandle"/>
+            <hr/>
+            <button class="btn btn-primary"
+                t-on-click="this.onCallSubComponentMethod">
+                Call Sub-component Method
+            </button>
+        </div>
+    </t>
+</templates>

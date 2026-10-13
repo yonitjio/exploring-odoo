@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="cheat_owl" owl="1">
+        <Layout display="{ controlPanel: {} }" className="'overflow-auto h-100'">
+            <div class="cheat-web-container p-3 mb-5">
+                <div class="row g-2">
+                    <div class="col-xl-2 col-sm-6">
+                        <div class="card">
+                            <h5 class="card-header">
+                                <a class="collapsed d-block" data-bs-toggle="collapse" href="#collapse-owl-use-ref" aria-expanded="true" aria-controls="collapse-collapsed">
+                                    <em>t-ref</em> Example
+                                    <i class="oi float-end" data-icon="expand_more"></i>
+                                </a>
+                            </h5>
+                            <div id="collapse-owl-use-ref" class="collapse">
+                                <div class="card-body">
+                                    <p class="card-text" t-ref="this.useRefCardTextRef">
+                                    This text color can be changed by clicking the button below.
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="d-flex justify-content-end">
+                                        <button t-on-click="this.changeUseRefCardTextColor" class="btn btn-sm btn-outline-primary w-50">Change Color</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-sm-6">
+                        <div class="card">
+                            <h5 class="card-header">
+                                <a class="collapsed d-block" data-bs-toggle="collapse" href="#collapse-owl-non-reactive" aria-expanded="true" aria-controls="collapse-collapsed">
+                                    DOM Manipulation Example
+                                    <i class="oi float-end" data-icon="expand_more"></i>
+                                </a>
+                            </h5>
+                            <div id="collapse-owl-non-reactive" class="collapse">
+                                <div class="card-body">
+                                    <p class="card-text">
+                                        This is a random value: <br/>
+                                        <span class="text-primary" t-ref="this.domRandomValue1Ref"></span>
+                                        <span class="text-danger ms-1" t-ref="this.domRandomValue2Ref"></span>
+                                        <span class="text-warning ms-1" t-ref="this.domRandomValue3Ref"></span>
+                                        <span class="text-info ms-1" t-ref="this.domRandomValue4Ref"></span>
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="d-flex justify-content-end">
+                                        <button t-on-click="this.generateDomRandomValue" class="btn btn-sm btn-outline-primary w-50">Randomize</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-sm-6">
+                        <div class="card">
+                            <h5 class="card-header">
+                                <a class="collapsed d-block" data-bs-toggle="collapse" href="#collapse-owl-signal" aria-expanded="true" aria-controls="collapse-collapsed">
+                                    <em>Signal</em> Example
+                                    <i class="oi float-end" data-icon="expand_more"></i>
+                                </a>
+                            </h5>
+                            <div id="collapse-owl-signal" class="collapse">
+                                <div class="card-body">
+                                    <p class="card-text">
+                                        This is a random value: <br/>
+                                        <span class="text-primary"><t t-out="this.randomValue()" /></span>
+                                        <span class="text-danger ms-1"><t t-out="this.randomValue()" /></span>
+                                        <span class="text-warning ms-1"><t t-out="this.randomValue()" /></span>
+                                        <span class="text-info ms-1"><t t-out="this.randomValue()" /></span>
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="d-flex justify-content-end">
+                                        <button t-on-click="this.generateSignalRandomValue" class="btn btn-sm btn-outline-primary w-50">Randomize</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-sm-6">
+                        <div class="card">
+                            <h5 class="card-header">
+                                <a class="collapsed d-block" data-bs-toggle="collapse" href="#collapse-owl-proxy" aria-expanded="true" aria-controls="collapse-collapsed">
+                                    <em>Proxy</em> Example
+                                    <i class="oi float-end" data-icon="expand_more"></i>
+                                </a>
+                            </h5>
+                            <div id="collapse-owl-proxy" class="collapse">
+                                <div class="card-body">
+                                    <p class="card-text">
+                                        This is a random value: <br/>
+                                        <span class="text-primary"><t t-out="this.state.randomValue" /></span>
+                                        <span class="text-danger ms-1"><t t-out="this.state.randomValue" /></span>
+                                        <span class="text-warning ms-1"><t t-out="this.state.randomValue" /></span>
+                                        <span class="text-info ms-1"><t t-out="this.state.randomValue" /></span>
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="d-flex justify-content-end">
+                                        <button t-on-click="this.generateProxyRandomValue" class="btn btn-sm btn-outline-primary w-50">Randomize</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-1 g-2">
+                    <div class="col-12">
+                        <div class="card">
+                            <h5 class="card-header">
+                                <a class="collapsed d-block" data-bs-toggle="collapse" href="#collapse-owl-input-binding" aria-expanded="true" aria-controls="collapse-collapsed">
+                                    Input Binding
+                                    <i class="oi float-end" data-icon="expand_more"></i>
+                                </a>
+                            </h5>
+                            <div id="collapse-owl-input-binding" class="collapse">
+                                <div class="row m-2 mt-0 g-2">
+                                    <div class="col-xl-2 col-sm-6">
+                                        <div class="card h-100">
+                                            <h5 class="card-header">
+                                                <i class="oi" data-icon="keyboard"/> Input
+                                            </h5>
+                                            <div class="card-body">
+                                                <p class="card-text">
+                                                    <input class="o_input" t-model.proxy="this.bindingValue"/>
+                                                    <hr/>
+                                                    <div>Input value: <span t-ref="this.inputBindingRef"> <t t-out="this.bindingValue" /></span></div>
+                                                    <button class="btn btn-sm btn-outline-primary" t-on-click="this.getInputBindingValue">Get Input Value</button>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row m-2 mt-0 g-2">
+                                    <div class="hr-sect">Two-way Binding</div>
+                                    <div class="col-xl-2 col-sm-6">
+                                        <div class="card h-100">
+                                            <h5 class="card-header">
+                                                <i class="oi" data-icon="keyboard"/> Input
+                                            </h5>
+                                            <div class="card-body">
+                                                <p class="card-text justify-content-between d-flex flex-column h-100">
+                                                    <input class="o_input" t-model.proxy="this.bindingState.valueStandardInputBinding"/>
+                                                    <div><hr/>Input value: <t t-out="this.bindingState.valueStandardInputBinding" /></div>
+                                                    <button class="btn btn-sm btn-outline-primary" t-on-click="this.changeValueStandardInputBinding">Randomize</button>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-2 col-sm-6">
+                                        <div class="card h-100">
+                                            <h5 class="card-header">
+                                                <i class="oi" data-icon="text_fields" /> Textarea
+                                            </h5>
+                                            <div class="card-body">
+                                                <p class="card-text justify-content-between d-flex flex-column h-100">
+                                                    <textarea class="o_input" t-model.proxy="this.bindingState.valueTextAreaInputBinding"/>
+                                                    <div><hr/>Input value: <t t-out="this.bindingState.valueTextAreaInputBinding" /></div>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-2 col-sm-6">
+                                        <div class="card h-100">
+                                            <h5 class="card-header">
+                                                <i class="oi" data-icon="check_box"/> Checkbox
+                                            </h5>
+                                            <div class="card-body">
+                                                <p class="card-text justify-content-between d-flex flex-column h-100">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" id="cbInputBindingCheck" t-model.proxy="this.bindingState.valueCheckBoxInputBinding"/>
+                                                        <label class="form-check-label" for="cbInputBindingCheck">Checkbox</label>
+                                                    </div>
+                                                    <div><hr/>Input value: <t t-out="this.bindingState.valueCheckBoxInputBinding" /></div>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-2 col-sm-6">
+                                        <div class="card h-100">
+                                            <h5 class="card-header">
+                                                <i class="oi" data-icon="radio_button_checked"/> Radio Buttons
+                                            </h5>
+                                            <div class="card-body">
+                                                <p class="card-text justify-content-between d-flex flex-column h-100">
+                                                    <div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" id="cbInputBindingOne" value="one" t-model.proxy="this.bindingState.valueRadioButtonInputBinding"/>
+                                                            <label class="form-check-label" for="cbInputBindingOne">One</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" id="cbInputBindingTwo" value="two" t-model.proxy="this.bindingState.valueRadioButtonInputBinding" />
+                                                            <label class="form-check-label" for="cbInputBindingTwo">Two</label>
+                                                        </div>
+                                                    </div>
+                                                    <div><hr/>Input value: <t t-out="this.bindingState.valueRadioButtonInputBinding" /></div>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-2 col-sm-6">
+                                        <div class="card h-100">
+                                            <h5 class="card-header">
+                                                <i class="oi" data-icon="expand_circle_down"/> Select
+                                            </h5>
+                                            <div class="card-body">
+                                                <p class="card-text justify-content-between d-flex flex-column h-100">
+                                                    <select class="form-select" t-model.proxy="this.bindingState.valueSelectionInputBinding">
+                                                        <option value="red">Red</option>
+                                                        <option value="blue">Blue</option>
+                                                    </select>
+                                                    <div><hr/>Input value: <t t-out="this.bindingState.valueSelectionInputBinding" /></div>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-2 col-sm-6">
+                                        <div class="card h-100">
+                                            <h5 class="card-header">
+                                                <i class="oi" data-icon="expand"/> Range
+                                            </h5>
+                                            <div class="card-body">
+                                                <p class="card-text justify-content-between d-flex flex-column h-100">
+                                                    <input class="form-range"  min="0" max="5" step="0.5" type="range" t-model.proxy="this.bindingState.valueRangeInputBinding"/>
+                                                    <div><hr/>Input value: <t t-out="this.bindingState.valueRangeInputBinding" /></div>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Layout>
+    </t>
+</templates>

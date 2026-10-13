@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="cheat_owl_simple_text">
+        <div t-on-click="this.props.onClick">
+            <t t-out="this.props.text" />
+        </div>
+    </t>
+</templates>

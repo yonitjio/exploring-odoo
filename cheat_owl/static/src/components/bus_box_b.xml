@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="cheat_owl_bus_box_b">
+        <div class="border border-primary rounded p-2 mt-2">
+            <div>Bus Box B</div>
+            <hr/>
+            <t t-out="this.state.text" />
+        </div>
+    </t>
+</templates>

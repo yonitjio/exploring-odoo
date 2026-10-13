@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="cheat_owl_bus_box_a">
+        <div class="border border-primary rounded p-2">
+            <div>Bus Box A</div>
+            <hr/>
+            <button class="btn btn-primary"
+                t-on-click="this.onTriggerEvent">
+                Trigger Event
+            </button>
+        </div>
+    </t>
+</templates>

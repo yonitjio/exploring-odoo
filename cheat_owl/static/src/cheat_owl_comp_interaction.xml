@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="cheat_owl_comp_interaction" owl="1">
+        <Layout display="{ controlPanel: {} }" className="'overflow-auto h-100'">
+            <div class="cheat-web-container p-3 mb-5">
+                <div class="row g-2">
+                    <div class="col-xl-2 col-sm-6">
+                        <div class="card">
+                            <h5 class="card-header">
+                                <a class="collapsed d-block" data-bs-toggle="collapse" href="#collapse-owl-props-variable" aria-expanded="true" aria-controls="collapse-collapsed">
+                                    Props &amp; State Variables
+                                    <i class="oi float-end" data-icon="expand_more"></i>
+                                </a>
+                            </h5>
+                            <div id="collapse-owl-props-variable" class="collapse">
+                                <div class="card-body">
+                                    <SimpleBox title="'Simple Box'" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-sm-6">
+                        <div class="card">
+                            <h5 class="card-header">
+                                <a class="collapsed d-block" data-bs-toggle="collapse" href="#collapse-owl-event-bus" aria-expanded="true" aria-controls="collapse-collapsed">
+                                    Event Bus
+                                    <i class="oi float-end" data-icon="expand_more"></i>
+                                </a>
+                            </h5>
+                            <div id="collapse-owl-event-bus" class="collapse">
+                                <div class="card-body">
+                                    <BusBoxA/>
+                                    <BusBoxB/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-sm-6">
+                        <div class="card">
+                            <h5 class="card-header">
+                                <a class="collapsed d-block" data-bs-toggle="collapse" href="#collapse-owl-imperative-handle" aria-expanded="true" aria-controls="collapse-collapsed">
+                                    Imperative Handle
+                                    <i class="oi float-end" data-icon="expand_more"></i>
+                                </a>
+                            </h5>
+                            <div id="collapse-owl-imperative-handle" class="collapse">
+                                <div class="card-body">
+                                    <ImperativeBox/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Layout>
+    </t>
+</templates>
