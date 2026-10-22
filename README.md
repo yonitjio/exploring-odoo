@@ -14,6 +14,10 @@ Having served its purpose as a pioneer in creating multi-purpose, node-based use
 
 My hope is that this codebase serves as an inspiration for the Odoo developer community, showcasing the potential of pure Owl and encouraging the development of even more sophisticated node-based interfaces for Odoo.
 
-### A Note on Nuido 2 (N2)
+### A Note on Nuido 2 and Nuido 3
 
-Nuido 2 (N2) is currently in development, though there are no plans to release it publicly at this time. However, you can still explore its capabilities and see what's possible by watching the N2 videos on my [YouTube channel](https://www.youtube.com/@exploring-odoo).
+I'm still working on my projects, though there's currently no plan to release them publicly. In the meantime, you can explore what they can do through the videos on my YouTube channel.
+
+Nuido 2 is no longer actively developed, as I'm now focusing on Nuido 3.
+
+Curious about the project? Feel free to start a discussion in this repository. I'd be happy to hear your thoughts!
