@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+THIS FILE IS A PART OF PUBLIC REPOSITORY https://github.com/yonitjio/exploring-odoo
+
+This software is released under the MIT License.
+SPDX-License-Identifier: MIT
+https://opensource.org/licenses/MIT
+
+THIS SOFTWARE IS EXPERIMENTAL, NO GUARANTEES OR LIABILITY ASSUMED.
+
+-->
 <templates xml:space="preserve">
     <t t-name="quickboard.QbColorList">
         <div class="o_colorlist d-flex flex-wrap align-items-center mw-100 gap-0" aria-atomic="true" t-ref="this.colorlistRef">

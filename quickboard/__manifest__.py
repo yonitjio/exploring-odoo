@@ -12,20 +12,31 @@
         "security/quickboard_security.xml",
         "security/ir.access.csv",
         "views/quickboard_views.xml",
+        "views/quickboard_board_views.xml",
         "views/quickboard_item_views.xml",
     ],
     "assets": {
         "web.assets_backend": [
             "quickboard/static/src/**/*",
             ("remove", "quickboard/static/src/quickboard/**/*"),
+            ("remove", "quickboard/static/src/styles/**/*"),
         ],
         "quickboard.assets": [
             ("include", "web.chartjs_lib"),
             "quickboard/static/lib/gridstack/*",
             "quickboard/static/lib/spinjs/*",
             "quickboard/static/src/quickboard/**/*",
-            "quickboard/static/src/css/**/*",
         ],
+        "quickboard.light_assets": [
+            ("include", "quickboard.assets"),
+            "quickboard/static/src/styles/variables.scss",
+            "quickboard/static/src/styles/quickboard.scss",
+        ],
+        "quickboard.dark_assets": [
+            ("include", "quickboard.assets"),
+            "quickboard/static/src/styles/variables.dark.scss",
+            "quickboard/static/src/styles/quickboard.scss",
+        ]
     },
     "license": "Other OSI approved licence",
     "application": True,

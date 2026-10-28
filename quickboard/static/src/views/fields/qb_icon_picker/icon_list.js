@@ -8,7 +8,6 @@
  * THIS SOFTWARE IS EXPERIMENTAL, NO GUARANTEES OR LIABILITY ASSUMED.
  *
  */
-
 export const iconList = [
     { label: "500px", value: "500px", icon: "oi_500px", icon_filled: false },
     { label: "address-book", value: "address-book", icon: "contact_page", icon_filled: true },

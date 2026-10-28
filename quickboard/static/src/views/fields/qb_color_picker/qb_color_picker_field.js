@@ -8,17 +8,13 @@
  * THIS SOFTWARE IS EXPERIMENTAL, NO GUARANTEES OR LIABILITY ASSUMED.
  *
  */
-
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
 import { standardFieldProps } from "@web/views/fields/standard_field_props";
 import { QbColorList } from "../../../core/qb_color_list/qb_color_list";
-
 import { user } from "@web/core/user";
 import { Component, useProps, t } from "@odoo/owl";
-
 import { QUICKBOARD_BG_COLORS, QUICKBOARD_FG_COLORS } from "../../../core/colors";
-
 export class QbColorPickerField extends Component {
     static template = "quickboard.QbColorPickerField";
     static components = {
@@ -29,25 +25,22 @@ export class QbColorPickerField extends Component {
         canToggle: t.boolean(),
         mode: t.string(),
     });
-
     currentColorPalette() {
         let theme = user.settings.quickboard_theme;
-        if (this.props.mode === "foreground"){
+        if (this.props.mode === "foreground") {
             return QUICKBOARD_FG_COLORS[theme];
-        } else {
+        }
+        else {
             return QUICKBOARD_BG_COLORS[theme];
         }
     }
-
     get isExpanded() {
         return !this.props.canToggle && !this.props.readonly;
     }
-
     switchColor(colorIndex) {
         this.props.record.update({ [this.props.name]: colorIndex });
     }
 }
-
 export const qbColorPickerField = {
     component: QbColorPickerField,
     supportedTypes: ["integer"],
@@ -68,5 +61,4 @@ export const qbColorPickerField = {
         mode: options.mode,
     }),
 };
-
 registry.category("fields").add("qb_color_picker", qbColorPickerField);

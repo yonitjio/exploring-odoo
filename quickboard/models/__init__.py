@@ -9,3 +9,4 @@ THIS SOFTWARE IS EXPERIMENTAL, NO GUARANTEES OR LIABILITY ASSUMED.
 """
 from . import quickboard_item
 from . import res_users_settings
+from . import quickboard_board

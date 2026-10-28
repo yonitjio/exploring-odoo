@@ -7,12 +7,17 @@ https://opensource.org/licenses/MIT
 THIS SOFTWARE IS EXPERIMENTAL, NO GUARANTEES OR LIABILITY ASSUMED. */
 
 .quickboard {
-    background-color: #555;
+    background-color: $quickboard-bg;
+}
+
+.quickboard-toolbar {
+    background-color: $quickboard-toolbar-bg;
 }
 
 .grid-stack-item-content {
-    background-color: whitesmoke;
-    border: 1px solid black;
+    background-color: $quickboard-stack-item-bg;
+    border: $quickboard-stack-item-border;
+    color: $quickboard-color;
 }
 
 .quickboard-item-basic-title {

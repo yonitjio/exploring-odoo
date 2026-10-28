@@ -8,16 +8,14 @@
  * THIS SOFTWARE IS EXPERIMENTAL, NO GUARANTEES OR LIABILITY ASSUMED.
  *
  */
-
 import { t } from "@odoo/owl";
-
 const { DateTime } = luxon;
-
 export const standardQuickboardItemProps = {
-    action: t.object(),
+    action: t.object({
+        doAction: t.function()
+    }),
     itemId: t.number(),
     theme: t.string(),
-    startDate: t.instanceOf(DateTime),
-    endDate: t.instanceOf(DateTime),
+    startDate: t.object(),
+    endDate: t.object(),
 };
-

@@ -273,9 +273,10 @@ class QuickboardController(http.Controller):
         return vals
 
     @http.route('/quickboard/item_defs', type='jsonrpc', auth='user', website=True)
-    def get_quickboard_items(self):
+    def get_quickboard_items(self, board_id=None):
+        domain = [("board_id", "=", board_id)] if board_id else []
         items = []
-        for quickboard_item in request.env['quickboard.item'].with_context({"hide_model": True}).search([], order="id"):
+        for quickboard_item in request.env['quickboard.item'].with_context({"hide_model": True}).search(domain, order="id"):
             vals = self.get_quickboard_item_values(quickboard_item, None, None, False)
             items.append(vals)
         return items

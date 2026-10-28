@@ -16,6 +16,8 @@ class Users(models.Model):
     quickboard_theme = fields.Char("Quickboard Theme", default="def")
     quickboard_start_date = fields.Char("Start Date")
     quickboard_end_date = fields.Char("End Date")
+    
+    quickboard_board_id = fields.Integer("Last Quickboard")
 
     @api.constrains("quickboard_start_date")
     def _validate_start_date(self):

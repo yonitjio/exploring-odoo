@@ -17,6 +17,7 @@ THIS SOFTWARE IS EXPERIMENTAL, NO GUARANTEES OR LIABILITY ASSUMED.
       <field name="model">quickboard.item</field>
       <field name="arch" type="xml">
         <list string="Quickboard Item">
+          <field name="board_id"/>
           <field name="name"/>
           <field name="model_name"/>
           <field name="chart_type"/>
@@ -34,6 +35,7 @@ THIS SOFTWARE IS EXPERIMENTAL, NO GUARANTEES OR LIABILITY ASSUMED.
           <sheet>
             <group>
               <group string="General" >
+                  <field name="board_id" required="1" options="{'no_create': True}"/>
                   <field name="type"
                       required="1"
                       readonly="context.get('quick_edit', False)"/>

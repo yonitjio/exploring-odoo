@@ -13,8 +13,27 @@ THIS SOFTWARE IS EXPERIMENTAL, NO GUARANTEES OR LIABILITY ASSUMED.
 
     <t t-name="quickboard">
         <div class="quickboard h-100 overflow-auto" style="min-height:-webkit-fill-available;">
-            <div class="container-fluid flex-column flex-md-row bg-light d-flex align-items-center justify-content-between">
+            <div class="quickboard-toolbar container-fluid flex-column flex-md-row d-flex justify-content-between">
                 <div class="btn-toolbar w-100 w-md-auto my-2 d-flex" role="toolbar">
+                    <div class="input-group me-2 flex-nowrap">
+                    <div class="input-group-text d-none d-md-block"><span class="align-middle">Board</span></div>
+                        <div class="form-control">
+                            <RecordSelector t-props="this.boardSelectProps" />
+                        </div>
+                        <button type="button" class="btn btn-secondary" title="New board"
+                                t-on-click="() => this.addBoard()">
+                            <i class="oi" data-icon="add"/>
+                        </button>
+                        <button type="button" class="btn btn-secondary" title="Rename board"
+                                t-on-click="() => this.renameBoard()">
+                            <i class="oi" data-icon="edit"/>
+                        </button>
+                        <button type="button" class="btn btn-secondary" title="Delete board"
+                                t-att-disabled="this.state.boards.length &lt; 2"
+                                t-on-click="() => this.deleteBoard()">
+                            <i class="oi" data-icon="delete"/>
+                        </button>
+                    </div>
                     <div class="btn-group me-1 flex-grow-1" role="group">
                         <button id="save" type="button" class="btn btn-primary" t-on-click="(ev) => this.saveQuickboard(ev)">
                             <i class="oi me-2 d-none d-md-inline" data-icon="save" />Save
@@ -29,8 +48,8 @@ THIS SOFTWARE IS EXPERIMENTAL, NO GUARANTEES OR LIABILITY ASSUMED.
                         </button>
                     </div>
                 </div>
-                <div class="d-flex my-auto mb-2">
-                    <div class="flex-nowrap input-group input-group-sm ms-1 me-1">
+                <div class="btn-toolbar w-100 w-md-auto my-2 d-flex align-items-baseline" role="toolbar">
+                    <div class="flex-nowrap input-group ms-1 me-1">
                         <div class="input-group-text d-none d-md-block"><span class="align-middle">Theme</span></div>
                         <div class="form-control">
                             <SelectMenu
@@ -53,23 +72,25 @@ THIS SOFTWARE IS EXPERIMENTAL, NO GUARANTEES OR LIABILITY ASSUMED.
                             </SelectMenu>
                         </div>
                     </div>
-                    <div class="input-group input-group-sm ms-1 me-1">
+                    <div class="input-group ms-1 me-1">
                         <div class="input-group-text d-none d-md-block"><span class="align-middle">Start Date</span></div>
                         <div class="form-control">
                             <DateTimeInput type="'date'" value="this.state.startDate" placeholder="'Start Date'"
                                 onChange="(d) => this.onStartDateChanged(d)"/>
                         </div>
                     </div>
-                    <div class="input-group input-group-sm ms-1 me-1">
+                    <div class="input-group ms-1 me-1">
                         <div class="input-group-text d-none d-md-block"><span class="align-middle">End Date</span></div>
                         <div class="form-control">
                             <DateTimeInput type="'date'" value="this.state.endDate" placeholder="'End Date'"
                                 onChange="(d) => this.onEndDateChanged(d)"/>
                         </div>
                     </div>
-                    <button id="applyFilter" type="button" class="btn btn-primary" t-on-click="(ev) => this.applyFilter(ev)">
-                        Apply
-                    </button>
+                    <div class="btn-group ms-1 flex-grow-1" role="group">
+                        <button id="applyFilter" type="button" class="btn btn-primary" t-on-click="(ev) => this.applyFilter(ev)">
+                            <i class="oi me-2 d-none d-md-inline" data-icon="check" />Apply
+                        </button>
+                    </div>
                 </div>
             </div>
             <div class="grid-stack " t-ref="this.gridRef">

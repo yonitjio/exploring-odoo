@@ -57,9 +57,24 @@ class QuickboardItem(models.Model):
     height = fields.Integer(string="Height")
     width = fields.Integer(string="Width")
 
+    board_id = fields.Many2one(
+        "quickboard.board", string="Board", index=True, ondelete="cascade")
+
+    @api.model
+    def _default_board(self):
+        board = self.env["quickboard.board"]
+        return board.search([], limit=1) or board.create({"name": "My Quickboard"})
+
     @api.model_create_multi
     def create(self, vals_list):
+        default_board = None
         for val in vals_list:
+            if not val.get("board_id"):
+                val["board_id"] = self.env.context.get("default_board_id")
+            if not val["board_id"]:
+                default_board = default_board or self._default_board()
+                val["board_id"] = default_board.id
+
             if not self.env.context.get("ai_generation", False):
                 if 'type' in val:
                     if val["type"] == "basic":
@@ -71,18 +86,16 @@ class QuickboardItem(models.Model):
 
                 sql = """WITH item_dim AS (
                             SELECT y_pos, CASE WHEN height = 0 THEN 1 ELSE height END AS height
-                            FROM quickboard_item sdi WHERE create_uid = %s
+                            FROM quickboard_item WHERE board_id = %s
                         )
-                        SELECT max(y_pos + height) as max_y_pos FROM item_dim WHERE y_pos = (SELECT max(y_pos) FROM item_dim);
+                        SELECT COALESCE(max(y_pos + height), 0) AS max_y_pos
+                        FROM item_dim WHERE y_pos = (SELECT max(y_pos) FROM item_dim);
                     """
-                self.env.cr.execute(sql, [self.env.uid])
-                res = self.env.cr.dictfetchall()
-                max_y_pos = res[0].get("max_y_pos")
-                val["y_pos"] = max_y_pos
+                self.env.cr.execute(sql, [val["board_id"]])
+                val["y_pos"] = self.env.cr.fetchone()[0]
                 val["x_pos"] = 0
-        res = super().create(vals_list)
-        return res
-
+        return super().create(vals_list)
+            
     @api.onchange("type")
     def clear_values(self):
         for rec in self:
